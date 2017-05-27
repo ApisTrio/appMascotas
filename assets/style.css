@@ -1,0 +1,141 @@
+/* COLORES */
+
+.color-blanco {
+    
+    color: white;
+}
+
+/* TITULOS */
+
+.titulo1 {
+    font-size: 18px;
+}
+
+.titulo2 {
+    font-size: 20px;
+}
+
+
+/* INTERLINEADOS */
+
+
+.interlineado14 {
+        
+    line-height: 14px;
+    
+}
+
+.interlineado16 {
+        
+    line-height: 16px;
+    
+}
+
+.interlineado20 {
+    
+    line-height: 20px;
+}
+
+/**********************/
+
+.negrita {
+    font-weight: bold !important;
+}
+
+.globitos {
+    padding: 40px;
+    background-color: rgba(53, 71, 201, 0.6);
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    color: white
+}
+
+.boton-verde {
+    color: white;
+    background-color: #7aeeb1;
+    border: none;
+    padding: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 35px;
+}
+
+.boton-verde-negativo {
+    color: #7aeeb1;
+    background-color: transparent;
+    border: 2px solid #7aeeb1;
+    padding: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 35px;
+}
+
+
+.texto-pequeno {
+    font-size: 12px;
+}
+
+.margin-auto{
+    margin: auto;
+}
+
+
+/* ELEMENTO FLOTAR */
+
+.flotar-izquierda {
+    float: left;
+}
+
+.flotar-derecha {
+    float: right;
+}
+
+
+/* SECCIONES */
+
+.como-funciona {
+    
+    background-color: #ffde16;
+    height: 600px;
+    padding-top: 40px;
+
+}
+
+.nuestras-placas{
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+}
+
+.como-empezar {
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+}
+
+.mascotas-perdidas {
+    
+    background-color: #272754;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+.contenido-iphone{
+    padding-top: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    height: 450px;
+    width: 250px;
+    color: white;
+    background-color: rgba(53, 71, 201, 0.6);
+    
+}
+

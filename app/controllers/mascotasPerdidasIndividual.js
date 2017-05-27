@@ -1,4 +1,4 @@
-angular.module("bz-mascotas")
+angular.module("mascotas")
 
 .controller("mascotasPerdidasIndividualController", [function () {
     

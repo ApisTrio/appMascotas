@@ -1,4 +1,4 @@
-angular.module("bz-mascotas", ["ngMessages", "ui.router", "ngAnimate"])
+angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate"])
 
 .config(["$stateProvider", "$locationProvider", function ($stateProvider, $locationProvider) {
 

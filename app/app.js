@@ -1,4 +1,4 @@
-angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate"])
+angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"])
 
 .config(["$stateProvider", "$locationProvider", function ($stateProvider, $locationProvider) {
 
@@ -26,7 +26,6 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate"])
         url: '/registro',
         templateUrl: 'app/views/registroUsuario.tpl',
         controller: 'registroController as registro'
-
     })
 
     ////////////////////////////////////
@@ -59,6 +58,7 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate"])
     .state({
         name: 'perfil',
         url: '/perfil',
+        abstract: false,
         templateUrl: 'app/views/perfil.tpl',
         controller: 'perfilController as perfil'
 

@@ -13,7 +13,7 @@
                 <div>imagen</div>
                 <h5 class="negrita">REGISTRA TU MASCOTA</h5>
                 <p class="texto-pequeno">Registrate en nuestra plataforma para poder activar tu placa o entra con tu usuario y contraseña</p>
-                <button class="boton-verde">EMPIEZA AQUÍ</button>
+                <button class="boton-verde" ui-sref="registroUsuario">EMPIEZA AQUÍ</button>
             </div>
         </div>
         <div class="col s4 center-align">
@@ -109,7 +109,7 @@
                 </div>
                 <div class="row">
                     <div class="col s4 center-align"><button class="boton-verde">COMPRAR</button></div>
-                    <div class="col s4 center-align"><button class="boton-verde-negativo">CREAR CUENTA</button></div>
+                    <div class="col s4 center-align"><button class="boton-verde-negativo" ui-sref="registroUsuario">CREAR CUENTA</button></div>
                     <div class="col s4 center-align"><button class="boton-verde-negativo">ACTIVAR</button></div>
                 </div>
             </div>

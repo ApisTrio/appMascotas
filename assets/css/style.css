@@ -1,5 +1,27 @@
-/* COLORES */
+@font-face {
+    font-family: 'OpenSansR';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'OpenSansL';
+    src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+    font-weight: lighter;
+}
+@font-face {
+    font-family: 'OpenSansS';
+    src: url('../fonts/OpenSans-Semibold.ttf') format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'OpenSansB';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bolder;
+}
 
+body{ font-family: 'OpenSansR'; font-weight: normal; }
+
+/* COLORES */
 .color-blanco {
     color: white;
 }
@@ -7,12 +29,17 @@
 
 /* TAMAÑOS FUENTES */
 
+.regular{ font-family: 'OpenSansR' !important; }
+.light{ font-family: 'OpenSansL' !important; }
+.semibold{ font-family: 'OpenSansS' !important; }
+.bold{ font-family: 'OpenSansB' !important; }
+
 .titulo1 {
     font-size: 18px;
 }
 
 .titulo2 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .texto-pequeno {
@@ -44,6 +71,8 @@
 .margin-auto {
     margin: auto;
 }
+
+.margin-in > div{ margin-bottom: 20px; }
 
 
 /* ELEMENTOS */
@@ -255,3 +284,20 @@ cdx-pasos .barra>div>div {
 cdx-pasos .barra>div>div.activo {
     background-color: #3e4b94 !important;
 }
+
+/*PALETA DE COLORES*/
+
+.c1{ color: #43435b;}
+.c2{ color: #595c8b;}
+.c3{ color: #8084c0;}
+.c4{ color: #B2DA9F;}
+.c5{ color: #C0EAAC;}
+.c6{ color: #A5CC93;}
+.c7{ color: #333333;}
+.c8{ color: #4A4A4A;}
+.c9{ color: #7F7F7F;}
+.c10{ color: #9FA3A7;}
+.c11{ color: #FAFAFA;}
+.c12{ color: #F8E81C;}
+.c13{ color: #A2CDFF;}
+.c14{ color: #F9593A;}

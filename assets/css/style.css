@@ -78,7 +78,7 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
 /* ELEMENTOS */
 
 .globitos {
-    padding: 40px;
+    padding: 22px;
     background-color: rgba(53, 71, 201, 0.6);
     border-radius: 50%;
     height: 300px;
@@ -193,13 +193,15 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
 .inicio{
     
     background-image: url(../images/dinbeat_qr_home.jpg);
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     padding-bottom: 50px;
 }
 
 .como-funciona {
-    background-color: #ffde16;
+    background-image: url(../images/dinbeat_qr_como_funciona.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     height: 600px;
     padding-top: 40px;
 }

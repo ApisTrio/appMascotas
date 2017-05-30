@@ -87,8 +87,8 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
     })
 
     .state({
-        name: 'perfil.misMascotas.individual',
-        url: '/:id',
+        name: 'perfil.misMascotasIndividual',
+        url: '/mis-mascotas/:id',
         templateUrl: 'app/views/perfil.misMascotas.individual.tpl',
         controller: 'misMascotasIndividualController as misMascotasIndividual'
 

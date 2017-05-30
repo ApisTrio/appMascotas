@@ -78,7 +78,7 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
 /* ELEMENTOS */
 
 .globitos {
-    padding: 40px;
+    padding: 22px;
     background-color: rgba(53, 71, 201, 0.6);
     border-radius: 50%;
     height: 300px;

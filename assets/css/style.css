@@ -122,6 +122,13 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     border-radius: 35px;
 }
 
+.ondas{
+    
+    position: absolute;
+    top: 480px;
+    width: 100%;
+    
+}
 
 /* ELEMENTO FLOTAR */
 
@@ -183,6 +190,14 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
 
 /* SECCIONES */
 
+.inicio{
+    
+    background-image: url(../images/dinbeat_qr_home.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
 .como-funciona {
     background-color: #ffde16;
     height: 600px;
@@ -190,6 +205,7 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
 }
 
 .nuestras-placas {
+    background-color: white;
     padding-top: 40px;
     padding-bottom: 40px;
 }

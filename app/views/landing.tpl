@@ -1,4 +1,4 @@
-<section>
+<section class="inicio">
     <div class="row">
         <div class="col s10 offset-s1 m8 offset-m2">
             <h4 class="center-align regular c8">Protege tus mascotas con Nuestras Placas QR</h4>
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-
+    <img class="ondas" src="assets/images/dinbeat_waves.png">
 </section>
 <section class="nuestras-placas">
     <div class="row">
@@ -70,7 +70,7 @@
                 <div class="center-align">Imagen</div>
                 <div class="negrita center-align titulo2 interlineado20">Reúnete con tu mascota</div>
                 <div class="center-align texto-pequeno negrita">Cuando alguien acceda a la información del código QR de tu mascota te enviaremos un e-mail informándote de que ha sido encontrada y la dirección del lugar</div>
-            </div>            
+            </div>
         </div>
     </div>
 </section>
@@ -92,7 +92,7 @@
                             <div class="center-align texto-pequeno negrita">Adquiere tu Placa QR en nuestra tienda online de forma simple y segura</div>
                             <div class="center-align"><button class="boton-verde">COMPRAR</button></div>
                         </div>
-                        <div class="col s12 m4 margin-in"> 
+                        <div class="col s12 m4 margin-in">
                             <div class="center-align">Imagen</div>
                             <div class="negrita center-align titulo2 interlineado20">2. Crea el perfil de tu mascota</div>
                             <div class="center-align texto-pequeno negrita">Introduce todos los datos relevantes de tu mascota, información veterinario, personas de contacto alternativas, etc. <br>Registra tantas placas como desees</div>

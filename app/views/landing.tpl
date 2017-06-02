@@ -8,40 +8,33 @@
                 <p class="semibold">Si tu mascota se pierde, cualquiera con un móvil podrá escanear el codigo QR de su placa, ver su perfil y contactar contigo de forma segura. Cuando alguien acceda a su información te enviaremos un e-mail informándote de que ha sido encontrada</p>
             </div>
         </div>
-        <div class="row">
-
-
-
-            <div class="col s12 m12 l4 center-align">
-                <div class="globitos flotar-derecha">
-                    <img class="responsive-img" src="assets/images/icons/Add_dog.png">
-                    <h5 class="negrita">REGISTRA TU MASCOTA</h5>
-                    <p class="texto-pequeno">Registrate en nuestra plataforma para poder activar tu placa o entra con tu usuario y contraseña</p>
-                    <button class="boton-verde" ui-sref="registroUsuario">EMPIEZA AQUÍ</button>
-                </div>
-            </div>
-            <div class="col s12 m12 l4 center-align">
-                <div class="contenido-iphone margin-auto">
-                    <h5 class="negrita">¡HE PERDIDO MI MASCOTA!</h5>
-                    <img class="responsive-img" src="assets/images/icons/Lost_Human.png">
-                    <p class="texto-pequeno">Activa esta alerta y deja que otros usuarios que estén cerca te ayuden a encontrarla</p>
-                    <button class="boton-verde-negativo">ACTIVAR ALARMA</button>
-                </div>
-            </div>
-            <div class="col s12 m12 l4 center-align">
-                <div class="globitos">
-                    <img class="responsive-img" src="assets/images/icons/lost_dog.png">
-                    <h5 class="negrita">HE ENCONTRADO UNA MASCOTA</h5>
-                    <p class="texto-pequeno">Introduce el id de la placa</p>
-                    <button class="boton-verde">ENCONTRAR DUEÑO</button>
-                    <p class="texto-pequeno">¿Dónde está el ID?</p>
-                </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l4 center-align">
+            <div class="globitos flotar-derecha">
+                <img class="responsive-img" src="assets/images/icons/Add_dog.png">
+                <h5 class="negrita">REGISTRA TU MASCOTA</h5>
+                <p class="texto-pequeno">Registrate en nuestra plataforma para poder activar tu placa o entra con tu usuario y contraseña</p>
+                <button class="boton-verde" ui-sref="registroUsuario">EMPIEZA AQUÍ</button>
             </div>
         </div>
-
-
-
-
+        <div class="col s12 m12 l4 center-align">
+            <div class="contenido-iphone margin-auto">
+                <h5 class="negrita">¡HE PERDIDO MI MASCOTA!</h5>
+                <img class="responsive-img" src="assets/images/icons/Lost_Human.png">
+                <p class="texto-pequeno">Activa esta alerta y deja que otros usuarios que estén cerca te ayuden a encontrarla</p>
+                <button class="boton-verde-negativo">ACTIVAR ALARMA</button>
+            </div>
+        </div>
+        <div class="col s12 m12 l4 center-align">
+            <div class="globitos">
+                <img class="responsive-img" src="assets/images/icons/lost_dog.png">
+                <h5 class="negrita">HE ENCONTRADO UNA MASCOTA</h5>
+                <p class="texto-pequeno">Introduce el id de la placa</p>
+                <button class="boton-verde">ENCONTRAR DUEÑO</button>
+                <p class="texto-pequeno">¿Dónde está el ID?</p>
+            </div>
+        </div>
     </div>
     <!--<img class="ondas" src="assets/images/dinbeat_waves.png">-->
 </section>
@@ -60,26 +53,31 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m6 l3 margin-in">
-                <div class="center-align"><img class="responsive-img" src="assets/images/icons/crea_un_perfil.png"></div>
-                <div class="negrita center-align titulo2 interlineado20">Crea un perfil y registra tu placa</div>
-                <div class="center-align texto-pequeno negrita">Registrala en nuestra web y mantén la información de tu mascota actualizada. Puedes añadir datos médicos, veterinarios, personas de contacto alternativas, etc...</div>
+            <div class="col s12 m12 l6">        
+                <div class="col s12 m6 l6 margin-in">
+                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/crea_un_perfil.png"></div>
+                    <div class="negrita center-align titulo2 interlineado20">Crea un perfil y registra tu placa</div>
+                    <div class="center-align texto-pequeno negrita">Registrala en nuestra web y mantén la información de tu mascota actualizada. Puedes añadir datos médicos, veterinarios, personas de contacto alternativas, etc...</div>
+                </div>
+                <div class="col s12 m6 l6 margin-in">
+                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/lost_dog2.png"></div>
+                    <div class="negrita center-align titulo2 interlineado20">Si tu mascota se pierde</div>
+                    <div class="center-align texto-pequeno negrita">Asegúrate de que la información de su perfil está actualizada y activa la alerta de mascota perdida para que el resto de usuarios cercanos puedan ayudarte a localizarla</div>
+                </div>
             </div>
-            <div class="col s12 m6 l3 margin-in">
-                <div class="center-align"><img class="responsive-img" src="assets/images/icons/lost_dog2.png"></div>
-                <div class="negrita center-align titulo2 interlineado20">Si tu mascota se pierde</div>
-                <div class="center-align texto-pequeno negrita">Asegúrate de que la información de su perfil está actualizada y activa la alerta de mascota perdida para que el resto de usuarios cercanos puedan ayudarte a localizarla</div>
+            <div class="col s12 m12 l6">
+                <div class="col s12 m6 l6 margin-in">
+                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/escanea_qr.png"></div>
+                    <div class="negrita center-align titulo2 interlineado20">Escanea el código QR o visita la página</div>
+                    <div class="center-align texto-pequeno negrita">Cualquiera con un móvil puede escanear el código QR o visitar el perfil de tu mascota a través de la web para ver tus datos de contacto y su información</div>
+                </div>
+                <div class="col s12 m6 l6 margin-in">
+                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/reunete_con_tu_mascota.png"></div>
+                    <div class="negrita center-align titulo2 interlineado20">Reúnete con tu mascota</div>
+                    <div class="center-align texto-pequeno negrita">Cuando alguien acceda a la información del código QR de tu mascota te enviaremos un e-mail informándote de que ha sido encontrada y la dirección del lugar</div>
+                </div>
             </div>
-            <div class="col s12 m6 l3 margin-in">
-                <div class="center-align"><img class="responsive-img" src="assets/images/icons/escanea_qr.png"></div>
-                <div class="negrita center-align titulo2 interlineado20">Escanea el código QR o visita la página</div>
-                <div class="center-align texto-pequeno negrita">Cualquiera con un móvil puede escanear el código QR o visitar el perfil de tu mascota a través de la web para ver tus datos de contacto y su información</div>
-            </div>
-            <div class="col s12 m6 l3 margin-in">
-                <div class="center-align"><img class="responsive-img" src="assets/images/icons/reunete_con_tu_mascota.png"></div>
-                <div class="negrita center-align titulo2 interlineado20">Reúnete con tu mascota</div>
-                <div class="center-align texto-pequeno negrita">Cuando alguien acceda a la información del código QR de tu mascota te enviaremos un e-mail informándote de que ha sido encontrada y la dirección del lugar</div>
-            </div>
+
         </div>
     </div>
 </section>

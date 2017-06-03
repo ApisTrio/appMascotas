@@ -11,7 +11,7 @@
 </div>
 
 <div class="row">
-    <div class="col s4 center-align offset-s4"> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
+    <div class="col s12 m4 offset-m4 center-align "> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
 </div>
 
 <div class="row">

@@ -2,7 +2,7 @@
     
     <div class="row contenedor-perfil">
 
-        <div class="col s2 center-align negrita menu-perfil">
+        <div class="col s10 m2 center-align negrita menu-perfil">
             <div ui-sref="landing">Inicio</div>
             <div ui-sref="">Mi perfil</div>
             <div ui-sref="perfil.misMascotas">Mis mascotas</div>

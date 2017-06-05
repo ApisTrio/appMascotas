@@ -64,8 +64,8 @@ angular.module("mascotas")
             scope.formas = [
                 {
                     url: {
-                        normal: "assets/images/forms/modelo_pajarita.png",
-                        selectd: ""
+                        normal: "assets/images/forms/modelo_redonda.png",
+                        selected: "assets/images/forms/modelo_redonda_selected.png"
                     },
                     id: 1,
                     forma: "redonda"
@@ -74,13 +74,37 @@ angular.module("mascotas")
 
                     url: {
                         normal: "assets/images/forms/modelo_pajarita.png",
-                        selectd: ""
+                        selected: "assets/images/forms/modelo_pajarita_selected.png"
                     },
                     id: 2,
                     forma: "pajarita"
 
                 }
             ]
+            
+            
+            
+            angular.forEach(scope.formas,function(valor, llave){
+                
+                if(llave != 0){
+                    
+                    scope.formas[llave].url.visible = scope.formas[llave].url.normal;
+                    
+                }
+                
+                else{
+                    
+                    scope.formas[llave].url.visible = scope.formas[llave].url.selected;
+                }
+            
+            });
+            
+            
+            scope.seleccionar = function(indice){
+                
+                
+                
+            }
 
         }
     };

@@ -102,10 +102,10 @@
     </script>
     
     <!--- directiva de formas --->
-    <script type="text/ng-template" id="cdx.pasos.html">
+    <script type="text/ng-template" id="cdx.formas.html">
     
-        <div ng-repeat="forma in scope.formas" ng-click="cambiarValor(forma.id)">
-            <img ng-src="forma.url">
+        <div ng-repeat="forma in formas" ng-click="cambiarValor(forma.id)">
+            <img ng-src="{{forma.url.visible}}">
         </div>
     
     </script>

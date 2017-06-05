@@ -378,6 +378,15 @@ cdx-pasos .barra>div>div.activo {
     background-color: #3e4b94 !important;
 }
 
+cdx-formas>div {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+cdx-formas img {
+    width: 50px;
+}
+
 
 /*PALETA DE COLORES*/
 

@@ -3,25 +3,33 @@
     src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
     font-weight: normal;
 }
+
 @font-face {
     font-family: 'OpenSansL';
     src: url('../fonts/OpenSans-Light.ttf') format('truetype');
     font-weight: lighter;
 }
+
 @font-face {
     font-family: 'OpenSansS';
     src: url('../fonts/OpenSans-Semibold.ttf') format('truetype');
     font-weight: bold;
 }
+
 @font-face {
     font-family: 'OpenSansB';
     src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
     font-weight: bolder;
 }
 
-body{ font-family: 'OpenSansR'; font-weight: normal; }
+body {
+    font-family: 'OpenSansR';
+    font-weight: normal;
+}
+
 
 /* COLORES */
+
 .color-blanco {
     color: white;
 }
@@ -29,10 +37,21 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
 
 /* TAMAÑOS FUENTES */
 
-.regular{ font-family: 'OpenSansR' !important; }
-.light{ font-family: 'OpenSansL' !important; }
-.semibold{ font-family: 'OpenSansS' !important; }
-.bold{ font-family: 'OpenSansB' !important; }
+.regular {
+    font-family: 'OpenSansR' !important;
+}
+
+.light {
+    font-family: 'OpenSansL' !important;
+}
+
+.semibold {
+    font-family: 'OpenSansS' !important;
+}
+
+.bold {
+    font-family: 'OpenSansB' !important;
+}
 
 .titulo1 {
     font-size: 18px;
@@ -72,9 +91,13 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     margin: auto;
 }
 
-.margin-in > div{ margin-bottom: 20px; }
+.margin-in>div {
+    margin-bottom: 20px;
+}
 
-.text-center{ text-align: center; }
+.text-center {
+    text-align: center;
+}
 
 
 /* ELEMENTOS */
@@ -100,19 +123,13 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     border-radius: 35px;
 }
 
-
-.boton-neutro:hover{
-    
+.boton-neutro:hover {
     background-color: #7F7F7F;
-
 }
 
-.boton-neutro:focus{
-    
+.boton-neutro:focus {
     background-color: #9FA3A7:
-
 }
-
 
 .boton-verde {
     color: white;
@@ -126,15 +143,11 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     border-radius: 35px;
 }
 
-
-.boton-verde:hover{
-    
+.boton-verde:hover {
     background-color: #A5CC93;
-    
 }
 
-.boton-verde:focus{
-    
+.boton-verde:focus {
     background-color: #C0EAAC;
 }
 
@@ -150,26 +163,22 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     border-radius: 35px;
 }
 
-.boton-verde-negativo:hover{
-    
+.boton-verde-negativo:hover {
     border: 2px solid #A5CC93;
 }
 
-.boton-verde-negativo:focus{
-    
+.boton-verde-negativo:focus {
     border: 2px solid #C0EAAC;
     background-color: transparent;
 }
 
-
-.ondas{
-    
+.ondas {
     position: relative;
     top: 1px;
     width: 100%;
     margin-top: -170px;
-    
 }
+
 
 /* ELEMENTO FLOTAR */
 
@@ -188,14 +197,16 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     font-weight: bold;
 }
 
-.input-formulario>input {
+.input-formulario input {
+    display: inline-block;
+    width: 80%;
     text-indent: 15px;
     background-color: rgba(247, 247, 247, 0.58);
     margin: 0px;
     border: 1px solid #d2d1d1;
 }
 
-.input-formulario>input:focus {
+.input-formulario input:focus {
     border: 1px solid #26a69a;
     box-shadow: none !important;
 }
@@ -210,11 +221,13 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     border-top: 1px solid #d2d1d1;
 }
 
-.condiciones-formulario label{
+.condiciones-formulario label {
     height: auto;
 }
 
-.input-formulario>md-select {
+.input-formulario md-select {
+    display: inline-block;
+    width: 80%;
     text-indent: 15px;
     background-color: rgba(247, 247, 247, 0.58);
     margin: 0px;
@@ -223,7 +236,9 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     border: 1px solid #d2d1d1;
 }
 
-.input-formulario>textarea {
+.input-formulario textarea {
+    display: inline-block;
+    width: 80%;
     text-indent: 15px;
     background-color: rgba(247, 247, 247, 0.58);
     margin: 0px;
@@ -232,11 +247,28 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     height: 80px;
 }
 
+input.valido,
+input.valido:focus,
+md-select.valido,
+md-select.valido:focus,
+textarea.valido,
+textarea.valido:focus {
+    border: 2px solid #B2DA9F !important;
+}
+
+input.erroneo,
+input.erroneo:focus,
+md-select.erroneo,
+md-select.erroneo:focus,
+textarea.erroneo,
+textarea.erroneo:focus {
+    border: 2px solid #f8e71c !important;
+}
+
 
 /* SECCIONES */
 
-.inicio{
-    
+.inicio {
     background-image: url(../images/dinbeat_qr_home.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -277,8 +309,7 @@ body{ font-family: 'OpenSansR'; font-weight: normal; }
     background-color: #595C8B;
 }
 
-.contenedor-perfil{
-    
+.contenedor-perfil {
     margin-bottom: 0px;
 }
 
@@ -315,7 +346,7 @@ cdx-pasos .datos>div>div:first-child {
     margin: auto;
     font-size: 12px;
     border-radius: 50%;
-    background-color: #7aeeb1;
+    background-color: #B2DA9F;
 }
 
 cdx-pasos .datos>div>div.activo:first-child {
@@ -339,7 +370,7 @@ cdx-pasos .barra>div {
 
 cdx-pasos .barra>div>div {
     height: 2px;
-    background: #7aeeb1;
+    background: #B2DA9F;
     width: 100%;
 }
 
@@ -347,19 +378,61 @@ cdx-pasos .barra>div>div.activo {
     background-color: #3e4b94 !important;
 }
 
+
 /*PALETA DE COLORES*/
 
-.c1{ color: #43435b;}
-.c2{ color: #595c8b;}
-.c3{ color: #8084c0;}
-.c4{ color: #B2DA9F;}
-.c5{ color: #C0EAAC;}
-.c6{ color: #A5CC93;}
-.c7{ color: #333333;}
-.c8{ color: #4A4A4A;}
-.c9{ color: #7F7F7F;}
-.c10{ color: #9FA3A7;}
-.c11{ color: #FAFAFA;}
-.c12{ color: #F8E81C;}
-.c13{ color: #A2CDFF;}
-.c14{ color: #F9593A;}
+.c1 {
+    color: #43435b;
+}
+
+.c2 {
+    color: #595c8b;
+}
+
+.c3 {
+    color: #8084c0;
+}
+
+.c4 {
+    color: #B2DA9F;
+}
+
+.c5 {
+    color: #C0EAAC;
+}
+
+.c6 {
+    color: #A5CC93;
+}
+
+.c7 {
+    color: #333333;
+}
+
+.c8 {
+    color: #4A4A4A;
+}
+
+.c9 {
+    color: #7F7F7F;
+}
+
+.c10 {
+    color: #9FA3A7;
+}
+
+.c11 {
+    color: #FAFAFA;
+}
+
+.c12 {
+    color: #F8E81C;
+}
+
+.c13 {
+    color: #A2CDFF;
+}
+
+.c14 {
+    color: #F9593A;
+}

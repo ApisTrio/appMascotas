@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-
+    <!--JQUERY-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
     <!--Librerias core de angualarJS -->
     <script src="modulos/angular/angular.min.js"></script>
     <script src="modulos/angular-messages/angular-messages.min.js"></script>
@@ -21,8 +23,11 @@
 
 
     <!--Librerias 3r party angularJS -->
+  
     <script src="modulos/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="modulos/angular-material/angular-material.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
 
 
     <!--Archivos App -->
@@ -94,6 +99,15 @@
                 <div ng-class="{activo: pasos[5]}"></div>
             </div>
         </div>
+    </script>
+    
+    <!--- directiva de formas --->
+    <script type="text/ng-template" id="cdx.pasos.html">
+    
+        <div ng-repeat="forma in scope.formas" ng-click="cambiarValor(forma.id)">
+            <img ng-src="forma.url">
+        </div>
+    
     </script>
 
 </body>

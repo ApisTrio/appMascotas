@@ -357,6 +357,32 @@ textarea.erroneo:focus {
     
 }
 
+.boton-agregar {
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/forms/agregar_contacto.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    margin-right: 10px;
+    
+}
+
+.boton-agregar:hover {
+    
+    background-image: url(../images/forms/agregar_contacto_hover.png);
+    
+}
+
+.boton-agregar:focus{
+    
+    outline: none;
+    
+} 
+
+
 /* SECCIONES */
 
 .inicio {

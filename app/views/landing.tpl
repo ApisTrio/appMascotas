@@ -150,7 +150,7 @@
                 </div>
             </div>
             <div class="col s12 center-align margin-out">
-                <button class="boton-verde-negativo">VER MÁS</button>
+                <button class="boton-verde-negativo" ui-sref="mascotasPerdidas">VER MÁS</button>
             </div>
         </div>
     </div>

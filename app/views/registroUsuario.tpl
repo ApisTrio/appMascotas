@@ -10,7 +10,7 @@
         </div>
     </div>
 </section>
-<section ng-init="registro.pasos = 4" ng-switch="registro.pasos" ng-form="formPasos">
+<section ng-init="registro.pasos = 1" ng-switch="registro.pasos" ng-form="formPasos">
 
     <!-------------------------->
     <!----------PASO #1--------->
@@ -502,6 +502,8 @@
                 Información de otros contactos
             </div>
         </div>
+        
+        
 
         <div ng-form="duenoExtraForm" ng-repeat="dueno in registro.datos.duenos">
 

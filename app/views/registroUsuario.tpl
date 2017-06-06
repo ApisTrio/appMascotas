@@ -10,7 +10,7 @@
         </div>
     </div>
 </section>
-<section ng-init="registro.pasos = 3" ng-switch="registro.pasos" ng-form="formPasos">
+<section ng-init="registro.pasos = 1" ng-switch="registro.pasos" ng-form="formPasos">
 
     <!-------------------------->
     <!----------PASO #1--------->
@@ -29,7 +29,7 @@
                 <div class="campo-formulario">Nombre *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.nombre" ng-class="{'valido': formPaso1.nombre.$valid, 'erroneo': (!formPaso1.nombre.$valid && formPaso1.nombre.$dirty)}" placeholder="Nombre" type="text" name="nombre" minlength="3" required>
+                        <input ng-model="registro.datos.dueno.nombre" ng-class="{'valido': formPaso1.nombre.$valid, 'erroneo': (!formPaso1.nombre.$valid && formPaso1.nombre.$dirty)}" placeholder="Nombre" type="text" name="nombre" minlength="3" required>
                         <cdx-validez data-validez="formPaso1.nombre.$valid" data-mostrar="formPaso1.nombre.$dirty"></cdx-validez>
                     </div>
 
@@ -45,7 +45,7 @@
                 <div class="campo-formulario">Apellido *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.apellido" ng-class="{'valido': formPaso1.apellido.$valid, 'erroneo': (!formPaso1.apellido.$valid && formPaso1.apellido.$dirty)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
+                        <input ng-model="registro.datos.dueno.apellido" ng-class="{'valido': formPaso1.apellido.$valid, 'erroneo': (!formPaso1.apellido.$valid && formPaso1.apellido.$dirty)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
                         <cdx-validez data-validez="formPaso1.apellido.$valid" data-mostrar="formPaso1.apellido.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso1.apellido.$error" ng-show="formPaso1.apellido.$dirty">
@@ -62,7 +62,7 @@
                 <div class="campo-formulario">E-mail *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.email" ng-class="{'valido': formPaso1.email.$valid, 'erroneo': (!formPaso1.email.$valid && formPaso1.email.$dirty)}" placeholder="E-mail" type="email" name="email" required>
+                        <input ng-model="registro.datos.dueno.email" ng-class="{'valido': formPaso1.email.$valid, 'erroneo': (!formPaso1.email.$valid && formPaso1.email.$dirty)}" placeholder="E-mail" type="email" name="email" required>
                         <cdx-validez data-validez="formPaso1.email.$valid" data-mostrar="formPaso1.email.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso1.email.$error" ng-show="formPaso1.email.$dirty">
@@ -79,7 +79,7 @@
                 <div class="campo-formulario">Nombre de usuario *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.usuario" ng-class="{'valido': formPaso1.usuario.$valid, 'erroneo': (!formPaso1.usuario.$valid && formPaso1.usuario.$dirty)}" placeholder="Nombre de usuario" type="text" name="usuario" ng-pattern="/^[a-zA-Z0-9]*$/" minlength="6" required>
+                        <input ng-model="registro.datos.usuario.usuario" ng-class="{'valido': formPaso1.usuario.$valid, 'erroneo': (!formPaso1.usuario.$valid && formPaso1.usuario.$dirty)}" placeholder="Nombre de usuario" type="text" name="usuario" ng-pattern="/^[a-zA-Z0-9]*$/" minlength="6" required>
                         <cdx-validez data-validez="formPaso1.usuario.$valid" data-mostrar="formPaso1.usuario.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso1.usuario.$error" ng-show="formPaso1.usuario.$dirty">
@@ -98,7 +98,7 @@
                 <div class="campo-formulario">Contraseña *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.clave" ng-class="{'valido': formPaso1.clave.$valid, 'erroneo': (!formPaso1.clave.$valid && formPaso1.clave.$dirty)}" placeholder="Contraseña" type="password" name="clave" minlength="6" required>
+                        <input ng-model="registro.datos.usuario.pass" ng-class="{'valido': formPaso1.clave.$valid, 'erroneo': (!formPaso1.clave.$valid && formPaso1.clave.$dirty)}" placeholder="Contraseña" type="password" name="clave" minlength="6" required>
                         <cdx-validez data-validez="formPaso1.clave.$valid" data-mostrar="formPaso1.clave.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso1.clave.$error" ng-show="formPaso1.clave.$dirty">
@@ -113,7 +113,7 @@
                 <div class="campo-formulario">Verificar contraseña *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.clave2" ng-class="{'valido': formPaso1.clave2.$valid, 'erroneo': (!formPaso1.clave2.$valid && formPaso1.clave2.$dirty)}" placeholder="Verificar contraseña" type="password" name="clave2" required>
+                        <input ng-model="registro.verificarPass" ng-class="{'valido': formPaso1.clave2.$valid, 'erroneo': (!formPaso1.clave2.$valid && formPaso1.clave2.$dirty)}" placeholder="Verificar contraseña" type="password" name="clave2" required>
                         <cdx-validez data-validez="formPaso1.clave2.$valid" data-mostrar="formPaso1.clave2.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso1.clave2.$error" ng-show="formPaso1.clave2.$dirty">
@@ -156,7 +156,7 @@
                 <div class="campo-formulario">Nombre de tu mascota *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.nombreMascota" ng-class="{'valido': formPaso2.nombreMascota.$valid, 'erroneo': (!formPaso2.nombreMascota.$valid && formPaso2.nombreMascota.$dirty)}" placeholder="Nombre de tu mascota " type="text" name="nombreMascota" minlength="3" required>
+                        <input ng-model="registro.datos.mascota.nombre" ng-class="{'valido': formPaso2.nombreMascota.$valid, 'erroneo': (!formPaso2.nombreMascota.$valid && formPaso2.nombreMascota.$dirty)}" placeholder="Nombre de tu mascota " type="text" name="nombreMascota" minlength="3" required>
                         <cdx-validez data-validez="formPaso2.nombreMascota.$valid" data-mostrar="formPaso2.nombreMascota.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso2.nombreMascota.$error" ng-show="formPaso2.nombreMascota.$dirty">
@@ -178,7 +178,7 @@
                 <div class="campo-formulario">Género *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="registro.generoMasccota" ng-class="{'valido': formPaso2.generoMasccota.$valid, 'erroneo': (!formPaso2.generoMasccota.$valid && formPaso2.generoMasccota.$dirty)}" placeholder="Genero" class="md-no-underline" name="generoMasccota" required>
+                        <md-select ng-model="registro.datos.mascota.genero" ng-class="{'valido': formPaso2.generoMasccota.$valid, 'erroneo': (!formPaso2.generoMasccota.$valid && formPaso2.generoMasccota.$dirty)}" placeholder="Genero" class="md-no-underline" name="generoMasccota" required>
                             <md-option value="Masculino">Masculino</md-option>
                             <md-option value="Femenino">Femenino</md-option>
                         </md-select>
@@ -193,7 +193,7 @@
                 <div class="campo-formulario">Fecha de Nacimiento *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-class="{'valido': formPaso2.fecha.$valid, 'erroneo': (!formPaso2.fecha.$valid && formPaso2.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="registro.fecha" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" required/>
+                        <input ng-class="{'valido': formPaso2.fecha.$valid, 'erroneo': (!formPaso2.fecha.$valid && formPaso2.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="registro.datos.mascota.nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" required/>
                         <cdx-validez data-validez="formPaso2.fecha.$valid" data-mostrar="formPaso2.fecha.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso2.fecha.$error" ng-show="formPaso2.fecha.$dirty">
@@ -207,7 +207,7 @@
                 <div class="campo-formulario">Especie *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="registro.especie" ng-class="{'valido': formPaso2.especie.$valid, 'erroneo': (!formPaso2.especie.$valid && formPaso2.especie.$dirty)}" placeholder="Especie" name="especie" class="md-no-underline" required>
+                        <md-select ng-model="registro.datos.mascota.especie" ng-class="{'valido': formPaso2.especie.$valid, 'erroneo': (!formPaso2.especie.$valid && formPaso2.especie.$dirty)}" placeholder="Especie" name="especie" class="md-no-underline" required>
                             <md-option value="Perro">Perro</md-option>
                             <md-option value="Gato">Gato</md-option>
                             <md-option value="Conejo">Conejo</md-option>
@@ -224,7 +224,7 @@
                 <div class="campo-formulario">Raza *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="registro.raza" ng-class="{'valido': formPaso2.raza.$valid, 'erroneo': (!formPaso2.raza.$valid && formPaso2.raza.$dirty)}" placeholder="Raza" name="raza" class="md-no-underline" required>
+                        <md-select ng-model="registro.datos.mascota.razas_idRaza" ng-class="{'valido': formPaso2.raza.$valid, 'erroneo': (!formPaso2.raza.$valid && formPaso2.raza.$dirty)}" placeholder="Raza" name="raza" class="md-no-underline" required>
                             <md-option value="algo">Yorkshire Terrier</md-option>
                             <md-option value="algo2">San Bernardo</md-option>
                         </md-select>
@@ -239,14 +239,14 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="campo-formulario">Número de chip</div>
-                <div class="input-formulario"><input placeholder="Número de chip" type="text"></div>
+                <div class="input-formulario"><input ng-model="registro.datos.mascota.chip" placeholder="Número de chip" type="text"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="campo-formulario">Peso</div>
                 <div class="input-formulario">
-                    <md-select ng-model="registro.peso" placeholder="Peso" class="md-no-underline">
-                        <md-option value="algo">2-5 Kg</md-option>
-                        <md-option value="algo2">5-8 Kg</md-option>
+                    <md-select ng-model="registro.datos.mascota.peso" placeholder="Peso" class="md-no-underline">
+                        <md-option value="2-5 Kg">2-5 Kg</md-option>
+                        <md-option value="5-8 Kg">5-8 Kg</md-option>
                     </md-select>
                 </div>
             </div>
@@ -255,10 +255,9 @@
             <div class="col s12 m4 offset-m1">
                 <div class="campo-formulario">Comentarios</div>
                 <div class="input-formulario">
-                    <textarea placeholder="Número de chip" rows="3"></textarea>
+                    <textarea ng-model="registro.datos.mascota.comentarios" placeholder="Comentarios" rows="3"></textarea>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col s12 m10 offset-m1">
                     * Dato requerido
@@ -298,15 +297,15 @@
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
             <div class="col s12 m2">
-                
-                    <cdx-formas></cdx-formas>
-                
+
+                <cdx-formas data-seleccionado="registro.seleccionado"></cdx-formas>
+
             </div>
         </div>
 
         <div class="row">
             <div class="col s12 m10 offset-m1 center-align">
-                SLIDER PLACAS
+                <cdx-modelos ng-model="registro.modelo"></cdx-modelos>
             </div>
         </div>
 
@@ -332,11 +331,11 @@
         <div class="row">
 
             <!--- NOMBRE DEL CONTACTO --->
-            <div class="col s12 m4 offset-m1" ng-init="">
+            <div class="col s12 m4 offset-m1">
                 <div class="campo-formulario">Nombre *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.contacto.nombre" ng-class="{'valido': formPaso4.nombre.$valid, 'erroneo': (!formPaso4.nombre.$valid && formPaso4.nombre.$dirty)}" placeholder="Nombre Completo" type="text" name="nombre" minlength="3" required>
+                        <input ng-model="registro.datos.dueno.nombre" ng-class="{'valido': formPaso4.nombre.$valid, 'erroneo': (!formPaso4.nombre.$valid && formPaso4.nombre.$dirty)}" placeholder="Nombre Completo" type="text" name="nombre" minlength="3" required>
                         <cdx-validez data-validez="formPaso4.nombre.$valid" data-mostrar="formPaso4.nombre.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso4.nombre.$error" ng-show="formPaso4.nombre.$dirty">
@@ -351,7 +350,7 @@
                 <div class="campo-formulario">Apellido *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.contacto.apellido" ng-class="{'valido': formPaso4.apellido.$valid, 'erroneo': (!formPaso4.apellido.$valid && formPaso4.apellido.$dirty)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
+                        <input ng-model="registro.datos.dueno.apellido" ng-class="{'valido': formPaso4.apellido.$valid, 'erroneo': (!formPaso4.apellido.$valid && formPaso4.apellido.$dirty)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
                         <cdx-validez data-validez="formPaso4.apellido.$valid" data-mostrar="formPaso4.apellido.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso4.apellido.$error" ng-show="formPaso4.apellido.$dirty">
@@ -369,7 +368,7 @@
                 <div class="campo-formulario">Télefonos de contacto *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.telefono" ng-class="{'valido': formPaso4.telefono.$valid, 'erroneo': (!formPaso4.telefono.$valid && formPaso4.telefono.$dirty)}" placeholder="Télefonos de contacto" type="tel" name="telefono" ng-pattern="/^[0-9]*$/" required>
+                        <input ng-model="registro.datos.dueno.telefono" ng-class="{'valido': formPaso4.telefono.$valid, 'erroneo': (!formPaso4.telefono.$valid && formPaso4.telefono.$dirty)}" placeholder="Télefonos de contacto" type="tel" name="telefono" ng-pattern="/^[0-9]*$/" required>
                         <cdx-validez data-validez="formPaso4.telefono.$valid" data-mostrar="formPaso4.telefono.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso4.telefono.$error" ng-show="formPaso4.telefono.$dirty">
@@ -382,7 +381,7 @@
                 <div class="campo-formulario">E-mail *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.email" ng-class="{'valido': formPaso4.email.$valid, 'erroneo': (!formPaso4.email.$valid && formPaso4.email.$dirty)}" placeholder="E-mail" type="email" name="email" required>
+                        <input ng-model="registro.datos.dueno.email" ng-class="{'valido': formPaso4.email.$valid, 'erroneo': (!formPaso4.email.$valid && formPaso4.email.$dirty)}" placeholder="E-mail" type="email" name="email" required>
                         <cdx-validez data-validez="formPaso4.email.$valid" data-mostrar="formPaso4.email.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso4.email.$error" ng-show="formPaso4.email.$dirty">
@@ -400,7 +399,7 @@
                 <div class="campo-formulario">Fecha de Nacimiento</div>
                 <div class="input-formulario">
                     <div>
-                        <input input-date type="text" name="fecha" ng-model="registro.fechaNacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12"/>
+                        <input input-date type="text" name="fecha" ng-model="registro.datos.dueno.nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" />
                     </div>
                 </div>
             </div>
@@ -409,7 +408,7 @@
             <div class="col s12 m4 offset-m2">
                 <div class="campo-formulario">Sexo</div>
                 <div class="input-formulario">
-                    <md-select ng-model="registro.sexo" placeholder="Sexo" class="md-no-underline">
+                    <md-select ng-model="registro.datos.dueno.sexo" placeholder="Sexo" class="md-no-underline">
                         <md-option value="Masculino">Masculino</md-option>
                         <md-option value="Femenino">Femenino</md-option>
                     </md-select>
@@ -424,7 +423,7 @@
                 <div class="campo-formulario">País *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="registro.pais"  ng-class="{'valido': formPaso4.pais.$valid, 'erroneo': (!formPaso4.pais.$valid && formPaso4.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
+                        <md-select ng-model="registro.datos.dueno.pais" ng-class="{'valido': formPaso4.pais.$valid, 'erroneo': (!formPaso4.pais.$valid && formPaso4.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
                             <md-option value="España">España</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso4.pais.$valid" data-mostrar="formPaso4.pais.$dirty"></cdx-validez>
@@ -440,7 +439,7 @@
                 <div class="campo-formulario">Provincia *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="registro.provincia" ng-class="{'valido': formPaso4.provincia.$valid, 'erroneo': (!formPaso4.provincia.$valid && formPaso4.provincia.$dirty)}" placeholder="Provincia" class="md-no-underline" name="provincia" required>
+                        <md-select ng-model="registro.datos.dueno.provincia" ng-class="{'valido': formPaso4.provincia.$valid, 'erroneo': (!formPaso4.provincia.$valid && formPaso4.provincia.$dirty)}" placeholder="Provincia" class="md-no-underline" name="provincia" required>
                             <md-option value="Alguna">Alguna</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso4.provincia.$valid" data-mostrar="formPaso4.provincia.$dirty"></cdx-validez>
@@ -458,7 +457,7 @@
                 <div class="campo-formulario">Ciudad *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="registro.ciudad" ng-class="{'valido': formPaso4.ciudad.$valid, 'erroneo': (!formPaso4.ciudad.$valid && formPaso4.ciudad.$dirty)}" placeholder="Ciudad" class="md-no-underline" name="ciudad" required>
+                        <md-select ng-model="registro.datos.dueno.ciudad" ng-class="{'valido': formPaso4.ciudad.$valid, 'erroneo': (!formPaso4.ciudad.$valid && formPaso4.ciudad.$dirty)}" placeholder="Ciudad" class="md-no-underline" name="ciudad" required>
                             <md-option value="Alguna">Alguna</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso4.ciudad.$valid" data-mostrar="formPaso4.ciudad.$dirty"></cdx-validez>
@@ -473,7 +472,7 @@
             <div class="col s12 m4 offset-m2">
                 <div class="campo-formulario">Dirección</div>
                 <div class="input-formulario">
-                    <input placeholder="Dirección" type="text">
+                    <input ng-model="registro.datos.dueno.direccion" placeholder="Dirección" type="text">
                 </div>
             </div>
         </div>
@@ -484,7 +483,7 @@
                 <div class="campo-formulario">Código postal *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.postcode" ng-class="{'valido': formPaso4.postcode.$valid, 'erroneo': (!formPaso4.postcode.$valid && formPaso4.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" required>
+                        <input ng-model="registro.datos.dueno.codigo_postal" ng-class="{'valido': formPaso4.postcode.$valid, 'erroneo': (!formPaso4.postcode.$valid && formPaso4.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" required>
                         <cdx-validez data-validez="formPaso4.postcode.$valid" data-mostrar="formPaso4.postcode.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso4.postcode.$error" ng-show="formPaso4.postcode.$dirty">
@@ -494,9 +493,199 @@
             </div>
         </div>
 
+        <!--------------------->
+        <!-- OTROS CONTACTOS -->
+        <!--------------------->
+
+        <div class="row" ng-if="registro.datos.duenos.length">
+            <div class="col s12 m10 offset-m1 negrita">
+                Información de otros contactos
+            </div>
+        </div>
+        
+        
+
+        <div ng-form="duenoExtraForm" ng-repeat="dueno in registro.datos.duenos">
+
+            <div class="row">
+
+                <!--- NOMBRE DEL CONTACTO --->
+                <div class="col s12 m4 offset-m1">
+                    <div class="campo-formulario">Nombre *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <input ng-model="dueno.nombre" ng-class="{'valido': duenoExtraForm.nombre.$valid, 'erroneo': (!duenoExtraForm.nombre.$valid && duenoExtraForm.nombre.$dirty)}" placeholder="Nombre Completo" type="text" name="nombre" minlength="3" required>
+                            <cdx-validez data-validez="duenoExtraForm.nombre.$valid" data-mostrar="duenoExtraForm.nombre.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.nombre.$error" ng-show="duenoExtraForm.nombre.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--- APELLIDO --->
+                <div class="col s12 m4 offset-m2">
+                    <div class="campo-formulario">Apellido *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <input ng-model="dueno.apellido" ng-class="{'valido': duenoExtraForm.apellido.$valid, 'erroneo': (!duenoExtraForm.apellido.$valid && duenoExtraForm.apellido.$dirty)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
+                            <cdx-validez data-validez="duenoExtraForm.apellido.$valid" data-mostrar="duenoExtraForm.apellido.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.apellido.$error" ng-show="duenoExtraForm.apellido.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- TELEFONO -->
+                <div class="col s12 m4 offset-m1">
+                    <div class="campo-formulario">Télefonos de contacto *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <input ng-model="dueno.telefono" ng-class="{'valido': duenoExtraForm.telefono.$valid, 'erroneo': (!duenoExtraForm.telefono.$valid && duenoExtraForm.telefono.$dirty)}" placeholder="Télefonos de contacto" type="tel" name="telefono" ng-pattern="/^[0-9]*$/" required>
+                            <cdx-validez data-validez="duenoExtraForm.telefono.$valid" data-mostrar="duenoExtraForm.telefono.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.telefono.$error" ng-show="duenoExtraForm.telefono.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="pattern">Solo se aceptan digitos.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 offset-m2">
+                    <div class="campo-formulario">E-mail *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <input ng-model="dueno.email" ng-class="{'valido': duenoExtraForm.email.$valid, 'erroneo': (!duenoExtraForm.email.$valid && duenoExtraForm.email.$dirty)}" placeholder="E-mail" type="email" name="email" required>
+                            <cdx-validez data-validez="duenoExtraForm.email.$valid" data-mostrar="duenoExtraForm.email.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.email.$error" ng-show="duenoExtraForm.email.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="email">Debe ser un E-mail valido.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- FECHA -->
+                <div class="col s12 m4 offset-m1">
+                    <div class="campo-formulario">Fecha de Nacimiento</div>
+                    <div class="input-formulario">
+                        <div>
+                            <input input-date type="text" name="fecha" ng-model="dueno.nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEXO -->
+                <div class="col s12 m4 offset-m2">
+                    <div class="campo-formulario">Sexo</div>
+                    <div class="input-formulario">
+                        <md-select ng-model="dueno.sexo" placeholder="Sexo" class="md-no-underline">
+                            <md-option value="Masculino">Masculino</md-option>
+                            <md-option value="Femenino">Femenino</md-option>
+                        </md-select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- PAIS -->
+                <div class="col s12 m4 offset-m1">
+                    <div class="campo-formulario">País *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <md-select ng-model="dueno.pais" ng-class="{'valido': duenoExtraForm.pais.$valid, 'erroneo': (!duenoExtraForm.pais.$valid && duenoExtraForm.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
+                                <md-option value="España">España</md-option>
+                            </md-select>
+                            <cdx-validez data-validez="duenoExtraForm.pais.$valid" data-mostrar="duenoExtraForm.pais.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.pais.$error" ng-show="duenoExtraForm.pais.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROVINCIA -->
+                <div class="col s12 m4 offset-m2">
+                    <div class="campo-formulario">Provincia *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <md-select ng-model="dueno.provincia" ng-class="{'valido': duenoExtraForm.provincia.$valid, 'erroneo': (!duenoExtraForm.provincia.$valid && duenoExtraForm.provincia.$dirty)}" placeholder="Provincia" class="md-no-underline" name="provincia" required>
+                                <md-option value="Alguna">Alguna</md-option>
+                            </md-select>
+                            <cdx-validez data-validez="duenoExtraForm.provincia.$valid" data-mostrar="duenoExtraForm.provincia.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.provincia.$error" ng-show="duenoExtraForm.provincia.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <!-- CIUDAD -->
+                <div class="col s12 m4 offset-m1">
+                    <div class="campo-formulario">Ciudad *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <md-select ng-model="dueno.ciudad" ng-class="{'valido': duenoExtraForm.ciudad.$valid, 'erroneo': (!duenoExtraForm.ciudad.$valid && duenoExtraForm.ciudad.$dirty)}" placeholder="Ciudad" class="md-no-underline" name="ciudad" required>
+                                <md-option value="Alguna">Alguna</md-option>
+                            </md-select>
+                            <cdx-validez data-validez="duenoExtraForm.ciudad.$valid" data-mostrar="duenoExtraForm.ciudad.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.ciudad.$error" ng-show="duenoExtraForm.ciudad.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIRECCION -->
+                <div class="col s12 m4 offset-m2">
+                    <div class="campo-formulario">Dirección</div>
+                    <div class="input-formulario">
+                        <input ng-model="dueno.direccion" placeholder="Dirección" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <!-- CODIGO POSTAL -->
+                <div class="col s12 m3 offset-m1">
+                    <div class="campo-formulario">Código postal *</div>
+                    <div class="input-formulario">
+                        <div>
+                            <input ng-model="dueno.codigo_postal" ng-class="{'valido': duenoExtraForm.postcode.$valid, 'erroneo': (!duenoExtraForm.postcode.$valid && duenoExtraForm.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" required>
+                            <cdx-validez data-validez="duenoExtraForm.postcode.$valid" data-mostrar="duenoExtraForm.postcode.$dirty"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.postcode.$error" ng-show="duenoExtraForm.postcode.$dirty">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col s12 m4 offset-m3">
+                    <button class="boton-neutro" ng-click="registro.datos.duenos.splice($index, 1)">Eliminar este contacto</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
         <div class="row">
             <div class="col s12 m10 offset-m1">
-                Agregar persona de contacto
+                <div class="boton-agregar" ng-click="registro.datos.duenos.push({nombre: null, apellido: null, telefono: null, email: null, nacimiento: null, direccion: null, pais: null, provincia: null, ciudad: null, codigo_postal: null})"></div> Agregar persona de contacto
             </div>
         </div>
 
@@ -541,7 +730,7 @@
     <div class="row">
         <div class="col s4 offset-s4 botones-formulario" ng-show="registro.pasos < 5">
             <button class="boton-neutro" ui-sref="landing">Cancelar</button>
-            <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid)">SIGUIENTE</button>
+            <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>
         </div>
         <div class="col s12 m4 offset-m4 botones-formulario" ng-show="registro.pasos == 5">
             <button class="boton-verde">INICIAR SESIÓN</button>

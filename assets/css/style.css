@@ -351,6 +351,12 @@ textarea.erroneo:focus {
 }
 
 
+.bloqueado{
+    opacity: 0.4;
+    cursor: not-allowed
+    
+}
+
 /* SECCIONES */
 
 .inicio {
@@ -472,8 +478,62 @@ cdx-formas>div {
 }
 
 cdx-formas img {
-    width: 50px;
+    height: 30px;
+    cursor: pointer;
 }
+
+cdx-formas img:focus {
+    
+    outline: none;
+    
+}
+
+cdx-modelos img {
+    
+    
+    
+}
+
+cdx-modelos > div {
+    
+    display: inline-block;
+    
+}
+
+cdx-modelos > div > div {
+    
+    display: inline-block;
+    
+}
+
+cdx-modelos img {
+    
+    height: 50px;
+    filter: grayscale(100%);
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+cdx-modelos img.activo {
+    
+    filter: grayscale(0%);
+    
+}
+
+cdx-modelos img:hover{
+    
+    filter: grayscale(0%);
+    
+}
+
+cdx-modelos img:focus, cdx-modelos div:focus, cdx-modelos label:focus {
+    
+    outline: none;
+    
+}
+
+
 
 
 /*PALETA DE COLORES*/

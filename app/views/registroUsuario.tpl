@@ -298,15 +298,15 @@
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
             <div class="col s12 m2">
-                
-                    <cdx-formas></cdx-formas>
-                
+
+                <cdx-formas data-seleccionado="registro.seleccionado"></cdx-formas>
+
             </div>
         </div>
 
         <div class="row">
             <div class="col s12 m10 offset-m1 center-align">
-                SLIDER PLACAS
+                <cdx-modelos ng-model="registro.modelo"></cdx-modelos>
             </div>
         </div>
 
@@ -400,7 +400,7 @@
                 <div class="campo-formulario">Fecha de Nacimiento</div>
                 <div class="input-formulario">
                     <div>
-                        <input input-date type="text" name="fecha" ng-model="registro.fechaNacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12"/>
+                        <input input-date type="text" name="fecha" ng-model="registro.fechaNacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" />
                     </div>
                 </div>
             </div>
@@ -424,7 +424,7 @@
                 <div class="campo-formulario">País *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="registro.pais"  ng-class="{'valido': formPaso4.pais.$valid, 'erroneo': (!formPaso4.pais.$valid && formPaso4.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
+                        <md-select ng-model="registro.pais" ng-class="{'valido': formPaso4.pais.$valid, 'erroneo': (!formPaso4.pais.$valid && formPaso4.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
                             <md-option value="España">España</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso4.pais.$valid" data-mostrar="formPaso4.pais.$dirty"></cdx-validez>
@@ -541,7 +541,7 @@
     <div class="row">
         <div class="col s4 offset-s4 botones-formulario" ng-show="registro.pasos < 5">
             <button class="boton-neutro" ui-sref="landing">Cancelar</button>
-            <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid)">SIGUIENTE</button>
+            <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>
         </div>
         <div class="col s12 m4 offset-m4 botones-formulario" ng-show="registro.pasos == 5">
             <button class="boton-verde">INICIAR SESIÓN</button>

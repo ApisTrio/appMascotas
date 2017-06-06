@@ -94,7 +94,16 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
     })
 
+    ////////////////////////////
+    ////////// Login ///////////
+    ////////////////////////////
 
+    .state({
+        name: 'login',
+        url: '/login',
+        templateUrl: 'app/views/login.tpl',
+        controller: 'loginController as login'
+    })
 
     ////////////////////////////
     ////////// Placa ///////////

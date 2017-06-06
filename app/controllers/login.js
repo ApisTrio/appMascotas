@@ -1,8 +1,9 @@
 angular.module("mascotas")
 
-.controller("perfilController", [function () {
+.controller("loginController", [function () {
     
     var cdx = this;
+    
     
     
 

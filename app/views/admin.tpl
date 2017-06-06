@@ -168,7 +168,7 @@
 		<div class="row">
 			
 			<div class="col s12 m10 offset-m1">
-				<table>
+				<table class="table-admin">
 					<thead>
 						<tr>
 							<th>Usuario</th>
@@ -186,17 +186,19 @@
 					</thead>
 					<tbody>
 						<tr>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
+							<td class="usuario"> Daniel Torres</td>
+							<td>Duke</td>
+							<td>
+								123456 <br> 654321
+							</td>
+							<td>Perro</td>
+							<td>Mestizo de Braco Aleman</td>
+							<td>54326789</td>
+							<td>danieljtorres94@gmail.com</td>
+							<td>Ronda, Malaga, España</td>
+							<td>08907</td>
+							<td>03 Jul 2017</td>
+							<td>lapicito</td>
 						</tr>
 					</tbody>
 				</table>

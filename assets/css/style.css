@@ -98,7 +98,30 @@ body {
 }
 
 
+
 /****** MISC ******/
+
+table.table-admin th, .table-admin td {
+    padding: 15px 0 15px 5px;
+    text-align: left;
+}
+
+table.table-admin {
+    border-collapse: collapse;
+}
+
+table.table-admin, table.table-admin th, table.table-admin td {
+    border: 1px solid #e8e8e8;
+}
+
+.table-admin tbody tr td{
+    font-size: 12px;
+    color: #333333;
+}
+.table-admin tbody tr td.usuario{
+    color: #7eb6e7;
+    font-weight: bold;
+}
 
 .shadow{
     -webkit-box-shadow: 0px 0px 25px -1px rgba(204,204,204,0.42);
@@ -135,6 +158,10 @@ body {
 
 .text-center {
     text-align: center;
+}
+
+.text-left{
+    text-align: left;
 }
 
 .filtros-tabla span{
@@ -223,6 +250,19 @@ body {
     top: 1px;
     width: 100%;
     margin-top: -170px;
+}
+
+.iniciar-sesion input {
+    border: 1px solid grey;
+    border-radius: 30px;
+    box-shadow: inset 0px 0px 1px 0px grey;
+    padding: 0 0 0 30px;
+    box-sizing: border-box;
+}
+
+.iniciar-sesion input[type=text]:focus:not([readonly]){
+    border: 1px solid #26a69a;
+    box-shadow: 0 0px 0 0 #26a69a;
 }
 
 
@@ -404,6 +444,11 @@ textarea.erroneo:focus {
 }
 
 .admin{
+    background-color: white;
+}
+
+.login{
+    padding: 200px 0;
     background-color: white;
 }
 

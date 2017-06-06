@@ -58,24 +58,24 @@
                 <div class="col s12 m6 l6 margin-in">
                     <div class="center-align"><img class="responsive-img" src="assets/images/icons/crea_un_perfil.png"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Crea un perfil y registra tu placa</div>
-                    <div class="center-align texto-pequeno negrita">Registrala en nuestra web y mantén la información de tu mascota actualizada. Puedes añadir datos médicos, veterinarios, personas de contacto alternativas, etc...</div>
+                    <div class="center-align texto-pequeno negrita parrafo">Registrala en nuestra web y mantén la información de tu mascota actualizada. Puedes añadir datos médicos, veterinarios, personas de contacto alternativas, etc...</div>
                 </div>
                 <div class="col s12 m6 l6 margin-in">
                     <div class="center-align"><img class="responsive-img" src="assets/images/icons/lost_dog2.png"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Si tu mascota se pierde</div>
-                    <div class="center-align texto-pequeno negrita">Asegúrate de que la información de su perfil está actualizada y activa la alerta de mascota perdida para que el resto de usuarios cercanos puedan ayudarte a localizarla</div>
+                    <div class="center-align texto-pequeno negrita parrafo">Asegúrate de que la información de su perfil está actualizada y activa la alerta de mascota perdida para que el resto de usuarios cercanos puedan ayudarte a localizarla</div>
                 </div>
             </div>
             <div class="col s12 m12 l6">
                 <div class="col s12 m6 l6 margin-in">
                     <div class="center-align"><img class="responsive-img" src="assets/images/icons/escanea_qr.png"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Escanea el código QR o visita la página</div>
-                    <div class="center-align texto-pequeno negrita">Cualquiera con un móvil puede escanear el código QR o visitar el perfil de tu mascota a través de la web para ver tus datos de contacto y su información</div>
+                    <div class="center-align texto-pequeno negrita parrafo">Cualquiera con un móvil puede escanear el código QR o visitar el perfil de tu mascota a través de la web para ver tus datos de contacto y su información</div>
                 </div>
                 <div class="col s12 m6 l6 margin-in">
                     <div class="center-align"><img class="responsive-img" src="assets/images/icons/reunete_con_tu_mascota.png"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Reúnete con tu mascota</div>
-                    <div class="center-align texto-pequeno negrita">Cuando alguien acceda a la información del código QR de tu mascota te enviaremos un e-mail informándote de que ha sido encontrada y la dirección del lugar</div>
+                    <div class="center-align texto-pequeno negrita parrafo">Cuando alguien acceda a la información del código QR de tu mascota te enviaremos un e-mail informándote de que ha sido encontrada y la dirección del lugar</div>
                 </div>
             </div>
 
@@ -92,26 +92,26 @@
         </div>
         <div class="row">
             <div class="col s12 m12">
-                <div class="card-panel">
+                <div class="card-panel shadow">
                     <div class="row">
                         <div class="col s12 m4 margin-in">
-                            <div class="center-align"><img class="responsive-img" src="assets/images/icons/crea_un_perfil.png"></div>
+                            <div class="center-align"><img src="assets/images/icons/crea_un_perfil.png" width="45px" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">1. Compra una Placa QR</div>
-                            <div class="center-align texto-pequeno negrita">Adquiere tu Placa QR en nuestra tienda online de forma simple y segura</div>
+                            <div class="center-align texto-pequeno negrita parrafo">Adquiere tu Placa QR en nuestra tienda online de forma simple y segura</div>
                             <div class="center-align"><button class="boton-verde">COMPRAR</button></div>
                         </div>
 
                         <div class="col s12 m4 margin-in">
-                            <div class="center-align"><img class="responsive-img" src="assets/images/icons/profile_dog.png"></div>
+                            <div class="center-align"><img src="assets/images/icons/profile_dog.png" width="45px" height="45px"></div>
 
                             <div class="negrita center-align titulo2 interlineado20 c2" >2. Crea el perfil de tu mascota</div>
-                            <div class="center-align texto-pequeno negrita">Introduce todos los datos relevantes de tu mascota, información veterinario, personas de contacto alternativas, etc. <br>Registra tantas placas como desees</div>
+                            <div class="center-align texto-pequeno negrita parrafo">Introduce todos los datos relevantes de tu mascota, información veterinario, personas de contacto alternativas, etc. <br>Registra tantas placas como desees</div>
                             <div class="center-align"><button class="boton-verde-negativo" ui-sref="registroUsuario">CREAR CUENTA</button></div>
                         </div>
                         <div class="col s12 m4 margin-in">
-                            <div class="center-align"><img class="responsive-img" src="assets/images/icons/activa_tu_placa_qr.png"></div>
+                            <div class="center-align"><img src="assets/images/icons/activa_tu_placa_qr.png" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">3. Activa tu placa QR</div>
-                            <div class="center-align texto-pequeno negrita">Sincroniza tu perfil con tu placa y mantenlo actualizado para que en caso de pérdida sea sencillo contactarte</div>
+                            <div class="center-align texto-pequeno negrita parrafo">Sincroniza tu perfil con tu placa y mantenlo actualizado para que en caso de pérdida sea sencillo contactarte</div>
                             <div class="center-align"><button class="boton-verde-negativo">ACTIVAR</button></div>
                         </div>
                     </div>
@@ -121,35 +121,37 @@
     </div>
 </section>
 <section class="mascotas-perdidas color-blanco">
-    <div class="row">
-        <div class="col s12">
-            <h4 class="center-align">Mascotas perdidas</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m4 margin-in">
-            <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
-            <div class="center-align negrita">
-                <div class="titulo2">Nombre</div>
-                <div class="texto-pequeno">Sexo, años</div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h4 class="center-align">Mascotas perdidas</h4>
             </div>
         </div>
-        <div class="col s12 m4 margin-in">
-            <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
-            <div class="center-align negrita">
-                <div class="titulo2">Nombre</div>
-                <div class="texto-pequeno">Sexo, años</div>
+        <div class="row">
+            <div class="col s12 m4 margin-in">
+                <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
+                <div class="center-align negrita">
+                    <div class="titulo2">Nombre</div>
+                    <div class="texto-pequeno">Sexo, años</div>
+                </div>
             </div>
-        </div>
-        <div class="col s12 m4 margin-in">
-            <div class="center-align"><img class="circle" src="assets/images/tobi.png"></div>
-            <div class="center-align negrita">
-                <div class="titulo2">Nombre</div>
-                <div class="texto-pequeno">Sexo, años</div>
+            <div class="col s12 m4 margin-in">
+                <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
+                <div class="center-align negrita">
+                    <div class="titulo2">Nombre</div>
+                    <div class="texto-pequeno">Sexo, años</div>
+                </div>
             </div>
-        </div>
-        <div class="col s12 center-align margin-in">
-            <button class="boton-verde-negativo">VER MÁS</button>
+            <div class="col s12 m4 margin-in">
+                <div class="center-align"><img class="circle" src="assets/images/tobi.png"></div>
+                <div class="center-align negrita">
+                    <div class="titulo2">Nombre</div>
+                    <div class="texto-pequeno">Sexo, años</div>
+                </div>
+            </div>
+            <div class="col s12 center-align margin-out">
+                <button class="boton-verde-negativo">VER MÁS</button>
+            </div>
         </div>
     </div>
 </section>

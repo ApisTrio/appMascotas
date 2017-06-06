@@ -1,4 +1,4 @@
-angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial", "ui.materialize"])
+angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial", "ui.materialize","uiSwitch"])
 
 .config(["$stateProvider", "$locationProvider", function ($stateProvider, $locationProvider) {
 

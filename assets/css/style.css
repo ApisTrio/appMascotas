@@ -103,8 +103,30 @@ body {
 
 /****** MISC ******/
 
-table.table-admin th,
-.table-admin td {
+
+.flex{
+    display: flex;
+}
+
+.flex.column{
+    flex-flow: column;
+}
+
+.flex.justify-content{
+    justify-content: center;
+}
+
+.absolute{
+    position: absolute;
+    z-index: 1000000000;
+}
+
+.absolute.center{
+    left: calc(50% - 18px);
+}
+
+table.table-admin th, .table-admin td {
+
     padding: 15px 0 15px 5px;
     text-align: left;
 }
@@ -285,14 +307,21 @@ table.table-admin td {
 }
 
 .iniciar-sesion input {
-    border: 1px solid grey;
+    border: 1px solid #efefef;
     border-radius: 30px;
-    box-shadow: inset 0px 0px 1px 0px grey;
+    box-shadow: inset 0px 0px 1px 0px #efefef;
     padding: 0 0 0 30px;
     box-sizing: border-box;
 }
 
-.iniciar-sesion input[type=text]:focus:not([readonly]) {
+
+.iniciar-sesion input::-webkit-input-placeholder {
+    color: #000000;
+    font-style: oblique;
+}
+
+.iniciar-sesion input[type=text]:focus:not([readonly]), .iniciar-sesion input[type=password]:focus:not([readonly]){
+
     border: 1px solid #26a69a;
     box-shadow: 0 0px 0 0 #26a69a;
 }

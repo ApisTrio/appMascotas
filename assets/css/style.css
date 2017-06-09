@@ -177,8 +177,16 @@ table.table-admin, table.table-admin th, table.table-admin td {
     margin-bottom: 20px;
 }
 
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+
 .margin-out {
     margin: 30px 0 30px
+}
+
+.margin-auto{
+    margin: auto;
 }
 
 .text-center {
@@ -216,6 +224,18 @@ table.table-admin, table.table-admin th, table.table-admin td {
 
 .row.fechas-vacunas .col:first-child {
     padding-left: 0px;
+}
+
+.recordar-usuario-titulo{
+    font-size: 25px;
+    font-weight: 600;
+    color: #5a5d8c;
+}
+
+.recordar-usuario-texto{
+    font-size: 12px;
+    font-weight: 600;
+    color: #424242;
 }
 
 /* ELEMENTOS */
@@ -564,6 +584,11 @@ textarea.erroneo:focus {
 
 .login{
     padding: 200px 0;
+    background-color: white;
+}
+
+.recordar-usuario, .cambiar-contrasena{
+    padding: 150px 0;
     background-color: white;
 }
 

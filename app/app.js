@@ -106,6 +106,28 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
     })
 
     ////////////////////////////
+    /// Recordar Usuario ///////
+    ////////////////////////////   
+
+    .state({
+        name: 'recordarUsuario',
+        url: '/recordar-usuario',
+        templateUrl: 'app/views/recordarUsuario.tpl',
+        controller: 'recordarUsuarioController as recordarUsuario'
+    })
+
+    ////////////////////////////
+    /// Cambiar contraseña ///////
+    ////////////////////////////   
+
+    .state({
+        name: 'cambiarContrasena',
+        url: '/cambiar-contrasena',
+        templateUrl: 'app/views/cambiarContrasena.tpl',
+        controller: 'cambiarContrasenaController as cambiarContrasena'
+    })
+
+    ////////////////////////////
     ////////// Placa ///////////
     ////////////////////////////
 

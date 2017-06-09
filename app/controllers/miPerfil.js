@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("misMascotasIndividualController", [function () {
+.controller("miPerfilController", [function () {
     
     var cdx = this;
     

@@ -31,7 +31,7 @@ body {
 /* COLORES */
 
 .color-blanco {
-    color: white;
+    color: white !important;
 }
 
 
@@ -101,10 +101,10 @@ body {
 }
 
 
-
 /****** MISC ******/
 
-table.table-admin th, .table-admin td {
+table.table-admin th,
+.table-admin td {
     padding: 15px 0 15px 5px;
     text-align: left;
 }
@@ -113,23 +113,26 @@ table.table-admin {
     border-collapse: collapse;
 }
 
-table.table-admin, table.table-admin th, table.table-admin td {
+table.table-admin,
+table.table-admin th,
+table.table-admin td {
     border: 1px solid #e8e8e8;
 }
 
-.table-admin tbody tr td{
+.table-admin tbody tr td {
     font-size: 12px;
     color: #333333;
 }
-.table-admin tbody tr td.usuario{
+
+.table-admin tbody tr td.usuario {
     color: #7eb6e7;
     font-weight: bold;
 }
 
-.shadow{
-    -webkit-box-shadow: 0px 0px 25px -1px rgba(204,204,204,0.42);
-    -moz-box-shadow: 0px 0px 25px -1px rgba(204,204,204,0.42);
-    box-shadow: 0px 0px 25px -1px rgba(204,204,204,0.42);
+.shadow {
+    -webkit-box-shadow: 0px 0px 25px -1px rgba(204, 204, 204, 0.42);
+    -moz-box-shadow: 0px 0px 25px -1px rgba(204, 204, 204, 0.42);
+    box-shadow: 0px 0px 25px -1px rgba(204, 204, 204, 0.42);
 }
 
 .parrafo {
@@ -164,12 +167,11 @@ table.table-admin, table.table-admin th, table.table-admin td {
     text-align: center;
 }
 
-.text-left{
+.text-left {
     text-align: left;
 }
 
-.filtros-tabla span{
-
+.filtros-tabla span {
     margin: 0 5px 10px 5px;
     font-weight: normal;
 }
@@ -179,22 +181,28 @@ table.table-admin, table.table-admin th, table.table-admin td {
 }
 
 .padding-top-30 {
-    padding-top: 30px;
+    padding-top: 30px !important;
 }
 
+.no-margin {
+    margin: 0px;
+}
 
 .no-margin-bottom {
-    
     margin-bottom: 0px
-    
 }
 
 .divider {
-    height: 1.1px;  
+    height: 1.1px;
 }
 
 .row.fechas-vacunas .col:first-child {
     padding-left: 0px;
+}
+
+.fondo-blanco {
+    
+    background-color: white;
 }
 
 /* ELEMENTOS */
@@ -205,7 +213,7 @@ table.table-admin, table.table-admin th, table.table-admin td {
     border-radius: 50%;
     height: 300px;
     width: 300px;
-    color: white
+    color: white !important;
 }
 
 .boton-neutro {
@@ -284,9 +292,51 @@ table.table-admin, table.table-admin th, table.table-admin td {
     box-sizing: border-box;
 }
 
-.iniciar-sesion input[type=text]:focus:not([readonly]){
+.iniciar-sesion input[type=text]:focus:not([readonly]) {
     border: 1px solid #26a69a;
     box-shadow: 0 0px 0 0 #26a69a;
+}
+
+.cubo-mascota {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    cursor: pointer;
+}
+
+.menu-perfil {
+    padding-left: 35px !important;
+}
+
+.menu-perfil>div {
+    cursor: pointer;
+}
+
+.icono-menu,
+.opcion-menu {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icono-menu img {
+    width: 25px;
+    vertical-align: middle;
+}
+
+.colapso-menu {
+    cursor: auto;
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 60px;
+}
+
+.colapso-menu img {
+    cursor: pointer;
+    width: 15px;
+}
+
+.opcion-menu {
+    margin-left: 10px;
+    max-width: calc(100% - 60px)
 }
 
 
@@ -492,54 +542,50 @@ textarea.erroneo:focus {
 }
 
 .contenedor-perfil {
-    
     margin-bottom: 0px;
-    
+    background-color: white;
+}
+
+.contenedor-perfil-interno {
+    padding: 0px !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0px -4px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 0px -2px rgba(0, 0, 0, 0.2);
 }
 
 .menu-perfil {
-    
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    background-color: white;
     height: 100%;
-    
 }
 
 .admin {
-    
     background-color: white;
-    
 }
 
-.header-mascota{
-    
+.header-mascota {
     background-color: #B2DA9F;
     background-image: url(../images/dinbeat_waves.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 100% 100%;
-    
 }
 
 .informacion-mascota {
-    
-   background-color: white;
+    background-color: white;
 }
 
 .titulo-info {
-    
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .contenido-info {
-    
     margin-bottom: 15px;
 }
 
-.login{
+.login {
     padding: 200px 0;
     background-color: white;
 }
+
 
 /*DIRECTIVES */
 
@@ -654,7 +700,7 @@ cdx-modelos label:focus {
 }
 
 .c2 {
-    color: #595c8b;
+    color: #595c8b !important;
 }
 
 .c3 {
@@ -705,3 +751,36 @@ cdx-modelos label:focus {
     color: #F9593A;
 }
 
+
+/* HEADER */
+
+header {
+    background-color: white;
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0px 0px 5px 0 rgba(0, 0, 0, 0.12), 0px 0px 0px -2px rgba(0, 0, 0, 0.2);
+}
+
+header>div {
+    display: inline-flex;
+    height: 80px;
+    vertical-align: middle;
+}
+
+header .contenedor-logo {
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+   
+}
+
+header .contenedor-navbar {
+    justify-content: flex-end;
+    align-items: center;
+    width: 85%;
+  
+}
+
+header .contenedor-navbar a {
+    margin-right: 30px;
+    color: #7f7f7f;
+    font-weight: bold;
+}

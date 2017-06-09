@@ -1,17 +1,47 @@
 <section>
-    
+
     <div class="row contenedor-perfil">
 
-        <div class="col s10 m2 center-align negrita menu-perfil">
-            <div ui-sref="landing">Inicio</div>
-            <div ui-sref="">Mi perfil</div>
-            <div ui-sref="perfil.misMascotas">Mis mascotas</div>
-            <div ui-sref="perfil.activarAlerta">Activar Alerta</div>
+        <div class="col s10 m2 negrita menu-perfil margin-out">
+            <div class="colapso-menu">
+                <img src="assets/images/menu_iconos/collapse.png">
+            </div>
+
+            <div ui-sref="landing" class="margin-out">
+                <div class="icono-menu">
+                    <img src="assets/images/menu_iconos/huella.png">
+                </div>
+                <div class="opcion-menu">
+                    Inicio
+                </div>
+            </div>
+            <div ui-sref="perfil.miPerfil" class="margin-out">
+                <div class="icono-menu">
+                    <img src="assets/images/menu_iconos/profile.png">
+                </div>
+                <div class="opcion-menu">
+                    Mi perfil
+                </div>
+            </div>
+            <div ui-sref="perfil.misMascotas" class="margin-out">
+                <div class="icono-menu">
+                    <img src="assets/images/menu_iconos/huella.png">
+                </div>
+                <div class="opcion-menu" class="margin-out">Mis mascotas</div>
+            </div>
+            <div ui-sref="perfil.activarAlerta">
+                <div class="icono-menu">
+                    <img src="assets/images/menu_iconos/important_message.png">
+                </div>
+                <div class="opcion-menu">
+                    Activar alerta de mascota perdida
+                </div>
+            </div>
         </div>
 
-        <div class="col s10" ui-view>
-            
-           
+        <div class="col s10 contenedor-perfil-interno fondo-blanco" ui-view>
+
+
         </div>
 
     </div>

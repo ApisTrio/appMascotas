@@ -25,7 +25,6 @@
 
 
     <!--Librerias 3r party angularJS -->
-
     <script src="modulos/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="modulos/angular-material/angular-material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
@@ -49,17 +48,39 @@
     <script src="app/controllers/mascotasPerdidasIndividual.js"></script>
     <script src="app/controllers/misMascotas.js"></script>
     <script src="app/controllers/misMascotasIndividual.js"></script>
+    <script src="app/controllers/misMascotasEditar.js"></script>
+    <script src="app/controllers/misMascotasPlaca.js"></script>
+    <script src="app/controllers/misMascotasNueva.js"></script>
     <script src="app/controllers/perfil.js"></script>
+    <script src="app/controllers/miPerfil.js"></script>
     <script src="app/controllers/placa.js"></script>
     <script src="app/controllers/registro.js"></script>
 </head>
 
 <body ng-app="mascotas">
-    <header></header>
-    <div ui-view></div>
+    <header>
+        <div class="contenedor-logo">
+            <div>
+                <a href="http://www.dinbeat.com/">
+                    <img src="assets/images/logo/logo_dinbeat.svg">
+                </a>
+            </div>
+        </div><!--
+     --><div class="contenedor-navbar">
+            <div>
+                <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
+                <a href="#">Placas QR</a>
+                <a href="#">Tienda</a>
+                <a href="http://www.dinbeat.com/sobre-nosotros/">Sobre nosotros</a>
+                <a href="http://www.dinbeat.com/blog/">Blog</a>
+                <a class="c2 nombre-usuario" ui-sref="perfil.miPerfil">CDX Usuario</a>
+            </div>
+        </div>
+    </header>
+    <div class="fondo-blanco" ui-view>
+    
+    </div>
     <footer>
-
-
 
     </footer>
 

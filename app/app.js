@@ -40,17 +40,6 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
     })
 
-    .state({
-
-        name: 'mascotasPerdidas.individual',
-        url: '/:id',
-        templateUrl: 'app/views/mascotasPerdidas.individual.tpl',
-        controller: 'mascotasPerdidasIndividualController as mascotasPerdidasIndividual'
-
-    })
-
-
-
     ////////////////////////////
     //////Perfil e hijos////////
     ////////////////////////////
@@ -58,10 +47,16 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
     .state({
         name: 'perfil',
         url: '/perfil',
-        abstract: false,
+        abstract: true,
         templateUrl: 'app/views/perfil.tpl',
         controller: 'perfilController as perfil'
-
+    })
+    
+    .state({
+        name: 'perfil.miPerfil',
+        url: '/mi-perfil',
+        templateUrl: 'app/views/perfil.miPerfil.tpl',
+        controller: 'miPerfilController as miPerfil'
     })
 
     .state({
@@ -83,16 +78,37 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         url: '/mis-mascotas',
         templateUrl: 'app/views/perfil.misMascotas.tpl',
         controller: 'misMascotasController as misMascotas'
-
     })
-
+    
+    .state({
+        name: 'perfil.misMascotasPlaca',
+        url: '/mis-mascotas/nueva-placa',
+        templateUrl: 'app/views/perfil.misMascotas.placa.tpl',
+        controller: 'misMascotasPlacaController as misMascotasPlaca'
+    })
+    
+    .state({
+        name: 'perfil.misMascotasNueva',
+        url: '/mis-mascotas/nueva-mascota',
+        templateUrl: 'app/views/perfil.misMascotas.nueva.tpl',
+        controller: 'misMascotasNuevaController as misMascotaNueva'
+    })
+    
     .state({
         name: 'perfil.misMascotasIndividual',
-        url: '/mis-mascotas/:id',
+        url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}',
         templateUrl: 'app/views/perfil.misMascotas.individual.tpl',
         controller: 'misMascotasIndividualController as misMascotasIndividual'
-
     })
+    
+    .state({
+        name: 'perfil.misMascotasEditar',
+        url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}/editar',
+        templateUrl: 'app/views/perfil.misMascotas.editar.tpl',
+        controller: 'misMascotasEditarController as misMascotasEditar'
+    })
+    
+   
 
     ////////////////////////////
     ////////// Login ///////////

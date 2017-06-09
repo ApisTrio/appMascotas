@@ -1,4 +1,4 @@
-<section>
+<section class="padding-top-30 fondo-blanco">
     <div class="row">
         <div class="col s12 center-align">
             <h5 class="center-align">Registro</h5>
@@ -10,7 +10,7 @@
         </div>
     </div>
 </section>
-<section ng-init="registro.pasos = 1" ng-switch="registro.pasos" ng-form="formPasos">
+<section class="fondo-blanco" ng-init="registro.pasos = 4" ng-switch="registro.pasos" ng-form="formPasos">
 
     <!-------------------------->
     <!----------PASO #1--------->
@@ -282,7 +282,7 @@
                 <div class="campo-formulario">Introduce el número de tu placa *</div>
                 <div class="input-formulario">
                     <div>
-                        <input ng-model="registro.numeroPlaca" ng-class="{'valido': formPaso3.numeroPlaca.$valid, 'erroneo': (!formPaso3.numeroPlaca.$valid && formPaso3.numeroPlaca.$dirty)}" placeholder="Introduce el número de tu placa" type="text" name="numeroPlaca" required>
+                        <input ng-model="registro.placa.codigo" ng-class="{'valido': formPaso3.numeroPlaca.$valid, 'erroneo': (!formPaso3.numeroPlaca.$valid && formPaso3.numeroPlaca.$dirty)}" placeholder="Introduce el número de tu placa" type="text" name="numeroPlaca" required>
                         <cdx-validez data-validez="formPaso3.numeroPlaca.$valid" data-mostrar="formPaso3.numeroPlaca.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso3.numeroPlaca.$error" ng-show="formPaso3.numeroPlaca.$dirty">
@@ -305,7 +305,7 @@
 
         <div class="row">
             <div class="col s12 m10 offset-m1 center-align">
-                <cdx-modelos ng-model="registro.modelo"></cdx-modelos>
+                <cdx-modelos ng-model="registro.placa.modelos_idModelo"></cdx-modelos>
             </div>
         </div>
 
@@ -497,13 +497,19 @@
         <!-- OTROS CONTACTOS -->
         <!--------------------->
 
-        <div class="row" ng-if="registro.datos.duenos.length">
-            <div class="col s12 m10 offset-m1 negrita">
-                Información de otros contactos
+        <div class="row" ng-show="registro.datos.duenos.length">
+            <div class="col s10 offset-s1">
+                <div class="divider"></div>
             </div>
         </div>
-        
-        
+
+        <div class="row" ng-show="registro.datos.duenos.length">
+            <div class="col s12 m10 offset-m1 negrita">
+                <h4 class="titulo2 negrita interlineado20 c2">Información de otros contactos</h4>
+            </div>
+        </div>
+
+
 
         <div ng-form="duenoExtraForm" ng-repeat="dueno in registro.datos.duenos">
 
@@ -676,6 +682,12 @@
                     <button class="boton-neutro" ng-click="registro.datos.duenos.splice($index, 1)">Eliminar este contacto</button>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="divider"></div>
+                </div>
+            </div>
         </div>
 
 
@@ -693,6 +705,12 @@
         <div class="row">
             <div class="col s12 m10 offset-m1">
                 * Dato requerido
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s10 offset-s1">
+                <div class="divider"></div>
             </div>
         </div>
 

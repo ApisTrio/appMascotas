@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div class="col s10 contenedor-perfil-interno fondo-blanco" ui-view>
+        <div class="col s12 m10 contenedor-perfil-interno fondo-blanco" ui-view>
 
 
         </div>

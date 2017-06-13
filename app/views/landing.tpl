@@ -115,6 +115,7 @@
                             <div class="center-align"><button class="boton-verde-negativo">ACTIVAR</button></div>
                         </div>
                     </div>
+                    <img src="assets/images/perrogato.png" class="img-perrogato" width="160">
                 </div>
             </div>
         </div>

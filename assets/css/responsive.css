@@ -16,6 +16,10 @@
     .como-funciona {
     	height: auto !important;
 	}
+
+    .contenedor-navbar{
+        display: none
+    }
 }
 
 

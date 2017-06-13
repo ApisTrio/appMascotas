@@ -409,6 +409,12 @@ table.table-admin td {
     float: right;
 }
 
+.eliminar-pequeno{
+    
+    color:#9e9e9e;
+    cursor:pointer;
+    
+}
 
 /* FORMULARIOS */
 
@@ -653,6 +659,11 @@ textarea.erroneo:focus {
 
 
 /*DIRECTIVES */
+
+.mapa{
+    
+    height: 250px;
+}
 
 [ng-messages]{
     padding: 4px;

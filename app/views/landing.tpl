@@ -129,25 +129,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 margin-in">
+            <div class="col s12 m4 margin-in" ng-repeat="perdida in landing.perdidas">
                 <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
                 <div class="center-align negrita">
                     <div class="titulo2">Nombre</div>
                     <div class="texto-pequeno">Sexo, años</div>
                 </div>
             </div>
-            <div class="col s12 m4 margin-in">
-                <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
-                <div class="center-align negrita">
-                    <div class="titulo2">Nombre</div>
-                    <div class="texto-pequeno">Sexo, años</div>
-                </div>
-            </div>
-            <div class="col s12 m4 margin-in">
-                <div class="center-align"><img class="circle" src="assets/images/tobi.png"></div>
-                <div class="center-align negrita">
-                    <div class="titulo2">Nombre</div>
-                    <div class="texto-pequeno">Sexo, años</div>
+            <div class="col s12 margin-in" ng-if="!landing.perdidas.length">
+                <div class="center-align">
+                    <div class="titulo2">¡Excelente!</div>
+                    <div class="titulo2">Ninguna mascota se ha perdido.</div>
                 </div>
             </div>
             <div class="col s12 center-align margin-out">

@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("registroController", ["usuariosService", function (usuariosService) {
+.controller("registroController", ["usuariosService", "razasService", "especiesService",function (usuariosService, razasService, especiesService) {
 
     var cdx = this;
     
@@ -106,7 +106,20 @@ angular.module("mascotas")
             "codigo": null
         }
     };
-
+    
+    
+    
+    razasService.lista().then(function(res){
+        
+        cdx.razas = res;
+        
+    })
+    
+    especiesService.lista().then(function(res){
+        
+        cdx.especies = res;
+        
+    })
 
 
 

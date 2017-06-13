@@ -220,10 +220,7 @@
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.especie.$pristine || formPaso2.especie.$valid}">
                         <md-select ng-model="registro.datos.mascota.especie" ng-class="{'valido': formPaso2.especie.$valid, 'erroneo': (!formPaso2.especie.$valid && formPaso2.especie.$dirty)}" placeholder="Especie" name="especie" class="md-no-underline" required>
-                            <md-option value="Perro">Perro</md-option>
-                            <md-option value="Gato">Gato</md-option>
-                            <md-option value="Conejo">Conejo</md-option>
-                            <md-option value="Hurón">Hurón</md-option>
+                            <md-option ng-repeat="especie in registro.especies" value="{{especie.idEspecie}}">{{especie.especie}}</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso2.especie.$valid" data-mostrar="formPaso2.especie.$dirty"></cdx-validez>
                     </div>
@@ -237,8 +234,7 @@
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.raza.$pristine || formPaso2.raza.$valid}">
                         <md-select ng-model="registro.datos.mascota.razas_idRaza" ng-class="{'valido': formPaso2.raza.$valid, 'erroneo': (!formPaso2.raza.$valid && formPaso2.raza.$dirty)}" placeholder="Raza" name="raza" class="md-no-underline" required>
-                            <md-option value="1">Yorkshire Terrier</md-option>
-                            <md-option value="2">San Bernardo</md-option>
+                            <md-option ng-repeat="raza in registro.razas" value="{{raza.idRaza}}">{{raza.raza}}</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso2.raza.$valid" data-mostrar="formPaso2.raza.$dirty"></cdx-validez>
                     </div>

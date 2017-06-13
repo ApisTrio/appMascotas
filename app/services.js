@@ -64,7 +64,7 @@ angular.module("mascotas")
 
 
 
-        $http.get(apiRootFactory + "placas/verificar/" + idPlaca).then(function (res) {
+        $http.get(apiRootFactory + "placas/asignada/" + idPlaca).then(function (res) {
 
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
@@ -162,8 +162,8 @@ angular.module("mascotas")
         })
 
         .then(function (res) {
-            
-            var objetoToken =  res.data;
+
+            var objetoToken = res.data;
             $window.localStorage.setItem('cdxToken', JSON.stringify(objetoToken));
             $rootScope.objetoToken = objetoToken;
 
@@ -199,7 +199,7 @@ angular.module("mascotas")
                 return $rootScope.objetoToken;
 
             } else {
-                
+
                 return false;
 
             }
@@ -219,10 +219,10 @@ angular.module("mascotas")
 ///////////////////////
 
 .service("mascotasService", ["$http", "$q", "apiRootFactory", function ($http, $q, apiRootFactory) {
-    
-    this.datos = function(idMascota){
-        
-        
+
+    this.datos = function (idMascota) {
+
+
 
         var defered = $q.defer();
         var promise = defered.promise;
@@ -234,8 +234,8 @@ angular.module("mascotas")
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
-               defered.resolve(res.data.result);
-               
+                defered.resolve(res.data.result);
+
 
             } else {
 
@@ -247,9 +247,69 @@ angular.module("mascotas")
 
         return promise;
 
-        
+
     }
-    
+
+
+
+    this.perdidas = function () {
+
+
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "perdidas/lista/").then(function (res) {
+
+            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+    }
+
+    this.mascotasDueno = function (idDueno) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "/mascotas/dueno/" + idDueno).then(function (res) {
+
+            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+    }
+
+
 }])
 
 ///////////////////////
@@ -257,7 +317,7 @@ angular.module("mascotas")
 ///////////////////////
 
 .service("placasService", ["$http", "$q", "apiRootFactory", function ($http, $q, apiRootFactory) {
-    
+
     this.verificarAsignada = function (idPlaca) {
 
 
@@ -266,13 +326,13 @@ angular.module("mascotas")
 
 
 
-        $http.get(apiRootFactory + "placas/verificar/" + idPlaca).then(function (res) {
+        $http.get(apiRootFactory + "placas/asignada/" + idPlaca).then(function (res) {
 
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
-               defered.resolve(res.data.result);
-               
+                defered.resolve(res.data.result);
+
 
             } else {
 
@@ -286,5 +346,80 @@ angular.module("mascotas")
 
 
     }
-    
+
+}])
+
+
+///////////////////////
+////// ESPECIES ///////
+///////////////////////
+
+.service("especiesService", ["$http", "$q", "apiRootFactory", function ($http, $q, apiRootFactory) {
+
+    this.lista = function () {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "especies/lista/").then(function (res) {
+
+            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+
+    }
+
+}])
+
+///////////////////////
+//////// RAZAS ////////
+///////////////////////
+
+.service("razasService", ["$http", "$q", "apiRootFactory", function ($http, $q, apiRootFactory) {
+
+    this.lista = function () {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "razas/lista/").then(function (res) {
+
+            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+
+    }
+
 }])

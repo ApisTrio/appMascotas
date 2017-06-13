@@ -1,4 +1,4 @@
-angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial", "ui.materialize","uiSwitch"])
+angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial", "ui.materialize", "uiSwitch"])
 
 .config(["$stateProvider", "$locationProvider", function ($stateProvider, $locationProvider) {
 
@@ -7,7 +7,7 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
     $stateProvider
 
-    .state({
+        .state({
         name: 'landing',
         url: '/',
         templateUrl: 'app/views/landing.tpl',
@@ -25,7 +25,17 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         name: 'registroUsuario',
         url: '/registro',
         templateUrl: 'app/views/registroUsuario.tpl',
-        controller: 'registroController as registro'
+        controller: 'registroController as registro',
+        resolve: {
+            "currentAuth": ["$q", "usuariosService", function ($q, usuariosService) {
+
+                if (usuariosService.autorizado()) {
+
+                    return $q.reject("LOGOUT_REQUIRED");
+                }
+
+                }]
+        }
     })
 
     ////////////////////////////////////
@@ -49,14 +59,32 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         url: '/perfil',
         abstract: true,
         templateUrl: 'app/views/perfil.tpl',
-        controller: 'perfilController as perfil'
+        controller: 'perfilController as perfil',
+        resolve: {
+            "currentAuth": ["$q", "usuariosService", function ($q, usuariosService) {
+
+                if (!usuariosService.autorizado()) {
+
+                    return $q.reject("AUTH_REQUIRED");
+                }
+
+                }]
+        }
     })
-    
+
     .state({
         name: 'perfil.miPerfil',
         url: '/mi-perfil',
         templateUrl: 'app/views/perfil.miPerfil.tpl',
         controller: 'miPerfilController as miPerfil'
+    })
+
+    .state({
+        name: 'perfil.eliminarCuenta',
+        url: '/eliminar-cuenta',
+        templateUrl: 'app/views/perfil.eliminarCuenta.tpl',
+        controller: 'eliminarCuentaController as eliminarCuenta'
+
     })
 
     .state({
@@ -79,36 +107,40 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         templateUrl: 'app/views/perfil.misMascotas.tpl',
         controller: 'misMascotasController as misMascotas'
     })
-    
+
     .state({
         name: 'perfil.misMascotasPlaca',
         url: '/mis-mascotas/nueva-placa',
         templateUrl: 'app/views/perfil.misMascotas.placa.tpl',
         controller: 'misMascotasPlacaController as misMascotasPlaca'
     })
-    
+
     .state({
         name: 'perfil.misMascotasNueva',
         url: '/mis-mascotas/nueva-mascota',
         templateUrl: 'app/views/perfil.misMascotas.nueva.tpl',
-        controller: 'misMascotasNuevaController as misMascotaNueva'
+        controller: 'misMascotasNuevaController as misMascotasNueva'
     })
-    
+
     .state({
         name: 'perfil.misMascotasIndividual',
         url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}',
         templateUrl: 'app/views/perfil.misMascotas.individual.tpl',
         controller: 'misMascotasIndividualController as misMascotasIndividual'
     })
-    
+
     .state({
-        name: 'perfil.misMascotasEditar',
-        url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}/editar',
-        templateUrl: 'app/views/perfil.misMascotas.editar.tpl',
-        controller: 'misMascotasEditarController as misMascotasEditar'
-    })
-    
-   
+            name: 'perfil.misMascotasEditar',
+            url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}/editar',
+            templateUrl: 'app/views/perfil.misMascotas.editar.tpl',
+            controller: 'misMascotasEditarController as misMascotasEditar'
+        })
+        .state({
+            name: 'perfil.misMascotasEliminar',
+            url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}/eliminar',
+            templateUrl: 'app/views/perfil.misMascotas.eliminar.tpl',
+            controller: 'misMascotasEliminarController as misMascotasEliminar'
+        })
 
     ////////////////////////////
     ////////// Login ///////////
@@ -118,8 +150,31 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         name: 'login',
         url: '/login',
         templateUrl: 'app/views/login.tpl',
-        controller: 'loginController as login'
+        controller: 'loginController as login',
+        resolve: {
+            "currentAuth": ["$q", "usuariosService", function ($q, usuariosService) {
+
+                if (usuariosService.autorizado()) {
+
+                    return $q.reject("LOGOUT_REQUIRED");
+                }
+
+                }]
+        }
     })
+
+    ////////////////////////////
+    /////Confirmar Cuenta///////
+    ////////////////////////////
+
+    .state({
+        name: 'confirmar',
+        url: '/confirmar/:id/:token',
+        templateUrl: 'app/views/confirmar.tpl',
+        controller: 'confirmarController as confirmar'
+
+    })
+
 
     ////////////////////////////
     /// Recordar Usuario ///////
@@ -151,12 +206,70 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         name: 'placa',
         url: '/{idPlaca: [0-9a-zA-Z]{4,6}}',
         templateUrl: 'app/views/placa.tpl',
-        controller: 'placaController as placa'
+        controller: 'placaController as placa',
+        resolve: {
+            placaValida: ["placasService", "mascotasService", "$stateParams", "$q", function (placasService, mascotasService, $stateParams, $q) {
+                var defered = $q.defer();
+                var promise = defered.promise;
+
+                placasService.verificarAsignada($stateParams.idPlaca).
+                then(function (res) {
+
+
+
+                    $q.all([
+                        mascotasService.datos(res.mascotas_idMascota).then(res)]).then(function (resGlobal) {
+                        
+                        var datos = {basico: resGlobal[0]}
+                       
+
+                        defered.resolve(datos);
+                    })
+
+
+
+                })
+
+                .catch(function (res) {
+
+
+                    defered.reject("PLACA_INVALIDA")
+
+                })
+
+                return promise;
+
+            }]
+
+        }
     });
 
 
 
     //$locationProvider.html5Mode(true);
 
+
+}])
+
+.run(["$rootScope", "$state", function ($rootScope, $state) {
+
+    $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
+        // We can catch the error thrown when the $requireSignIn promise is rejected
+        // and redirect the user back to the home page
+        if (error === "AUTH_REQUIRED") {
+
+            $state.go("login");
+        } else if (error === "LOGOUT_REQUIRED") {
+
+            $state.go("perfil.miPerfil");
+        } else if (error === "PLACA_INVALIDA") {
+
+            $state.go("landing");
+        } else {
+
+            console.log(error);
+        }
+
+    });
 
 }])

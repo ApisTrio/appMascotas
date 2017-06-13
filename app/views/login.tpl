@@ -9,7 +9,7 @@
 					<p>CREAR MI CUENTA</p>
 					<p style="font-size: 18px">¿Te apasionan los animales? <br>¡Entonces eres de los nuestros!</p>
 					<br>
-					<button class="boton-verde">REGISTRARME</button>
+					<button class="boton-verde" ui-sref="registroUsuario">REGISTRARME</button>
 				</div>
 			</div>
 			<div class="center-align flex justify-content column absolute center">
@@ -25,19 +25,19 @@
 				">o</div>
 				<div class="" style="margin: 0 auto;height: 200px;"><div style="width: 1px;b;background-color: #e5e5e5;height: 200px;"></div></div>
 			</div>
-			<div class="col s12 m6 l6 xl5 center-align iniciar-sesion">
+			<div class="col s12 m6 l6 xl5 center-align iniciar-sesion" ng-form="loginForm">
 				<p>INICIAR SESIÓN</p>
 				<div class="col s10 offset-s1">
-					<input type="text" name="usuario" placeholder="Usuario">
+					<input ng-model="login.usuario.usuario" type="text" name="usuario" placeholder="Usuario">
 				</div>
 				<div class="col s10 offset-s1">
-					<input type="password" name="pass" placeholder="Contraseña">
+					<input ng-model="login.usuario.pass" type="password" name="pass" placeholder="Contraseña">
 				</div>
 				<div class="col s10 offset-s1 text-left">
-					<input type="checkbox" class="filled-in" id="recuerdame" name="recuerdame" required/>
+					<input type="checkbox" class="filled-in" id="recuerdame" name="recuerdame" />
 					<label for="recuerdame">Recuérdame</label>
 				</div>
-				<button class="boton-verde margin-out">ACCEDER</button>
+				<button class="boton-verde margin-out" type="submit" ng-click="login.iniciarSesion(login.usuario, loginForm.$valid)" >ACCEDER</button>
 				<p>¿Has olvidado tu contraseña?</p>
 				<p>¿Has olvidado tu usuario?</p>
 			</div>

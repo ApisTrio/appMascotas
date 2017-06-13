@@ -1,18 +1,52 @@
 angular.module("mascotas")
 
-.controller("registroController", [function () {
+.controller("registroController", ["usuariosService", function (usuariosService) {
 
     var cdx = this;
+    
+    cdx.listo = true;
+    
+    
+    //funcion para el avance del formulario
 
-    cdx.avanzar = function (valido) {
+    cdx.avanzar = function (valido, datos) {
 
         if (valido) {
 
-            cdx.pasos = cdx.pasos + 1;
+            if (cdx.pasos < 4) {
+
+                cdx.pasos = cdx.pasos + 1;
+
+            } else if (cdx.pasos == 4) {
+
+                if (cdx.listo) {
+                    
+                    cdx.listo = false;
+
+                    usuariosService.registro(datos)
+
+                    .then(function (res) {
+
+                        console.log(res)
+                        cdx.pasos = cdx.pasos + 1;
+
+                    })
+
+                    .catch(function (res) {
+
+                        console.log("error")
+
+                    })
+
+                }
+
+            }
         }
 
 
     }
+
+    //datos para los datepickers
 
     cdx.hoy = new Date();
 
@@ -30,15 +64,53 @@ angular.module("mascotas")
 
     }
 
+
+    // datos del formulario de registro
+
     cdx.datos = {
-        
-        duenos: []
+        "duenos": [],
+        "dueno": {
+            "nombre": null,
+            "apellido": null,
+            "email": null,
+            "telefono": null,
+            "nacimiento": null,
+            "sexo": null,
+            "provincia": null,
+            "pais": null,
+            "ciudad": null,
+            "direccion": null,
+            "codigo_postal": null
+
+        },
+        "usuario": {
+            "emailU": null,
+            "usuario": null,
+            "pass": null
+
+        },
+        "mascota": {
+            "nombre": null,
+            "fecha_nacimiento": null,
+            "genero": null,
+            "especie": null,
+            "razas_idRaza": null,
+            "chip": null,
+            "peso": null,
+            "comentarios": null,
+            "foto": null
+
+        },
+        "placa": {
+            "modelos_idModelo": null,
+            "codigo": null
+        }
     };
-    
-    
-    
-     
-    
-    
+
+
+
+
+
+
 
 }])

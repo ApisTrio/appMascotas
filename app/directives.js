@@ -220,10 +220,160 @@ angular.module("mascotas")
             ngModel.$render = function () {
                 scope.valorCorbata = ngModel.$modelValue;
             };
-            
+
             ngModel.$setViewValue(scope.valorCorbata);
 
 
         }
     }
-});
+})
+
+//validaciones
+.directive('cdxValidacion', function ($q, validarService) {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attributes, ctrl) {
+
+            if (attributes.validacion) {
+
+                ctrl.$asyncValidators[attributes.validacion] = function (modelValor, viewValor) {
+
+                    var defered = $q.defer();
+                    var promise = defered.promise;
+
+                    if (ctrl.$isEmpty(modelValor)) {
+                        // consider empty model valid
+                        return defered.resolve();
+                    }
+
+                    if (attributes.deseado == "true") {
+
+                        if (attributes.validacion != "placa") {
+
+                            validarService.validar(attributes.validacion, modelValor)
+
+                            .then(function (res) {
+
+                                defered.resolve();
+                            })
+
+                            .catch(function (res) {
+
+                                defered.reject();
+                            })
+
+                        } else {
+
+                            validarService.placa(modelValor)
+
+                            .then(function (res) {
+
+                                defered.reject();
+                            })
+
+                            .catch(function (res) {
+
+                                
+                                
+                                defered.resolve();
+                            })
+
+                        }
+
+
+
+
+                    } else if (attributes.deseado == "false") {
+
+                        if (attributes.validacion != "placa") {
+
+                            validarService.validar(attributes.validacion, modelValor)
+
+                            .then(function (res) {
+
+
+                                defered.reject();
+                            })
+
+                            .catch(function (res) {
+
+                                defered.resolve();
+                            })
+
+
+                        }
+                        
+                        else {
+                            
+                            validarService.placa(modelValor)
+
+                            .then(function (res) {
+
+                               defered.resolve();
+                            })
+
+                            .catch(function (res) {
+
+                                
+                                
+                                 defered.reject();
+                            })
+                                         
+                        }
+
+                    }
+
+                    return promise;
+
+                }
+
+            }
+
+
+
+
+        }
+    };
+})
+
+.directive("cdxValidacionClave", [function () {
+
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attributes, ctrl) {
+
+
+            ctrl.$validators.identica = function (modelValor, viewValor) {
+
+
+                if (ctrl.$isEmpty(modelValor)) {
+                    // consider empty models to be valid
+                    return true;
+                } else if (modelValor == attributes.validacion) {
+
+                    return true;
+
+                } else {
+
+                    return false;
+
+                }
+
+            };
+
+
+            attributes.$observe('validacion', function (val) {
+
+                ctrl.$setValidity('identica', attributes.validacion === ctrl.$viewValue);
+
+            });
+
+
+
+
+        }
+    };
+
+
+
+}])

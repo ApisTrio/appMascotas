@@ -23,7 +23,7 @@
                 <h5 class="negrita">¡HE PERDIDO MI MASCOTA!</h5>
                 <img class="responsive-img" src="assets/images/icons/Lost_Human.png">
                 <p class="texto-pequeno">Activa esta alerta y deja que otros usuarios que estén cerca te ayuden a encontrarla</p>
-                <button class="boton-verde-negativo">ACTIVAR ALARMA</button>
+                <button class="boton-verde-negativo" ui-sref="perfil.activarAlerta">ACTIVAR ALARMA</button>
             </div>
         </div>
         <div class="col s12 m12 l4 center-align">
@@ -112,7 +112,7 @@
                             <div class="center-align"><img src="assets/images/icons/activa_tu_placa_qr.png" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">3. Activa tu placa QR</div>
                             <div class="center-align texto-pequeno negrita parrafo">Sincroniza tu perfil con tu placa y mantenlo actualizado para que en caso de pérdida sea sencillo contactarte</div>
-                            <div class="center-align"><button class="boton-verde-negativo">ACTIVAR</button></div>
+                            <div class="center-align"><button class="boton-verde-negativo" ui-sref="perfil.misMascotasPlaca">ACTIVAR</button></div>
                         </div>
                     </div>
                 </div>

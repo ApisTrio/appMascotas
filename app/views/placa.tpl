@@ -1,7 +1,7 @@
 <section class="color-blanco header-mascota">
     <div class="row">
         <div class="col s12 center-align">
-            <h4 class="negrita no-margin-bottom">Nombre</h4>
+            <h4 class="negrita no-margin-bottom">{{placa.datos.basico.nombre}}</h4>
         </div>
     </div>
 
@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">Nombre completo</div>
-            <div class="contenido-info">Kira</div>
+            <div class="contenido-info">{{placa.datos.basico.nombre}}</div>
             <div class="divider"></div>
         </div>
         <div class="col s4 offset-s2">
@@ -46,7 +46,7 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">Género</div>
-            <div class="contenido-info">Femenimo</div>
+            <div class="contenido-info">{{placa.datos.basico.genero}}</div>
             <div class="divider"></div>
         </div>
         <div class="col s4 offset-s2">
@@ -59,12 +59,14 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">Número de chip</div>
-            <div class="contenido-info">124235345464565</div>
+            <div class="contenido-info" ng-if="placa.datos.basico.chip">{{placa.datos.basico.chip}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.basico.chip">...</div>
             <div class="divider"></div>
         </div>
         <div class="col s4 offset-s2">
             <div class="titulo-info">Peso</div>
-            <div class="contenido-info">2,4 Kg</div>
+            <div class="contenido-info" ng-if="placa.datos.basico.peso">{{placa.datos.basico.peso}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.basico.peso">...</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -72,7 +74,8 @@
     <div class="row no-margin-bottom" >
         <div class="col s10 offset-s1">
             <div class="titulo-info">Comentarios</div>
-            <div class="contenido-info">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
+            <div class="contenido-info" ng-if="placa.datos.basico.comentarios">{{placa.datos.basico.comentarios}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.basico.comentarios">...</div>
             <div class="divider"></div>
         </div>
     </div>

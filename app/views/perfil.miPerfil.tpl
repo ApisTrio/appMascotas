@@ -21,12 +21,12 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">Nombre</div>
-            <div class="contenido-info">John</div>
+            <div class="contenido-info">{{miPerfil.datos.dueno.nombre}}</div>
             <div class="divider"></div>
         </div>
         <div class="col s4 offset-s2">
             <div class="titulo-info">Apellido</div>
-            <div class="contenido-info">Doe</div>
+            <div class="contenido-info">{{miPerfil.datos.dueno.apellido}}</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -34,12 +34,12 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">E-mail</div>
-            <div class="contenido-info">superman@gmail.com</div>
+            <div class="contenido-info">{{miPerfil.datos.usuario.emailU}}</div>
             <div class="divider"></div>
         </div>
         <div class="col s4 offset-s2">
             <div class="titulo-info">Nombre de usuario</div>
-            <div class="contenido-info">Kal-L</div>
+            <div class="contenido-info">{{miPerfil.datos.usuario.usuario}}</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -47,11 +47,12 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">Fecha de nacimiento</div>
-            <div class="contenido-info">01-01-2001</div>
+            <div class="contenido-info">{{miPerfil.datos.dueno.nacimiento}}</div>
         </div>
         <div class="col s4 offset-s2">
             <div class="titulo-info">Sexo</div>
-            <div class="contenido-info">Masculino</div>
+            <div class="contenido-info" ng-if="miPerfil.datos.usuario.sexo">{{miPerfil.datos.usuario.sexo}}</div>
+            <div class="contenido-info" ng-if="!miPerfil.datos.usuario.sexo">...</div>
         </div>
     </div>
 
@@ -62,64 +63,23 @@
     </div>
 
 </section>
-<!---- INFORMACION MEDICA ---->
+<!---- INFORMACION DE CONTACTO---->
 <section>
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info c2">Información de Contacto</div>
         </div>
     </div>
-    
-    
-    <div class="row">
-        <div class="col s4 offset-s1">
-            <div class="titulo-info">Fecha de la última vacuna</div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Parbovirosis</div>
-                <div class="col s6">12-03-2016</div>
-            </div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Rabia</div>
-                <div class="col s6">12-03-2016</div>
-            </div>
-            <div class="divider"></div>
-        </div>
-        <div class="col s4 offset-s2">
-            <div class="titulo-info">Recordatorio</div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Parbovirosis</div>
-                <div class="col s6">12-03-2017</div>
-            </div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Rabia</div>
-                <div class="col s6">12-03-2017</div>
-            </div>
-            <div class="divider"></div>
-        </div>
-    </div>
 
     <div class="row">
         <div class="col s4 offset-s1">
-            <div class="titulo-info">Fecha de la última desparasitación interna</div>
-            <div class="contenido-info">12-03-2016</div>
+            <div class="titulo-info">Teléfono de contacto</div>
+            <div class="contenido-info">{{miPerfil.datos.dueno.telefono}}</div>
             <div class="divider"></div>
         </div>
         <div class="col s4 offset-s2">
-            <div class="titulo-info">Fecha de la última desparasitación externa</div>
-            <div class="contenido-info">12-03-2016</div>
-            <div class="divider"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s4 offset-s1">
-            <div class="titulo-info">Centro Veterinario</div>
-            <div class="contenido-info">Centro Veterinario Animalis</div>
-            <div class="divider"></div>
-        </div>
-        <div class="col s4 offset-s2">
-            <div class="titulo-info">Veterinario</div>
-            <div class="contenido-info">David Pumarola</div>
+            <div class="titulo-info">E-mail</div>
+            <div class="contenido-info">{{miPerfil.datos.dueno.email}}</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -127,11 +87,9 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">Dirección</div>
-            <div class="contenido-info">Av. Europa, 331, Hospital, Barcelona</div>
-        </div>
-        <div class="col s4 offset-s2">
-            <div class="titulo-info">Teléfono</div>
-            <div class="contenido-info">644 95 15 85</div>
+            <div class="contenido-info" ng-if="miPerfil.datos.dueno.direccion">{{miPerfil.datos.dueno.direccion}}, {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
+            <div class="contenido-info" ng-if="!miPerfil.datos.dueno.direccion"> {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
+            
         </div>
     </div>
 
@@ -146,4 +104,12 @@
             <button class="boton-verde-negativo">EDITAR</button>
         </div>
     </div>
+</section>
+<section>
+    <div class="row">
+        <div class="col s12 offset-s1">
+            <div ui-sref="perfil.eliminarCuenta">Eliminar cuenta</div>
+        </div>
+    </div>
+
 </section>

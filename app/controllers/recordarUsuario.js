@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("recordarUsuarioController", [function () {
+.controller("recordarUsuarioController", ["usuariosServices",function (usuariosServices) {
     
     var cdx = this;
     

@@ -33,14 +33,13 @@
 
     <!--Archivos App -->
     <script src="app/app.js"></script>
-
-    <!--
-    <script src="app/services.js"></script>-->
+    <script src="app/services.js"></script>
     <script src="app/directives.js"></script>
 
 
     <!-- Controladores -->
     <script src="app/controllers/activarAlerta.js"></script>
+    <script src="app/controllers/header.js"></script>
     <script src="app/controllers/admin.js"></script>
     <script src="app/controllers/landing.js"></script>
     <script src="app/controllers/mascotaPerdida.js"></script>
@@ -51,14 +50,18 @@
     <script src="app/controllers/misMascotasEditar.js"></script>
     <script src="app/controllers/misMascotasPlaca.js"></script>
     <script src="app/controllers/misMascotasNueva.js"></script>
+    <script src="app/controllers/misMascotasEliminar.js"></script>
     <script src="app/controllers/perfil.js"></script>
     <script src="app/controllers/miPerfil.js"></script>
     <script src="app/controllers/placa.js"></script>
+    <script src="app/controllers/login.js"></script>
     <script src="app/controllers/registro.js"></script>
+    <script src="app/controllers/confirmar.js"></script>
+    <script src="app/controllers/eliminarCuenta.js"></script>
 </head>
 
 <body ng-app="mascotas">
-    <header>
+    <header ng-controller="headerController as header">
         <div class="contenedor-logo">
             <div>
                 <a href="http://www.dinbeat.com/">
@@ -73,7 +76,9 @@
                 <a href="#">Tienda</a>
                 <a href="http://www.dinbeat.com/sobre-nosotros/">Sobre nosotros</a>
                 <a href="http://www.dinbeat.com/blog/">Blog</a>
-                <a class="c2 nombre-usuario" ui-sref="perfil.miPerfil">CDX Usuario</a>
+                <a class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-if="header.autorizado">{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}</a>
+                <a class="c2 nombre-usuario" ui-sref="login" ng-if="!header.autorizado">Iniciar Sesión</a>
+                
             </div>
         </div>
     </header>

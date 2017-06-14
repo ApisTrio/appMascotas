@@ -219,7 +219,7 @@
                 <div class="campo-formulario">Especie *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.especie.$pristine || formPaso2.especie.$valid}">
-                        <md-select ng-model="registro.datos.mascota.especie" ng-class="{'valido': formPaso2.especie.$valid, 'erroneo': (!formPaso2.especie.$valid && formPaso2.especie.$dirty)}" placeholder="Especie" name="especie" class="md-no-underline" required>
+                        <md-select ng-change="registro.cargarRazas(registro.datos.mascota.especie)" ng-model="registro.datos.mascota.especie" ng-class="{'valido': formPaso2.especie.$valid, 'erroneo': (!formPaso2.especie.$valid && formPaso2.especie.$dirty)}" placeholder="Especie" name="especie" class="md-no-underline" required>
                             <md-option ng-repeat="especie in registro.especies" value="{{especie.idEspecie}}">{{especie.especie}}</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso2.especie.$valid" data-mostrar="formPaso2.especie.$dirty"></cdx-validez>
@@ -264,7 +264,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m12 offset-m1">
+            <div class="col s12 m1 offset-m1">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Comentarios</div>
                     <div class="input-formulario">
@@ -296,16 +296,18 @@
                 <div class="campo-formulario">Introduce el número de tu placa *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso3.numeroPlaca.$pristine || formPaso3.numeroPlaca.$valid}">
-                        <input ng-model="registro.datos.placa.codigo" ng-class="{'valido': formPaso3.numeroPlaca.$valid, 'erroneo': (!formPaso3.numeroPlaca.$valid && formPaso3.numeroPlaca.$dirty)}" placeholder="Introduce el número de tu placa" type="text" name="numeroPlaca" cdx-validacion data-validacion="placa" data-deseado="false" required>
+                        <input ng-model="registro.datos.placa.codigo" ng-class="{'valido': formPaso3.numeroPlaca.$valid, 'erroneo': (!formPaso3.numeroPlaca.$valid && formPaso3.numeroPlaca.$dirty)}" placeholder="Introduce el número de tu placa" type="text" name="numeroPlaca" cdx-validacion data-validacion="placa" data-deseado="false" cdx-validacion-dispo required>
                         <cdx-validez data-validez="formPaso3.numeroPlaca.$valid" data-mostrar="formPaso3.numeroPlaca.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso3.numeroPlaca.$error" ng-show="formPaso3.numeroPlaca.$dirty">
                         <div ng-message="required">Este campo es requerido.</div>
-                        <div ng-message="placa">La placa no es válida.</div>
+                        <div ng-message="placa">La placa no está disponible.</div>
+                        <div ng-message="disponible">La placa no es válida.</div>
                     </div>
                     <div ng-messages="formPaso3.numeroPlaca.$pending" ng-show="formPaso3.numeroPlaca.$dirty">
 
-                        <div ng-message="placa">Verificando válidez de la placa...</div>
+                        <div ng-message="placa">Verificando la disponibilidad de la placa...</div>
+                        <div ng-message="disponible">Verificando la válidez de la placa...</div>
                     </div>
                 </div>
             </div>

@@ -85,6 +85,34 @@ angular.module("mascotas")
 
 
     }
+    
+    
+    this.placaDisponible = function (idPlaca){
+        
+        
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "placas/creada/" + idPlaca).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();                
+
+            } else {
+
+                defered.reject();
+            
+            }
+
+        });
+
+
+        return promise;
+        
+    }
 
 
 
@@ -208,6 +236,15 @@ angular.module("mascotas")
 
 
     }
+    
+    
+    this.salir = function(){
+        
+        
+        $rootScope.objetoToken = false;
+        $window.localStorage.removeItem('cdxToken');
+        
+    }
 
 
 
@@ -229,7 +266,7 @@ angular.module("mascotas")
 
 
 
-        $http.get(apiRootFactory + "/mascotas/datos/" + idMascota).then(function (res) {
+        $http.get(apiRootFactory + "mascotas/datos/" + idMascota).then(function (res) {
 
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
@@ -249,10 +286,36 @@ angular.module("mascotas")
 
 
     }
+    
+    this.datosMedicos = function(idMascota){
+        
+        
+        var defered = $q.defer();
+        var promise = defered.promise;
 
 
 
-    this.perdidas = function () {
+        $http.get(apiRootFactory + "informacion/datos/" + idMascota).then(function (res) {
+
+            if (res.data.response) {
+                
+                defered.resolve(res.data.result);
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+    }
+
+
+
+    this.perdidas = function (cantidad, salto) {
 
 
 
@@ -262,7 +325,37 @@ angular.module("mascotas")
 
 
 
-        $http.get(apiRootFactory + "perdidas/lista/").then(function (res) {
+        $http.get(apiRootFactory + "perdidas/lista/" + cantidad + "/" + salto).then(function (res) {
+
+            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+    }
+    
+    this.encontradas = function (cantidad, salto) {
+
+
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "perdidas/encontradas/lista/" + cantidad + "/" + salto).then(function (res) {
 
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
@@ -289,7 +382,7 @@ angular.module("mascotas")
 
 
 
-        $http.get(apiRootFactory + "/mascotas/dueno/" + idDueno).then(function (res) {
+        $http.get(apiRootFactory + "mascotas/dueno/" + idDueno).then(function (res) {
 
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
@@ -308,6 +401,37 @@ angular.module("mascotas")
         return promise;
 
     }
+
+    this.duenosMascota = function (idMascota) {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "duenos/mascota/" + idMascota).then(function (res) {
+
+            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+    }
+    
+    
+    
 
 
 }])
@@ -362,9 +486,7 @@ angular.module("mascotas")
         var defered = $q.defer();
         var promise = defered.promise;
 
-
-
-        $http.get(apiRootFactory + "especies/lista/").then(function (res) {
+        $http.get(apiRootFactory + "especies/lista").then(function (res) {
 
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
@@ -378,11 +500,9 @@ angular.module("mascotas")
             }
 
         });
-
-
+        
         return promise;
-
-
+        
     }
 
 }])
@@ -401,9 +521,8 @@ angular.module("mascotas")
 
 
 
-        $http.get(apiRootFactory + "razas/lista/").then(function (res) {
+        $http.get(apiRootFactory + "razas/lista").then(function (res) {
 
-            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
                 defered.resolve(res.data.result);
@@ -421,5 +540,106 @@ angular.module("mascotas")
 
 
     }
+    
+    
+    this.listaEspecie = function (idEspecie) {
 
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "razas/lista/" + idEspecie ).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+
+    }
+    
+
+}])
+
+
+
+.factory('AuthInterceptor', function ($window, $q, $rootScope) {
+
+    function salir() {
+
+        $rootScope.objetoToken = false;
+        $window.localStorage.removeItem('cdxToken');
+
+    }
+
+
+    function autorizado() {
+
+        if ($rootScope.objetoToken) {
+
+            return $rootScope.objetoToken;
+
+        } else {
+
+            if ($window.localStorage.getItem('cdxToken')) {
+
+                $rootScope.objetoToken = JSON.parse($window.localStorage.getItem('cdxToken'));
+
+                return $rootScope.objetoToken;
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+
+    }
+
+    return {
+        request: function (config) {
+            config.headers = config.headers || {};
+            if (autorizado()) {
+                config.headers.auth = autorizado().token;
+            }
+            return config || $q.when(config);
+        },
+        response: function (response) {
+            if (response.status === 401) {
+                salir();
+            }
+            return response || $q.when(response);
+        }
+    };
+})
+
+
+
+
+
+.factory("formatearFactory", [function(){
+    
+    
+    
+    var formatear = function(texto){
+        
+        return texto.replace("&ntilde;", "ñ")
+        
+    }
+    
+    return formatear;
+    
 }])

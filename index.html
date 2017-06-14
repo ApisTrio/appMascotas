@@ -14,7 +14,7 @@
 
     <!--JQUERY-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    
+
     <!-- MAPS -->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD3rv58fVm8h5McUzT9wrG6J7lQFw_J7Uk"></script>
 
@@ -73,21 +73,31 @@
                 </a>
             </div>
         </div><!--
-     --><div class="contenedor-navbar">
-            <div>
+     --><div class="contenedor-navbar" ng-mouseleave="header.hmenuMostrar=false">
+            <div >
                 <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
                 <a ui-sref="landing">Placas QR</a>
                 <a href="#">Tienda</a>
                 <a href="http://www.dinbeat.com/sobre-nosotros/">Sobre nosotros</a>
                 <a href="http://www.dinbeat.com/blog/">Blog</a>
-                <a class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-if="header.autorizado">{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}</a>
-                <a class="c2 nombre-usuario" ui-sref="login" ng-if="!header.autorizado">Iniciar Sesión</a>
-                
+
+                <div ng-switch="header.autorizado" class="login-contenedor" >
+                    <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
+
+                    <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default>{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}
+                    </a>
+                    <div ng-switch-default ng-show="header.hmenuMostrar" class="cerrar-sesion c2 nombre-usuario" ng-click="header.salir()">
+                       Cerrar sesion
+                        
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </header>
     <div class="fondo-blanco" ui-view>
-    
+
     </div>
     <footer>
 
@@ -154,7 +164,7 @@
                 </label>
             </div>
         </div>
-        
+
     </script>
 
 

@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("misMascotasNuevaController", [function () {
+.controller("misMascotasNuevaController", ["especiesService", "razasService", function (especiesService, razasService) {
 
     var cdx = this;
 
@@ -21,7 +21,7 @@ angular.module("mascotas")
 
     }
 
-    
+
     cdx.hoy = new Date();
 
     cdx.datosDatepicker = {
@@ -37,6 +37,32 @@ angular.module("mascotas")
         max: (new Date(cdx.hoy.getTime() + (1000 * 60 * 60 * 24))).toISOString()
 
     }
+
+
+    especiesService.lista().then(function (res) {
+
+        cdx.especies = res;
+
+    })
+
+
+    cdx.cargarRazas = function (idEspecie) {
+
+        cdx.razas = [];
+        cdx.datos.mascota.razas_idRaza = null;
+        razasService.listaEspecie(idEspecie).then(function (res) {
+
+            cdx.razas = res;
+
+        })
+
+    }
     
     
+    
+    
+
+
+
+
 }])

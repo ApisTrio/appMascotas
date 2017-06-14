@@ -1,13 +1,17 @@
 angular.module("mascotas")
 
-.controller("placaController", ["placasService", "mascotasService", "$stateParams", "placaValida", function (placasService, mascotasService, $stateParams, placaValida) {
+.controller("placaController", ["placasService", "mascotasService", "$stateParams", "placaValida", "formatearFactory", function (placasService, mascotasService, $stateParams, placaValida, formatearFactory) {
 
     var cdx = this;
 
 
     cdx.datos = placaValida;
     
-    console.log(placaValida)
+   cdx.formatear = function(texto){
+        
+        return formatearFactory(texto);
+        
+    }
 
 
 }])

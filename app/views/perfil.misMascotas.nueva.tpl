@@ -68,11 +68,8 @@
                 <div class="campo-formulario">Especie *</div>
                 <div class="input-formulario">
                     <div>
-                        <md-select ng-model="misMascotasNueva.datos.mascota.especie" ng-class="{'valido': formPaso1.especie.$valid, 'erroneo': (!formPaso1.especie.$valid && formPaso1.especie.$dirty)}" placeholder="Especie" name="especie" class="md-no-underline" required>
-                            <md-option value="Perro">Perro</md-option>
-                            <md-option value="Gato">Gato</md-option>
-                            <md-option value="Conejo">Conejo</md-option>
-                            <md-option value="Hurón">Hurón</md-option>
+                        <md-select ng-change="misMascotasNueva.cargarRazas(misMascotasNueva.datos.mascota.especie)" ng-model="misMascotasNueva.datos.mascota.especie" ng-class="{'valido': formPaso1.especie.$valid, 'erroneo': (!formPaso1.especie.$valid && formPaso1.especie.$dirty)}" placeholder="Especie" name="especie" class="md-no-underline" required>
+                            <md-option ng-value="{{especie.idEspecie}}" ng-repeat="especie in misMascotasNueva.especies">{{especie.especie}}</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso1.especie.$valid" data-mostrar="formPaso1.especie.$dirty"></cdx-validez>
                     </div>
@@ -86,8 +83,7 @@
                 <div class="input-formulario">
                     <div>
                         <md-select ng-model="misMascotasNueva.datos.mascota.razas_idRaza" ng-class="{'valido': formPaso1.raza.$valid, 'erroneo': (!formPaso1.raza.$valid && formPaso1.raza.$dirty)}" placeholder="Raza" name="raza" class="md-no-underline" required>
-                            <md-option value="algo">Yorkshire Terrier</md-option>
-                            <md-option value="algo2">San Bernardo</md-option>
+                            <md-option ng-value="{{raza.idRaza}}" ng-repeat="raza in misMascotasNueva.razas">{{raza.raza}}</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso1.raza.$valid" data-mostrar="formPaso1.raza.$dirty"></cdx-validez>
                     </div>

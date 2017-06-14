@@ -126,7 +126,49 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         name: 'perfil.misMascotasIndividual',
         url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}',
         templateUrl: 'app/views/perfil.misMascotas.individual.tpl',
-        controller: 'misMascotasIndividualController as misMascotasIndividual'
+        controller: 'misMascotasIndividualController as misMascotasIndividual',
+        resolve: {
+            placaValida: ["placasService", "mascotasService", "$stateParams", "$q", function (placasService, mascotasService, $stateParams, $q) {
+                var defered = $q.defer();
+                var promise = defered.promise;
+
+                placasService.verificarAsignada($stateParams.idPlaca). then(function (res) {
+
+
+
+                    $q.all([
+                        mascotasService.datos(res.mascotas_idMascota).then(res),
+                        mascotasService.duenosMascota(res.mascotas_idMascota).then(res),
+                        mascotasService.datosMedicos(res.mascotas_idMascota).then(res)
+                    ]).then(function (resGlobal) {
+                        
+                        console.log(resGlobal)
+                        var datos = {
+                            basico: resGlobal[0][0],
+                            duenos: resGlobal[1],
+                            medicos: resGlobal[2][0]
+                        }
+
+
+                        defered.resolve(datos);
+                    })
+
+
+
+                })
+
+                .catch(function (res) {
+
+
+                    defered.reject("PLACA_INVALIDA_PRIVADA")
+
+                })
+
+                return promise;
+
+            }]
+
+        }
     })
 
     .state({
@@ -218,10 +260,17 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
 
                     $q.all([
-                        mascotasService.datos(res.mascotas_idMascota).then(res)]).then(function (resGlobal) {
-                        
-                        var datos = {basico: resGlobal[0]}
-                       
+                        mascotasService.datos(res.mascotas_idMascota).then(res),
+                        mascotasService.duenosMascota(res.mascotas_idMascota).then(res),
+                        mascotasService.datosMedicos(res.mascotas_idMascota).then(res)
+                    ]).then(function (resGlobal) {
+
+                        var datos = {
+                            basico: resGlobal[0][0],
+                            duenos: resGlobal[1],
+                            medicos: resGlobal[2]
+                        }
+
 
                         defered.resolve(datos);
                     })
@@ -265,6 +314,10 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         } else if (error === "PLACA_INVALIDA") {
 
             $state.go("landing");
+        } else if (error === "PLACA_INVALIDA_PRIVADA") {
+
+            $state.go("perfil.miPerfil");
+            
         } else {
 
             console.log(error);

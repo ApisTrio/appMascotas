@@ -7,14 +7,28 @@ angular.module("mascotas")
     cdx.autorizado = usuariosService.autorizado();
 
     $scope.$watch('$root.objetoToken', function (valor, nuevoValor) {
-        
+
         if (valor !== nuevoValor) {
-            
+
             cdx.autorizado = $rootScope.objetoToken;
-            
+
         }
-        
+
     });
+
+    cdx.menuMostrar = function () {
+        if (cdx.hmenuMostrar) {
+            cdx.hmenuMostrar = false;
+        } else {
+            cdx.hmenuMostrar = true;
+        }
+    }
+    
+    cdx.salir = function(){
+        
+        usuariosService.salir();
+        
+    }
 
 
 }])

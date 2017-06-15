@@ -248,7 +248,23 @@ angular.module("mascotas")
 
                     if (attributes.deseado == "true") {
 
-                        if (attributes.validacion != "placa") {
+                        if (attributes.validacion == "placa") {
+
+                            validarService.placa(modelValor)
+
+                            .then(function (res) {
+
+                                defered.reject();
+                            })
+
+                            .catch(function (res) {
+
+
+
+                                defered.resolve();
+                            })
+
+                        } else {
 
                             validarService.validar(attributes.validacion, modelValor)
 
@@ -260,22 +276,6 @@ angular.module("mascotas")
                             .catch(function (res) {
 
                                 defered.reject();
-                            })
-
-                        } else {
-
-                            validarService.placa(modelValor)
-
-                            .then(function (res) {
-
-                                defered.reject();
-                            })
-
-                            .catch(function (res) {
-
-                                
-                                
-                                defered.resolve();
                             })
 
                         }
@@ -285,7 +285,25 @@ angular.module("mascotas")
 
                     } else if (attributes.deseado == "false") {
 
-                        if (attributes.validacion != "placa") {
+                        if (attributes.validacion == "placa") {
+
+                            validarService.placa(modelValor)
+
+                            .then(function (res) {
+
+                                defered.resolve();
+                            })
+
+                            .catch(function (res) {
+
+
+
+                                defered.reject();
+                            })
+
+
+                        } else {
+
 
                             validarService.validar(attributes.validacion, modelValor)
 
@@ -300,25 +318,6 @@ angular.module("mascotas")
                                 defered.resolve();
                             })
 
-
-                        }
-                        
-                        else {
-                            
-                            validarService.placa(modelValor)
-
-                            .then(function (res) {
-
-                               defered.resolve();
-                            })
-
-                            .catch(function (res) {
-
-                                
-                                
-                                 defered.reject();
-                            })
-                                         
                         }
 
                     }
@@ -335,6 +334,50 @@ angular.module("mascotas")
         }
     };
 })
+
+
+.directive("cdxValidacionDispo", ["validarService", "$q", function (validarService, $q) {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attributes, ctrl) {
+
+
+            ctrl.$asyncValidators.disponible = function (modelValor, viewValor) {
+
+                var defered = $q.defer();
+                var promise = defered.promise;
+
+                if (ctrl.$isEmpty(modelValor)) {
+                    // consider empty model valid
+                    return defered.resolve();
+                }
+
+                validarService.placaDisponible(modelValor).then(function (res) {
+
+
+                    defered.resolve();
+                })
+
+                .catch(function (res) {
+
+                    defered.reject();
+                })
+
+
+
+                return promise;
+
+            }
+
+
+
+
+
+
+        }
+    };
+
+}])
 
 .directive("cdxValidacionClave", [function () {
 

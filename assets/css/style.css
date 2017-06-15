@@ -257,6 +257,11 @@ table.table-admin td {
     background-color: white;
 }
 
+.pointer {
+    
+    cursor: pointer
+}
+
 /* ELEMENTOS */
 
 .globitos {
@@ -662,6 +667,16 @@ textarea.erroneo:focus {
 
 /*DIRECTIVES */
 
+md-select.ng-required.ng-invalid:not(.md-no-asterisk) .md-select-value span:first-child:after, md-select[required].ng-invalid:not(.md-no-asterisk) .md-select-value span:first-child:after{
+    
+    content: none !important;
+}
+
+md-select.ng-invalid.ng-touched .md-select-value{
+    
+    color: rgba(0,0,0,0.38) !important;
+}
+
 .mapa{
     
     height: 250px;
@@ -871,3 +886,26 @@ header .contenedor-navbar a {
     color: #7f7f7f;
     font-weight: bold;
 }
+
+header .contenedor-navbar .login-contenedor{
+    
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+}
+
+
+
+.cerrar-sesion {
+    border: 1px solid black;
+    padding: 10px;
+    position: absolute;
+    background: white;
+    top: 30px;
+    left:-10px;
+    cursor: pointer;
+    
+}
+
+
+

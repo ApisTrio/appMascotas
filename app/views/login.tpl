@@ -38,8 +38,8 @@
 					<label for="recuerdame">Recuérdame</label>
 				</div>
 				<button class="boton-verde margin-out" type="submit" ng-click="login.iniciarSesion(login.usuario, loginForm.$valid)" >ACCEDER</button>
-				<p>¿Has olvidado tu contraseña?</p>
-				<p>¿Has olvidado tu usuario?</p>
+				<p class="pointer" ui-sref="cambiarContrasena">¿Has olvidado tu contraseña?</p>
+				<p class="pointer" ui-sref="recordarUsuario">¿Has olvidado tu usuario?</p>
 			</div>
 
 		</div>

@@ -10,6 +10,7 @@ angular.module("mascotas")
             
             if($rootScope.objetoToken == false){
                 
+                                
                 $state.go("login");
                 
             }
@@ -17,5 +18,8 @@ angular.module("mascotas")
         }
         
     });
+    
+ 
+    
 
 }])

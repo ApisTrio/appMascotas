@@ -4,7 +4,13 @@ angular.module("mascotas")
 
     var cdx = this;
     
+    cdx.especies = [];
+    
+    cdx.razas = [];
+    
     cdx.listo = true;
+    
+    
     
     
     //funcion para el avance del formulario
@@ -109,19 +115,27 @@ angular.module("mascotas")
     
     
     
-    razasService.lista().then(function(res){
-        
-        cdx.razas = res;
-        
-    })
+   
     
-    especiesService.lista().then(function(res){
-        
+    
+    especiesService.lista().then(function (res) {
+
         cdx.especies = res;
-        
+
     })
 
 
+    cdx.cargarRazas = function (idEspecie) {
+
+        cdx.razas = [];
+        cdx.datos.mascota.razas_idRaza = null;
+        razasService.listaEspecie(idEspecie).then(function (res) {
+
+            cdx.razas = res;
+
+        })
+
+    }
 
 
 

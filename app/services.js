@@ -85,11 +85,11 @@ angular.module("mascotas")
 
 
     }
-    
-    
-    this.placaDisponible = function (idPlaca){
-        
-        
+
+
+    this.placaDisponible = function (idPlaca) {
+
+
         var defered = $q.defer();
         var promise = defered.promise;
 
@@ -99,19 +99,19 @@ angular.module("mascotas")
 
             if (res.data.response) {
 
-                defered.resolve();                
+                defered.resolve();
 
             } else {
 
                 defered.reject();
-            
+
             }
 
         });
 
 
         return promise;
-        
+
     }
 
 
@@ -236,14 +236,14 @@ angular.module("mascotas")
 
 
     }
-    
-    
-    this.salir = function(){
-        
-        
+
+
+    this.salir = function () {
+
+
         $rootScope.objetoToken = false;
         $window.localStorage.removeItem('cdxToken');
-        
+
     }
 
 
@@ -255,7 +255,157 @@ angular.module("mascotas")
 ////// MASCOTAS////////
 ///////////////////////
 
-.service("mascotasService", ["$http", "$q", "apiRootFactory", function ($http, $q, apiRootFactory) {
+.service("mascotasService", ["$http", "$q", "apiRootFactory", "$httpParamSerializer", "usuariosService", function ($http, $q, apiRootFactory, $httpParamSerializer, usuariosService) {
+
+    this.nuevaEncontrada = function (idMascota) {
+
+        
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "perdidas/cambiar/encontrada", $httpParamSerializer({
+            idMascota: idMascota
+        }), {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+        
+        .catch(function(res){
+            
+            console.log("hola aqui")
+            
+        })
+
+        return promise;
+
+    }
+
+    this.mascotasPerdidasDueno = function (idDueno) {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.get(apiRootFactory + "perdidas/dueno/" + idDueno).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+        return promise;
+
+    }
+
+
+    this.nuevaPerdida = function (datos) {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "perdidas/registro", $httpParamSerializer(datos), {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+
+    this.crear = function (datos) {
+
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        datos.idDueno = usuariosService.autorizado().dueno.idDueno;
+
+        ////////////ELIMINAR///////////////
+        datos.foto = "algo";
+
+
+        $http.post(apiRootFactory + "mascotas/registro", $httpParamSerializer(datos), {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (res) {
+
+
+            if (res.data.response) {
+
+                var datosAsignarPlaca = {
+                    codigo: datos.codigo,
+                    mascotas_idMascota: res.data.idInsertado,
+                    modelos_idModelo: datos.modelos_idModelo
+                }
+
+                console.log(datos)
+
+                $http.post(apiRootFactory + "placas/asignar", $httpParamSerializer(datosAsignarPlaca), {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                }).then(function (resPlacaAsignada) {
+
+                    if (resPlacaAsignada.data.response) {
+                        console.log(resPlacaAsignada.data)
+                        defered.resolve(resPlacaAsignada.data.result.codigo);
+
+                    } else {
+
+                        defered.reject();
+                        //BORRAR SI ES NECESARIO
+                    }
+
+                })
+
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+
+
+    }
 
     this.datos = function (idMascota) {
 
@@ -273,7 +423,6 @@ angular.module("mascotas")
 
                 defered.resolve(res.data.result);
 
-
             } else {
 
                 defered.reject();
@@ -286,10 +435,10 @@ angular.module("mascotas")
 
 
     }
-    
-    this.datosMedicos = function(idMascota){
-        
-        
+
+    this.datosMedicos = function (idMascota) {
+
+
         var defered = $q.defer();
         var promise = defered.promise;
 
@@ -298,7 +447,7 @@ angular.module("mascotas")
         $http.get(apiRootFactory + "informacion/datos/" + idMascota).then(function (res) {
 
             if (res.data.response) {
-                
+
                 defered.resolve(res.data.result);
 
             } else {
@@ -344,7 +493,7 @@ angular.module("mascotas")
         return promise;
 
     }
-    
+
     this.encontradas = function (cantidad, salto) {
 
 
@@ -429,9 +578,9 @@ angular.module("mascotas")
         return promise;
 
     }
-    
-    
-    
+
+
+
 
 
 }])
@@ -452,7 +601,7 @@ angular.module("mascotas")
 
         $http.get(apiRootFactory + "placas/asignada/" + idPlaca).then(function (res) {
 
-            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
+
             if (res.data.response) {
 
                 defered.resolve(res.data.result);
@@ -468,6 +617,35 @@ angular.module("mascotas")
 
         return promise;
 
+
+    }
+
+
+    this.placasAsignadas = function (idMascota) {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "placas/mascota/" + idMascota).then(function (res) {
+
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
 
     }
 
@@ -500,9 +678,9 @@ angular.module("mascotas")
             }
 
         });
-        
+
         return promise;
-        
+
     }
 
 }])
@@ -540,8 +718,8 @@ angular.module("mascotas")
 
 
     }
-    
-    
+
+
     this.listaEspecie = function (idEspecie) {
 
 
@@ -550,7 +728,7 @@ angular.module("mascotas")
 
 
 
-        $http.get(apiRootFactory + "razas/lista/" + idEspecie ).then(function (res) {
+        $http.get(apiRootFactory + "razas/lista/" + idEspecie).then(function (res) {
 
             if (res.data.response) {
 
@@ -569,7 +747,7 @@ angular.module("mascotas")
 
 
     }
-    
+
 
 }])
 
@@ -630,16 +808,16 @@ angular.module("mascotas")
 
 
 
-.factory("formatearFactory", [function(){
-    
-    
-    
-    var formatear = function(texto){
-        
+.factory("formatearFactory", [function () {
+
+
+
+    var formatear = function (texto) {
+
         return texto.replace("&ntilde;", "ñ")
-        
+
     }
-    
+
     return formatear;
-    
+
 }])

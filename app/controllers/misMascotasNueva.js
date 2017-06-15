@@ -1,20 +1,43 @@
 angular.module("mascotas")
 
-.controller("misMascotasNuevaController", ["especiesService", "razasService", function (especiesService, razasService) {
+.controller("misMascotasNuevaController", ["especiesService", "razasService", "mascotasService", function (especiesService, razasService, mascotasService) {
 
     var cdx = this;
+
+    cdx.datos = {
+
+        nombre: null,
+        foto: null,
+        genero: null,
+        peso: null,
+        comentarios: null,
+        chip: null,
+        fecha_nacimiento: null,
+        razas_idRaza: null,
+        idDueno: null
+
+    }
+
 
     cdx.avanzar = function (valido, datos) {
 
         if (valido) {
 
-            if (cdx.pasos < 3) {
+            if (cdx.pasos < 2) {
 
                 cdx.pasos = cdx.pasos + 1;
+
             } else {
+                
+                console.log(datos)
 
+                mascotasService.crear(datos).then(function (res) {
 
+                    cdx.pasos = cdx.pasos + 1;
+                    
+                    cdx.perfilMascota = res;
 
+                })
             }
 
         }
@@ -49,7 +72,7 @@ angular.module("mascotas")
     cdx.cargarRazas = function (idEspecie) {
 
         cdx.razas = [];
-        cdx.datos.mascota.razas_idRaza = null;
+        cdx.datos.razas_idRaza = null;
         razasService.listaEspecie(idEspecie).then(function (res) {
 
             cdx.razas = res;
@@ -57,10 +80,11 @@ angular.module("mascotas")
         })
 
     }
-    
-    
-    
-    
+
+
+
+
+
 
 
 

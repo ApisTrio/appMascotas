@@ -10,11 +10,8 @@ angular.module("mascotas")
     
     cdx.listo = true;
     
-    
-    
-    
-    //funcion para el avance del formulario
 
+    //funcion para el avance del formulario
     cdx.avanzar = function (valido, datos) {
 
         if (valido) {
@@ -33,7 +30,6 @@ angular.module("mascotas")
 
                     .then(function (res) {
 
-                        console.log(res)
                         cdx.pasos = cdx.pasos + 1;
 
                     })
@@ -47,13 +43,12 @@ angular.module("mascotas")
                 }
 
             }
-        }
 
+        }
 
     }
 
     //datos para los datepickers
-
     cdx.hoy = new Date();
 
     cdx.datosDatepicker = {

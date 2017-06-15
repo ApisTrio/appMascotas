@@ -103,30 +103,29 @@ body {
 
 /****** MISC ******/
 
-
-.flex{
+.flex {
     display: flex;
 }
 
-.flex.column{
+.flex.column {
     flex-flow: column;
 }
 
-.flex.justify-content{
+.flex.justify-content {
     justify-content: center;
 }
 
-.absolute{
+.absolute {
     position: absolute;
     z-index: 1000000000;
 }
 
-.absolute.center{
+.absolute.center {
     left: calc(50% - 18px);
 }
 
-table.table-admin th, .table-admin td {
-
+table.table-admin th,
+.table-admin td {
     padding: 15px 0 15px 5px;
     text-align: left;
 }
@@ -189,7 +188,7 @@ table.table-admin td {
     margin-bottom: 20px;
 }
 
-.margin-bottom-30{
+.margin-bottom-30 {
     margin-bottom: 30px;
 }
 
@@ -197,7 +196,7 @@ table.table-admin td {
     margin: 30px 0 30px
 }
 
-.margin-auto{
+.margin-auto {
     margin: auto;
 }
 
@@ -238,29 +237,26 @@ table.table-admin td {
     padding-left: 0px;
 }
 
-
-.recordar-usuario-titulo{
+.recordar-usuario-titulo {
     font-size: 25px;
     font-weight: 600;
     color: #5a5d8c;
 }
 
-.recordar-usuario-texto{
+.recordar-usuario-texto {
     font-size: 12px;
     font-weight: 600;
     color: #424242;
-
 }
 
 .fondo-blanco {
-    
     background-color: white;
 }
 
 .pointer {
-    
     cursor: pointer
 }
+
 
 /* ELEMENTOS */
 
@@ -349,14 +345,13 @@ table.table-admin td {
     box-sizing: border-box;
 }
 
-
 .iniciar-sesion input::-webkit-input-placeholder {
     color: #000000;
     font-style: oblique;
 }
 
-.iniciar-sesion input[type=text]:focus:not([readonly]), .iniciar-sesion input[type=password]:focus:not([readonly]){
-
+.iniciar-sesion input[type=text]:focus:not([readonly]),
+.iniciar-sesion input[type=password]:focus:not([readonly]) {
     border: 1px solid #26a69a;
     box-shadow: 0 0px 0 0 #26a69a;
 }
@@ -399,8 +394,19 @@ table.table-admin td {
 }
 
 .opcion-menu {
-    margin-left: 10px;
+    font-size: 12px;
+    margin-left: 8px;
     max-width: calc(100% - 60px)
+}
+
+.desactivar-alarma-perfil, .agregar-placa-perfil {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.desactivar-alarma-perfil img, .agregar-placa-perfil img {
+    vertical-align: middle;
+    height: 20px;
 }
 
 
@@ -414,12 +420,11 @@ table.table-admin td {
     float: right;
 }
 
-.eliminar-pequeno{
-    
-    color:#9e9e9e;
-    cursor:pointer;
-    
+.eliminar-pequeno {
+    color: #9e9e9e;
+    cursor: pointer;
 }
+
 
 /* FORMULARIOS */
 
@@ -567,6 +572,34 @@ textarea.erroneo:focus {
     outline: none;
 }
 
+.exclamacion-perdida {
+    position: absolute;
+    top: 70%;
+    left: 63%;
+    height: 50px;
+}
+
+.contenedor-foto-mascota {
+    position: relative;
+}
+
+.placas-mascota>.placa-individual {
+    display: inline-block
+}
+
+.placas-mascota>.placa-individual>img {
+    width: 50px;
+    vertical-align: middle;
+}
+
+.placas-mascota>.placa-individual>div {
+    display: inline-block;
+    width: 2px;
+    height: 31px;
+    background: #aeaeae;
+    vertical-align: middle;
+}
+
 
 /* SECCIONES */
 
@@ -658,8 +691,8 @@ textarea.erroneo:focus {
     background-color: white;
 }
 
-
-.recordar-usuario, .cambiar-contrasena{
+.recordar-usuario,
+.cambiar-contrasena {
     padding: 150px 0;
     background-color: white;
 }
@@ -667,28 +700,25 @@ textarea.erroneo:focus {
 
 /*DIRECTIVES */
 
-md-select.ng-required.ng-invalid:not(.md-no-asterisk) .md-select-value span:first-child:after, md-select[required].ng-invalid:not(.md-no-asterisk) .md-select-value span:first-child:after{
-    
+md-select.ng-required.ng-invalid:not(.md-no-asterisk) .md-select-value span:first-child:after,
+md-select[required].ng-invalid:not(.md-no-asterisk) .md-select-value span:first-child:after {
     content: none !important;
 }
 
-md-select.ng-invalid.ng-touched .md-select-value{
-    
-    color: rgba(0,0,0,0.38) !important;
+md-select.ng-invalid.ng-touched .md-select-value {
+    color: rgba(0, 0, 0, 0.38) !important;
 }
 
-.mapa{
-    
+.mapa {
     height: 250px;
 }
 
-[ng-messages]{
+[ng-messages] {
     padding: 4px;
 }
 
-[ng-message]{
-    
-     color:#9e9e9e;
+[ng-message] {
+    color: #9e9e9e;
 }
 
 cdx-pasos .datos {
@@ -871,14 +901,12 @@ header .contenedor-logo {
     justify-content: center;
     align-items: center;
     width: 15%;
-   
 }
 
 header .contenedor-navbar {
     justify-content: flex-end;
     align-items: center;
     width: 85%;
-  
 }
 
 header .contenedor-navbar a {
@@ -887,14 +915,11 @@ header .contenedor-navbar a {
     font-weight: bold;
 }
 
-header .contenedor-navbar .login-contenedor{
-    
+header .contenedor-navbar .login-contenedor {
     display: inline-block;
     position: relative;
     font-weight: bold;
 }
-
-
 
 .cerrar-sesion {
     border: 1px solid black;
@@ -902,10 +927,6 @@ header .contenedor-navbar .login-contenedor{
     position: absolute;
     background: white;
     top: 30px;
-    left:-10px;
+    left: -10px;
     cursor: pointer;
-    
 }
-
-
-

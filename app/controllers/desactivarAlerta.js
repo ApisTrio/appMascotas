@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("activarAlertaController", ["NavigatorGeolocation", "NgMap", "mascotasService", "usuariosService", "$filter",function (NavigatorGeolocation, NgMap, mascotasService, usuariosService, $filter) {
+.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter",function (mascotasService, usuariosService, $filter) {
 
     var cdx = this;
 
@@ -10,7 +10,7 @@ angular.module("mascotas")
 
     cdx.datos = {};
     
-    cdx.hoy = new Date();
+    /*cdx.hoy = new Date();
 
 
     NavigatorGeolocation.getCurrentPosition()
@@ -35,43 +35,27 @@ angular.module("mascotas")
         });
 
     });
+*/
 
+    mascotasService.mascotasPerdidasDueno(usuariosService.autorizado().dueno.idDueno).then(function (res) {
 
-    mascotasService.mascotasDueno(usuariosService.autorizado().dueno.idDueno)
-        
-        .then(function (res) {
-        
-            angular.forEach(res, function(valor, llave){
+        cdx.mascotas = res;
 
-                if((!valor.perdida && !valor.encontrado) || (valor.perdida && valor.encontrado)){
-
-                    cdx.mascotas.push(res[llave]);
-
-                }
-
-            })
-
-        })
+    })
 
 
 
-    cdx.avanzar = function (valido, datos) {
+    cdx.avanzar = function (valido, idMascota) {
 
+       
         if (valido) {
 
-            if (cdx.opciones < 3) {
-
-                cdx.opciones = cdx.opciones + 1;
-
-            } else if (cdx.opciones == 3) {
-                
-                datos.fecha = $filter('date')(cdx.hoy , "dd/MM/yyyy")
-                
-                mascotasService.nuevaPerdida(datos)
+                mascotasService.nuevaEncontrada(idMascota)
 
                 .then(function (res) {
 
                     cdx.opciones = cdx.opciones + 1;
+                    console.log("hola")
 
                 })
 
@@ -80,8 +64,8 @@ angular.module("mascotas")
                     console.log("error")
 
                 })
-
-            }
+                
+              
             
         }
 

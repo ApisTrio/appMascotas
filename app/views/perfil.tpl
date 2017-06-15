@@ -37,6 +37,15 @@
                     Activar alerta de mascota perdida
                 </div>
             </div>
+            
+            <div ui-sref="perfil.desactivarAlerta" class="margin-out" ng-show="perfil.mascotasPerdidas">
+                <div class="icono-menu">
+                    <img src="assets/images/menu_iconos/important_message.png">
+                </div>
+                <div class="opcion-menu">
+                    Desactivar alerta de mascota perdida
+                </div>
+            </div>
         </div>
 
         <div class="col s12 m10 contenedor-perfil-interno fondo-blanco" ui-view>

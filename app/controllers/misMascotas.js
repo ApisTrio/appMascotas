@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("misMascotasController", ["mascotasService", "usuariosService",function (mascotasService, usuariosService) {
+.controller("misMascotasController", ["mascotasService", "usuariosService", "placasService",function (mascotasService, usuariosService, placasService) {
     
     var cdx = this;
     
@@ -10,7 +10,18 @@ angular.module("mascotas")
         
         cdx.mascotas = res;
         
-        console.log(cdx.mascotas)
+        angular.forEach(cdx.mascotas, function(valor, llave){
+            
+            placasService.placasAsignadas(valor.idMascota).then(function(res){
+                
+                cdx.mascotas[llave].placas = res;
+                
+                console.log(res)
+                
+            })
+            
+            
+        })
         
     })
     

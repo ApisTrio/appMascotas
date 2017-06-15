@@ -10,16 +10,36 @@
     </div>
 
     <div class="row">
-        <div class="col s12 center-align">
-            <div class="center-align">
+        <div class="col s4 offset-s4 center-align">
+            <div class="center-align  contenedor-foto-mascota">
                 <img class="circle" src="assets/images/tobi.png">
+                <img class="exclamacion-perdida" src="assets/images/icons/alerta_activada_mascota_perdida.png" ng-show="(misMascotasIndividual.datos.basico.perdida && !misMascotasIndividual.datos.basico.encontrado)">
             </div>
         </div>
     </div>
 
-    <div class="row no-margin-bottom">
-        <div class="col s12 m4 offset-m4 center-align c2" ng-if="misMascotasIndividual.datos.basico.comentarios"> {{misMascotasIndividual.datos.basico.comentarios}}</div>
-        <div class="col s12 m4 offset-m4 center-align c2" ng-if="!misMascotasIndividual.datos.basico.comentarios"> ... </div>
+   
+    <div class="row c2">
+        <div class="col s6 offset-s3 center-align">
+            <div class="placas-mascota">
+                <div class="placa-individual" ng-repeat="placa in misMascotasIndividual.datos.placas | limitTo:3">
+                    <img ng-src="assets/images/placas/Pajaritas/placas_iconos-01.png"> {{placa.codigo}}
+                    <div ng-show="!$last"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col s3 center-align">
+            <div class="agregar-placa-perfil">
+                <img src="assets/images/icons/alerta.png"> Agregar placa
+            </div>
+        </div>
+    </div>
+    <div class="row  no-margin-bottom c2 negrita" ng-if="(misMascotasIndividual.datos.basico.perdida && !misMascotasIndividual.datos.basico.encontrado)">
+        <div class="col s12 center-align">
+            <div class="desactivar-alarma-perfil">
+                <img src="assets/images/icons/alerta.png"> Desactivar alerta de mascota perdida
+            </div>
+        </div>
     </div>
 </section>
 
@@ -72,7 +92,7 @@
         </div>
     </div>
 
-    <div class="row no-margin-bottom" >
+    <div class="row no-margin-bottom">
         <div class="col s10 offset-s1">
             <div class="titulo-info">Comentarios</div>
             <div class="contenido-info" ng-if="misMascotasIndividual.datos.basico.comentarios">{{misMascotasIndividual.datos.basico.comentarios}}</div>
@@ -80,7 +100,7 @@
             <div class="divider"></div>
         </div>
     </div>
-    
+
 </section>
 <!---- INFORMACION MEDICA ---->
 <section class="informacion-mascota">

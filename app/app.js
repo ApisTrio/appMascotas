@@ -100,6 +100,13 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         templateUrl: 'app/views/perfil.activarAlerta.tpl',
         controller: 'activarAlertaController as activarAlerta'
     })
+    
+    .state({
+        name: 'perfil.desactivarAlerta',
+        url: '/desactivar-alerta',
+        templateUrl: 'app/views/perfil.desactivarAlerta.tpl',
+        controller: 'desactivarAlertaController as desactivarAlerta'
+    })
 
     .state({
         name: 'perfil.misMascotas',
@@ -128,25 +135,27 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         templateUrl: 'app/views/perfil.misMascotas.individual.tpl',
         controller: 'misMascotasIndividualController as misMascotasIndividual',
         resolve: {
-            placaValida: ["placasService", "mascotasService", "$stateParams", "$q", function (placasService, mascotasService, $stateParams, $q) {
+            placaValida: ["placasService", "mascotasService", "$stateParams", "$q", "placasService", function (placasService, mascotasService, $stateParams, $q, placasService) {
                 var defered = $q.defer();
                 var promise = defered.promise;
 
                 placasService.verificarAsignada($stateParams.idPlaca). then(function (res) {
 
-
+ 
 
                     $q.all([
                         mascotasService.datos(res.mascotas_idMascota).then(res),
                         mascotasService.duenosMascota(res.mascotas_idMascota).then(res),
-                        mascotasService.datosMedicos(res.mascotas_idMascota).then(res)
+                        mascotasService.datosMedicos(res.mascotas_idMascota).then(res),
+                        placasService.placasAsignadas(res.mascotas_idMascota).then(res)
                     ]).then(function (resGlobal) {
                         
                         console.log(resGlobal)
                         var datos = {
-                            basico: resGlobal[0][0],
+                            basico: resGlobal[0],
                             duenos: resGlobal[1],
-                            medicos: resGlobal[2][0]
+                            medicos: resGlobal[2][0],
+                            placas: resGlobal[3]
                         }
 
 
@@ -266,7 +275,7 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
                     ]).then(function (resGlobal) {
 
                         var datos = {
-                            basico: resGlobal[0][0],
+                            basico: resGlobal[0],
                             duenos: resGlobal[1],
                             medicos: resGlobal[2]
                         }

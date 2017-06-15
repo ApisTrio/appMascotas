@@ -10,8 +10,9 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
+
     }
     .como-funciona {
     	height: auto !important;
@@ -20,8 +21,17 @@
     .contenedor-navbar{
         display: none
     }
-}
 
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
+    }
+}
 
 
 /* Smartphones (landscape) ----------- */
@@ -47,10 +57,10 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
     	height: auto !important;
 	}
 }
@@ -67,10 +77,10 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
     }
 }
@@ -90,10 +100,10 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
     }
 }
@@ -108,8 +118,8 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
         .como-funciona {
         height: auto !important;
@@ -153,10 +163,10 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
     }
 }
@@ -171,10 +181,10 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
     }
 }
@@ -193,10 +203,10 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
     }
 }
@@ -211,10 +221,10 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
     }
 }
@@ -233,11 +243,32 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -100px;
+    }
+
+    .inicio {
+        background-size: auto 95%;
+        background-position: 36% bottom; 
+    }
+
+    .como-empezar .titulo2 {
+        height: 60px;
+    }
+
+    .como-empezar .parrafo {
+        height: 120px;
+    }
+
+    .img-perrogato {
+        bottom: -16%;
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
@@ -251,11 +282,21 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
     }
 }
 
@@ -273,11 +314,21 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
@@ -291,11 +342,21 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
     }
 }
 
@@ -313,11 +374,21 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
     }
 }
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
@@ -331,10 +402,20 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-        color: white;
-        background-color: rgba(53, 71, 201, 0.6);
+
+
     }
-        .como-funciona {
+    .como-funciona {
         height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
     }
 }

@@ -597,13 +597,15 @@ textarea.erroneo:focus {
 }
 
 .contenido-iphone {
-    padding-top: 10px;
+    padding-top: 50px;
     padding-left: 35px;
     padding-right: 35px;
     height: 450px;
     width: 250px;
     color: white;
-    background-color: #595C8B;
+    background-image: url('../images/phone2.png');
+    background-position: center center;
+    background-size: 100% 100%;
 }
 
 .contenedor-perfil {

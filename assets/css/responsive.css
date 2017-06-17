@@ -1,3 +1,9 @@
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*------------------------ 320px X 480px ---------------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.globitos {
@@ -10,13 +16,200 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-
-
-
     }
     .como-funciona {
     	height: auto !important;
 	}
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -58px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
+    }
+
+    header .contenedor-logo {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+
+
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 320px X 568px and 568px X 320px-----------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+    .contenedor-navbar{
+        display: none
+    }
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 320px X 640px and 640px X 320px-----------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -100px;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    header .contenedor-logo {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+
+    .inicio {
+        background-size: auto 95%;
+        background-position: 36% bottom; 
+    }
+
+    .como-empezar .titulo2 {
+        height: 60px;
+    }
+
+    .como-empezar .parrafo {
+        height: 120px;
+    }
+
+    .img-perrogato {
+        bottom: -16%;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+     .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }   
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -51px;
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
+    }
+
+    header .contenedor-logo {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+    .como-funciona {
+        height: auto !important;
+    }
 
     .contenedor-navbar{
         display: none
@@ -32,19 +225,415 @@
         background-position: 32% 101%;  
     }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
 
 
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-/* Styles */
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
 }
 
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-/* Styles */
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 320px X 640px and 640px X 320px-----------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+
+
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
+    }
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+
+
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .ondas {
+        top: 1px;
+        margin-top: -62px;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .inicio {
+        background-size: auto 82%;
+        background-position: 32% 101%;  
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+
 }
 
 
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 375px X 667px and 667px X 375px-----------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+
+
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .contenedor-navbar{
+        display: none
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+
+
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 412px X 732px and 732px X 412px-----------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 412px) and (max-device-width: 732px) and (orientation : landscape){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 120px;
+    }
+    .ondas {
+        margin-top: -115px;
+    }
+
+    .como-funciona {
+        height: auto !important;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-device-width: 412px) and (max-device-width: 732px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 100px;
+    }
+    .ondas {
+        margin-top: -102px;
+    }
+
+    .como-funciona {
+        height: auto !important;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 414px X 737px and 737px X 414px-----------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 100px;
+    }
+    .ondas {
+        margin-top: -142px;
+    }
+
+    .como-funciona {
+        height: auto !important;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 100px;
+    }
+    .ondas {
+        margin-top: -142px;
+    }
+
+    .como-funciona {
+        height: auto !important;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+
+}
+
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 414px X 736px and 736px X 414px-----------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : landscape){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 120px;
+    }
+    .ondas {
+        margin-top: -120px;
+    }
+
+    .como-funciona {
+        height: auto !important;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
+
+
+
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 768px X 1024px and 1024px X 768px---------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
@@ -83,8 +672,22 @@
     .como-funciona {
         height: auto !important;
     }
-}
 
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+    .ondas {
+        margin-top: -101px;
+    }
+    .como-empezar .parrafo {
+        height: 120px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+}
 
 /**********
 iPad 3
@@ -126,33 +729,13 @@ iPad 3
     }
 }
 
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------------------- 800px X 1200px ---------------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-/* Styles */
-}
-
-
-
-/* Large screens ----------- */
-@media only screen  and (min-width : 1824px) {
-/* Styles */
-}
-
-
-
-/* iPhone 5 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-
-
-/* iPhone 6 ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-device-width : 800px) and (orientation : portrait) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -163,259 +746,28 @@ iPad 3
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-}
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-}
-
-
-
-/* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-}
-@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-}
-
-
-
-/* Samsung Galaxy S3 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-
-    .ondas {
-        top: 1px;
-        margin-top: -100px;
     }
 
     .inicio {
-        background-size: auto 95%;
-        background-position: 36% bottom; 
-    }
-
-    .como-empezar .titulo2 {
-        height: 60px;
+        background-size: auto 80%;
+        background-position: 32% 101%;
     }
 
     .como-empezar .parrafo {
-        height: 120px;
+        height: 100px;
     }
 
-    .img-perrogato {
-        bottom: -16%;
-    }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
     .como-funciona {
         height: auto !important;
     }
 
     .ondas {
-        top: 1px;
-        margin-top: -62px;
+        margin-top: -142px;
     }
 
-    .inicio {
-        background-size: auto 82%;
-        background-position: 32% 101%;  
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
     }
 }
 
 
-
-/* Samsung Galaxy S4 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-
-    .ondas {
-        top: 1px;
-        margin-top: -62px;
-    }
-
-    .inicio {
-        background-size: auto 82%;
-        background-position: 32% 101%;  
-    }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-
-    .ondas {
-        top: 1px;
-        margin-top: -62px;
-    }
-
-    .inicio {
-        background-size: auto 82%;
-        background-position: 32% 101%;  
-    }
-}
-
-
-
-/* Samsung Galaxy S5 ----------- */
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-
-    .ondas {
-        top: 1px;
-        margin-top: -62px;
-    }
-
-    .inicio {
-        background-size: auto 82%;
-        background-position: 32% 101%;  
-    }
-}
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-
-
-    }
-    .como-funciona {
-        height: auto !important;
-    }
-
-    .ondas {
-        top: 1px;
-        margin-top: -62px;
-    }
-
-    .inicio {
-        background-size: auto 82%;
-        background-position: 32% 101%;  
-    }
-}

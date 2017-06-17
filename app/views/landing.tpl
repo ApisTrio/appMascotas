@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 margin-in pointer" ng-repeat="perdida in landing.perdidas" ui-sref="placa({idPlaca: perdida.codigo})">
+            <div class="col s12 m6 l4 margin-in pointer" ng-repeat="perdida in landing.perdidas" ui-sref="placa({idPlaca: perdida.codigo})">
                 <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
                 <div class="center-align negrita">
                     <div class="titulo2">{{perdida.nombre}}</div>

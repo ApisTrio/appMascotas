@@ -130,12 +130,10 @@
         </div>
         <div class="row">
             <div class="col s12 m6 l4 margin-in pointer" ng-repeat="perdida in landing.perdidas" ui-sref="placa({idPlaca: perdida.codigo})">
-                <div class="center-align">
+           
                     <div class="circle foto-mascota" style="background-image:url(/apiMascotas/public/images/mascotas/{{perdida.foto}});">
                     </div>
-                </div>
-            <div class="col s12 m6 l4 margin-in pointer" ng-repeat="perdida in landing.perdidas" ui-sref="placa({idPlaca: perdida.codigo})">
-                <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
+            
                 <div class="center-align negrita">
                     <div class="titulo2">{{perdida.nombre}}</div>
                     <div class="texto-pequeno">{{landing.formatear(perdida.edad)}}</div>

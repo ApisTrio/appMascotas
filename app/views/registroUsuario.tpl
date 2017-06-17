@@ -18,14 +18,14 @@
 
     <div ng-form="formPaso1" ng-switch-when="1">
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita">
+            <div class="col s10 offset-s1 m10 offset-m1 negrita">
                 Tu información de contacto será mostrada públicamente, para que puedan contactar contigo si encuentra a tu mascota.
             </div>
         </div>
         <div class="row">
 
             <!------ Nombre ------>
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Nombre *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.nombre.$pristine || formPaso1.nombre.$valid}">
@@ -41,7 +41,7 @@
             </div>
 
             <!------ Apellido ------>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Apellido *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.apellido.$pristine || formPaso1.apellido.$valid}">
@@ -58,7 +58,7 @@
         <div class="row">
 
             <!------ Email ------>
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">E-mail *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.email.$pristine || formPaso1.email.$valid}">
@@ -80,7 +80,7 @@
 
 
             <!------ Usuario ------>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Nombre de usuario *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.usuario.$pristine || formPaso1.usuario.$valid}">
@@ -103,7 +103,7 @@
 
 
             <!------ Contraseña ------>
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Contraseña *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.clave.$pristine || formPaso1.clave.$valid}">
@@ -118,7 +118,7 @@
             </div>
 
             <!------ Verificar Contraseña ------>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Verificar contraseña *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.clave2.$pristine || formPaso1.clave2.$valid}">
@@ -136,13 +136,13 @@
 
 
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s10 offset-s1 m10 offset-m1">
                 * Dato requerido
             </div>
         </div>
 
         <div class="row">
-            <div class="col s12 m10 offset-m1 condiciones-formulario">
+            <div class="col s10 offset-s1 m10 offset-m1 condiciones-formulario">
                 <input ng-model="registro.terminos" type="checkbox" class="filled-in" id="terminos" name="terminos" required/>
                 <label for="terminos">He leido y acepto los <a href="/terminos-condiciones-dinbeat-qr">términos y condiciones</a>, así como las <a href="/politica-privacidad-dinbeat-qr">politicas de privacidad</a> de la empresa.</label>
             </div>
@@ -157,12 +157,12 @@
 
     <div ng-form="formPaso2" ng-switch-when="2">
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita">
+            <div class="col s10 offset-s1 m10 offset-m1 negrita">
                 Introduce los datos de tu mascota.
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Nombre de tu mascota *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.nombreMascota.$pristine || formPaso2.nombreMascota.$valid}">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Foto</div>
                     <div class="input-formulario text-center">
@@ -185,7 +185,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Género *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.generoMasccota.$pristine || formPaso2.generoMasccota.$valid}">
@@ -200,7 +200,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Fecha de Nacimiento *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.fecha.$pristine || formPaso2.fecha.$valid}">
@@ -214,7 +214,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Especie *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.especie.$pristine || formPaso2.especie.$valid}">
@@ -228,7 +228,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Raza *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.raza.$pristine || formPaso2.raza.$valid}">
@@ -244,13 +244,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Número de chip</div>
                     <div class="input-formulario"><input ng-model="registro.datos.mascota.chip" placeholder="Número de chip" type="text"></div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Peso</div>
                     <div class="input-formulario">
@@ -263,7 +263,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m1 offset-m1">
+            <div class="col s12 m10 offset-m1">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Comentarios</div>
                     <div class="input-formulario">
@@ -272,7 +272,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m10 offset-m1">
+                <div class="col s10 offset-s1 m10 offset-m1">
                     * Dato requerido
                 </div>
             </div>
@@ -286,12 +286,12 @@
     <div ng-form="formPaso3" ng-switch-when="3">
 
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita">
+            <div class="col s10 offset-s1 m10 offset-m1 negrita">
                 Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a href="">tienda</a>.
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m10 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Introduce el número de tu placa *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso3.numeroPlaca.$pristine || formPaso3.numeroPlaca.$valid}">
@@ -313,10 +313,10 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m2 offset-m1">
+            <div class="col s10 offset-s1 m2 offset-m1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s12 m2">
+            <div class="col s10 offset-s1 m2">
 
                 <cdx-formas data-seleccionado="registro.seleccionado" class="margin-bottom-30"></cdx-formas>
 
@@ -324,13 +324,13 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m10 offset-m1 center-align">
+            <div class="col s10 offset-s1 m10 offset-m1 center-align">
                 <cdx-modelos ng-model="registro.datos.placa.modelos_idModelo" data-seleccionado="{{registro.seleccionado}}" class="margin-bottom-30"></cdx-modelos>
             </div>
         </div>
 
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s10 offset-s1 m10 offset-m1">
                 * Dato requerido
             </div>
         </div>
@@ -343,7 +343,7 @@
 
     <div ng-form="formPaso4" ng-switch-when="4" ng-init="registro.datos.dueno.email = registro.datos.usuario.emailU">
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita">
+            <div class="col s10 offset-s1 m10 offset-m1 negrita">
                 Tu información de contacto será mostrada públicamente, para que puedan contactar contigo si encuentran a tu mascota.
             </div>
         </div>
@@ -351,7 +351,7 @@
         <div class="row">
 
             <!--- NOMBRE DEL CONTACTO --->
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Nombre *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.nombre.$valid}">
@@ -366,7 +366,7 @@
             </div>
 
             <!--- APELLIDO --->
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Apellido *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.nombre.$valid}">
@@ -384,7 +384,7 @@
         <div class="row">
 
             <!-- TELEFONO -->
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Télefonos de contacto *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.telefono.$pristine || formPaso4.telefono.$valid}">
@@ -397,7 +397,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">E-mail *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.nombre.$valid}">
@@ -415,7 +415,7 @@
         <div class="row">
 
             <!-- FECHA -->
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Fecha de Nacimiento</div>
                 <div class="input-formulario">
                     <div class="margin-bottom-30">
@@ -425,7 +425,7 @@
             </div>
 
             <!-- SEXO -->
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Sexo</div>
                 <div class="input-formulario">
                     <div class="margin-bottom-30">
@@ -441,7 +441,7 @@
         <div class="row">
 
             <!-- PAIS -->
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">País *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.pais.$pristine || formPaso4.pais.$valid}">
@@ -457,7 +457,7 @@
             </div>
 
             <!-- PROVINCIA -->
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Provincia *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.provincia.$pristine || formPaso4.provincia.$valid}">
@@ -475,7 +475,7 @@
         <div class="row">
 
             <!-- CIUDAD -->
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="campo-formulario">Ciudad *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.ciudad.$pristine || formPaso4.ciudad.$valid}">
@@ -491,7 +491,7 @@
             </div>
 
             <!-- DIRECCION -->
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="campo-formulario">Dirección</div>
                 <div class="input-formulario">
                     <div class="margin-bottom-30">
@@ -503,7 +503,7 @@
         <div class="row">
 
             <!-- CODIGO POSTAL -->
-            <div class="col s12 m3 offset-m1">
+            <div class="col s11 offset-s1 m4 offset-m1">
                 <div class="campo-formulario">Código postal *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.postcode.$pristine || formPaso4.postcode.$valid}">
@@ -528,7 +528,7 @@
         </div>
 
         <div class="row" ng-show="registro.datos.duenos.length">
-            <div class="col s12 m10 offset-m1 negrita">
+            <div class="col s10 offset-s1 m10 offset-m1 negrita">
                 <h4 class="titulo2 negrita interlineado20 c2">Información de otros contactos</h4>
             </div>
         </div>
@@ -540,7 +540,7 @@
             <div class="row">
 
                 <!--- NOMBRE DEL CONTACTO --->
-                <div class="col s12 m4 offset-m1">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                     <div class="campo-formulario">Nombre *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.nombre.$pristine || duenoExtraForm.nombre.$valid}">
@@ -555,7 +555,7 @@
                 </div>
 
                 <!--- APELLIDO --->
-                <div class="col s12 m4 offset-m2">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                     <div class="campo-formulario">Apellido *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.apellido.$pristine || duenoExtraForm.apellido.$valid}">
@@ -573,7 +573,7 @@
             <div class="row">
 
                 <!-- TELEFONO -->
-                <div class="col s12 m4 offset-m1">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                     <div class="campo-formulario">Télefonos de contacto *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.telefono.$pristine || duenoExtraForm.telefono.$valid}">
@@ -586,7 +586,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m4 offset-m2">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                     <div class="campo-formulario">E-mail *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.email.$pristine || duenoExtraForm.email.$valid}">
@@ -604,7 +604,7 @@
             <div class="row">
 
                 <!-- FECHA -->
-                <div class="col s12 m4 offset-m1">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                     <div class="campo-formulario">Fecha de Nacimiento</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.fecha.$pristine || duenoExtraForm.fecha.$valid}">
@@ -614,7 +614,7 @@
                 </div>
 
                 <!-- SEXO -->
-                <div class="col s12 m4 offset-m2">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                     <div class="campo-formulario">Sexo</div>
                     <div class="input-formulario">
                         <div class="margin-bottom-30">
@@ -630,7 +630,7 @@
             <div class="row">
 
                 <!-- PAIS -->
-                <div class="col s12 m4 offset-m1">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                     <div class="campo-formulario">País *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.pais.$pristine || duenoExtraForm.pais.$valid}">
@@ -646,7 +646,7 @@
                 </div>
 
                 <!-- PROVINCIA -->
-                <div class="col s12 m4 offset-m2">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                     <div class="campo-formulario">Provincia *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.provincia.$pristine || duenoExtraForm.provincia.$valid}">
@@ -664,7 +664,7 @@
             <div class="row">
 
                 <!-- CIUDAD -->
-                <div class="col s12 m4 offset-m1">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                     <div class="campo-formulario">Ciudad *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.ciudad.$pristine || duenoExtraForm.ciudad.$valid}">
@@ -680,7 +680,7 @@
                 </div>
 
                 <!-- DIRECCION -->
-                <div class="col s12 m4 offset-m2">
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Dirección</div>
                         <div class="input-formulario">
@@ -692,7 +692,7 @@
             <div class="row">
 
                 <!-- CODIGO POSTAL -->
-                <div class="col s12 m3 offset-m1">
+                <div class="col s11 offset-s1 m4 offset-m1">
                     <div class="campo-formulario">Código postal *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.postcode.$pristine || duenoExtraForm.postcode.$valid}">
@@ -706,7 +706,7 @@
                 </div>
 
 
-                <div class="col s12 m4 offset-m3">
+                <div class="col s11 offset-s1 m4 offset-m3">
                     <div class="margin-bottom-30">
                         <button class="boton-neutro" ng-click="registro.datos.duenos.splice($index, 1)">Eliminar este contacto</button>
                     </div>
@@ -726,14 +726,14 @@
 
 
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s10 offset-s1 m10 offset-m1">
                 <div class="boton-agregar" ng-click="registro.datos.duenos.push({nombre: null, apellido: null, telefono: null, email: null, nacimiento: null, direccion: null, pais: null, provincia: null, ciudad: null, codigo_postal: null})"></div> Agregar persona de contacto
             </div>
         </div>
 
 
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s10 offset-s1 m10 offset-m1">
                 * Dato requerido
             </div>
         </div>
@@ -776,7 +776,7 @@
     <!--------- SIGUIENTE -------->
 
     <div class="row">
-        <div class="col s4 offset-s4 botones-formulario" ng-show="registro.pasos < 5 && registro.listo">
+        <div class="col s10 offset-s1 m4 offset-m4 botones-formulario" ng-show="registro.pasos < 5 && registro.listo">
             <button class="boton-neutro" ui-sref="landing">Cancelar</button>
             <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid, registro.datos)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>
         </div>

@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row margin-out">
-        <div class="col s12 m2 margin-in pointer" ng-repeat="perdida in mascotasPerdidas.perdidas | limitTo: 10" ng-class="{'offset-m1': $first || ($index == 5) }" ui-sref="placa({idPlaca: perdida.codigo})">
+        <div class="col s12 m6 l3 xl2 margin-in pointer" ng-repeat="perdida in mascotasPerdidas.perdidas | limitTo: 10" ng-class="{'offset-m1': $first || ($index == 5) }" ui-sref="placa({idPlaca: perdida.codigo})">
             <div class="center-align">
                 <div class="circle foto-mascota" style="background-image:url(/apiMascotas/public/images/mascotas/{{perdida.foto}});">
                 </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="row margin-out">
-        <div class="col s12 m2 margin-in pointer" ng-repeat="encontrada in mascotasPerdidas.encontradas | limitTo: 10" ng-class="{'offset-m1': $first || ($index == 5) }" ui-sref="placa({idPlaca: encontrada.codigo})">
+        <div class="col s12 m6 l3 xl2margin-in pointer" ng-repeat="encontrada in mascotasPerdidas.encontradas | limitTo: 10" ng-class="{'offset-m1': $first || ($index == 5) }" ui-sref="placa({idPlaca: encontrada.codigo})">
             <div class="center-align">
                 <div class="circle foto-mascota" style="background-image:url(/apiMascotas/public/images/mascotas/{{encontrada.foto}});">
                 </div>

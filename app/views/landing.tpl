@@ -54,7 +54,7 @@
         </div>
         <div class="row">
 
-            <div class="col s12 m12 l6">        
+            <div class="col s12 m12 l6">
                 <div class="col s12 m6 l6 margin-in">
                     <div class="center-align"><img class="responsive-img" src="assets/images/icons/crea_un_perfil.png"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Crea un perfil y registra tu placa</div>
@@ -104,7 +104,7 @@
                         <div class="col s12 m4 margin-in">
                             <div class="center-align"><img src="assets/images/icons/profile_dog.png" width="45px" height="45px"></div>
 
-                            <div class="negrita center-align titulo2 interlineado20 c2" >2. Crea el perfil de tu mascota</div>
+                            <div class="negrita center-align titulo2 interlineado20 c2">2. Crea el perfil de tu mascota</div>
                             <div class="center-align texto-pequeno negrita parrafo">Introduce todos los datos relevantes de tu mascota, información veterinario, personas de contacto alternativas, etc. <br>Registra tantas placas como desees</div>
                             <div class="center-align"><button class="boton-verde-negativo" ui-sref="registroUsuario">CREAR CUENTA</button></div>
                         </div>
@@ -130,7 +130,10 @@
         </div>
         <div class="row">
             <div class="col s12 m4 margin-in pointer" ng-repeat="perdida in landing.perdidas" ui-sref="placa({idPlaca: perdida.codigo})">
-                <div class="center-align"><img class="circle" src="assets/images/canela.png"></div>
+                <div class="center-align">
+                    <div class="circle foto-mascota" style="background-image:url(/apiMascotas/public/images/mascotas/{{perdida.foto}});">
+                    </div>
+                </div>
                 <div class="center-align negrita">
                     <div class="titulo2">{{perdida.nombre}}</div>
                     <div class="texto-pequeno">{{landing.formatear(perdida.edad)}}</div>

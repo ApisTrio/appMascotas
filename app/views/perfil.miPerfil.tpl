@@ -106,7 +106,7 @@
 </section>
 <section>
     <div class="row">
-        <div class="col s12 offset-s1">
+        <div class="col s10 offset-s1">
             <div ui-sref="perfil.eliminarCuenta" class="eliminar-pequeno">Eliminar cuenta</div>
         </div>
     </div>

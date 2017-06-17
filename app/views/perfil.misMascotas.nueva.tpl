@@ -30,8 +30,8 @@
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Foto</div>
                     <div class="input-formulario text-center">
-                        <input class="ng-hide" id="input-file-id" type="file" accept="image/*" />
-                        <label for="input-file-id" class="boton-verde-negativo">CARGAR FOTO</label>
+                        
+                        <label for="input-file-id" class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="500KB" ngf-min-height="100">CARGAR FOTO</label>
                     </div>
                 </div>
             </div>
@@ -173,7 +173,7 @@
 
         <div class="row">
             <div class="col s12 m10 offset-m1 center-align">
-                <cdx-modelos ng-model="misMascotasNueva.datos.modelos_idModelo" class="margin-bottom-30"></cdx-modelos>
+                <cdx-modelos ng-model="misMascotasNueva.datos.modelos_idModelo" data-seleccionado="{{misMascotasNueva.seleccionado}}"  required class="margin-bottom-30"></cdx-modelos>
             </div>
         </div>
 

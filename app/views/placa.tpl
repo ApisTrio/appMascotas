@@ -12,7 +12,8 @@
     <div class="row">
         <div class="col s12 center-align">
             <div class="center-align">
-                <img class="circle" src="assets/images/tobi.png">
+                <div class="circle foto-mascota" style="background-image:url(/apiMascotas/public/images/mascotas/{{placa.datos.basico.foto}});">
+                </div>
             </div>
         </div>
     </div>
@@ -93,25 +94,24 @@
     <div class="row">
         <div class="col s4 offset-s1">
             <div class="titulo-info">Fecha de la última vacuna</div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Parbovirosis</div>
-                <div class="col s6">12-03-2016</div>
+            <div class="row fechas-vacunas" ng-repeat="vacuna in placa.datos.vacunas">
+                <div class="col s6">{{vacuna.vacuna}}</div>
+                <div class="col s6">{{vacuna.fecha}}</div>
             </div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Rabia</div>
-                <div class="col s6">12-03-2016</div>
+            <div class="row fechas-vacunas" ng-if="!placa.datos.vacunas.length">
+                <div class="col s12">...</div>
             </div>
             <div class="divider"></div>
         </div>
         <div class="col s4 offset-s2">
             <div class="titulo-info">Recordatorio</div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Parbovirosis</div>
-                <div class="col s6">12-03-2017</div>
+            <div class="row fechas-vacunas" ng-repeat="vacuna in placa.datos.vacunas">
+                <div class="col s6">{{vacuna.vacuna}}</div>
+                <div class="col s6" ng-if="vacuna.fecha_recordatorio">{{vacuna.fecha_recordatorio}}</div>
+                <div class="col s6" ng-if="!vacuna.fecha_recordatorio">...</div>
             </div>
-            <div class="row fechas-vacunas">
-                <div class="col s6">Rabia</div>
-                <div class="col s6">12-03-2017</div>
+            <div class="row fechas-vacunas" ng-if="!placa.datos.vacunas.length">
+                <div class="col s12">...</div>
             </div>
             <div class="divider"></div>
         </div>

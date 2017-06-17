@@ -1,4 +1,4 @@
-angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial", "ui.materialize", "uiSwitch", "ngMap"])
+angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial", "ui.materialize", "uiSwitch", "ngMap", "ngFileUpload"])
 
 .config(["$stateProvider", "$locationProvider", function ($stateProvider, $locationProvider) {
 
@@ -144,18 +144,14 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
  
 
                     $q.all([
-                        mascotasService.datos(res.mascotas_idMascota).then(res),
-                        mascotasService.duenosMascota(res.mascotas_idMascota).then(res),
-                        mascotasService.datosMedicos(res.mascotas_idMascota).then(res),
-                        placasService.placasAsignadas(res.mascotas_idMascota).then(res)
+                        mascotasService.datos(res.mascotas_idMascota).then(res), mascotasService.duenosMascota(res.mascotas_idMascota).then(res), placasService.placasAsignadas(res.mascotas_idMascota).then(res)
                     ]).then(function (resGlobal) {
                         
                         console.log(resGlobal)
                         var datos = {
                             basico: resGlobal[0],
                             duenos: resGlobal[1],
-                            medicos: resGlobal[2][0],
-                            placas: resGlobal[3]
+                            placas: resGlobal[2]
                         }
 
 
@@ -270,14 +266,12 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
                     $q.all([
                         mascotasService.datos(res.mascotas_idMascota).then(res),
-                        mascotasService.duenosMascota(res.mascotas_idMascota).then(res),
-                        mascotasService.datosMedicos(res.mascotas_idMascota).then(res)
+                        mascotasService.duenosMascota(res.mascotas_idMascota).then(res)
                     ]).then(function (resGlobal) {
 
                         var datos = {
                             basico: resGlobal[0],
-                            duenos: resGlobal[1],
-                            medicos: resGlobal[2]
+                            duenos: resGlobal[1]
                         }
 
 

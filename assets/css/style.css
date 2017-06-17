@@ -260,6 +260,15 @@ table.table-admin td {
 
 /* ELEMENTOS */
 
+.foto-mascota {
+    height: 200px;
+    width: 200px;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: auto
+}
+
 .globitos {
     padding: 22px;
     background-color: rgba(89, 92, 139, 0.76);
@@ -399,12 +408,14 @@ table.table-admin td {
     max-width: calc(100% - 60px)
 }
 
-.desactivar-alarma-perfil, .agregar-placa-perfil {
+.desactivar-alarma-perfil,
+.agregar-placa-perfil {
     display: inline-block;
     cursor: pointer;
 }
 
-.desactivar-alarma-perfil img, .agregar-placa-perfil img {
+.desactivar-alarma-perfil img,
+.agregar-placa-perfil img {
     vertical-align: middle;
     height: 20px;
 }
@@ -584,20 +595,23 @@ textarea.erroneo:focus {
 }
 
 .placas-mascota>.placa-individual {
-    display: inline-block
+    display: inline-block;
+    font-size: 12px;
 }
 
 .placas-mascota>.placa-individual>img {
-    width: 50px;
+    width: 45px;
     vertical-align: middle;
 }
 
-.placas-mascota>.placa-individual>div {
+.placas-mascota .divisor-placas {
     display: inline-block;
     width: 2px;
     height: 31px;
     background: #aeaeae;
     vertical-align: middle;
+    margin-left: 7px;
+    margin-right: 7px;
 }
 
 

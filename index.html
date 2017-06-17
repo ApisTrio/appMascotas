@@ -26,6 +26,9 @@
     <script src="modulos/angular-aria/angular-aria.min.js"></script>
     <script src="modulos/angular-ui-switch/angular-ui-switch.js"></script>
     <script src="modulos/angular-google-maps/build/scripts/ng-map.min.js"></script>
+     <script src="modulos/angular-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="modulos/angular-file-upload/ng-file-upload.min.js"></script>
+   
 
 
     <!--Librerias 3r party angularJS -->
@@ -158,10 +161,10 @@
     <script type="text/ng-template" id="cdx.modelos.html">
 
         <div>
-            <div ng-repeat="modelo in modelos" ng-click="seleccionar($index)">
-                <label for="{{modelo.id}}">
-                    <img ng-src="{{modelo.url}}" ng-class="{'activo': modelo.activo}">
-                    <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.id}}" name="placa" ng-value="modelo.id" ng-change="actualizar()">
+            <div ng-repeat="modelo in modelos[seleccionado]" ng-click="seleccionar($index, seleccionado)">
+                <label for="{{modelo.idModelo}}">
+                    <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
+                    <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
                 </label>
             </div>
         </div>
@@ -171,4 +174,6 @@
 
 </body>
 
+    
+    <!---- DESARROLLADO POR ALGUIEN ----->
 </html>

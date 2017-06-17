@@ -1,26 +1,35 @@
 angular.module("mascotas")
 
-.controller("misMascotasPlacaController", [function () {
-    
+.controller("misMascotasPlacaController", ["mascotasService", "placasService", "usuariosService",function (mascotasService, placasService, usuariosService) {
+
     var cdx = this;
+
+    cdx.mascotas = [];
+
+    cdx.placa = {};
+
     
-    cdx.avanzar = function(valido, datos){
+    mascotasService.mascotasDueno(usuariosService.autorizado().dueno.idDueno).then(function(res){
         
-        if(valido){
+        cdx.mascotas = res;
+        
+    });
+    
+    cdx.avanzar = function (valido, datos) {
+
+        if (valido) {
             
-            if(cdx.pasos < 2){
+            placasService.asignar(datos).then(function(res){
                 
-                cdx.pasos = cdx.pasos + 1;
-            }
-            
-            else{
+               cdx.pasos = cdx.pasos + 1; 
                 
-                
-                
-            }
-            
+            })
+
         }
-        
+
     }
-    
+
+
+
+
 }])

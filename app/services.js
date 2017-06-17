@@ -34,22 +34,18 @@ angular.module("mascotas")
 
                 if (res.data.result) {
 
-                    console.log("encontrado")
                     defered.resolve();
 
                 } else {
 
-                    console.log(" no encontrado");
+
                     defered.reject();
                 }
 
             } else {
 
-                console.log("fallo de consulta")
                 defered.reject();
             }
-
-
 
         })
         return promise;
@@ -62,27 +58,21 @@ angular.module("mascotas")
         var defered = $q.defer();
         var promise = defered.promise;
 
-
-
         $http.get(apiRootFactory + "placas/asignada/" + idPlaca).then(function (res) {
 
             ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
-                console.log("placa ocupada o invalida")
                 defered.reject();
 
             } else {
 
-                console.log("placa valida")
                 defered.resolve();
             }
 
         });
 
-
         return promise;
-
 
     }
 
@@ -92,8 +82,6 @@ angular.module("mascotas")
 
         var defered = $q.defer();
         var promise = defered.promise;
-
-
 
         $http.get(apiRootFactory + "placas/creada/" + idPlaca).then(function (res) {
 
@@ -109,11 +97,9 @@ angular.module("mascotas")
 
         });
 
-
         return promise;
 
     }
-
 
 
 }])
@@ -162,14 +148,12 @@ angular.module("mascotas")
         .then(function (res) {
 
             defered.resolve();
-            console.log(res)
 
         })
 
         .catch(function (res) {
 
             defered.reject();
-            console.log(res)
 
         })
 
@@ -181,8 +165,6 @@ angular.module("mascotas")
 
         var defered = $q.defer();
         var promise = defered.promise;
-
-
 
         $http.post(apiRootFactory + "usuarios/login", {
             usuario: usuario,
@@ -234,19 +216,15 @@ angular.module("mascotas")
 
         }
 
-
     }
 
 
     this.salir = function () {
 
-
         $rootScope.objetoToken = false;
         $window.localStorage.removeItem('cdxToken');
 
     }
-
-
 
 }])
 
@@ -255,11 +233,52 @@ angular.module("mascotas")
 ////// MASCOTAS////////
 ///////////////////////
 
-.service("mascotasService", ["$http", "$q", "apiRootFactory", "$httpParamSerializer", "usuariosService", function ($http, $q, apiRootFactory, $httpParamSerializer, usuariosService) {
+.service("mascotasService", ["$http", "$q", "apiRootFactory", "$httpParamSerializer", "usuariosService", "Upload", function ($http, $q, apiRootFactory, $httpParamSerializer, usuariosService, Upload) {
+
+    this.foto = function (imagen, tipo) {
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        Upload.upload({
+            url: apiRootFactory + 'subir-imagen',
+            data: {
+                imagen: imagen,
+                tipo: tipo,
+                path: 'mascotas'
+            },
+        }).then(function(res){
+            
+            defered.resolve(res.data);
+        })
+    
+        return promise;
+    }
+
+    this.vacunas = function (idMascota) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.get(apiRootFactory + "/informacion/vacunas/" + idMascota).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+        return promise;
+
+    }
 
     this.nuevaEncontrada = function (idMascota) {
 
-        
+
         var defered = $q.defer();
         var promise = defered.promise;
 
@@ -280,12 +299,6 @@ angular.module("mascotas")
                 defered.reject();
             }
 
-        })
-        
-        .catch(function(res){
-            
-            console.log("hola aqui")
-            
         })
 
         return promise;
@@ -352,8 +365,6 @@ angular.module("mascotas")
 
         datos.idDueno = usuariosService.autorizado().dueno.idDueno;
 
-        ////////////ELIMINAR///////////////
-        datos.foto = "algo";
 
 
         $http.post(apiRootFactory + "mascotas/registro", $httpParamSerializer(datos), {
@@ -380,7 +391,7 @@ angular.module("mascotas")
                 }).then(function (resPlacaAsignada) {
 
                     if (resPlacaAsignada.data.response) {
-                        console.log(resPlacaAsignada.data)
+                        
                         defered.resolve(resPlacaAsignada.data.result.codigo);
 
                     } else {
@@ -583,13 +594,41 @@ angular.module("mascotas")
 
 
 
-}])
+            }])
 
 ///////////////////////
 ////// PLACAS /////////
 ///////////////////////
 
-.service("placasService", ["$http", "$q", "apiRootFactory", function ($http, $q, apiRootFactory) {
+.service("placasService", ["$http", "$q", "apiRootFactory", "$httpParamSerializer", function ($http, $q, apiRootFactory, $httpParamSerializer) {
+
+
+    this.asignar = function (datos) {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "placas/asignar", $httpParamSerializer(datos), {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
 
     this.verificarAsignada = function (idPlaca) {
 
@@ -751,6 +790,43 @@ angular.module("mascotas")
 
 }])
 
+/////////////////
+////MODELOS//////
+/////////////////
+
+.service("modelosService", ["apiRootFactory", "$http", "$q", "$httpParamSerializer", function (apiRootFactory, $http, $q, $httpParamSerializer) {
+
+
+    this.listaForma = function (forma) {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "/modelos/forma/" + forma).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+
+    }
+
+
+}])
 
 
 .factory('AuthInterceptor', function ($window, $q, $rootScope) {
@@ -803,8 +879,6 @@ angular.module("mascotas")
         }
     };
 })
-
-
 
 
 

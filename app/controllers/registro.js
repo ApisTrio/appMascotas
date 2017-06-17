@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("registroController", ["usuariosService", "razasService", "especiesService",function (usuariosService, razasService, especiesService) {
+.controller("registroController", ["usuariosService", "razasService", "especiesService", "mascotasService",function (usuariosService, razasService, especiesService, mascotasService) {
 
     var cdx = this;
     
@@ -24,21 +24,29 @@ angular.module("mascotas")
 
                 if (cdx.listo) {
                     
-                    cdx.listo = false;
+                  if (cdx.imagen) {
 
-                    usuariosService.registro(datos)
+                    mascotasService.foto(cdx.imagen, "." + cdx.imagen.type.split("/")[1]).then(function (res) {
 
-                    .then(function (res) {
+                        datos.mascota.foto = res;
+
+                        usuariosService.registro(datos).then(function (res) {
+
+                            cdx.pasos = cdx.pasos + 1;
+
+                        })
+
+                    })
+
+                } else {
+
+                    usuariosService.registro(datos).then(function (res) {
 
                         cdx.pasos = cdx.pasos + 1;
 
                     })
 
-                    .catch(function (res) {
-
-                        console.log("error")
-
-                    })
+                }
 
                 }
 

@@ -28,16 +28,37 @@ angular.module("mascotas")
                 cdx.pasos = cdx.pasos + 1;
 
             } else {
-                
-                console.log(datos)
 
-                mascotasService.crear(datos).then(function (res) {
+                if (cdx.imagen) {
 
-                    cdx.pasos = cdx.pasos + 1;
-                    
-                    cdx.perfilMascota = res;
+                    mascotasService.foto(cdx.imagen, "." + cdx.imagen.type.split("/")[1]).then(function (res) {
 
-                })
+                        datos.foto = res;
+
+                        mascotasService.crear(datos).then(function (res) {
+
+                            cdx.pasos = cdx.pasos + 1;
+
+                            cdx.perfilMascota = res;
+
+                        })
+
+
+                    })
+
+                } else {
+
+                    mascotasService.crear(datos).then(function (res) {
+
+                        cdx.pasos = cdx.pasos + 1;
+
+                        cdx.perfilMascota = res;
+
+                    })
+
+                }
+
+
             }
 
         }

@@ -49,7 +49,7 @@
 
         <div class="row">
             <div class="col s10 offset-s1 center-align">
-                <h4 class="titulo2 negrita interlineado20 c2">Has activado la alerta de mascota perdida</h4>
+                <h4 class="titulo2 negrita interlineado20 c2">Has desactivado la alerta de mascota perdida</h4>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
     <div class="row" ng-if="desactivarAlerta.opciones !=2">
         <div class="col s4 offset-s4 botones-formulario">
             <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-            <button class="boton-verde" ng-click="desactivarAlerta.avanzar(alertaForm.$valid, desactivarAlerta.datos.idMascota)">DESACTIVAR</button>
+            <button class="boton-verde" ng-click="desactivarAlerta.avanzar(alertaForm.$valid, desactivarAlerta.datos.idMascota)" ng-class="{'bloqueado' : !alertaForm.$valid }" >DESACTIVAR</button>
         </div>
 
     </div>

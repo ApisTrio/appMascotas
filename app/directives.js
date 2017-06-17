@@ -70,7 +70,6 @@ angular.module("mascotas")
                         normal: "assets/images/forms/modelo_pajarita.png",
                         selected: "assets/images/forms/modelo_pajarita_selected.png"
                     },
-                    id: 2,
                     forma: "pajarita"
 
                 },
@@ -79,7 +78,6 @@ angular.module("mascotas")
                         normal: "assets/images/forms/modelo_redonda.png",
                         selected: "assets/images/forms/modelo_redonda_selected.png"
                     },
-                    id: 1,
                     forma: "redonda"
 
                 }
@@ -125,79 +123,48 @@ angular.module("mascotas")
 
 }])
 
-.directive('cdxModelos', function () {
+.directive('cdxModelos', ["modelosService", function (modelosService) {
     return {
         require: "ngModel",
         scope: true,
         templateUrl: 'cdx.modelos.html',
-        controller: ["$scope", function ($scope) {
+        controller: ["$scope", "modelosService", function ($scope, modelosService) {
+
+            $scope.modelos = {
+                pajarita: [],
+                redonda: []
+            }
+
+            angular.forEach($scope.modelos, function (valor, llave) {
+                modelosService.listaForma(llave).then(function (res) {
+
+
+                    $scope.modelos[llave] = res;
+                    if ($scope.modelos[llave].length && $scope.modelos[llave] == "pajarita") {
+
+                        $scope.modelos[llave][0].activo = true;
+                        $scope.valorCorbata = $scope.modelos[llave][0].idModelo;
+                    }
+
+                })
+
+
+            })
 
 
 
 
-            $scope.modelos = [
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-01.png",
-                    forma: "pajarita",
-                    id: 1
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-04.png",
-                    forma: "pajarita",
-                    id: 2
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-03.png",
-                    forma: "pajarita",
-                    id: 3
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-05.png",
-                    forma: "pajarita",
-                    id: 4
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-06.png",
-                    forma: "pajarita",
-                    id: 5
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-07.png",
-                    forma: "pajarita",
-                    id: 6
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-08.png",
-                    forma: "pajarita",
-                    id: 7
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-09.png",
-                    forma: "pajarita",
-                    id: 8
-                },
-                {
-                    url: "assets/images/placas/Pajaritas/placas_iconos-10.png",
-                    forma: "pajarita",
-                    id: 9
-                }
-            ];
+            $scope.seleccionar = function (indice, seleccionado) {
 
-
-            $scope.modelos[0].activo = true;
-            $scope.valorCorbata = $scope.modelos[0].id;
-
-            $scope.seleccionar = function (indice) {
-
-                angular.forEach($scope.modelos, function (valor, llave) {
+                angular.forEach($scope.modelos[seleccionado], function (valor, llave) {
 
                     if (llave == indice) {
 
-                        $scope.modelos[llave].activo = true;
+                        $scope.modelos[seleccionado][llave].activo = true;
 
                     } else {
 
-                        $scope.modelos[llave].activo = false;
+                        $scope.modelos[seleccionado][llave].activo = false;
 
                     }
 
@@ -211,6 +178,8 @@ angular.module("mascotas")
         }],
         link: function (scope, element, attrs, ngModel) {
 
+
+
             if (!ngModel) return;
 
             scope.actualizar = function () {
@@ -221,12 +190,50 @@ angular.module("mascotas")
                 scope.valorCorbata = ngModel.$modelValue;
             };
 
-            ngModel.$setViewValue(scope.valorCorbata);
 
+
+            ngModel.$validators.required = function (modelValor, viewValor) {
+
+
+                if (ngModel.$isEmpty(modelValor)) {
+                    // consider empty models to be valid 
+                    return false;
+                } else {
+
+                    return true;
+                }
+
+            };
+
+
+
+            attrs.$observe("seleccionado", function (nuevoValor, viejoValor) {
+
+                if (nuevoValor !== viejoValor) {
+
+                    scope.seleccionado = nuevoValor;
+
+                    angular.forEach(scope.modelos[scope.seleccionado], function (valor, llave) {
+
+                        if (scope.modelos[scope.seleccionado][llave].activo == true) {
+
+                            scope.modelos[scope.seleccionado][llave].activo = false;
+
+                        }
+                        
+
+                    })
+                    
+                    ngModel.$setViewValue(null)
+
+                }
+
+
+            })
 
         }
     }
-})
+}])
 
 //validaciones
 .directive('cdxValidacion', function ($q, validarService) {

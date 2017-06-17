@@ -59,7 +59,7 @@
             <div class="margin-bottom-30">
                 <div class="campo-formulario">Escribe un mensaje</div>
                 <div class="input-formulario">
-                    <textarea ng-model="activarAlerta.datos.mensaje" placeholder="Escribe un mensaje" rows="3"></textarea>
+                    <textarea ng-model="activarAlerta.datos.mensaje" placeholder="Escribe un mensaje" rows="3" name="mensaje" required></textarea>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
     <div class="row" ng-if="activarAlerta.opciones !=4">
         <div class="col s4 offset-s4 botones-formulario">
             <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-            <button class="boton-verde" ng-click="activarAlerta.avanzar(alertaForm.$valid, activarAlerta.datos)" ng-if="activarAlerta.opciones < 3">SIGUIENTE</button>
+            <button class="boton-verde" ng-click="activarAlerta.avanzar(alertaForm.$valid, activarAlerta.datos)" ng-if="activarAlerta.opciones < 3" ng-class="{'bloqueado' : !alertaForm.$valid }">SIGUIENTE</button>
             <button class="boton-verde" ng-click="activarAlerta.avanzar(alertaForm.$valid, activarAlerta.datos)" ng-if="activarAlerta.opciones == 3">ACTIVAR</button>
         </div>
 

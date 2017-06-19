@@ -1,10 +1,12 @@
 angular.module("mascotas")
 
-.controller("misMascotasController", ["mascotasService", "usuariosService", "placasService",function (mascotasService, usuariosService, placasService) {
+.controller("misMascotasController", ["mascotasService", "usuariosService", "placasService", "apiConstant", function (mascotasService, usuariosService, placasService, apiConstant) {
     
     var cdx = this;
     
     cdx.mascotas = [];
+    
+    cdx.apiDir = apiConstant;
     
     mascotasService.mascotasDueno(usuariosService.autorizado().dueno.idDueno).then(function(res){
         

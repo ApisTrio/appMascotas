@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("activarAlertaController", ["NavigatorGeolocation", "NgMap", "mascotasService", "usuariosService", "$filter",function (NavigatorGeolocation, NgMap, mascotasService, usuariosService, $filter) {
+.controller("activarAlertaController", ["NavigatorGeolocation", "NgMap", "mascotasService", "usuariosService", "$filter", "mailService",function (NavigatorGeolocation, NgMap, mascotasService, usuariosService, $filter, mailService) {
 
     var cdx = this;
 
@@ -71,7 +71,10 @@ angular.module("mascotas")
 
                 .then(function (res) {
 
+                    mailService.activarAlerta(datos.idMascota);
+                    
                     cdx.opciones = cdx.opciones + 1;
+                    
 
                 })
 

@@ -50,21 +50,19 @@ angular.module("mascotas")
        
         if (valido) {
 
-                mascotasService.nuevaEncontrada(idMascota)
-
-                .then(function (res) {
-
+                mascotasService.nuevaEncontrada(idMascota).then(function (res) {
+                    
+                   // mailService.desactivarAlerta(idMascota);
+                     console.log("adios")
                     cdx.opciones = cdx.opciones + 1;
+
+                }).catch(function(res){
+                    
                     console.log("hola")
-
+                    
                 })
 
-                .catch(function (res) {
-
-                    console.log("error")
-
-                })
-                
+              
               
             
         }

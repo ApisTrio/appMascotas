@@ -20,19 +20,6 @@
 
     <div class="row">
         <div class="col s12 m4 offset-m1">
-            <div class="titulo-info">Nombre</div>
-            <div class="contenido-info">{{miPerfil.datos.dueno.nombre}}</div>
-            <div class="divider"></div>
-        </div>
-        <div class="col s12 m4 offset-m2">
-            <div class="titulo-info">Apellido</div>
-            <div class="contenido-info">{{miPerfil.datos.dueno.apellido}}</div>
-            <div class="divider"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m4 offset-m1">
             <div class="titulo-info">E-mail</div>
             <div class="contenido-info">{{miPerfil.datos.usuario.emailU}}</div>
             <div class="divider"></div>
@@ -68,6 +55,19 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info c2">Información de Contacto</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col s12 m4 offset-m1">
+            <div class="titulo-info">Nombre</div>
+            <div class="contenido-info">{{miPerfil.datos.dueno.nombre}}</div>
+            <div class="divider"></div>
+        </div>
+        <div class="col s12 m4 offset-m2">
+            <div class="titulo-info">Apellido</div>
+            <div class="contenido-info">{{miPerfil.datos.dueno.apellido}}</div>
+            <div class="divider"></div>
         </div>
     </div>
 

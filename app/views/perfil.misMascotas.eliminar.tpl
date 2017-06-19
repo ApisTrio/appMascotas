@@ -1,4 +1,4 @@
-<section ng-switch="eliminarCuenta.pasos" ng-init="eliminarCuenta.pasos = 1" class="padding-top-30">
+<section ng-switch="misMascotasEliminar.pasos" ng-init="misMascotasEliminar.pasos = 1" class="padding-top-30">
     <div ng-switch-when="1">
         <div class="row">
             <div class="col s10 offset-s1 center-align">
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col s4 offset-s4 botones-formulario">
                 <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-                <button class="boton-verde" ng-click="eliminarCuenta.pasos = eliminarCuenta.pasos + 1">CONFIRMAR</button>
+                <button class="boton-verde" ng-click="misMascotasEliminar.avanzar(misMascotasEliminar.placa)">CONFIRMAR</button>
             </div>
         </div>
     </div>

@@ -727,7 +727,7 @@
 
         <div class="row">
             <div class="col s10 offset-s1 m10 offset-m1">
-                <div class="boton-agregar" ng-click="registro.datos.duenos.push({nombre: null, apellido: null, telefono: null, email: null, nacimiento: null, direccion: null, pais: null, provincia: null, ciudad: null, codigo_postal: null})"></div> Agregar persona de contacto
+                <div class="boton-agregar" ng-click="registro.datos.duenos.push({nombre: null, apellido: null, telefono: null, email: null, nacimiento: null, direccion: null, pais: null, provincia: null, ciudad: null, codigo_postal: null, sexo: null})"></div> Agregar persona de contacto
             </div>
         </div>
 

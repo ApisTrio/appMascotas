@@ -12,7 +12,9 @@
     <div class="row">
         <div class="col s12 center-align">
             <div class="center-align">
-                <div class="circle foto-mascota" style="background-image:url(/apiMascotas/public/images/mascotas/{{placa.datos.basico.foto}});">
+                <div class="circle foto-mascota" style="background-image:url({{placa.apiDir.dominio}}{{placa.apiDir.path}}{{placa.apiDir.imagenes.mascotas}}{{placa.datos.basico.foto}});" ng-if="placa.datos.basico.foto">
+                </div>
+                <div class="circle foto-mascota" style="background-image:url(assets/images/icons/foto_perfil.png); border: 1px solid black" ng-if="!placa.datos.basico.foto">
                 </div>
             </div>
         </div>

@@ -31,7 +31,7 @@
                 <img class="responsive-img" src="assets/images/icons/lost_dog.png">
                 <h5 class="negrita">HE ENCONTRADO UNA MASCOTA</h5>
                 <p class="texto-pequeno">Introduce el id de la placa</p>
-                <button class="boton-verde">ENCONTRAR DUEÑO</button>
+                <button class="boton-verde" ng-click="landing.mostrarModal()">ENCONTRAR DUEÑO</button>
                 <p class="texto-pequeno">¿Dónde está el ID?</p>
             </div>
         </div>
@@ -129,9 +129,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m6 l4 margin-in pointer" ng-repeat="perdida in landing.perdidas" ui-sref="placa({idPlaca: perdida.codigo})">
+            <div class="col s12 m6 l4 margin-in pointer" ng-repeat="perdida in landing.perdidas">
            
-                    <div class="circle foto-mascota" style="background-image:url(/apiMascotas/public/images/mascotas/{{perdida.foto}});">
+                    <div class="circle foto-mascota" style="background-image:url({{landing.apiDir.dominio}}{{landing.apiDir.path}}{{landing.apiDir.imagenes.mascotas}}{{perdida.foto}});">
                     </div>
             
                 <div class="center-align negrita">

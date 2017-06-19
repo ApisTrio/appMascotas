@@ -100,7 +100,7 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         templateUrl: 'app/views/perfil.activarAlerta.tpl',
         controller: 'activarAlertaController as activarAlerta'
     })
-    
+
     .state({
         name: 'perfil.desactivarAlerta',
         url: '/desactivar-alerta',
@@ -139,14 +139,14 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
                 var defered = $q.defer();
                 var promise = defered.promise;
 
-                placasService.verificarAsignada($stateParams.idPlaca). then(function (res) {
+                placasService.verificarAsignada($stateParams.idPlaca).then(function (res) {
 
- 
+
 
                     $q.all([
                         mascotasService.datos(res.mascotas_idMascota).then(res), mascotasService.duenosMascota(res.mascotas_idMascota).then(res), placasService.placasAsignadas(res.mascotas_idMascota).then(res)
                     ]).then(function (resGlobal) {
-                        
+
                         console.log(resGlobal)
                         var datos = {
                             basico: resGlobal[0],
@@ -186,7 +186,31 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
             name: 'perfil.misMascotasEliminar',
             url: '/mis-mascotas/{idPlaca: [0-9a-zA-Z]{4,6}}/eliminar',
             templateUrl: 'app/views/perfil.misMascotas.eliminar.tpl',
-            controller: 'misMascotasEliminarController as misMascotasEliminar'
+            controller: 'misMascotasEliminarController as misMascotasEliminar',
+            resolve: {
+                placaValida: ["placasService", "mascotasService", "$stateParams", "$q", "placasService", function (placasService, mascotasService, $stateParams, $q, placasService) {
+                    var defered = $q.defer();
+                    var promise = defered.promise;
+
+                    placasService.verificarAsignada($stateParams.idPlaca).then(function (res) {
+
+                        defered.resolve(res.mascotas_idMascota);
+
+                    })
+
+                    .catch(function (res) {
+
+                        defered.reject("PLACA_INVALIDA_PRIVADA");
+
+                    })
+
+                    return promise;
+
+                }]
+
+            }
+
+
         })
 
     ////////////////////////////
@@ -243,6 +267,14 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         url: '/cambiar-contrasena',
         templateUrl: 'app/views/cambiarContrasena.tpl',
         controller: 'cambiarContrasenaController as cambiarContrasena'
+    })
+    
+    .state({
+        name: 'eliminarCuenta',
+        url: '/eliminar-cuenta/:token',
+        templateUrl: 'app/views/eliminarCuentaPublico.tpl',
+        controller: 'eliminarCuentaPublicoController as eliminarCuentaPublico'
+        
     })
 
     ////////////////////////////
@@ -319,8 +351,8 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
             $state.go("landing");
         } else if (error === "PLACA_INVALIDA_PRIVADA") {
 
-            $state.go("perfil.miPerfil");
-            
+            $state.go("perfil.misMascotas");
+
         } else {
 
             console.log(error);

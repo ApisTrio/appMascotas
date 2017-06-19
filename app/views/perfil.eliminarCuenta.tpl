@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col s4 offset-s4 botones-formulario">
                 <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-                <button class="boton-verde" ng-click="eliminarCuenta.pasos = eliminarCuenta.pasos + 1">ELIMINAR</button>
+                <button class="boton-verde" ng-click="eliminarCuenta.avanzar()">ELIMINAR</button>
             </div>
         </div>
     </div>

@@ -168,11 +168,34 @@ angular.module("mascotas")
 
                     }
 
-
-
-
                 })
 
+            }
+
+         
+            $scope.avanzar = function (salto, accion, cantidad, resultante) {
+                console.log(resultante) 
+                
+                if (accion) {
+                    
+                    
+                   
+                    if (salto < cantidad && resultante == 6) {
+
+
+                        $scope.cdx.salto = $scope.cdx.salto + 1;
+
+
+                    }
+                } else if (!accion) {
+
+                    if (salto < cantidad && resultante == 6) {
+
+                        $scope.cdx.salto = $scope.cdx.salto - 1;
+
+                    }
+
+                }
             }
 
         }],
@@ -220,10 +243,10 @@ angular.module("mascotas")
                             scope.modelos[scope.seleccionado][llave].activo = false;
 
                         }
-                        
+
 
                     })
-                    
+
                     ngModel.$setViewValue(null)
 
                 }

@@ -5,7 +5,15 @@ angular.module("mascotas")
 
     dominio: "http://localhost/",
 
-    path: "apiMascotas/"
+    path: "apiMascotas/",
+
+    imagenes: {
+
+        modelos: "public/images/modelos/",
+
+        mascotas: "public/images/mascotas/"
+
+    }
 
 })
 
@@ -112,6 +120,31 @@ angular.module("mascotas")
 
 .service("usuariosService", ["$http", "$q", "apiRootFactory", "$window", "$rootScope", function ($http, $q, apiRootFactory, $window, $rootScope) {
 
+
+    this.borrar = function (token) {
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.get(apiRootFactory + "usuarios/borrar/" + token).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+        return promise;
+
+
+    }
+
     this.registro = function (datos) {
 
         var defered = $q.defer();
@@ -124,11 +157,11 @@ angular.module("mascotas")
 
             if (res.data.response) {
 
-                defered.resolve(res.data.result);
+                defered.resolve(res.data.idInsertado);
 
             } else {
 
-                defered.reject(res.data.result);
+                defered.reject(res.data.idInsertado);
 
             }
         })
@@ -235,6 +268,34 @@ angular.module("mascotas")
 
 .service("mascotasService", ["$http", "$q", "apiRootFactory", "$httpParamSerializer", "usuariosService", "Upload", function ($http, $q, apiRootFactory, $httpParamSerializer, usuariosService, Upload) {
 
+
+    this.darBaja = function (idMascota) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mascotas/borrar", $httpParamSerializer({
+            idMascota: idMascota
+        }), {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+    }
+
     this.foto = function (imagen, tipo) {
         var defered = $q.defer();
         var promise = defered.promise;
@@ -246,11 +307,11 @@ angular.module("mascotas")
                 tipo: tipo,
                 path: 'mascotas'
             },
-        }).then(function(res){
-            
+        }).then(function (res) {
+
             defered.resolve(res.data);
         })
-    
+
         return promise;
     }
 
@@ -259,7 +320,7 @@ angular.module("mascotas")
         var defered = $q.defer();
         var promise = defered.promise;
 
-        $http.get(apiRootFactory + "/informacion/vacunas/" + idMascota).then(function (res) {
+        $http.get(apiRootFactory + "informacion/vacunas/" + idMascota).then(function (res) {
 
             if (res.data.response) {
 
@@ -296,7 +357,7 @@ angular.module("mascotas")
 
             } else {
 
-                defered.reject();
+                //defered.reject();
             }
 
         })
@@ -391,8 +452,11 @@ angular.module("mascotas")
                 }).then(function (resPlacaAsignada) {
 
                     if (resPlacaAsignada.data.response) {
-                        
-                        defered.resolve(resPlacaAsignada.data.result.codigo);
+
+                        defered.resolve({
+                            codigo: resPlacaAsignada.data.result.codigo,
+                            idMascota: res.data.idInsertado
+                        });
 
                     } else {
 
@@ -688,6 +752,7 @@ angular.module("mascotas")
 
     }
 
+
 }])
 
 
@@ -825,6 +890,247 @@ angular.module("mascotas")
 
     }
 
+
+}])
+
+
+.service("mailService", ["apiRootFactory", "$http", "$q", "$httpParamSerializer", "$filter", function (apiRootFactory, $http, $q, $httpParamSerializer, $filter) {
+
+    this.borrarUsuario = function (idUsuario) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/cuenta-eliminada", {
+            id: idUsuario
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+
+    this.activarAlerta = function (idMascota) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/alerta-activada", {
+            id: idMascota
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+
+    }
+
+    this.desactivarAlerta = function (idMascota) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/alerta-desactivada", {
+            id: idMascota
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+
+    this.confirmacionCuenta = function (idUsuario) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/confirmacion-cuenta", {
+            id: idUsuario
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+    }
+
+
+    this.nuevaMascota = function (idMascota) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/nueva-mascota", {
+            id: idMascota
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+    }
+
+
+    this.placaEscaneada = function (idMascota, latitud = false, longitud = false, direccion = false) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+        var hoy = new Date();
+
+        var fecha = $filter('date')(hoy, "dd/MM/yyyy");
+        var hora = $filter('date')(hoy, "hh:mm a");
+
+
+        var enlace = latitud && longitud ? "https://www.google.co.ve/maps/@" + latitud + "," + longitud : "";
+
+
+        $http.post(apiRootFactory + "mail/placa-escaneada", {
+            id: idMascota,
+            fecha: fecha + " a las " + hora,
+            latitud: latitud,
+            longitud: longitud,
+            direccion: direccion,
+            enlace: enlace
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+
+
+    }
+
+    this.darBaja = function (idMascota) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/baja-mascota", {
+            id: idMascota
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+    
+    this.cambiarContrasena = function(email){
+        
+         var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/cambiar-contrasena", {
+            emailU: email
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+        
+    }
+
+}])
+
+.service("googleMapsService", ["$http", "$q", function ($http, $q) {
+
+    this.geoCodeInverso = function (latitud, longitud, apiKey) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitud + "," + longitud + "&key=" + apiKey + "&language=es").then(function (res) {
+
+            if (res.data.status == "OK") {
+
+                defered.resolve(res.data.results[0].formatted_address);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
 
 }])
 

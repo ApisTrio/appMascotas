@@ -8,7 +8,7 @@ angular.module("mascotas")
     usuariosService.confirmar($stateParams.id, $stateParams.token)
     
     .then(function(res){
-        console.log("hola")
+   
         cdx.opciones = 2;
         
     })

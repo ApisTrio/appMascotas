@@ -102,6 +102,10 @@ body {
 
 
 /****** MISC ******/
+.escondido{
+    
+    visibility: hidden;
+}
 
 .flex {
     display: flex;
@@ -260,13 +264,62 @@ table.table-admin td {
 
 /* ELEMENTOS */
 
+img.editar-perfil{
+    
+    height: 25px;
+    margin: 10px;
+    cursor: pointer;
+    
+}
+
+img.editar-perfil:focus{
+    
+    outline: none;
+}
+
 .foto-mascota {
     height: 200px;
     width: 200px;
     background-position: 50% 50%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    margin: auto
+    margin: auto;
+    transition: 0.5s all ease; 
+}
+
+.contenedor-foto-mascota:hover .foto-mascota{
+    cursor: pointer;
+    filter: brightness(50%);
+}
+
+.editar-foto-mascota{
+    
+    transition: 0.5s all ease; 
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    
+}
+
+.contenedor-foto-mascota:hover .editar-foto-mascota{
+    opacity: 1;
+}
+
+[ng-form="vacunasForm"] .input-formulario{
+    
+    margin-bottom: 10px;
+    position: relative;
+    
+}
+
+.eliminar-vacuna-boton{
+
+    height: 20px;
+    vertical-align: middle;
 }
 
 .globitos {
@@ -418,6 +471,7 @@ table.table-admin td {
 .agregar-placa-perfil img {
     vertical-align: middle;
     height: 20px;
+    outline: none;
 }
 
 

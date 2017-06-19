@@ -1,10 +1,12 @@
 angular.module("mascotas")
 
-.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", function (placasService, mascotasService, $stateParams, placaValida) {
+.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", "apiConstant", function (placasService, mascotasService, $stateParams, placaValida, apiConstant) {
 
     var cdx = this;
 
     cdx.datos = placaValida;
+
+    cdx.apiDir = apiConstant;
 
     mascotasService.datosMedicos(placaValida.basico.idMascota).then(function (res) {
 

@@ -26,9 +26,9 @@
     <script src="modulos/angular-aria/angular-aria.min.js"></script>
     <script src="modulos/angular-ui-switch/angular-ui-switch.js"></script>
     <script src="modulos/angular-google-maps/build/scripts/ng-map.min.js"></script>
-     <script src="modulos/angular-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="modulos/angular-file-upload/ng-file-upload-shim.min.js"></script>
     <script src="modulos/angular-file-upload/ng-file-upload.min.js"></script>
-   
+
 
 
     <!--Librerias 3r party angularJS -->
@@ -65,7 +65,9 @@
     <script src="app/controllers/login.js"></script>
     <script src="app/controllers/registro.js"></script>
     <script src="app/controllers/confirmar.js"></script>
+    <script src="app/controllers/cambiarContrasena.js"></script>
     <script src="app/controllers/eliminarCuenta.js"></script>
+    <script src="app/controllers/eliminarCuentaPublico.js"></script>
 </head>
 
 <body ng-app="mascotas">
@@ -78,21 +80,21 @@
             </div>
         </div><!--
      --><div class="contenedor-navbar" ng-mouseleave="header.hmenuMostrar=false">
-            <div >
+            <div>
                 <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
                 <a ui-sref="landing">Placas QR</a>
                 <a href="#">Tienda</a>
                 <a href="http://www.dinbeat.com/sobre-nosotros/">Sobre nosotros</a>
                 <a href="http://www.dinbeat.com/blog/">Blog</a>
 
-                <div ng-switch="header.autorizado" class="login-contenedor" >
+                <div ng-switch="header.autorizado" class="login-contenedor">
                     <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
 
                     <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default>{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}
                     </a>
                     <div ng-switch-default ng-show="header.hmenuMostrar" class="cerrar-sesion c2 nombre-usuario" ng-click="header.salir()">
-                       Cerrar sesion
-                        
+                        Cerrar sesion
+
                     </div>
 
                 </div>
@@ -160,20 +162,38 @@
     <!--- directiva de modelos --->
     <script type="text/ng-template" id="cdx.modelos.html">
 
-        <div>
-            <div ng-repeat="modelo in modelos[seleccionado]" ng-click="seleccionar($index, seleccionado)">
+        <div ng-init="cdx.salto = 0">
+            <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )">
+            <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index, seleccionado)">
                 <label for="{{modelo.idModelo}}">
                     <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
                     <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
                 </label>
             </div>
+            <img src="assets/images/forms/right.png" ng-click="avanzar(cdx.salto,true, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length)">
         </div>
 
+    </script>
+
+    <script type="text/ng-template" id="cdx.encontreMascotaModal.html">
+        <div class="row margin-in">
+            <div class="col s12 center-align">
+                <h4 class="titulo2 negrita interlineado20 c2">¿Has encontrado una mascota?</h4>
+                <div class="center-align">Por favor introduce el ID de su placa</div>
+                <div class="margin-bottom-30">
+                    <div class="input-formulario">
+                        <input ng-model="idPlaca" placeholder="ID de la placa" type="text" />
+                    </div>
+                </div>
+                <button class="boton-verde" ui-sref="placa({idPlaca: idPlaca})" ng-click="cerrarModal()">ENCONTRAR DUEÑO</button>
+            </div>
+        </div>
     </script>
 
 
 </body>
 
-    
-    <!---- DESARROLLADO POR ALGUIEN ----->
+
+<!---- DESARROLLADO POR ALGUIEN ----->
+
 </html>

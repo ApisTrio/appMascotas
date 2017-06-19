@@ -7,13 +7,13 @@ angular.module("mascotas")
     cdx.perdidas = [];
     cdx.encontradas = [];
 
-    mascotasService.perdidas(10, 0).then(function (res) {
+    mascotasService.perdidas(12, 0).then(function (res) {
 
         cdx.perdidas = res;
 
     })
 
-    mascotasService.encontradas(10, 0).then(function (res) {
+    mascotasService.encontradas(12, 0).then(function (res) {
 
         cdx.encontradas = res;
 

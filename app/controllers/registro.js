@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("registroController", ["usuariosService", "razasService", "especiesService", "mascotasService",function (usuariosService, razasService, especiesService, mascotasService) {
+.controller("registroController", ["usuariosService", "razasService", "especiesService", "mascotasService", "mailService",function (usuariosService, razasService, especiesService, mascotasService, mailService) {
 
     var cdx = this;
     
@@ -31,8 +31,11 @@ angular.module("mascotas")
                         datos.mascota.foto = res;
 
                         usuariosService.registro(datos).then(function (res) {
-
+                            
+                            mailService.confirmacionCuenta(res);
+                            
                             cdx.pasos = cdx.pasos + 1;
+                            
 
                         })
 
@@ -42,6 +45,8 @@ angular.module("mascotas")
 
                     usuariosService.registro(datos).then(function (res) {
 
+                        mailService.confirmacionCuenta(res);
+                        
                         cdx.pasos = cdx.pasos + 1;
 
                     })

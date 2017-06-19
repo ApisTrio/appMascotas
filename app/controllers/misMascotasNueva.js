@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("misMascotasNuevaController", ["especiesService", "razasService", "mascotasService", function (especiesService, razasService, mascotasService) {
+.controller("misMascotasNuevaController", ["especiesService", "razasService", "mascotasService", "mailService",function (especiesService, razasService, mascotasService, mailService) {
 
     var cdx = this;
 
@@ -36,10 +36,12 @@ angular.module("mascotas")
                         datos.foto = res;
 
                         mascotasService.crear(datos).then(function (res) {
-
+                            
+                            mailService.nuevaMascota(res.idMascota);
+                            
                             cdx.pasos = cdx.pasos + 1;
 
-                            cdx.perfilMascota = res;
+                            cdx.perfilMascota = res.codigo;  
 
                         })
 

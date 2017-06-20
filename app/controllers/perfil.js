@@ -18,6 +18,15 @@ angular.module("mascotas")
 
     });
 
+    cdx.colapsar = function(menucColapsado) {
+        console.log(menucColapsado)
+        if (menucColapsado) {
+            cdx.menuColapsado = false;
+        } else {
+            cdx.menuColapsado = true;
+        }
+    }
+
     cdx.mascotasPerdidas = false;
 
     mascotasService.mascotasPerdidasDueno(usuariosService.autorizado().dueno.idDueno)

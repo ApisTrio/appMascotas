@@ -221,7 +221,7 @@
             <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )">
             <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
                 <label for="{{modelo.idModelo}}">
-                    <img ng-src="{{apiDir.dominio}}{{apiDir.path}}{{apiDir.imagenes.corbatas}}{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
+                    <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
                     <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
                 </label>
             </div>

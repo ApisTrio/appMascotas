@@ -753,7 +753,7 @@ textarea.erroneo:focus {
     height: 100%;
 }
 
-#menu-perfil, #contenedor-perfil-interno{
+#menu-perfil{
     transition: 1s all ease;
 }
 .menu-perfil > div:not(.colapso-menu){

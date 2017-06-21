@@ -57,7 +57,7 @@
             <div class="input-formulario">
                 <div ng-class="{'margin-bottom-30': nuevaPlacaForm.mascota.$pristine || nuevaPlacaForm.mascota.$valid}">
                     <md-select ng-model="misMascotasPlaca.placa.mascotas_idMascota" placeholder="Selecciona una mascota" name="mascota" class="md-no-underline" ng-class="{'valido': nuevaPlacaForm.mascota.$valid, 'erroneo': (!nuevaPlacaForm.mascota.$valid && nuevaPlacaForm.mascota.$dirty)}" required>
-                        <md-option ng-value="{{mascota.idMascota}}" ng-repeat="mascota in misMascotasPlaca.mascotas">{{mascota.nombre}}</md-option>
+                        <md-option ng-value="{{mascota.idMascota}}" ng-repeat="mascota in misMascotasPlaca.mascotas track by $index">{{mascota.nombre}}</md-option>
                     </md-select>
                     <cdx-validez data-validez="nuevaPlacaForm.mascota.$valid" data-mostrar="nuevaPlacaForm.mascota.$dirty"></cdx-validez>
                 </div>

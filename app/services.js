@@ -120,7 +120,6 @@ angular.module("mascotas")
 
 .service("usuariosService", ["$http", "$q", "apiRootFactory", "$window", "$rootScope", function ($http, $q, apiRootFactory, $window, $rootScope) {
 
-
     this.borrar = function (token) {
 
 
@@ -258,6 +257,12 @@ angular.module("mascotas")
         $window.localStorage.removeItem('cdxToken');
 
     }
+    
+    this.actualizarSesion = function(objetoToken){
+        
+        $window.localStorage.setItem('cdxToken', JSON.stringify(objetoToken));
+        $rootScope.objetoToken = objetoToken;
+    }
 
 }])
 
@@ -267,6 +272,49 @@ angular.module("mascotas")
 ///////////////////////
 
 .service("mascotasService", ["$http", "$q", "apiRootFactory", "$httpParamSerializer", "usuariosService", "Upload", function ($http, $q, apiRootFactory, $httpParamSerializer, usuariosService, Upload) {
+
+    this.datosModificar = function (datos) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+        $http.post(apiRootFactory + "mascotas/modificar", datos).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+        return promise;
+
+
+    }
+
+    this.modificarDueno = function (datos) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "duenos/modificar", datos).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
 
 
     this.darBaja = function (idMascota) {
@@ -313,6 +361,37 @@ angular.module("mascotas")
         })
 
         return promise;
+    }
+    
+    this.nuevaFoto = function(idMascota, foto){
+        
+        
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mascotas/asignar/foto", $httpParamSerializer({
+            id: idMascota,
+            nombreimg: foto
+        }), {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+        
+        
     }
 
     this.vacunas = function (idMascota) {
@@ -443,8 +522,6 @@ angular.module("mascotas")
                     modelos_idModelo: datos.modelos_idModelo
                 }
 
-                console.log(datos)
-
                 $http.post(apiRootFactory + "placas/asignar", $httpParamSerializer(datosAsignarPlaca), {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -518,8 +595,8 @@ angular.module("mascotas")
         var promise = defered.promise;
 
 
-
         $http.get(apiRootFactory + "informacion/datos/" + idMascota).then(function (res) {
+
 
             if (res.data.response) {
 
@@ -532,12 +609,32 @@ angular.module("mascotas")
 
         });
 
-
         return promise;
 
     }
 
+    this.datosMedicosEditar = function (datos) {
+        console.log(datos);
+        var defered = $q.defer();
+        var promise = defered.promise;
 
+        $http.post(apiRootFactory + "informacion/registro", datos).then(function (res) {
+
+            if (res.data.response) {
+                console.log(res.data)
+                defered.resolve(res.data.idInsertado);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+
+    }
 
     this.perdidas = function (cantidad, salto) {
 
@@ -551,7 +648,6 @@ angular.module("mascotas")
 
         $http.get(apiRootFactory + "perdidas/lista/" + cantidad + "/" + salto).then(function (res) {
 
-            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
                 defered.resolve(res.data.result);
@@ -581,7 +677,6 @@ angular.module("mascotas")
 
         $http.get(apiRootFactory + "perdidas/encontradas/lista/" + cantidad + "/" + salto).then(function (res) {
 
-            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
                 defered.resolve(res.data.result);
@@ -608,7 +703,6 @@ angular.module("mascotas")
 
         $http.get(apiRootFactory + "mascotas/dueno/" + idDueno).then(function (res) {
 
-            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
                 defered.resolve(res.data.result);
@@ -636,7 +730,6 @@ angular.module("mascotas")
 
         $http.get(apiRootFactory + "duenos/mascota/" + idMascota).then(function (res) {
 
-            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
                 defered.resolve(res.data.result);
@@ -770,7 +863,6 @@ angular.module("mascotas")
 
         $http.get(apiRootFactory + "especies/lista").then(function (res) {
 
-            ////////////////////////////LLENAR LOS PROMISES///////////////////////////////
             if (res.data.response) {
 
                 defered.resolve(res.data.result);
@@ -895,6 +987,31 @@ angular.module("mascotas")
 
 
 .service("mailService", ["apiRootFactory", "$http", "$q", "$httpParamSerializer", "$filter", function (apiRootFactory, $http, $q, $httpParamSerializer, $filter) {
+
+    this.recuperarUsuario = function (email) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/recordar-usuario", {
+            emailU: email
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+
 
     this.borrarUsuario = function (idUsuario) {
 
@@ -1081,10 +1198,10 @@ angular.module("mascotas")
         return promise;
 
     }
-    
-    this.cambiarContrasena = function(email){
-        
-         var defered = $q.defer();
+
+    this.cambiarContrasena = function (email) {
+
+        var defered = $q.defer();
         var promise = defered.promise;
 
         $http.post(apiRootFactory + "mail/cambiar-contrasena", {
@@ -1103,7 +1220,7 @@ angular.module("mascotas")
         })
 
         return promise;
-        
+
     }
 
 }])

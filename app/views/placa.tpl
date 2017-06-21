@@ -122,14 +122,14 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Fecha de la última desparasitación interna</div>
-            <div class="contenido-info" ng-if="placa.datos.medicos[placa.datos.medicos.length - 1].desparasitacion_i">{{placa.datos.medicos[placa.datos.medicos.length - 1].desparasitacion_i}}</div>
-            <div class="contenido-info" ng-if="!placa.datos.medicos[placa.datos.medicos.length - 1].desparasitacion_i">...</div>
+            <div class="contenido-info" ng-if="placa.datos.medicos.desparasitacion_i">{{placa.datos.medicos.desparasitacion_i}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.medicos.desparasitacion_i">...</div>
             <div class="divider responsive"></div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Fecha de la última desparasitación externa</div>
-            <div class="contenido-info" ng-if="placa.datos.medicos[placa.datos.medicos.length - 1].desparasitacion_e">{{placa.datos.medicos[placa.datos.medicos.length - 1].desparasitacion_e}}</div>
-            <div class="contenido-info" ng-if="!placa.datos.medicos[placa.datos.medicos.length - 1].desparasitacion_e">...</div>
+            <div class="contenido-info" ng-if="placa.datos.medicos.desparasitacion_e">{{placa.datos.medicos.desparasitacion_e}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.medicos.desparasitacion_e">...</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -137,14 +137,14 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Centro Veterinario</div>
-            <div class="contenido-info" ng-if="placa.datos.medicos[placa.datos.medicos.length - 1].centro">{{placa.datos.medicos[placa.datos.medicos.length - 1].centro}}</div>
-            <div class="contenido-info" ng-if="!placa.datos.medicos[placa.datos.medicos.length - 1].centro">...</div>
+            <div class="contenido-info" ng-if="placa.datos.medicos.centro">{{placa.datos.medicos.centro}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.medicos.centro">...</div>
             <div class="divider responsive"></div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Veterinario</div>
-            <div class="contenido-info" ng-if="placa.datos.medicos[placa.datos.medicos.length - 1].veterinario">{{placa.datos.medicos[placa.datos.medicos.length - 1].veterinario}}</div>
-            <div class="contenido-info" ng-if="!placa.datos.medicos[placa.datos.medicos.length - 1].veterinario">...</div>
+            <div class="contenido-info" ng-if="placa.datos.medicos.veterinario">{{placa.datos.medicos.veterinario}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.medicos.veterinario">...</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -152,13 +152,13 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Dirección</div>
-            <div class="contenido-info" ng-if="placa.datos.medicos[placa.datos.medicos.length - 1].direccion_veterinario">{{placa.datos.medicos[placa.datos.medicos.length - 1].direccion_veterinario}}</div>
-            <div class="contenido-info" ng-if="!placa.datos.medicos[placa.datos.medicos.length - 1].direccion_veterinario">...</div>
+            <div class="contenido-info" ng-if="placa.datos.medicos.direccion_veterinario">{{placa.datos.medicos.direccion_veterinario}}</div>
+            <div class="contenido-info" ng-if="!placa.datos.medicos.direccion_veterinario">...</div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Teléfono</div>
-            <div class="contenido-info" ng-if="placa.datos.medicos[placa.datos.medicos.length - 1].telefono_veterinario"><a ng-href="tel:{{placa.datos.medicos[placa.datos.medicos.length - 1].telefono_veterinario}}">{{placa.datos.medicos[placa.datos.medicos.length - 1].telefono_veterinario}}</a></div>
-            <div class="contenido-info" ng-if="!placa.datos.medicos[placa.datos.medicos.length - 1].telefono_veterinario">...</div>
+            <div class="contenido-info" ng-if="placa.datos.medicos.telefono_veterinario"><a ng-href="tel:{{placa.datos.medicos.telefono_veterinario}}">{{placa.datos.medicos.telefono_veterinario}}</a></div>
+            <div class="contenido-info" ng-if="!placa.datos.medicos.telefono_veterinario">...</div>
         </div>
     </div>
 

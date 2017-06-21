@@ -18,7 +18,6 @@ angular.module("mascotas")
                 
                 cdx.mascotas[llave].placas = res;
                 
-                console.log(res)
                 
             })
             

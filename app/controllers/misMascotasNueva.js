@@ -45,7 +45,6 @@ angular.module("mascotas")
 
                         })
 
-
                     })
 
                 } else {

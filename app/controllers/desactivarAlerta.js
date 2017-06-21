@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter",function (mascotasService, usuariosService, $filter) {
+.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter", "$stateParams",function (mascotasService, usuariosService, $filter, $stateParams) {
 
     var cdx = this;
 
@@ -40,6 +40,13 @@ angular.module("mascotas")
     mascotasService.mascotasPerdidasDueno(usuariosService.autorizado().dueno.idDueno).then(function (res) {
 
         cdx.mascotas = res;
+        
+        angular.forEach(cdx.mascotas, function (valor, llave) {
+
+            if ($stateParams.idMascota && $stateParams.idMascota == valor.idMascota ) {
+                cdx.datos.idMascota = valor.idMascota; 
+            }
+        })
 
     })
 
@@ -52,13 +59,14 @@ angular.module("mascotas")
 
                 mascotasService.nuevaEncontrada(idMascota).then(function (res) {
                     
-                   // mailService.desactivarAlerta(idMascota);
-                     console.log("adios")
+                    console.log(idMascota)
+                    //mailService.desactivarAlerta(idMascota);
+               
                     cdx.opciones = cdx.opciones + 1;
 
                 }).catch(function(res){
                     
-                    console.log("hola")
+                    console.log("error")
                     
                 })
 

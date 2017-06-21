@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!--JQUERY-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+    
+    <!--MATERIALIZE-->
+    
+    <script src="assets/js/materialize.min.js"></script>
 
     <!-- MAPS -->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD3rv58fVm8h5McUzT9wrG6J7lQFw_J7Uk"></script>
@@ -34,8 +38,7 @@
     <!--Librerias 3r party angularJS -->
     <script src="modulos/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="modulos/angular-material/angular-material.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+    <script src="modulos/angular-materialize/angular-materialize.min.js"></script>
 
 
     <!--Archivos App -->
@@ -66,6 +69,7 @@
     <script src="app/controllers/registro.js"></script>
     <script src="app/controllers/confirmar.js"></script>
     <script src="app/controllers/cambiarContrasena.js"></script>
+    <script src="app/controllers/recordarUsuario.js"></script>
     <script src="app/controllers/eliminarCuenta.js"></script>
     <script src="app/controllers/eliminarCuentaPublico.js"></script>
 </head>
@@ -164,7 +168,7 @@
 
         <div ng-init="cdx.salto = 0">
             <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )">
-            <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index, seleccionado)">
+            <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
                 <label for="{{modelo.idModelo}}">
                     <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
                     <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">

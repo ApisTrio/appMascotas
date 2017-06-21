@@ -51,58 +51,213 @@
 
 </section>
 <!---- INFORMACION DE CONTACTO---->
-<section>
+<section ng-switch="miPerfil.pasos" ng-init="miPerfil.pasos = 1">
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info c2">Información de Contacto</div>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col s12 m4 offset-m1">
-            <div class="titulo-info">Nombre</div>
-            <div class="contenido-info">{{miPerfil.datos.dueno.nombre}}</div>
-            <div class="divider"></div>
+    <div ng-switch-default>
+        <div class="row">
+            <div class="col s12 m4 offset-m1">
+                <div class="titulo-info">Nombre</div>
+                <div class="contenido-info">{{miPerfil.datos.dueno.nombre}}</div>
+                <div class="divider"></div>
+            </div>
+            <div class="col s12 m4 offset-m2">
+                <div class="titulo-info">Apellido</div>
+                <div class="contenido-info">{{miPerfil.datos.dueno.apellido}}</div>
+                <div class="divider"></div>
+            </div>
         </div>
-        <div class="col s12 m4 offset-m2">
-            <div class="titulo-info">Apellido</div>
-            <div class="contenido-info">{{miPerfil.datos.dueno.apellido}}</div>
-            <div class="divider"></div>
+
+        <div class="row">
+            <div class="col s12 m4 offset-m1">
+                <div class="titulo-info">Teléfono de contacto</div>
+                <div class="contenido-info">{{miPerfil.datos.dueno.telefono}}</div>
+                <div class="divider"></div>
+            </div>
+            <div class="col s12 m4 offset-m2">
+                <div class="titulo-info">E-mail</div>
+                <div class="contenido-info">{{miPerfil.datos.dueno.email}}</div>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m4 offset-m1">
+                <div class="titulo-info">Dirección</div>
+                <div class="contenido-info" ng-if="miPerfil.datos.dueno.direccion">{{miPerfil.datos.dueno.direccion}}, {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
+                <div class="contenido-info" ng-if="!miPerfil.datos.dueno.direccion"> {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="boton-verde-negativo" ng-click="miPerfil.editarComenzar(miPerfil.datos)">EDITAR</button>
+            </div>
+        </div>
+    </div>
+    <div ng-switch-when="2" ng-form="editarForm">
+        <div class="row">
+
+            <!--- NOMBRE DEL CONTACTO --->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                <div class="campo-formulario">Nombre *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.nombre.$valid}">
+                        <input ng-model="miPerfil.datosEspejo.nombre" ng-class="{'valido': editarForm.nombre.$valid, 'erroneo': (!editarForm.nombre.$valid)}" placeholder="Nombre Completo" type="text" name="nombre" minlength="3" required>
+                        <cdx-validez data-validez="editarForm.nombre.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.nombre.$error" ng-show="editarForm.nombre.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--- APELLIDO --->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
+                <div class="campo-formulario">Apellido *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.nombre.$valid}">
+                        <input ng-model="miPerfil.datosEspejo.apellido" ng-class="{'valido': editarForm.apellido.$valid, 'erroneo': (!editarForm.apellido.$valid)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
+                        <cdx-validez data-validez="editarForm.apellido.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.apellido.$error" ng-show="editarForm.apellido.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- TELEFONO -->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                <div class="campo-formulario">Télefonos de contacto *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.telefono.$pristine || editarForm.telefono.$valid}">
+                        <input ng-model="miPerfil.datosEspejo.telefono" ng-class="{'valido': editarForm.telefono.$valid, 'erroneo': (!editarForm.telefono.$valid && editarForm.telefono.$dirty)}" placeholder="Télefonos de contacto" type="tel" name="telefono" ng-pattern="/^[0-9]*$/" required>
+                        <cdx-validez data-validez="editarForm.telefono.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.telefono.$error" ng-show="editarForm.telefono.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="pattern">Solo se aceptan digitos.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
+                <div class="campo-formulario">E-mail *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.nombre.$valid}">
+                        <input ng-model="miPerfil.datosEspejo.email" ng-class="{'valido': editarForm.email.$valid, 'erroneo': (!editarForm.email.$valid)}" placeholder="E-mail" type="email" name="email" required>
+                        <cdx-validez data-validez="editarForm.email.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.email.$error" ng-show="editarForm.email.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="email">Debe ser un E-mail valido.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- FECHA -->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                <div class="campo-formulario">Código postal *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.postcode.$pristine || editarForm.postcode.$valid}">
+                        <input ng-model="miPerfil.datosEspejo.codigo_postal" ng-class="{'valido': editarForm.postcode.$valid, 'erroneo': (!editarForm.postcode.$valid && editarForm.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" required>
+                        <cdx-validez data-validez="editarForm.postcode.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.postcode.$error" ng-show="editarForm.postcode.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIRECCION -->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
+                <div class="campo-formulario">Dirección</div>
+                <div class="input-formulario">
+                    <div class="margin-bottom-30">
+                        <input ng-model="miPerfil.datosEspejo.direccion" placeholder="Dirección" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- PAIS -->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                <div class="campo-formulario">País *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.pais.$pristine || editarForm.pais.$valid}">
+                        <md-select ng-model="miPerfil.datosEspejo.pais" ng-class="{'valido': editarForm.pais.$valid, 'erroneo': (!editarForm.pais.$valid && editarForm.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
+                            <md-option value="España">España</md-option>
+                        </md-select>
+                        <cdx-validez data-validez="editarForm.pais.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.pais.$error" ng-show="editarForm.pais.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROVINCIA -->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
+                <div class="campo-formulario">Provincia *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.provincia.$pristine || editarForm.provincia.$valid}">
+                        <md-select ng-model="miPerfil.datosEspejo.provincia" ng-class="{'valido': editarForm.provincia.$valid, 'erroneo': (!editarForm.provincia.$valid && editarForm.provincia.$dirty)}" placeholder="Provincia" class="md-no-underline" name="provincia" required>
+                            <md-option value="Alguna">Alguna</md-option>
+                        </md-select>
+                        <cdx-validez data-validez="editarForm.provincia.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.provincia.$error" ng-show="editarForm.provincia.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- CIUDAD -->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                <div class="campo-formulario">Ciudad *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': editarForm.ciudad.$pristine || editarForm.ciudad.$valid}">
+                        <md-select ng-model="miPerfil.datosEspejo.ciudad" ng-class="{'valido': editarForm.ciudad.$valid, 'erroneo': (!editarForm.ciudad.$valid && editarForm.ciudad.$dirty)}" placeholder="Ciudad" class="md-no-underline" name="ciudad" required>
+                            <md-option value="Alguna">Alguna</md-option>
+                        </md-select>
+                        <cdx-validez data-validez="editarForm.ciudad.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="editarForm.ciudad.$error" ng-show="editarForm.ciudad.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
+                <button class="boton-neutro" ng-click="miPerfil.editarCancelar()">Cancelar</button>
+                <button class="boton-verde" ng-click="miPerfil.editarGuardar(editarForm.$valid, miPerfil.datosEspejo)" ng-class="{'bloqueado' : !editarForm.$valid }">GUARDAR</button>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col s12 m4 offset-m1">
-            <div class="titulo-info">Teléfono de contacto</div>
-            <div class="contenido-info">{{miPerfil.datos.dueno.telefono}}</div>
-            <div class="divider"></div>
-        </div>
-        <div class="col s12 m4 offset-m2">
-            <div class="titulo-info">E-mail</div>
-            <div class="contenido-info">{{miPerfil.datos.dueno.email}}</div>
-            <div class="divider"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m4 offset-m1">
-            <div class="titulo-info">Dirección</div>
-            <div class="contenido-info" ng-if="miPerfil.datos.dueno.direccion">{{miPerfil.datos.dueno.direccion}}, {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
-            <div class="contenido-info" ng-if="!miPerfil.datos.dueno.direccion"> {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m10 offset-m1">
-            <div class="divider"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 center-align">
-            <button class="boton-verde-negativo">EDITAR</button>
-        </div>
-    </div>
 </section>
 <section>
     <div class="row">

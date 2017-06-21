@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col s12 m4 offset-m4 center-align">
-            <div class="center-align  contenedor-foto-mascota">
+            <div class="center-align  contenedor-foto-mascota" ngf-select="misMascotasIndividual.cargar($file)" ng-model="misMascotasIndividual.imagen" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="500KB" ngf-min-height="100">
                 <div class="circle foto-mascota" style="background-image:url({{misMascotasIndividual.apiDir.dominio}}{{misMascotasIndividual.apiDir.path}}{{misMascotasIndividual.apiDir.imagenes.mascotas}}{{misMascotasIndividual.datos.basico.foto}});" ng-if="misMascotasIndividual.datos.basico.foto">
                 </div>
                 <div class="circle foto-mascota" style="background-image:url(assets/images/icons/foto_perfil.png); border: 1px solid black" ng-if="!misMascotasIndividual.datos.basico.foto">
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="col s12 m12 l3 center-align">
-            <div class="agregar-placa-perfil" ui-sref="perfil.misMascotasPlaca">
+            <div class="agregar-placa-perfil" ui-sref="perfil.misMascotasPlaca({idMascota: misMascotasIndividual.datos.basico.idMascota})">
                 <img src="assets/images/forms/agregar_placa.png"> Agregar placa
             </div>
         </div>
@@ -49,14 +49,14 @@
 </section>
 
 <!---- INFORMACION BASICA ---->
-<section class="informacion-mascota" ng-switch="misMascotasIndividual.editar.basico">
+<section class="informacion-mascota" ng-switch="misMascotasIndividual.editar.basico.pasos">
 
     <div class="row">
         <div class="col s10 m8 offset-m1">
             <h4 class="titulo2 negrita interlineado20 c2">Información básica</h4>
         </div>
         <div class="col s2 m2 offset-m1">
-            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.basico = true" ng-show="!misMascotasIndividual.editar.basico">
+            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.basico.comenzar(misMascotasIndividual.datos.basico)" ng-show="!misMascotasIndividual.editar.basico.pasos">
         </div>
     </div>
 
@@ -114,63 +114,84 @@
     </div>
 
     <!--EDITAR-->
-    <div ng-switch-when="true">
+    <div ng-switch-when="true" ng-form="basicoEditarForm">
         <div class="row">
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
-                <div class="margin-bottom-30">
-                    <div class="campo-formulario">Nombre completo *</div>
-                    <div class="input-formulario">
-                        <input ng-model="misMascotasIndividual.datos.basico.nombre" placeholder="Nombre completo" type="text">
+                <div class="campo-formulario">Nombre de tu mascota *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': basicoEditarForm.nombreMascota.$pristine || basicoEditarForm.nombreMascota.$valid}">
+                        <input ng-model="misMascotasIndividual.espejo.basico.nombre" ng-class="{'valido': basicoEditarForm.nombreMascota.$valid, 'erroneo': (!basicoEditarForm.nombreMascota.$valid && basicoEditarForm.nombreMascota.$dirty)}" placeholder="Nombre de tu mascota " type="text" name="nombreMascota" minlength="3" required>
+                        <cdx-validez data-validez="basicoEditarForm.nombreMascota.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="basicoEditarForm.nombreMascota.$error" ng-show="basicoEditarForm.nombreMascota.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
                     </div>
                 </div>
             </div>
-
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                <div class="margin-bottom-30">
-                    <div class="campo-formulario">Fecha de nacimiento *</div>
-                    <div class="input-formulario">
-                        <input ng-model="misMascotasIndividual.datos.basico.fecha_nacimiento" placeholder="Nombre completo" type="text">
+                <div class="campo-formulario">Fecha de Nacimiento *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': basicoEditarForm.fecha.$pristine || basicoEditarForm.fecha.$valid}">
+                        <input ng-class="{'valido': basicoEditarForm.fecha.$valid, 'erroneo': (!basicoEditarForm.fecha.$valid && basicoEditarForm.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="misMascotasIndividual.espejo.basico.fecha_nacimiento" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasIndividual.datosDatepicker.max}}" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" required/>
+                        <cdx-validez data-validez="basicoEditarForm.fecha.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="basicoEditarForm.fecha.$error" ng-show="basicoEditarForm.fecha.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
-                <div class="margin-bottom-30">
-                    <div class="campo-formulario">Género *</div>
-                    <div class="input-formulario">
-                        <input ng-model="misMascotasIndividual.datos.basico.genero" placeholder="Género" type="text">
+                <div class="campo-formulario">Género *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': basicoEditarForm.generoMasccota.$pristine || basicoEditarForm.generoMasccota.$valid}">
+                        <md-select ng-model="misMascotasIndividual.espejo.basico.genero" ng-class="{'valido': basicoEditarForm.generoMasccota.$valid, 'erroneo': (!basicoEditarForm.generoMasccota.$valid && basicoEditarForm.generoMasccota.$dirty)}" placeholder="Genero" class="md-no-underline" name="generoMasccota" required>
+                            <md-option value="masculino">Masculino</md-option>
+                            <md-option value="femenino">Femenino</md-option>
+                        </md-select>
+                        <cdx-validez data-validez="basicoEditarForm.generoMasccota.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="basicoEditarForm.generoMasccota.$error" ng-show="basicoEditarForm.generoMasccota.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
                     </div>
                 </div>
             </div>
-
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                <div class="margin-bottom-30">
-                    <div class="campo-formulario">Raza *</div>
-                    <div class="input-formulario">
-                        <input ng-model="misMascotasIndividual.datos.basico.raza" placeholder="Raza" type="text">
+                <div class="campo-formulario">Raza *</div>
+                <div class="input-formulario">
+                    <div ng-class="{'margin-bottom-30': basicoEditarForm.raza.$pristine || basicoEditarForm.raza.$valid}">
+                        <md-select ng-model="misMascotasIndividual.espejo.basico.idRaza" ng-class="{'valido': basicoEditarForm.raza.$valid, 'erroneo': (!basicoEditarForm.raza.$valid && basicoEditarForm.raza.$dirty)}" placeholder="Raza" name="raza" class="md-no-underline" required>
+                            <md-option ng-repeat="raza in misMascotasIndividual.razas track by $index" value="{{raza.idRaza}}">{{raza.raza}}</md-option>
+                        </md-select>
+                        <cdx-validez data-validez="basicoEditarForm.raza.$valid" data-mostrar="true"></cdx-validez>
+                    </div>
+                    <div ng-messages="basicoEditarForm.raza.$error" ng-show="basicoEditarForm.raza.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
                     </div>
                 </div>
+
+
             </div>
         </div>
-
-
         <div class="row">
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Número de chip</div>
                     <div class="input-formulario">
-                        <input ng-model="misMascotasIndividual.datos.basico.chip" placeholder="Género" type="text">
+                        <input ng-model="misMascotasIndividual.espejo.basico.chip" placeholder="Número de chip" type="text">
                     </div>
                 </div>
             </div>
-
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                <div class="margin-bottom-30">
+                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Peso</div>
                     <div class="input-formulario">
-                        <input ng-model="misMascotasIndividual.datos.basico.peso" placeholder="Peso" type="text">
+                        <md-select ng-model="misMascotasIndividual.espejo.basico.peso" placeholder="Peso" class="md-no-underline">
+                            <md-option value="2-5 Kg">2-5 Kg</md-option>
+                            <md-option value="5-8 Kg">5-8 Kg</md-option>
+                        </md-select>
                     </div>
                 </div>
             </div>
@@ -181,16 +202,10 @@
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Comentarios</div>
                     <div class="input-formulario">
-                        <textarea ng-model="misMascotasIndividual.datos.basico.comentarios" placeholder="Comentarios" rows="3"></textarea>
+                        <textarea ng-model="misMascotasIndividual.espejo.basico.comentarios" placeholder="Comentarios" rows="3"></textarea>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col s10 offset-s1">
-                <div class="divider"></div>
-            </div>
-
         </div>
         <div class="row">
             <div class="col s10 offset-s1 m10 offset-m1">
@@ -200,8 +215,8 @@
 
         <div class="row">
             <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                <button class="boton-neutro" ng-click="misMascotasIndividual.editar.basico = false">Cancelar</button>
-                <button class="boton-verde">GUARDAR</button>
+                <button class="boton-neutro" ng-click="misMascotasIndividual.editar.basico.cancelar()">Cancelar</button>
+                <button class="boton-verde" ng-click="misMascotasIndividual.editar.basico.guardar(basicoEditarForm.$valid,misMascotasIndividual.espejo.basico)" ng-class="{'bloqueado' : !basicoEditarForm.$valid }">GUARDAR</button>
             </div>
         </div>
 
@@ -221,7 +236,7 @@
             <div class="titulo-info c2">Vacunas</div>
         </div>
         <div class="col s2 m2 offset-m1">
-            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.vacunas = true" ng-show="!misMascotasIndividual.editar.vacunas">
+            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.vacunas.comenzar(misMascotasIndividual.datos.vacunas)" ng-show="!misMascotasIndividual.editar.vacunas">
         </div>
     </div>
 
@@ -297,7 +312,7 @@
             </div>
             <div class="row">
                 <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                    <button class="boton-neutro" ng-click="misMascotasIndividual.editar.basico = false">Cancelar</button>
+                    <button class="boton-neutro" ng-click="">Cancelar</button>
                     <button class="boton-verde">GUARDAR</button>
                 </div>
             </div>
@@ -309,50 +324,50 @@
             <div class="titulo-info c2">Información médica adicional</div>
         </div>
         <div class="col s2 m2 offset-m1">
-            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.medico = true" ng-show="!misMascotasIndividual.editar.medico">
+            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.medico.comenzar(misMascotasIndividual.datos.medicos)" ng-show="!misMascotasIndividual.editar.medico.pasos">
         </div>
     </div>
-    <div ng-switch="misMascotasIndividual.editar.medico">
+    <div ng-switch="misMascotasIndividual.editar.medico.pasos">
         <!--MEDICO NORMAL -->
         <div ng-switch-default>
             <div class="row">
                 <div class="col s12 m10 offset-m1 l4 offset-l1">
                     <div class="titulo-info">Fecha de la última desparasitación interna</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_i">{{misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_i}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_i">...</div>
+                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.desparasitacion_i">{{misMascotasIndividual.datos.medicos.desparasitacion_i}}</div>
+                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.desparasitacion_i">...</div>
                     <div class="divider responsive"></div>
                 </div>
                 <div class="col s12 m10 offset-m1 l4 offset-l2">
                     <div class="titulo-info">Fecha de la última desparasitación externa</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_e">{{misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_e}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_e">...</div>
+                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.desparasitacion_e">{{misMascotasIndividual.datos.medicos.desparasitacion_e}}</div>
+                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.desparasitacion_e">...</div>
                     <div class="divider"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 m4 offset-m1">
                     <div class="titulo-info">Centro Veterinario</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].centro">{{misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].centro}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].centro">...</div>
+                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.centro">{{misMascotasIndividual.datos.medicos.centro}}</div>
+                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.centro">...</div>
                     <div class="divider responsive"></div>
                 </div>
                 <div class="col s12 m4 offset-m2">
                     <div class="titulo-info">Veterinario</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].veterinario">{{misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].veterinario}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].veterinario">...</div>
+                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.veterinario">{{misMascotasIndividual.datos.medicos.veterinario}}</div>
+                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.veterinario">...</div>
                     <div class="divider"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 m4 offset-m1">
                     <div class="titulo-info">Dirección</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].direccion_veterinario">{{misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].direccion_veterinario}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].direccion_veterinario">...</div>
+                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.direccion_veterinario">{{misMascotasIndividual.datos.medicos.direccion_veterinario}}</div>
+                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.direccion_veterinario">...</div>
                 </div>
                 <div class="col s12 m4 offset-m2">
                     <div class="titulo-info">Teléfono</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].telefono_veterinario"><a ng-href="tel:{{misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].telefono_veterinario}}">{{misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].telefono_veterinario}}</a></div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].telefono_veterinario">...</div>
+                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.telefono_veterinario"><a ng-href="tel:{{misMascotasIndividual.datos.medicos.telefono_veterinario}}">{{misMascotasIndividual.datos.medicos.telefono_veterinario}}</a></div>
+                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.telefono_veterinario">...</div>
                 </div>
             </div>
             <div class="row no-margin-bottom">
@@ -362,13 +377,13 @@
             </div>
         </div>
         <!-- MEDICO EDITAR -->
-        <div ng-switch-when="true">
+        <div ng-switch-when="true" ng-form="infoMedicoForm">
             <div class="row">
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Fecha de la última desparasitación interna</div>
                         <div class="input-formulario">
-                            <input ng-model="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_i" placeholder="Desparasitación Interna" type="text">
+                            <input input-date type="text" name="fecha" ng-model="misMascotasIndividual.espejo.medico.desparasitacion_i" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasIndividual.datosDatepicker.max}}" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" />
                         </div>
                     </div>
                 </div>
@@ -377,7 +392,7 @@
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Fecha de la última desparasitación externa</div>
                         <div class="input-formulario">
-                            <input ng-model="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].desparasitacion_e" placeholder="Desparasitación Externa" type="text">
+                            <input input-date type="text" name="fecha" ng-model="misMascotasIndividual.espejo.medico.desparasitacion_e" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasIndividual.datosDatepicker.max}}" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" />
                         </div>
                     </div>
                 </div>
@@ -388,7 +403,7 @@
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Centro Veterinario</div>
                         <div class="input-formulario">
-                            <input ng-model="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].centro" placeholder="Centro Veterinario" type="text">
+                            <input ng-model="misMascotasIndividual.espejo.medico.centro" placeholder="Centro Veterinario" type="text">
                         </div>
                     </div>
                 </div>
@@ -397,7 +412,7 @@
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Veterinario</div>
                         <div class="input-formulario">
-                            <input ng-model="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].veterinario" placeholder="Veterinario" type="text">
+                            <input ng-model="misMascotasIndividual.espejo.medico.veterinario" placeholder="Veterinario" type="text">
                         </div>
                     </div>
                 </div>
@@ -408,7 +423,7 @@
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Dirección</div>
                         <div class="input-formulario">
-                            <input ng-model="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].direccion_veterinario" placeholder="Dirección" type="text">
+                            <input ng-model="misMascotasIndividual.espejo.medico.direccion_veterinario" placeholder="Dirección" type="text">
                         </div>
                     </div>
                 </div>
@@ -417,7 +432,7 @@
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Teléfono</div>
                         <div class="input-formulario">
-                            <input ng-model="misMascotasIndividual.datos.medicos[misMascotasIndividual.datos.medicos.length - 1].telefono_veterinario" placeholder="Teléfono" type="text">
+                            <input ng-model="misMascotasIndividual.espejo.medico.telefono_veterinario" placeholder="Teléfono" type="text">
                         </div>
                     </div>
                 </div>
@@ -436,8 +451,8 @@
 
             <div class="row">
                 <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                    <button class="boton-neutro" ng-click="misMascotasIndividual.editar.medico = false">Cancelar</button>
-                    <button class="boton-verde">GUARDAR</button>
+                    <button class="boton-neutro" ng-click="misMascotasIndividual.editar.medico.cancelar()">Cancelar</button>
+                    <button class="boton-verde" ng-click="misMascotasIndividual.editar.medico.guardar(infoMedicoForm.$valid, misMascotasIndividual.espejo.medico)">GUARDAR</button>
                 </div>
             </div>
         </div>
@@ -544,7 +559,7 @@
         </div>
     </div>
     <div ng-switch-when="true">
-        <div class="col s10 m8 offset-m1" >
+        <div class="col s10 m8 offset-m1">
             <div class="titulo-info c2">Mis otros dueños</div>
         </div>
         <div ng-repeat="dueno in misMascotasIndividual.datos.duenos | limitTo: misMascotasIndividual.datos.duenos.length - 1 : 1">
@@ -640,14 +655,14 @@
                         <button class="boton-neutro" ng-click="misMascotasIndividual.datos.duenos.splice($index, 1)">Eliminar este contacto</button>
                     </div>
                 </div>
-                
+
             </div>
             <div class="row">
-            <div class="col s10 offset-s1">
-                <div class="divider"></div>
-            </div>
+                <div class="col s10 offset-s1">
+                    <div class="divider"></div>
+                </div>
 
-        </div>
+            </div>
         </div>
         <div class="row">
             <div class="col s12 m10 offset-m1">

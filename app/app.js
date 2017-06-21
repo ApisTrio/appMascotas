@@ -105,7 +105,11 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         name: 'perfil.desactivarAlerta',
         url: '/desactivar-alerta',
         templateUrl: 'app/views/perfil.desactivarAlerta.tpl',
-        controller: 'desactivarAlertaController as desactivarAlerta'
+        controller: 'desactivarAlertaController as desactivarAlerta',
+        params: {
+            idMascota: null
+            
+        }
     })
 
     .state({
@@ -119,7 +123,11 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         name: 'perfil.misMascotasPlaca',
         url: '/mis-mascotas/nueva-placa',
         templateUrl: 'app/views/perfil.misMascotas.placa.tpl',
-        controller: 'misMascotasPlacaController as misMascotasPlaca'
+        controller: 'misMascotasPlacaController as misMascotasPlaca',
+        params: {
+            idMascota: null
+            
+        }
     })
 
     .state({
@@ -154,11 +162,8 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
                             placas: resGlobal[2]
                         }
 
-
                         defered.resolve(datos);
                     })
-
-
 
                 })
 

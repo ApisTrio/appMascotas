@@ -6,16 +6,7 @@
             <div class="colapso-menu">
                 <img src="assets/images/menu_iconos/collapse.png">
             </div>
-
-            <div ui-sref="landing" class="margin-out">
-                <div class="icono-menu">
-                    <img src="assets/images/menu_iconos/huella.png">
-                </div>
-                <div class="opcion-menu">
-                    Inicio
-                </div>
-            </div>
-            <div ui-sref="perfil.miPerfil" class="margin-out">
+            <div ui-sref="perfil.miPerfil"  ui-sref-opts="{reload: true}" class="margin-out">
                 <div class="icono-menu">
                     <img src="assets/images/menu_iconos/profile.png">
                 </div>
@@ -23,13 +14,13 @@
                     Mi perfil
                 </div>
             </div>
-            <div ui-sref="perfil.misMascotas" class="margin-out">
+            <div ui-sref="perfil.misMascotas"  ui-sref-opts="{reload: true}" class="margin-out">
                 <div class="icono-menu">
                     <img src="assets/images/menu_iconos/huella.png">
                 </div>
                 <div class="opcion-menu" class="margin-out">Mis mascotas</div>
             </div>
-            <div ui-sref="perfil.activarAlerta">
+            <div ui-sref="perfil.activarAlerta"  ui-sref-opts="{reload: true}">
                 <div class="icono-menu">
                     <img src="assets/images/menu_iconos/important_message.png">
                 </div>
@@ -38,7 +29,7 @@
                 </div>
             </div>
             
-            <div ui-sref="perfil.desactivarAlerta" class="margin-out" ng-show="perfil.mascotasPerdidas">
+            <div ui-sref="perfil.desactivarAlerta"  ui-sref-opts="{reload: true}" class="margin-out">
                 <div class="icono-menu">
                     <img src="assets/images/menu_iconos/important_message.png">
                 </div>

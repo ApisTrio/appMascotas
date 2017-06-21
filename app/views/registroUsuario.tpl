@@ -271,12 +271,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s10 offset-s1 m10 offset-m1">
-                    * Dato requerido
-                </div>
+        </div>
+        <div class="row">
+            <div class="col s10 offset-s1 m10 offset-m1">
+                * Dato requerido
             </div>
         </div>
+
     </div>
 
     <!-------------------------->
@@ -781,7 +782,7 @@
             <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid, registro.datos)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>
         </div>
         <div class="col s12 m4 offset-m4 botones-formulario" ng-show="registro.pasos == 5">
-            <button class="boton-verde">INICIAR SESIÓN</button>
+            <button class="boton-verde" ui-sref="login">INICIAR SESIÓN</button>
         </div>
 
     </div>

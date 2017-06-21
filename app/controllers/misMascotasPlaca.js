@@ -13,12 +13,12 @@ angular.module("mascotas")
 
         cdx.mascotas = res;
 
-        angular.forEach(cdx.mascotas, function (valor, llave) {
+       /* angular.forEach(cdx.mascotas, function (valor, llave) {
 
             if ($stateParams.idMascota && $stateParams.idMascota == valor.idMascota ) {
                 cdx.placa.mascotas_idMascota = valor.idMascota; 
             }
-        })
+        })*/
 
     });
 

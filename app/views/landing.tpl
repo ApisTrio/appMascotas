@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <img class="ondas" src="assets/images/dinbeat_waves.png">
+    <img class="ondas" src="assets/images/dinbeat_waves.png" style="max-height: 200px">
 </section>
 <section class="nuestras-placas">
     <div class="row">

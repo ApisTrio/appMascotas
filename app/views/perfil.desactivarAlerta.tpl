@@ -54,7 +54,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 Recibirás un e-mail confirmando la desactivación de la alerta.
             </div>
         </div>

@@ -197,7 +197,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                Has creado el perfil de una nueva mascota, para editar sus datos accede a su ficha.
             </div>
         </div>

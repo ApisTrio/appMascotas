@@ -57,6 +57,7 @@
     .menu-perfil {
         padding-left: 0px !important;
     }
+
 }
 
 
@@ -91,6 +92,33 @@
         padding-left: 0px !important;
     }
 
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
+
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
 /* Styles */
@@ -119,6 +147,35 @@
 
     .menu-perfil {
         padding-left: 0px !important;
+    }
+
+    .login {
+        padding: 20px 0;
+        background-image: none;
+    }
+
+
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        left: 0;
     }
 }
 
@@ -198,6 +255,33 @@
     .menu-perfil {
         padding-left: 0px !important;
     }   
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
@@ -255,6 +339,34 @@
     .menu-perfil {
         padding-left: 0px !important;
     }
+
+    .login {
+        padding: 20px 0;
+        background-image: none;
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
 }
 
 /* Samsung Galaxy S4 ----------- */
@@ -301,6 +413,33 @@
 
     .menu-perfil {
         padding-left: 0px !important;
+    }
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
@@ -357,6 +496,37 @@
     .menu-perfil {
         padding-left: 0px !important;
     }
+
+
+    .login {
+        padding: 20px 0;
+        background-image: none;
+    }
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
+
+
+
 }
 
 /*------------------------------------------------------------*/
@@ -415,6 +585,34 @@
     .menu-perfil {
         padding-left: 0px !important;
     }
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
+
+
 }
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
     .globitos {
@@ -471,6 +669,36 @@
         padding-left: 0px !important;
     }
 
+
+    .login {
+        padding: 20px 0;
+        background-image: none;
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
+
+
 }
 
 
@@ -519,6 +747,33 @@
         .menu-perfil {
         padding-left: 0px !important;
     }
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
@@ -563,6 +818,34 @@
 
         .menu-perfil {
         padding-left: 0px !important;
+    }
+
+    .login {
+        padding: 20px 0;
+        background-image: none;
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        left: 0;
     }
 }
 
@@ -624,6 +907,33 @@
         .menu-perfil {
         padding-left: 0px !important;
     }
+
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
 }
 @media only screen and (min-device-width: 412px) and (max-device-width: 732px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
@@ -679,6 +989,29 @@
         .menu-perfil {
         padding-left: 0px !important;
     }
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
+
 }
 
 /*------------------------------------------------------------*/
@@ -738,6 +1071,33 @@
         .menu-perfil {
         padding-left: 0px !important;
     }
+
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
 }
 @media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
@@ -794,6 +1154,34 @@
         padding-left: 0px !important;
     }
 
+
+    .login {
+        padding: 20px 0;
+        background-image: none;
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
 }
 
 /*------------------------------------------------------------*/
@@ -853,6 +1241,28 @@
         .menu-perfil {
         padding-left: 0px !important;
     }
+
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
 }
 
 
@@ -865,6 +1275,9 @@
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+
+
 }
 
 /* iPads (landscape) ----------- */
@@ -886,6 +1299,39 @@
 
         .menu-perfil {
         padding-left: 0px !important;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
     }
 }
 
@@ -930,6 +1376,10 @@
         .menu-perfil {
         padding-left: 0px !important;
     }
+
+    .login {
+        background-size: 160% 70%;
+    }
 }
 
 /**********
@@ -960,6 +1410,32 @@ iPad 3
         .menu-perfil {
         padding-left: 0px !important;
     }
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        display: flex;
+        position: absolute;
+        z-index: 1000000000;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
     .globitos {
@@ -981,6 +1457,10 @@ iPad 3
 
     .menu-perfil {
         padding-left: 0px !important;
+    }
+
+        .login {
+        background-size: 160% 70%;
     }
 }
 
@@ -1030,6 +1510,10 @@ iPad 3
 
     .menu-perfil {
         padding-left: 0px !important;
+    }
+
+    .login {
+        background-size: 160% 70%;
     }
 }
 

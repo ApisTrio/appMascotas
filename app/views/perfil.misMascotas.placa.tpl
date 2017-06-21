@@ -95,7 +95,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 ¡Felicidades! Has agregado una nueva placa DinbeatQR. Recibirás un e-mail de confirmación. Puedes ver todos nuestros modelos en nuestra sección de tienda.
             </div>
         </div>

@@ -767,7 +767,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 Te enviaremos un e-mail de confirmación con tus datos para que actives tu cuenta. Una vez activada entra en el perfil de tu mascota para completar su formación médica, contacto veterinario y otros importantes.
             </div>
         </div>

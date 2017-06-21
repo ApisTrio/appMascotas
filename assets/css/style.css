@@ -785,9 +785,61 @@ textarea.erroneo:focus {
     margin-bottom: 15px;
 }
 
+.white-space-normal{
+    white-space: normal;
+}
+
 .login {
     padding: 200px 0;
     background-color: white;
+    background-image: url('../images/wave.png'); 
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: center center;
+}
+
+
+.login .linea-media{
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    display: flex;
+    position: absolute;
+    z-index: 1000000000;
+    left: calc(50% - 18px);
+}
+
+.login .linea-media .uno, .login .linea-media .tres{
+    margin: 0 auto;
+    height: 200px;
+}
+
+.login .linea-media .tres div, .login .linea-media .uno div{
+    width: 1px;
+    background-color: #e5e5e5;
+    height: 200px;
+}
+
+
+.login .titulo-inicios {
+    color: #6c709d;
+    font-weight: 600;
+}
+
+.login .titulo-registrate{
+    color: #afb2b6;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.login .registrarse{
+    margin-bottom: 30px;
+}
+
+
+.login .label{
+    color:#424242;
 }
 
 .recordar-usuario,

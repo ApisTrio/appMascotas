@@ -13,7 +13,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 Para continuar con la eliminación de tu cuenta te enviaremos un correo electrónico para confirmar la eliminación y que no haya sido un error.
             </div>
         </div>

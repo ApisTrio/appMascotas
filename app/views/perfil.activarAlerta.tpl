@@ -81,7 +81,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 Te hemos enviados un e-mail con los datos de la alerta de mascota perdida que acabas de activar. Esperamos la recuperes pronto. Recuerda desactivar la alerta una vez la encuentres. Si lo deseas puedes contactar con nosotros en <a href="mailto:qr@dinbeat.com">qr@dinbeat.com</a>
             </div>
         </div>

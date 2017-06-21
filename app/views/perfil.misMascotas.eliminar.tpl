@@ -13,7 +13,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 Esperamos haber ayudado a su correcta identificación durante el tiempo que ha permanecido en nuestra plataforma. Ya sabes que puedes contar con nosotros para proteger e identificar a tus mascotas. Si quieres contactar con nosotros escribenos a <a href="mailto:qr@gdinbeat.com">qr@dinbeat.com</a>
             </div>
         </div>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 Recibirás un e-mail con la confirmación de que el perfil de tu mascota ha sido dado de baja.
             </div>
         </div>

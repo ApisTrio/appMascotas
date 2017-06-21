@@ -461,13 +461,13 @@
 </section>
 
 <!---- INFORMACION DE MIS DUEÑOS ---->
-<section class="informacion-mascota" ng-switch="misMascotasIndividual.editar.dueno">
+<section class="informacion-mascota" ng-switch="misMascotasIndividual.editar.duenos.pasos">
     <div class="row">
         <div class="col s10 m8 offset-m1">
             <h4 class="titulo2 negrita interlineado20 c2">Información de mi(s) dueño(s)</h4>
         </div>
         <div class="col s2 m2 offset-m1">
-            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.dueno = true" ng-show="!misMascotasIndividual.editar.dueno">
+            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.duenos.comenzar(misMascotasIndividual.datos.duenos)" ng-show="!misMascotasIndividual.editar.duenos.pasos">
         </div>
     </div>
     <div class="col s10 m8 offset-m1">

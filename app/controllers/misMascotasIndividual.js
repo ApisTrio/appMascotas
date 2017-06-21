@@ -17,8 +17,8 @@ angular.module("mascotas")
                 cdx.datos.basico.foto = res;
 
             })
-            
-            
+
+
 
         })
 
@@ -39,12 +39,19 @@ angular.module("mascotas")
 
     });
 
+    razasService.listaEspecie(cdx.datos.basico.idEspecie).then(function (res) {
+
+        cdx.razas = res;
+
+
+    })
+
 
     cdx.espejo = {
         basico: {},
         medico: {},
-        vacunas: {},
-        duenos: {}
+        vacunas: [],
+        duenos: []
     }
 
 
@@ -77,12 +84,7 @@ angular.module("mascotas")
 
                 }
 
-                razasService.listaEspecie(cdx.datos.basico.idEspecie).then(function (res) {
 
-                    cdx.razas = res;
-                    cdx.espejo.basico.idRaza = basicoOriginal.idRaza;
-
-                })
 
                 cdx.editar.basico.pasos = true;
 
@@ -213,8 +215,15 @@ angular.module("mascotas")
         },
         duenos: {
             comenzar: function (duenosOriginal) {
-                
-                cdx.espejo.duenos = {}
+
+                angular.forEach(duenosOriginal, function (valor, llave) {
+
+                    cdx.espejo.duenos[llave] = valor;
+
+                })
+
+                cdx.editar.duenos.pasos = true;
+
 
             },
             cancelar: function () {
@@ -228,9 +237,9 @@ angular.module("mascotas")
     };
 
 
-    
-    
-    
+
+
+
     //datos para los datepickers
     cdx.hoy = new Date();
 

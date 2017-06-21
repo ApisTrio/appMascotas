@@ -9,7 +9,7 @@ angular.module("mascotas")
 
     imagenes: {
 
-        modelos: "public/images/modelos/",
+        modelos: "public/images/corbatas/",
 
         mascotas: "public/images/mascotas/"
 

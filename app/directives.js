@@ -128,12 +128,14 @@ angular.module("mascotas")
         require: "ngModel",
         scope: true,
         templateUrl: 'cdx.modelos.html',
-        controller: ["$scope", "modelosService", function ($scope, modelosService) {
+        controller: ["$scope", "modelosService", "apiConstant", function ($scope, modelosService, apiConstant) {
 
             $scope.modelos = {
                 pajarita: [],
                 redonda: []
             }
+            
+            $scope.apiDir = apiConstant;
 
             angular.forEach($scope.modelos, function (valor, llave) {
                 modelosService.listaForma(llave).then(function (res) {

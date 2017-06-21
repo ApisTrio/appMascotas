@@ -90,7 +90,7 @@
 
         <div class="row">
             <div class="col s10 offset-s1 center-align">
-                <h5>Haz activado tu nueva placa</h5>
+                <h4 class="titulo2 negrita interlineado20 c2">Haz activado tu nueva placa</h4>
             </div>
         </div>
 

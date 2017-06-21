@@ -282,6 +282,13 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         
     })
 
+    .state({
+        name: 'cambiarContrasenaConfirmar',
+        url: '/cambiar-contrasena/:token',
+        templateUrl: 'app/views/cambiarContrasenaConfirmar.tpl',
+        controller: 'cambiarContrasenaController as cambiarContrasena'
+    })
+
     ////////////////////////////
     ////////// Placa ///////////
     ////////////////////////////

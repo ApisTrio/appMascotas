@@ -76,14 +76,17 @@
 
 <body ng-app="mascotas">
     <header ng-controller="headerController as header">
-        <div class="contenedor-logo">
+        <div class="contenedor-logo col s6 m3">
             <div>
                 <a href="http://www.dinbeat.com/">
                     <img src="assets/images/logo/logo_dinbeat.svg">
                 </a>
             </div>
         </div><!--
-     --><div class="contenedor-navbar" ng-mouseleave="header.hmenuMostrar=false">
+
+
+     --><div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false" show-gt-sm>
+
             <div>
                 <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
                 <a ui-sref="landing">Placas QR</a>
@@ -104,8 +107,56 @@
                 </div>
 
             </div>
+        </div><!--
+
+     --><div class="contenedor-navbar-mobile" hide-gt-sm>
+            <label ng-click="header.toggleLeft()" class="burguer-menu">
+                <img src="assets/images/icons/burguer-menu.png">
+            </label>
         </div>
+
+        <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')"
+            md-whiteframe="4" hide-gt-sm>
+
+            <md-content layout-padding>
+                <ul class="contenedor-navbar-mobile">
+                    
+                    <li>
+                        <a href="http://www.dinbeat.com/proyecto-wearable/" ng-click="header.close()">Proyecto</a>
+                    </li>
+                    <li>
+                        <a ui-sref="landing" ng-click="header.close()">Placas QR</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="header.close()">Tienda</a>
+                    </li>
+                    <li>
+                        <a href="http://www.dinbeat.com/sobre-nosotros/" ng-click="header.close()">Sobre nosotros</a>
+                    </li>
+                    <li>
+                        <a href="http://www.dinbeat.com/blog/" ng-click="header.close()">Blog</a>
+                    </li>
+                    <li ng-click="header.close()">
+                            <a ng-if="!header.autorizado" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
+
+                            <a ng-if="header.autorizado" class="c2 nombre-usuario" ui-sref="perfil.miPerfil">{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}
+                            </a>
+
+                    </li>
+                    <li ng-if="header.autorizado" ng-click="header.close()">
+                        <a href="#" ng-click="header.salir()">
+                            Cerrar sesion</a>
+                    </li>
+                </ul>
+
+            </md-content>
+        </md-sidenav>
+
     </header>
+
     <div class="fondo-blanco" ui-view>
 
     </div>
@@ -170,7 +221,7 @@
             <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )">
             <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
                 <label for="{{modelo.idModelo}}">
-                    <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
+                    <img ng-src="{{misMascotas.apiDir.dominio}}{{misMascotas.apiDir.path}}{{misMascotas.apiDir.imagenes.corbatas}}{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
                     <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
                 </label>
             </div>
@@ -198,6 +249,6 @@
 </body>
 
 
-<!---- DESARROLLADO POR ALGUIEN ----->
+
 
 </html>

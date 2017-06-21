@@ -1,9 +1,10 @@
 <section>
 
-    <div class="row contenedor-perfil">
+    <div class="row contenedor-perfil" ng-init="perfil.menuColapsado = false" ng-class="{'contenedor-perfil-colapsado': perfil.menuColapsado}">
 
-        <div class="col s10 m2 negrita menu-perfil margin-out">
-            <div class="colapso-menu">
+        <div class="col negrita menu-perfil margin-out" id="menu-perfil" ng-class="{'s1': perfil.menuColapsado,'s11' : !perfil.menuColapsado,'m1': perfil.menuColapsado, 'm4': !perfil.menuColapsado, 'l1': perfil.menuColapsado, 'l3': !perfil.menuColapsado}">
+        
+            <div class="colapso-menu" ng-click="perfil.colapsar(perfil.menuColapsado)">
                 <img src="assets/images/menu_iconos/collapse.png">
             </div>
             <div ui-sref="perfil.miPerfil"  ui-sref-opts="{reload: true}" class="margin-out">
@@ -39,7 +40,7 @@
             </div>
         </div>
 
-        <div class="col s12 m10 contenedor-perfil-interno fondo-blanco" ui-view>
+        <div class="col s11 contenedor-perfil-interno fondo-blanco" id="contenedor-perfil-interno" ng-class="{'m11': perfil.menuColapsado, 'm8': !perfil.menuColapsado, 'l11': perfil.menuColapsado, 'l9': !perfil.menuColapsado}" ui-view>
 
 
         </div>

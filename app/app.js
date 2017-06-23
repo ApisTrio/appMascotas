@@ -155,7 +155,6 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
                         mascotasService.datos(res.mascotas_idMascota).then(res), mascotasService.duenosMascota(res.mascotas_idMascota).then(res), placasService.placasAsignadas(res.mascotas_idMascota).then(res)
                     ]).then(function (resGlobal) {
 
-                        console.log(resGlobal)
                         var datos = {
                             basico: resGlobal[0],
                             duenos: resGlobal[1],

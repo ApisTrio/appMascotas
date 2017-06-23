@@ -257,9 +257,9 @@ angular.module("mascotas")
         $window.localStorage.removeItem('cdxToken');
 
     }
-    
-    this.actualizarSesion = function(objetoToken){
-        
+
+    this.actualizarSesion = function (objetoToken) {
+
         $window.localStorage.setItem('cdxToken', JSON.stringify(objetoToken));
         $rootScope.objetoToken = objetoToken;
     }
@@ -300,6 +300,30 @@ angular.module("mascotas")
         var promise = defered.promise;
 
         $http.post(apiRootFactory + "duenos/modificar", datos).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+
+    this.eliminarDueno = function (idDueno) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "duenos/borrar", {
+            id: idDueno
+        }).then(function (res) {
 
             if (res.data.response) {
 
@@ -362,10 +386,10 @@ angular.module("mascotas")
 
         return promise;
     }
-    
-    this.nuevaFoto = function(idMascota, foto){
-        
-        
+
+    this.nuevaFoto = function (idMascota, foto) {
+
+
         var defered = $q.defer();
         var promise = defered.promise;
 
@@ -390,8 +414,8 @@ angular.module("mascotas")
         })
 
         return promise;
-        
-        
+
+
     }
 
     this.vacunas = function (idMascota) {
@@ -411,6 +435,35 @@ angular.module("mascotas")
             }
 
         });
+
+        return promise;
+
+    }
+
+
+    this.registrarVacuna = function (datos) {
+
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "informacion/registro-vacuna", $httpParamSerializer(datos), {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            } else {
+
+                //defered.reject();
+            }
+
+        })
 
         return promise;
 
@@ -844,8 +897,34 @@ angular.module("mascotas")
         return promise;
 
     }
+    
+    this.desactivarPlaca = function (idPlaca) {
 
 
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+
+
+        $http.get(apiRootFactory + "placas/desactivar/" + idPlaca).then(function (res) {
+
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+
+        return promise;
+
+    }
 }])
 
 
@@ -1222,6 +1301,34 @@ angular.module("mascotas")
         return promise;
 
     }
+
+}])
+
+.service("vacunasService", ["$http", "$q", "apiRootFactory",function ($http, $q, apiRootFactory) {
+
+
+    this.lista = function () {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.get(apiRootFactory + "/vacunas/lista").then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+
 
 }])
 

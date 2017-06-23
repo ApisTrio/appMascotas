@@ -33,7 +33,7 @@
             
             <div ui-sref="perfil.desactivarAlerta"  ui-sref-opts="{reload: true}" class="margin-out">
                 <div class="icono-menu">
-                    <img src="assets/images/menu_iconos/important_message.png">
+                    <img src="assets/images/menu_iconos/desactivar_inactivo.png">
                 </div>
                 <div class="opcion-menu">
                     Desactivar alerta de mascota perdida

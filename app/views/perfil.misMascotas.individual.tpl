@@ -29,7 +29,9 @@
             <div class="placas-mascota">
                 <div class="placa-individual" ng-repeat-start="placa in misMascotasIndividual.datos.placas | limitTo:3">
                     <img ng-src="assets/images/placas/{{placa.forma}}/{{placa.modelo}}"> {{placa.codigo}}
+                    <div class="eliminar-placa-boton" ng-click="misMascotasIndividual.mostrarModal(placa, placa)" ng-if="misMascotasIndividual.datos.placas.length > 1">x</div>
                 </div>
+
                 <div class="divisor-placas" ng-show="!$last" ng-repeat-end></div>
             </div>
         </div>
@@ -185,7 +187,7 @@
                 </div>
             </div>
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                 <div class="margin-bottom-30">
+                <div class="margin-bottom-30">
                     <div class="campo-formulario">Peso</div>
                     <div class="input-formulario">
                         <md-select ng-model="misMascotasIndividual.espejo.basico.peso" placeholder="Peso" class="md-no-underline">
@@ -236,18 +238,18 @@
             <div class="titulo-info c2">Vacunas</div>
         </div>
         <div class="col s2 m2 offset-m1">
-            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.vacunas.comenzar(misMascotasIndividual.datos.vacunas)" ng-show="!misMascotasIndividual.editar.vacunas">
+            <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.vacunas.comenzar(misMascotasIndividual.datos.vacunas)" ng-show="!misMascotasIndividual.editar.vacunas.pasos">
         </div>
     </div>
 
 
-    <div ng-switch="misMascotasIndividual.editar.vacunas">
+    <div ng-switch="misMascotasIndividual.editar.vacunas.pasos">
         <!--VACUNAS NORMAL -->
         <div ng-switch-default>
-            <div class="row">
+            <div class="row" ng-repeat="vacuna in misMascotasIndividual.datos.vacunas">
                 <div class="col s12 m10 offset-m1 l4 offset-l1">
                     <div class="titulo-info">Fecha de la última vacuna</div>
-                    <div class="row fechas-vacunas" ng-repeat="vacuna in misMascotasIndividual.datos.vacunas">
+                    <div class="row fechas-vacunas">
                         <div class="col s6">{{vacuna.vacuna}}</div>
                         <div class="col s6">{{vacuna.fecha}}</div>
                     </div>
@@ -258,7 +260,7 @@
                 </div>
                 <div class="col s12 m10 offset-m1 l4 offset-l2">
                     <div class="titulo-info">Recordatorio</div>
-                    <div class="row fechas-vacunas" ng-repeat="vacuna in misMascotasIndividual.datos.vacunas">
+                    <div class="row fechas-vacunas">
                         <div class="col s6">{{vacuna.vacuna}}</div>
                         <div class="col s6" ng-if="vacuna.fecha_recordatorio">{{vacuna.fecha_recordatorio}}</div>
                         <div class="col s6" ng-if="!vacuna.fecha_recordatorio">...</div>
@@ -271,13 +273,21 @@
             </div>
         </div>
         <!--VACUNAS EDITAR-->
-        <div ng-switch-when="true" ng-form="vacunasForm">
-            <div class="row">
+        <div ng-switch-when="true" ng-form="vacunasPriForm">
+            <div class="row" ng-repeat="vacuna in misMascotasIndividual.espejo.vacunas" ng-form="vacunasForm">
                 <div class="col s11 offset-s1 m3 offset-m1">
                     <div class="margin-bottom-30">
-                        <div class="campo-formulario">Fecha de la última vacuna</div>
-                        <div class="input-formulario" ng-repeat="vacuna in misMascotasIndividual.datos.vacunas">
-                            <input type="text">
+                        <div class="campo-formulario">Fecha de la última vacuna *</div>
+                        <div class="input-formulario">
+                            <div ng-class="{'margin-bottom-30': vacunasForm.ciudad.$pristine || vacunasForm.ciudad.$valid}">
+                                <md-select ng-model="vacuna.vacunas_idVacuna" ng-class="{'valido': vacunasForm.nombreVacuna.$valid, 'erroneo': (!vacunasForm.nombreVacuna.$valid && vacunasForm.nombreVacuna.$dirty)}" placeholder="Vacuna" class="md-no-underline" name="nombreVacuna" required>
+                                    <md-option ng-value="{{vacuna.idVacuna}}" ng-repeat="vacuna in misMascotasIndividual.vacunas">{{vacuna.vacuna}}</md-option>
+                                </md-select>
+                                <cdx-validez data-validez="vacunasForm.nombreVacuna.$valid" data-mostrar="true"></cdx-validez>
+                            </div>
+                            <div ng-messages="vacunasForm.nombreVacuna.$error" ng-show="true">
+                                <div ng-message="required">Este campo es requerido.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,9 +295,16 @@
                 <div class="col s11 offset-s1 m3">
                     <div class="margin-bottom-30">
                         <div class="campo-formulario escondido">x</div>
-                        <div class="input-formulario" ng-repeat="vacuna in misMascotasIndividual.datos.vacunas">
-                            <input type="text">
-                            <img class="eliminar-vacuna-boton" src="assets/images/icons/eliminar.png">
+                        <div class="input-formulario">
+                            <div ng-class="{'margin-bottom-30': vacunasForm.fecha.$pristine || vacunasForm.fecha.$valid}">
+                                <input ng-class="{'valido': vacunasForm.fecha.$valid, 'erroneo': (!vacunasForm.fecha.$valid && vacunasForm.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="vacuna.fecha" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" required/>
+                                <cdx-validez data-validez="vacunasForm.fecha.$valid" data-mostrar="true"></cdx-validez>
+                                <img class="eliminar-vacuna-boton" src="assets/images/icons/eliminar.png" ng-click="misMascotasIndividual.editar.vacunas.desparecer($index)">
+                            </div>
+                            <div ng-messages="vacunasForm.fecha.$error" ng-show="true">
+                                <div ng-message="required">Este campo es requerido.</div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -295,9 +312,18 @@
                 <div class="col s11 offset-s1 m3">
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Recordatorio</div>
-                        <div class="input-formulario" ng-repeat="vacuna in misMascotasIndividual.datos.vacunas">
-                            <input type="text">
+                        <div class="input-formulario">
+                            <div ng-class="{'margin-bottom-30': vacunasForm.recordatorio.$pristine || vacunasForm.recordatorio.$valid}">
+                                <input input-date type="text" name="recordatorio" id="inputCreated" ng-model="vacuna.recordatorio" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" />
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col s11 offset-s1 m2">
+                    <div class="campo-formulario escondido">x</div>
+                    <div class="input-formulario">
+                        <switch id="activo" name="activo" ng-model="vacuna.activo"></switch>
                     </div>
                 </div>
 
@@ -305,15 +331,15 @@
             <div class="row">
                 <div class="col s12 m10 offset-m1">
                     <div class="agregar-placa-perfil">
-                        <img src="assets/images/forms/agregar_placa.png" ng-click="misMascotasIndividual.datos.vacunas.push({})"> Agregar Vacuna
+                        <img src="assets/images/forms/agregar_placa.png" ng-click="misMascotasIndividual.espejo.vacunas.push({fecha: null, recordatorio: null, vacunas_idVacuna: null, activo: 0, idVamas: null})"> Agregar Vacuna
                     </div>
                 </div>
 
             </div>
             <div class="row">
                 <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                    <button class="boton-neutro" ng-click="">Cancelar</button>
-                    <button class="boton-verde">GUARDAR</button>
+                    <button class="boton-neutro" ng-click="misMascotasIndividual.editar.vacunas.cancelar()">Cancelar</button>
+                    <button class="boton-verde" ng-click="misMascotasIndividual.editar.vacunas.guardar(vacunasPriForm.$valid, misMascotasIndividual.espejo.vacunas)">GUARDAR</button>
                 </div>
             </div>
         </div>
@@ -481,7 +507,8 @@
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Fecha de nacimiento</div>
-            <div class="contenido-info">{{misMascotasIndividual.datos.duenos[0].nacimiento}}</div>
+            <div class="contenido-info" ng-if="misMascotasIndividual.datos.duenos[0].nacimiento">{{misMascotasIndividual.datos.duenos[0].nacimiento}}</div>
+            <div class="contenido-info" ng-if="!misMascotasIndividual.datos.duenos[0].nacimiento">...</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -502,7 +529,7 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Dirección</div>
-            <div class="contenido-info" ng-if="misMascotasIndividual.datos.duenos.direccion">{{misMascotasIndividual.datos.duenos[0].direccion}},{{misMascotasIndividual.datos.duenos[0].codigo_postal}}, {{misMascotasIndividual.datos.duenos[0].ciudad}}, {{misMascotasIndividual.datos.duenos[0].provincia}}, {{misMascotasIndividual.datos.duenos[0].pais}} </div>
+            <div class="contenido-info" ng-if="misMascotasIndividual.datos.duenos[0].direccion">{{misMascotasIndividual.datos.duenos[0].direccion}},{{misMascotasIndividual.datos.duenos[0].codigo_postal}}, {{misMascotasIndividual.datos.duenos[0].ciudad}}, {{misMascotasIndividual.datos.duenos[0].provincia}}, {{misMascotasIndividual.datos.duenos[0].pais}} </div>
             <div class="contenido-info" ng-if="!misMascotasIndividual.datos.duenos[0].direccion">{{misMascotasIndividual.datos.duenos[0].codigo_postal}}, {{misMascotasIndividual.datos.duenos[0].ciudad}}, {{misMascotasIndividual.datos.duenos[0].provincia}}, {{misMascotasIndividual.datos.duenos[0].pais}} </div>
         </div>
     </div>
@@ -526,7 +553,8 @@
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">Fecha de nacimiento</div>
-                <div class="contenido-info">{{dueno.nacimiento}}</div>
+                <div class="contenido-info" ng-if="dueno.nacimiento">{{dueno.nacimiento}}</div>
+                <div class="contenido-info" ng-if="!dueno.nacimiento">...</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -558,53 +586,154 @@
             </div>
         </div>
     </div>
-    <div ng-switch-when="true">
+    <div ng-switch-when="true" ng-form="duenoExtraPrinForm">
         <div class="col s10 m8 offset-m1">
             <div class="titulo-info c2">Mis otros dueños</div>
         </div>
-        <div ng-repeat="dueno in misMascotasIndividual.datos.duenos | limitTo: misMascotasIndividual.datos.duenos.length - 1 : 1">
+        <div ng-repeat="dueno in misMascotasIndividual.espejo.duenos | limitTo: misMascotasIndividual.espejo.duenos.length - 1 : 1" ng-form="duenoExtraForm">
             <div class="row">
+                <!--- NOMBRE DEL CONTACTO --->
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">Nombre</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.nombre" placeholder="Nombre" type="text">
+                    <div class="campo-formulario">Nombre *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.nombre.$pristine || duenoExtraForm.nombre.$valid}">
+                            <input ng-model="dueno.nombre" ng-class="{'valido': duenoExtraForm.nombre.$valid, 'erroneo': (!duenoExtraForm.nombre.$valid && duenoExtraForm.nombre.$dirty)}" placeholder="Nombre Completo" type="text" name="nombre" minlength="3" required>
+                            <cdx-validez data-validez="duenoExtraForm.nombre.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.nombre.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
                         </div>
                     </div>
                 </div>
 
+                <!--- APELLIDO --->
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">Apellido</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.apellido" placeholder="Apellido" type="text">
+                    <div class="campo-formulario">Apellido *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.apellido.$pristine || duenoExtraForm.apellido.$valid}">
+                            <input ng-model="dueno.apellido" ng-class="{'valido': duenoExtraForm.apellido.$valid, 'erroneo': (!duenoExtraForm.apellido.$valid && duenoExtraForm.apellido.$dirty)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
+                            <cdx-validez data-validez="duenoExtraForm.apellido.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.apellido.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
+
+                <!-- TELEFONO -->
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">Fecha de nacimiento</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.nacimiento" placeholder="Fecha de nacimiento" type="text">
+                    <div class="campo-formulario">Télefonos de contacto *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.telefono.$pristine || duenoExtraForm.telefono.$valid}">
+                            <input ng-model="dueno.telefono" ng-class="{'valido': duenoExtraForm.telefono.$valid, 'erroneo': (!duenoExtraForm.telefono.$valid && duenoExtraForm.telefono.$dirty)}" placeholder="Télefonos de contacto" type="tel" name="telefono" ng-pattern="/^[0-9]*$/" required>
+                            <cdx-validez data-validez="duenoExtraForm.telefono.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.telefono.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="pattern">Solo se aceptan digitos.</div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">Teléfonos de contacto</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.telefono" placeholder="Teléfonos de contacto" type="text">
+                    <div class="campo-formulario">E-mail *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.email.$pristine || duenoExtraForm.email.$valid}">
+                            <input ng-model="dueno.email" ng-class="{'valido': duenoExtraForm.email.$valid, 'erroneo': (!duenoExtraForm.email.$valid && duenoExtraForm.email.$dirty)}" placeholder="E-mail" type="email" name="email" required>
+                            <cdx-validez data-validez="duenoExtraForm.email.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.email.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="email">Debe ser un E-mail valido.</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
+
+                <!-- FECHA -->
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                    <div class="campo-formulario">Fecha de Nacimiento</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.fecha.$pristine || duenoExtraForm.fecha.$valid}">
+                            <input input-date type="text" name="fecha" ng-model="dueno.nacimiento" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasIndividual.datosDatepicker.max}}" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEXO -->
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
+                    <div class="campo-formulario">Sexo</div>
+                    <div class="input-formulario">
+                        <div class="margin-bottom-30">
+                            <md-select ng-model="dueno.sexo" placeholder="Sexo" class="md-no-underline">
+                                <md-option value="Masculino">Masculino</md-option>
+                                <md-option value="Femenino">Femenino</md-option>
+                            </md-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- PAIS -->
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                    <div class="campo-formulario">País *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.pais.$pristine || duenoExtraForm.pais.$valid}">
+                            <md-select ng-model="dueno.pais" ng-class="{'valido': duenoExtraForm.pais.$valid, 'erroneo': (!duenoExtraForm.pais.$valid && duenoExtraForm.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
+                                <md-option value="España">España</md-option>
+                            </md-select>
+                            <cdx-validez data-validez="duenoExtraForm.pais.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.pais.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROVINCIA -->
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
+                    <div class="campo-formulario">Provincia *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.provincia.$pristine || duenoExtraForm.provincia.$valid}">
+                            <md-select ng-model="dueno.provincia" ng-class="{'valido': duenoExtraForm.provincia.$valid, 'erroneo': (!duenoExtraForm.provincia.$valid && duenoExtraForm.provincia.$dirty)}" placeholder="Provincia" class="md-no-underline" name="provincia" required>
+                                <md-option value="Alguna">Alguna</md-option>
+                            </md-select>
+                            <cdx-validez data-validez="duenoExtraForm.provincia.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.provincia.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <!-- CIUDAD -->
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                    <div class="campo-formulario">Ciudad *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.ciudad.$pristine || duenoExtraForm.ciudad.$valid}">
+                            <md-select ng-model="dueno.ciudad" ng-class="{'valido': duenoExtraForm.ciudad.$valid, 'erroneo': (!duenoExtraForm.ciudad.$valid && duenoExtraForm.ciudad.$dirty)}" placeholder="Ciudad" class="md-no-underline" name="ciudad" required>
+                                <md-option value="Alguna">Alguna</md-option>
+                            </md-select>
+                            <cdx-validez data-validez="duenoExtraForm.ciudad.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.ciudad.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIRECCION -->
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                     <div class="margin-bottom-30">
                         <div class="campo-formulario">Dirección</div>
                         <div class="input-formulario">
@@ -612,62 +741,44 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">País</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.pais" placeholder="País" type="text">
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="row">
-                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">Provincia</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.provincia" placeholder="Provincia" type="text">
+
+                <!-- CODIGO POSTAL -->
+                <div class="col s11 offset-s1 m4 offset-m1">
+                    <div class="campo-formulario">Código postal *</div>
+                    <div class="input-formulario">
+                        <div ng-class="{'margin-bottom-30': duenoExtraForm.postcode.$pristine || duenoExtraForm.postcode.$valid}">
+                            <input ng-model="dueno.codigo_postal" ng-class="{'valido': duenoExtraForm.postcode.$valid, 'erroneo': (!duenoExtraForm.postcode.$valid && duenoExtraForm.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" required>
+                            <cdx-validez data-validez="duenoExtraForm.postcode.$valid" data-mostrar="true"></cdx-validez>
+                        </div>
+                        <div ng-messages="duenoExtraForm.postcode.$error" ng-show="true">
+                            <div ng-message="required">Este campo es requerido.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">Ciudad</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.ciudad" placeholder="Ciudad" type="text">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
-                    <div class="margin-bottom-30">
-                        <div class="campo-formulario">Código Postal</div>
-                        <div class="input-formulario">
-                            <input ng-model="dueno.codigo_postal" placeholder="Provincia" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="col s11 offset-s1 m4 offset-m2">
-                    <div class="margin-bottom-30">
-                        <button class="boton-neutro" ng-click="misMascotasIndividual.datos.duenos.splice($index, 1)">Eliminar este contacto</button>
-                    </div>
-                </div>
 
+                <div class="col s11 offset-s1 m4 offset-m3">
+                    <div class="margin-bottom-30">
+                        <button class="boton-neutro" ng-click="misMascotasIndividual.editar.duenos.desparecer($index)">Eliminar este contacto</button>
+                    </div>
+                </div>
             </div>
+
             <div class="row">
                 <div class="col s10 offset-s1">
                     <div class="divider"></div>
                 </div>
-
             </div>
+
+
         </div>
+
         <div class="row">
             <div class="col s12 m10 offset-m1">
                 <div class="agregar-placa-perfil">
-                    <img src="assets/images/forms/agregar_placa.png" ng-click="misMascotasIndividual.datos.duenos.push({})"> Agregar Dueño
+                    <img src="assets/images/forms/agregar_placa.png" ng-click="misMascotasIndividual.espejo.duenos.push({nombre: null, apellido: null, telefono: null, email: null, nacimiento: null, direccion: null, pais: null, provincia: null, ciudad: null, codigo_postal: null, sexo: null})"> Agregar Dueño
                 </div>
             </div>
 
@@ -686,11 +797,10 @@
 
         <div class="row">
             <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                <button class="boton-neutro" ng-click="misMascotasIndividual.editar.medico = false">Cancelar</button>
-                <button class="boton-verde">GUARDAR</button>
+                <button class="boton-neutro" ng-click="misMascotasIndividual.editar.duenos.cancelar()">Cancelar</button>
+                <button class="boton-verde" ng-click="misMascotasIndividual.editar.duenos.guardar(duenoExtraPrinForm.$valid, misMascotasIndividual.espejo.duenos)">GUARDAR</button>
             </div>
         </div>
-
     </div>
 
 </section>

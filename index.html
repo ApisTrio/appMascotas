@@ -14,9 +14,9 @@
 
     <!--JQUERY-->
     <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
-    
+
     <!--MATERIALIZE-->
-    
+
     <script src="assets/js/materialize.min.js"></script>
 
     <!-- MAPS -->
@@ -82,10 +82,12 @@
                     <img src="assets/images/logo/logo_dinbeat.svg">
                 </a>
             </div>
-        </div><!--
+        </div>
+        <!--
 
 
-     --><div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false" show-gt-sm>
+     -->
+        <div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false" show-gt-sm>
 
             <div>
                 <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
@@ -107,23 +109,21 @@
                 </div>
 
             </div>
-        </div><!--
+        </div>
+        <!--
 
-     --><div class="contenedor-navbar-mobile" hide-gt-sm>
+     -->
+        <div class="contenedor-navbar-mobile" hide-gt-sm>
             <label ng-click="header.toggleLeft()" class="burguer-menu">
                 <img src="assets/images/icons/burguer-menu.png">
             </label>
         </div>
 
-        <md-sidenav
-            class="md-sidenav-left"
-            md-component-id="left"
-            md-is-locked-open="$mdMedia('gt-md')"
-            md-whiteframe="4" hide-gt-sm>
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4" hide-gt-sm>
 
             <md-content layout-padding>
                 <ul class="contenedor-navbar-mobile">
-                    
+
                     <li>
                         <a href="http://www.dinbeat.com/proyecto-wearable/" ng-click="header.close()">Proyecto</a>
                     </li>
@@ -140,9 +140,9 @@
                         <a href="http://www.dinbeat.com/blog/" ng-click="header.close()">Blog</a>
                     </li>
                     <li ng-click="header.close()">
-                            <a ng-if="!header.autorizado" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
+                        <a ng-if="!header.autorizado" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
 
-                            <a ng-if="header.autorizado" class="c2 nombre-usuario" ui-sref="perfil.miPerfil">{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}
+                        <a ng-if="header.autorizado" class="c2 nombre-usuario" ui-sref="perfil.miPerfil">{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}
                             </a>
 
                     </li>
@@ -230,6 +230,7 @@
 
     </script>
 
+    <!-- directiva de modal para buscar placas--->
     <script type="text/ng-template" id="cdx.encontreMascotaModal.html">
         <div class="row margin-in">
             <div class="col s12 center-align">
@@ -241,6 +242,34 @@
                     </div>
                 </div>
                 <button class="boton-verde" ui-sref="placa({idPlaca: idPlaca})" ng-click="cerrarModal()">ENCONTRAR DUEÑO</button>
+            </div>
+        </div>
+    </script>
+
+
+    <!-- directiva de modal para buscar placas--->
+    <script type="text/ng-template" id="cdx.borrarPlaca.html">
+        <div class="row margin-in">
+            <div class="col s12 center-align">
+
+                <h4 class="titulo2 negrita interlineado20 c2">¿Deseas eliminar esta placa?</h4>
+                <div class="row">
+                    <div class="col s12 center-align"> <img class="placas-borrar-imagen" ng-src="assets/images/placas/{{placa.forma}}/{{placa.modelo}}"> {{placa.codigo}}</div>
+                </div>
+                <div  class="row">
+                    <div class="col s12 caja-modal"> Estás apunto de eliminar la placa #{{placa.codigo}} esta acción es irreversible, si quieres continuar escribe en la caja de texto la palabra ELIMINAR y acepta.
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <div class="col s12">
+                        <div class="input-formulario">
+                            <input ng-model="eliminar" placeholder="ELIMINAR" type="text">
+                        </div>
+                    </div>
+                </div>
+                <button class="boton-verde" ng-click="borrarPlaca(eliminar, placa.idPlaca)">ACEPTAR</button>
             </div>
         </div>
     </script>

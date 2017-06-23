@@ -33,7 +33,9 @@ angular.module("mascotas")
                 $scope.cerrarModal = function () {
                     $mdDialog.hide();
                 }
-            }
+            },
+            clickOutsideToClose: true,
+            escapeToClose: true
         });
 
 

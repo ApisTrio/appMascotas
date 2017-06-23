@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", "apiConstant", "$filter", "razasService", function (placasService, mascotasService, $stateParams, placaValida, apiConstant, $filter, razasService) {
+.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", "apiConstant", "$filter", "razasService", "$q", "$state", "vacunasService", "$mdDialog", "placasService", function (placasService, mascotasService, $stateParams, placaValida, apiConstant, $filter, razasService, $q, $state, vacunasService, $mdDialog, placasService) {
 
     var cdx = this;
 
@@ -27,6 +27,8 @@ angular.module("mascotas")
 
     cdx.razas = [];
 
+    cdx.vacunas = [];
+
     mascotasService.datosMedicos(placaValida.basico.idMascota).then(function (res) {
 
         cdx.datos.medicos = res[0];
@@ -43,6 +45,12 @@ angular.module("mascotas")
 
         cdx.razas = res;
 
+
+    })
+
+    vacunasService.lista().then(function (res) {
+
+        cdx.vacunas = res;
 
     })
 
@@ -203,22 +211,135 @@ angular.module("mascotas")
             pasos: false
         },
         vacunas: {
-            comenzar: function () {
+            comenzar: function (vacunasOriginal) {
 
+
+                angular.forEach(vacunasOriginal, function (valor, llave) {
+
+                    var fecha = new Date(vacunasOriginal[llave].fecha.split("/")[2], vacunasOriginal[llave].fecha.split("/")[1] - 1, vacunasOriginal[llave].fecha.split("/")[0]);
+
+                    var recordatorio = null;
+
+                    if (vacunasOriginal[llave].fecha_recordatorio) {
+
+                        recordatorio = new Date(vacunasOriginal[llave].fecha_recordatorio.split("/")[2], vacunasOriginal[llave].fecha_recordatorio.split("/")[1] - 1, vacunasOriginal[llave].fecha_recordatorio.split("/")[0]);
+
+                    }
+                    
+                    var activo = vacunasOriginal[llave].recordatorio_activo == "1" ? true : false; 
+                    
+                    cdx.espejo.vacunas[llave] = {
+                        fecha: vacunasOriginal[llave].fecha,
+                        recordatorio: recordatorio,
+                        activo:  activo,
+                        vacunas_idVacuna: vacunasOriginal[llave].vacunas_idVacuna,
+                        idMascota: vacunasOriginal[llave].idMascota,
+                        idVamas: vacunasOriginal[llave].idVamas
+                    };
+
+                })
+
+
+                cdx.editar.vacunas.pasos = true;
             },
             cancelar: function () {
 
-            },
-            guardar: function () {
+                cdx.espejo.vacunas = [];
+                cdx.editar.vacunas.eliminar = null;
+                cdx.editar.vacunas.pasos = false;
 
-            }
+            },
+            guardar: function (valido, vacunasEspejo) {
+
+                if (valido) {
+
+                    var promesas = [];
+
+                    angular.forEach(vacunasEspejo, function (valor, llave) {
+
+                        valor.idMascota = cdx.datos.basico.idMascota;
+
+                        valor.recordatorio = $filter('date')(valor.recordatorio, "dd/MM/yyyy");
+                        valor.fecha = $filter('date')(valor.fecha, "dd/MM/yyyy");
+                        
+                        
+                         valor.activo = valor.activo ? "1" : "0"; 
+                        
+                        promesas.push(mascotasService.registrarVacuna(valor));
+
+                    })
+
+                    angular.forEach(cdx.editar.vacunas.eliminar, function (valor, llave) {
+
+                        //promesas.push(mascotasService.eliminarDueno(valor));
+
+                    })
+
+                    $q.all(promesas).then(function (res) {
+
+                        mascotasService.vacunas(cdx.datos.basico.idMascota).then(function (res) {
+
+                            cdx.datos.vacunas = res;
+                            cdx.espejo.vacunas = [];
+                            cdx.editar.vacunas.eliminar = null;
+                            cdx.editar.vacunas.pasos = false;
+
+                        })
+
+                    })
+
+                    .catch(function () {
+
+                        $state.reload();
+
+                    })
+
+                }
+            },
+            desaparecer: function (indice) {
+
+
+                if (cdx.espejo.vacunas[indice].idVamas) {
+
+                    cdx.editar.vacunas.eliminar.push(cdx.espejo.vacunas[indice + 1].idVamas);
+
+                }
+
+                cdx.espejo.vacunas.splice(indice, 1);
+
+            },
+            eliminar: [],
+            pasos: false
+
         },
         duenos: {
             comenzar: function (duenosOriginal) {
 
                 angular.forEach(duenosOriginal, function (valor, llave) {
 
-                    cdx.espejo.duenos[llave] = valor;
+                    var nacimiento = null;
+
+                    if (duenosOriginal[llave].nacimiento) {
+
+                        nacimiento = new Date(duenosOriginal[llave].nacimiento.split("/")[2], duenosOriginal[llave].nacimiento.split("/")[1] - 1, duenosOriginal[llave].nacimiento.split("/")[0]);
+
+                    }
+                    cdx.espejo.duenos[llave] = {
+
+                        apellido: duenosOriginal[llave].apellido,
+                        ciudad: duenosOriginal[llave].ciudad,
+                        codigo_postal: duenosOriginal[llave].codigo_postal,
+                        direccion: duenosOriginal[llave].direccion,
+                        email: duenosOriginal[llave].email,
+                        idDueno: duenosOriginal[llave].idDueno,
+                        nacimiento: nacimiento,
+                        nombre: duenosOriginal[llave].nombre,
+                        pais: duenosOriginal[llave].pais,
+                        provincia: duenosOriginal[llave].provincia,
+                        sexo: duenosOriginal[llave].sexo,
+                        telefono: duenosOriginal[llave].telefono,
+
+                    };
 
                 })
 
@@ -227,11 +348,73 @@ angular.module("mascotas")
 
             },
             cancelar: function () {
+                var duenoPrincipal = cdx.espejo.duenos[0];
+                cdx.espejo.duenos = [duenoPrincipal];
+                cdx.editar.duenos.eliminar = null;
+                cdx.editar.duenos.pasos = false;
 
             },
             guardar: function (valido, duenosEspejo) {
 
+                if (valido) {
+
+                    var promesas = [];
+
+                    angular.forEach(duenosEspejo, function (valor, llave) {
+
+                        if (!valor.idDueno) {
+
+                            valor.idMascota = cdx.datos.basico.idMascota;
+
+                        }
+
+                        valor.nacimiento = $filter('date')(valor.nacimiento, "dd/MM/yyyy");
+
+                        promesas.push(mascotasService.modificarDueno(valor));
+
+                    })
+
+                    angular.forEach(cdx.editar.duenos.eliminar, function (valor, llave) {
+
+                        promesas.push(mascotasService.eliminarDueno(valor));
+
+                    })
+
+                    $q.all(promesas).then(function (res) {
+
+                        mascotasService.duenosMascota(cdx.datos.basico.idMascota).then(function (res) {
+
+                            cdx.datos.duenos = res;
+                            var duenoPrincipal = cdx.espejo.duenos[0];
+                            cdx.espejo.duenos = [duenoPrincipal];
+                            cdx.editar.eliminar = null;
+                            cdx.editar.pasos = false;
+
+                        })
+
+                    })
+
+                    .catch(function () {
+
+                        $state.reload();
+
+                    })
+
+                }
+
             },
+            desparecer: function (indice) {
+
+                if (cdx.espejo.duenos[indice + 1].idDueno) {
+
+                    cdx.editar.duenos.eliminar.push(cdx.espejo.duenos[indice + 1].idDueno);
+
+                }
+
+                cdx.espejo.duenos.splice(indice + 1, 1);
+
+            },
+            eliminar: [],
             pasos: false
         }
     };
@@ -254,6 +437,65 @@ angular.module("mascotas")
         cerrar: 'Cerrar',
         min: (new Date(cdx.hoy.getTime() - (1000 * 60 * 60 * 24 * 15))).toISOString(),
         max: (new Date(cdx.hoy.getTime() + (1000 * 60 * 60 * 24))).toISOString()
+
+    }
+
+
+
+
+    cdx.mostrarModal = function ($event, placa) {
+
+        //console.log(placa)
+
+        var promesa = $mdDialog.show({
+            parent: angular.element(document.body),
+            targetEvent: $event,
+            templateUrl: "cdx.borrarPlaca.html",
+            locals: {
+                placa: placa
+            },
+            controller: function ($scope, $mdDialog, placasService, placa) {
+
+                $scope.placa = placa;
+
+                $scope.borrarPlaca = function (palabra, idPlaca) {
+
+                    if ($filter('uppercase')(palabra) == 'ELIMINAR') {
+
+
+                        placasService.desactivarPlaca(placa.idPlaca)
+                            .then(function (res) {
+                                $mdDialog.hide();
+                            })
+
+
+
+                    }
+
+                }
+            },
+            clickOutsideToClose: true,
+            escapeToClose: true
+        });
+
+        promesa
+
+            .then(function (res) {
+
+
+
+
+
+            placasService.placasAsignadas(cdx.datos.basico.idMascota).then(function (res) {
+                
+                $mdDialog.hide();
+                cdx.datos.placas = res
+
+            })
+
+
+
+        })
 
     }
 

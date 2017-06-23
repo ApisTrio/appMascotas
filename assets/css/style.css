@@ -440,8 +440,8 @@ h5{
 }
 
 .menu-perfil > div:not(.colaspso-menu){
-    padding-left: 25px !important;
-    padding-right: 25px !important;
+    padding-left: 18px !important;
+    white-space: normal;
 }
 
 .menu-perfil>div {
@@ -460,7 +460,7 @@ h5{
 }
 
 .colapso-menu {
-    cursor: auto;
+    cursor: pointer;
     text-align: right;
     padding-right: 20px;
     margin-bottom: 60px;
@@ -474,7 +474,8 @@ h5{
 .opcion-menu {
     font-size: 12px;
     margin-left: 8px;
-    max-width: calc(100% - 60px)
+    max-width: calc(100% - 60px);
+    font-weight: 100;
 }
 
 .desactivar-alarma-perfil,
@@ -739,8 +740,8 @@ textarea.erroneo:focus {
     display: flex;
 }
 
-.contenedor-perfil-colapsado .menu-perfil > div:not(.colapso-menu) {
-    opacity: 0;
+.contenedor-perfil-colapsado .menu-perfil > div:not(.colapso-menu) div.opcion-menu  {
+    display: none;
 }
 
 .colapso-menu:focus, .burguer-menu:focus{
@@ -748,12 +749,7 @@ textarea.erroneo:focus {
 
 }
 
-.contenedor-perfil .menu-perfil .colapso-menu{
-    transition: .5s all ease-in;
-}
-.contenedor-perfil-colapsado .menu-perfil .colapso-menu{
-    transform: rotate(180deg);
-}
+
 
 
 .contenedor-perfil-interno {
@@ -767,11 +763,9 @@ textarea.erroneo:focus {
 }
 
 #menu-perfil{
-    transition: 1s all ease;
+    transition: .5s all ease;
 }
-.menu-perfil > div:not(.colapso-menu){
-    transition: .3s all ease-in;
-}
+
 
 .admin {
     background-color: white;
@@ -819,7 +813,7 @@ textarea.erroneo:focus {
     flex-flow: column;
     display: flex;
     position: absolute;
-    z-index: 1000000000;
+    z-index: 58;
     left: calc(50% - 18px);
 }
 

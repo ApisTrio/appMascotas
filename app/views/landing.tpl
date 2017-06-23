@@ -132,7 +132,7 @@
         <div class="row">
             <div class="col s12 m6 l4 margin-in pointer" ng-repeat="perdida in landing.perdidas">
            
-                    <div class="circle foto-mascota" style="background-image:url({{landing.apiDir.dominio}}{{landing.apiDir.path}}{{landing.apiDir.imagenes.mascotas}}{{perdida.foto}});">
+                    <div class="circle foto-mascota" style="background-image:url({{landing.apiDir.dominio}}{{landing.apiDir.path}}{{landing.apiDir.imagenes.mascotas}}{{perdida.foto}}); background-position: 100% 100%; background-size: cover;">
                     </div>
             
                 <div class="center-align negrita">

@@ -14,14 +14,14 @@
 
         <div class="row">
             <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
-                Para continuar con la eliminación de tu cuenta te enviaremos un correo electrónico para confirmar la eliminación y que no haya sido un error.
+                Este paso es irreversible, si deseas continuar con la eliminación de tu cuenta te enviaremos un correo electrónico para que lo confirmes.
             </div>
         </div>
 
         <div class="row">
             <div class="col s4 offset-s4 botones-formulario">
-                <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-                <button class="boton-verde" ng-click="eliminarCuenta.avanzar()">ELIMINAR</button>
+                <button style="width: 40%" class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
+                <button style="width: 40%" class="boton-verde" ng-click="eliminarCuenta.avanzar()">ELIMINAR</button>
             </div>
         </div>
     </div>

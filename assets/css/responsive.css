@@ -18,8 +18,10 @@
         width: 230px;
     }
     .como-funciona {
-    	height: auto !important;
-	}
+        height: auto !important;
+        background-size: auto 100%;
+
+    }
 
     .contenedor-navbar{
         display: none
@@ -314,6 +316,8 @@
 
     .como-funciona {
         height: auto !important;
+        background-size: auto 100%;
+
     }
 
     .contenedor-navbar{
@@ -642,6 +646,8 @@
     }
     .como-funciona {
         height: auto !important;
+        background-size: auto 100%;
+
     }
 
     /*.ondas {

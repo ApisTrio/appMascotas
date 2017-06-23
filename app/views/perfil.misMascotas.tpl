@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <div class="center-align contenedor-foto-mascota">
-                        <div class="circle foto-mascota" style="background-image:url({{misMascotas.apiDir.dominio}}{{misMascotas.apiDir.path}}{{misMascotas.apiDir.imagenes.mascotas}}{{mascota.foto}});" ng-if="mascota.foto">
+                        <div class="circle foto-mascota" style="background-image:url({{misMascotas.apiDir.dominio}}{{misMascotas.apiDir.path}}{{misMascotas.apiDir.imagenes.mascotas}}{{mascota.foto}}); background-position: 100% 100%; background-size: cover;" ng-if="mascota.foto">
                         </div>
                         <div class="circle foto-mascota" style="background-image:url(assets/images/icons/foto_perfil.png); border: 1px solid black;" ng-if="!mascota.foto">
                         </div>

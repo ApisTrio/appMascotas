@@ -5,7 +5,7 @@
 /*------------------------------------------------------------*/
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-width : 320px) and (max-width : 480px) {
 	.globitos {
     	height: 280px;
     	width: 280px;
@@ -60,6 +60,18 @@
 
 }
 
+@media only screen and (max-width : 800px){
+    header .contenedor-navbar {
+        display: none;
+    }
+}
+
+@media only screen and (min-width : 800px){
+    header .contenedor-navbar-mobile {
+        display: none;
+    }
+}
+
 
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
@@ -68,7 +80,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 5 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
 /* Styles */
     .contenedor-navbar{
         display: none
@@ -120,7 +132,7 @@
     }
 
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
 /* Styles */
 
     .contenedor-navbar{
@@ -186,7 +198,7 @@
 /*------------------------------------------------------------*/
 
 /* Samsung Galaxy S3 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 320px) and (max-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -283,7 +295,7 @@
         height: 200px;
     }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 320px) and (max-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -370,7 +382,7 @@
 }
 
 /* Samsung Galaxy S4 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+@media only screen and (min-width: 320px) and (max-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
     .globitos {
         height: 280px;
         width: 280px;
@@ -442,7 +454,7 @@
         height: 200px;
     }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+@media only screen and (min-width: 320px) and (max-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
     .globitos {
         height: 280px;
         width: 280px;
@@ -536,7 +548,7 @@
 /*------------------------------------------------------------*/
 
 /* Samsung Galaxy S5 ----------- */
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+@media only screen and (min-width: 360px) and (max-width: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
     .globitos {
         height: 280px;
         width: 280px;
@@ -614,7 +626,7 @@
 
 
 }
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+@media only screen and (min-width: 360px) and (max-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
     .globitos {
         height: 280px;
         width: 280px;
@@ -709,7 +721,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 6 ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -775,7 +787,7 @@
         height: 200px;
     }
 }
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -857,7 +869,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 412px) and (max-device-width: 732px) and (orientation : landscape){
+@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : landscape){
     .globitos {
         height: 280px;
         width: 280px;
@@ -935,7 +947,7 @@
         height: 200px;
     }
 }
-@media only screen and (min-device-width: 412px) and (max-device-width: 732px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -1021,7 +1033,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -1099,7 +1111,7 @@
         height: 200px;
     }
 }
-@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -1191,7 +1203,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-width: 737px) and (orientation : landscape){
+@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : landscape){
     .globitos {
         height: 280px;
         width: 280px;
@@ -1274,14 +1286,14 @@
 /*------------------------------------------------------------*/
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
 
 
 
 }
 
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
 
 	.contenido-iphone {
         margin-bottom: 100px;
@@ -1336,7 +1348,7 @@
 }
 
 /* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1385,7 +1397,7 @@
 /**********
 iPad 3
 **********/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1437,7 +1449,7 @@ iPad 3
         height: 200px;
     }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1470,7 +1482,7 @@ iPad 3
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 
-@media only screen and (min-device-width : 800px) and (orientation : portrait) {
+@media only screen and (min-width : 800px) and (max-width : 1024px) and (orientation : portrait) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1517,4 +1529,9 @@ iPad 3
     }
 }
 
-
+@media only screen and (min-width : 1450px) and (max-width : 2600px) and (orientation : landscape){
+    .inicio {
+        background-position: 100% 54%;
+        background-size: 100% 160%;
+    }
+}

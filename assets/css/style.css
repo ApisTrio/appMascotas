@@ -25,6 +25,7 @@
 body {
     font-family: 'OpenSansR';
     font-weight: normal;
+    background: white;
 }
 
 
@@ -399,6 +400,18 @@ img.editar-perfil:focus{
     position: absolute;
     bottom: -1px;
     width: 100%;
+}
+
+.ondas2 {
+    position: absolute;
+    bottom: -250px;
+    width: 100%;
+}
+
+h5{
+    font-size: 1.64rem;
+    line-height: 110%;
+    margin: 1.5rem 0 .656rem 0;
 }
 
 .iniciar-sesion input {
@@ -888,6 +901,11 @@ cdx-pasos .datos>div>div {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    color: #9e9e9e;
+}
+
+cdx-pasos .datos>div>div.activo + div {
+    color: #333333 !important;
 }
 
 cdx-pasos .datos>div>div:first-child {

@@ -87,7 +87,7 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Dirección</div>
-                <div class="contenido-info" ng-if="miPerfil.datos.dueno.direccion">{{miPerfil.datos.dueno.direccion}}, {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
+                <div class="contenido-info" ng-if="miPerfil.datos.dueno.direccion" style="white-space: normal;">{{miPerfil.datos.dueno.direccion}}, {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
                 <div class="contenido-info" ng-if="!miPerfil.datos.dueno.direccion"> {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
             </div>
         </div>

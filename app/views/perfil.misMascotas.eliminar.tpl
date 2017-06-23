@@ -20,8 +20,8 @@
 
         <div class="row">
             <div class="col s4 offset-s4 botones-formulario">
-                <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-                <button class="boton-verde" ng-click="misMascotasEliminar.avanzar(misMascotasEliminar.placa)">CONFIRMAR</button>
+                <button style="width: 40%" class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
+                <button style="width: 40%" class="boton-verde" ng-click="misMascotasEliminar.avanzar(misMascotasEliminar.placa)">CONFIRMAR</button>
             </div>
         </div>
     </div>

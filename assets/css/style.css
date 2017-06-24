@@ -481,7 +481,7 @@ h5{
 }
 
 .menu-perfil > div:not(.colaspso-menu){
-    padding-left: 18px !important;
+    padding-left: 17px !important;
     white-space: normal;
 }
 
@@ -505,6 +505,7 @@ h5{
     text-align: right;
     padding-right: 20px;
     margin-bottom: 60px;
+    height: 40px;
 }
 
 .colapso-menu img {
@@ -515,8 +516,12 @@ h5{
 .opcion-menu {
     font-size: 12px;
     margin-left: 8px;
-    max-width: calc(100% - 60px);
+    max-width: calc(72% - 30px);
     font-weight: 100;
+    position: absolute;
+    white-space: normal;
+    width: 20%;
+    transition: 1s all ease
 }
 
 .desactivar-alarma-perfil,
@@ -782,7 +787,7 @@ textarea.erroneo:focus {
 }
 
 .contenedor-perfil-colapsado .menu-perfil > div:not(.colapso-menu) div.opcion-menu  {
-    display: none;
+    opacity: 0;
 }
 
 .colapso-menu:focus, .burguer-menu:focus{
@@ -796,6 +801,14 @@ textarea.erroneo:focus {
 .contenedor-perfil-interno {
     padding: 0px !important;
     box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.14), inset 1px 0px 0px 0 rgba(0, 0, 0, 0.12), 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+@media only screen and (min-width: 993px){
+    .contenedor-perfil-interno.col.l11 {
+        width: 94.666667%;
+    }
 }
 
 .menu-perfil {
@@ -803,8 +816,24 @@ textarea.erroneo:focus {
     height: 100%;
 }
 
+@media only screen and (min-width: 601px){
+    .opcion-menu {
+        width: 22%;
+    }
+}
+
+@media only screen and (min-width: 993px){
+    .menu-perfil.col.l1 {
+        width: 5.333333% !important;
+    }
+    .opcion-menu {
+        width: 11%;
+    }
+}
+
+
 #menu-perfil{
-    transition: .5s all ease;
+    transition: 1s all ease;
 }
 
 

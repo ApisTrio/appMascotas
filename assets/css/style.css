@@ -307,6 +307,13 @@ img.editar-perfil{
     height: 25px;
     margin: 10px;
     cursor: pointer;
+    visibility: hidden;
+    
+}
+
+section.informacion-mascota:hover img.editar-perfil{
+    
+    visibility: visible;
     
 }
 
@@ -1001,6 +1008,12 @@ cdx-modelos>div {
 
 cdx-modelos>div>div {
     display: inline-block;
+    vertical-align: middle;
+}
+
+cdx-modelos > div > img:first-child, cdx-modelos > div > img:last-child {
+    height: 20px;
+    vertical-align: middle;
 }
 
 cdx-modelos img {

@@ -339,12 +339,14 @@
             <div class="row">
                 <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
                     <button class="boton-neutro" ng-click="misMascotasIndividual.editar.vacunas.cancelar()">Cancelar</button>
-                    <button class="boton-verde" ng-click="misMascotasIndividual.editar.vacunas.guardar(vacunasPriForm.$valid, misMascotasIndividual.espejo.vacunas)">GUARDAR</button>
+                    <button class="boton-verde" ng-class="{'bloqueado' : !vacunasPriForm.$valid }" ng-click="misMascotasIndividual.editar.vacunas.guardar(vacunasPriForm.$valid, misMascotasIndividual.espejo.vacunas)">GUARDAR</button>
                 </div>
             </div>
         </div>
     </div>
 
+</section>
+<section class="informacion-mascota">
     <div class="row">
         <div class="col s10 m8 offset-m1">
             <div class="titulo-info c2">Información médica adicional</div>
@@ -478,7 +480,7 @@
             <div class="row">
                 <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
                     <button class="boton-neutro" ng-click="misMascotasIndividual.editar.medico.cancelar()">Cancelar</button>
-                    <button class="boton-verde" ng-click="misMascotasIndividual.editar.medico.guardar(infoMedicoForm.$valid, misMascotasIndividual.espejo.medico)">GUARDAR</button>
+                    <button class="boton-verde" ng-class="{'bloqueado' : !infoMedicoForm.$valid }" ng-click="misMascotasIndividual.editar.medico.guardar(infoMedicoForm.$valid, misMascotasIndividual.espejo.medico)">GUARDAR</button>
                 </div>
             </div>
         </div>
@@ -798,7 +800,7 @@
         <div class="row">
             <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
                 <button class="boton-neutro" ng-click="misMascotasIndividual.editar.duenos.cancelar()">Cancelar</button>
-                <button class="boton-verde" ng-click="misMascotasIndividual.editar.duenos.guardar(duenoExtraPrinForm.$valid, misMascotasIndividual.espejo.duenos)">GUARDAR</button>
+                <button class="boton-verde" ng-class="{'bloqueado' : !duenoExtraPrinForm.$valid }" ng-click="misMascotasIndividual.editar.duenos.guardar(duenoExtraPrinForm.$valid, misMascotasIndividual.espejo.duenos)">GUARDAR</button>
             </div>
         </div>
     </div>

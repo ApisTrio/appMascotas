@@ -13,6 +13,11 @@
     	float: none !important;
 	}
 
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
     #footer-widgets {
         padding: 2% 0 0;
         flex-flow: column;
@@ -114,6 +119,10 @@
         width: 48%;
     }
 
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
     .login .linea-media .tres div, .login .linea-media .uno div {
         width: 100%;
         background-color: #e5e5e5;
@@ -174,6 +183,7 @@
         padding-left: 10px; 
     }
 
+
     header .contenedor-navbar-mobile {
         width: 49%;
     }
@@ -223,6 +233,10 @@
 
     .contenedor-modelos{
         width: 200px;
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
     }
 
     .divider.responsive {
@@ -398,6 +412,10 @@
         width: 230px;
     }
 
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
     .contenedor-navbar{
         display: none
     }
@@ -563,9 +581,13 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-
-
     }
+    
+    .cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
+
     .como-funciona {
         height: auto !important;
     }
@@ -749,6 +771,10 @@
         margin-top: -62px;
     }*/
 
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
     .contenedor-navbar{
         display: none
     }
@@ -904,6 +930,10 @@
         width: 230px;
 
 
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
     }
     #footer-widgets {
         padding: 2% 0 0;
@@ -1070,6 +1100,10 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
     }
 
     .inicio {
@@ -1243,6 +1277,10 @@
     .inicio {
         background-size: auto 80%;
         background-position: 32% 101%;
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
     }
 
     .como-empezar .parrafo {

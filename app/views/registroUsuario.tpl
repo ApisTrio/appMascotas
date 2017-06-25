@@ -777,7 +777,7 @@
 
     <!--------- SIGUIENTE -------->
 
-    <div class="row">
+    <div class="row no-margin-bottom" style="padding-bottom: 40px;">
         <div class="col s10 offset-s1 m4 offset-m4 botones-formulario" ng-show="registro.pasos < 5 && registro.listo">
             <button class="boton-neutro" ui-sref="landing">Cancelar</button>
             <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid, registro.datos)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>

@@ -145,6 +145,29 @@ angular.module("mascotas")
 
     }
 
+    
+    cdx.previsualizar = function ($event, imagen) {
+        
+        $mdDialog.show({
+            parent: angular.element(document.body),
+            targetEvent: $event,
+            templateUrl: "cdx.previsualizarMascota.html",
+            locals: {
+                imagen: imagen
+            },
+            controller: function ($scope, $mdDialog, imagen) {
+            
+                $scope.cerrarModal = function () {
+                    $mdDialog.hide();
+                }
+                
+                $scope.imagen = imagen;
+            },
+            clickOutsideToClose: true,
+            escapeToClose: true
+        });
+
+      }
 
 
 

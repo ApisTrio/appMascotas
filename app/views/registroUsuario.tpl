@@ -144,7 +144,7 @@
         <div class="row">
             <div class="col s10 offset-s1 m10 offset-m1 condiciones-formulario">
                 <input ng-model="registro.terminos" type="checkbox" class="filled-in" id="terminos" name="terminos" required/>
-                <label for="terminos">He leido y acepto los <a href="/terminos-condiciones-dinbeat-qr" target="_blank">términos y condiciones</a>, así como las <a href="/politica-privacidad-dinbeat-qr">politicas de privacidad</a> de la empresa.</label>
+                <label for="terminos">He leido y acepto los <a href="/terminos-condiciones-dinbeat-qr" target="_blank">términos y condiciones</a>, así como las <a href="/politica-privacidad-dinbeat-qr" target="_blank">politicas de privacidad</a> de la empresa.</label>
             </div>
         </div>
 
@@ -179,8 +179,15 @@
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Foto</div>
                     <div class="input-formulario text-center" style="position: relative;">
-                        <div ng-show="registro.aviso" ng-init="registro.aviso = false" style="position: absolute;width: 350px;padding: 10px;box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.32);top: -85px;right: 40px;">Debes subir una foto de máximo 500Kb y con una medida mínima de 500px y 500px</div>
-                        <label for="input-file-id" class="boton-verde-negativo" ng-mouseover="registro.aviso = true" ng-mouseleave="registro.aviso = false" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="500KB" ngf-min-height="100">CARGAR FOTO</label>
+                        <div ng-hide="registro.imagen">
+                            <button class="boton-verde-negativo" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" >CARGAR FOTO</button>
+                            
+                        </div>
+                        <div ng-show="registro.imagen">
+                            
+                            <button class="boton-verde" ng-click="registro.previsualizar($event, registro.imagen)">PREVISUALIZAR</button> O <button class="boton-neutro" ng-click="registro.imagen = null">Cancelar</button>
+                            <!--<img ngf-src="misMascotasNueva.imagen">-->
+                        </div>
                     </div>
                 </div>
             </div>

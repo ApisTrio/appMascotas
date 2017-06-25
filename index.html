@@ -228,7 +228,7 @@
 
     <!-- directiva de modal para buscar placas--->
     <script type="text/ng-template" id="cdx.encontreMascotaModal.html">
-        <div class="row margin-in">
+        <div class="row margin-bottom-40 margin-top-40 margin-left-40 margin-right-40">
             <div class="col s12 center-align">
                 <h4 class="titulo2 negrita interlineado20 c2">¿Has encontrado una mascota?</h4>
                 <div class="center-align">Por favor introduce el ID de su placa</div>
@@ -269,7 +269,16 @@
             </div>
         </div>
     </script>
-
+    
+    
+    <!-- directiva de previsualizar foto de mascota-->
+    <script type="text/ng-template" id="cdx.previsualizarMascota.html">
+        <div class="row margin-in">
+            <div class="col s12 center-align">
+                <img ngf-src="imagen" class="circle margin-top-30" style="height: 200px; width:200px;">
+            </div>
+        </div>
+    </script>
 
 </body>
 

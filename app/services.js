@@ -468,6 +468,30 @@ angular.module("mascotas")
         return promise;
 
     }
+    
+    this.eliminarVacuna = function(idVacuna){
+        
+        
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.get(apiRootFactory + "informacion/borrar-vacuna/" + idVacuna).then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve(res.data.result);
+
+            } else {
+
+                defered.reject();
+            }
+
+        });
+
+        return promise;
+        
+        
+    }
 
     this.nuevaEncontrada = function (idMascota) {
 

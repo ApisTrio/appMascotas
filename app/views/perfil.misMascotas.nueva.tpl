@@ -30,8 +30,16 @@
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Foto</div>
                     <div class="input-formulario text-center">
+                        <div ng-hide="misMascotasNueva.imagen">
+                            <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" >CARGAR FOTO</button>
+                            
+                        </div>
+                        <div ng-show="misMascotasNueva.imagen">
+                            
+                            <button class="boton-verde" ng-click="misMascotasNueva.previsualizar($event, misMascotasNueva.imagen)">PREVISUALIZAR</button> O <button class="boton-neutro" ng-click="misMascotasNueva.imagen = null">Cancelar</button>
+                            <!--<img ngf-src="misMascotasNueva.imagen">-->
+                        </div>
                         
-                        <label for="input-file-id" class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="500KB" ngf-min-height="100">CARGAR FOTO</label>
                     </div>
                 </div>
             </div>

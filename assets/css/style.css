@@ -803,6 +803,8 @@ textarea.erroneo:focus {
     box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.14), inset 1px 0px 0px 0 rgba(0, 0, 0, 0.12), 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
+    transition: 1s all ease;
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 993px){

@@ -783,7 +783,6 @@ textarea.erroneo:focus {
     background-color: white;
     overflow: hidden;
     white-space: nowrap;
-    display: flex;
 }
 
 .contenedor-perfil-colapsado .menu-perfil > div:not(.colapso-menu) div.opcion-menu  {
@@ -804,7 +803,8 @@ textarea.erroneo:focus {
     position: relative;
     z-index: 1;
     transition: width 1s;
-    overflow: hidden;
+    display: inline-block;
+    float: none !important;
 }
 
 @media only screen and (min-width: 993px){
@@ -813,9 +813,11 @@ textarea.erroneo:focus {
     }
 }
 
-.menu-perfil {
-    background-color: white;
-    height: 100%;
+#menu-perfil {
+    transition: 1s all ease;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
 }
 
 @media only screen and (min-width: 601px){
@@ -1042,6 +1044,7 @@ cdx-modelos>div {
 cdx-modelos>div>div>div, cdx-modelos>div>div   {
     display: inline-block;
     vertical-align: middle;
+    width: 100px;
 }
 
 cdx-modelos>div>div {
@@ -1203,4 +1206,63 @@ header .contenedor-navbar .login-contenedor {
     left: -10px;
     cursor: pointer;
         z-index: 1000000000000000000000;
+}
+
+
+
+/*FOTTER*/
+
+#main-footer {
+    background-color: #3c3d41;
+}
+
+#main-footer .footer-widget h4 {
+    color: #b5b5b5;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#footer-widgets .footer-widget li {
+    position: relative;
+    padding-left: 14px;
+}
+
+.footer-widget, .footer-widget li, .footer-widget li a, #footer-info {
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer-bottom {
+    background-color: rgba(0,3,48,0);
+    padding: 15px 0 5px;
+}
+
+#footer-info {
+    font-size: 10px;
+}
+
+#footer-info, #footer-info a {
+    color: #ffffff;
+}
+
+.menu-legal-container ul {
+    list-style: none;
+}
+
+#footer-widgets {
+    padding: 6% 0 0;
+    display: flex;
+}
+.footer-widget {
+    flex:1;
+    margin: 0 0 5.5% 0;
+}
+
+.et_pb_social_media_follow li {
+    float: left;
+    margin-bottom: 8px;
 }

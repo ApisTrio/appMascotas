@@ -13,9 +13,13 @@
     	float: none !important;
 	}
 
+    #footer-widgets {
+        padding: 2% 0 0;
+        flex-flow: column;
+    }
+
     #hiddeninmobile > section{
         overflow: hidden;
-        display: -webkit-inline-box
     }
 
 	.contenido-iphone {
@@ -125,6 +129,11 @@
         flex-flow: row;
         position: relative;
         left: 0;
+    }
+
+    #footer-widgets {
+        padding: 2% 0 0;
+        flex-flow: column;
     }
 
 }
@@ -877,6 +886,10 @@
         background-color: #e5e5e5;
         height: 200px;
     }
+    #footer-widgets {
+        padding: 2% 0 0;
+        flex-flow: column;
+    }
 }
 @media only screen and (min-width: 375px) and (max-width: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
@@ -891,6 +904,10 @@
         width: 230px;
 
 
+    }
+    #footer-widgets {
+        padding: 2% 0 0;
+        flex-flow: column;
     }
     .como-funciona {
         height: auto !important;
@@ -1067,6 +1084,10 @@
         margin-top: -102px;
     }*/
 
+    #footer-widgets {
+        padding: 2% 0 0;
+        flex-flow: column;
+    }
     .como-funciona {
         height: auto !important;
     }

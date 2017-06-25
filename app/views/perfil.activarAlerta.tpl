@@ -13,7 +13,7 @@
     </div>
 
     <div class="row">
-        <div class="col s10 offset-s1 m8 offset-m2 center-align">
+        <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
             Selecciona tu mascota perdida, el lugar dónde se ha perdido y un mensaje personalizado, activa la alerta y avisa a todas las personas que se encuentran cerca de tí.
         </div>
     </div>
@@ -22,7 +22,7 @@
     <!-- MASCOTA -->
     <div ng-switch-when="1" class="row" ng-form="formPaso1">
 
-        <div class="col s12 m4 offset-m4">
+        <div class="col s11 offset-s1 m4 offset-m4">
             <div class="campo-formulario">Mascota *</div>
             <div class="input-formulario">
                 <div ng-class="{'margin-bottom-30': formPaso1.mascota.$pristine || formPaso1.mascota.$valid}">

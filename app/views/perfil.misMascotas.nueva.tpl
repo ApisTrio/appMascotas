@@ -134,8 +134,8 @@
     <div ng-form="formPaso2" ng-switch-when="2">
 
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita">
-                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a href="">tienda</a>.
+            <div class="col s12 m10 offset-m1 negrita white-space-normal">
+                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a href="https://www.dinbeat.com/tienda/">tienda</a>.
             </div>
         </div>
         <div class="row">
@@ -161,7 +161,7 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m2 offset-m1">
+            <div class="col s12 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
             <div class="col s12 m2">

@@ -520,7 +520,7 @@ h5{
     font-weight: 100;
     position: absolute;
     white-space: normal;
-    width: 20%;
+    width: 27%;
     transition: 1s all ease
 }
 
@@ -834,6 +834,8 @@ textarea.erroneo:focus {
 }
 
 
+
+
 #menu-perfil{
     transition: 1s all ease;
 }
@@ -1037,13 +1039,17 @@ cdx-modelos>div {
     display: inline-block;
 }
 
-cdx-modelos>div>div {
+cdx-modelos>div>div>div, cdx-modelos>div>div   {
     display: inline-block;
     vertical-align: middle;
 }
 
+cdx-modelos>div>div {
+    overflow: hidden;
+}
+
 cdx-modelos > div > img:first-child, cdx-modelos > div > img:last-child {
-    height: 20px;
+    height: 14px;
     vertical-align: middle;
 }
 

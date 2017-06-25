@@ -46,7 +46,7 @@
             </div>
         </div>
         <div  class="col s11 contenedor-perfil-interno fondo-blanco" id="contenedor-perfil-interno" ng-class="{'m11': perfil.menuColapsado, 'm8': !perfil.menuColapsado, 'l11': perfil.menuColapsado, 'l10': !perfil.menuColapsado}">
-            <div ui-view>
+            <div id="hiddeninmobile" ui-view>
 
 
             </div>

@@ -200,7 +200,7 @@
         </div>
     </script>
 
-    <!--- directiva de formas --->
+    <!-- directiva de formas -->
     <script type="text/ng-template" id="cdx.formas.html">
 
         <div ng-repeat="forma in formas">
@@ -210,23 +210,27 @@
     </script>
 
 
-    <!--- directiva de modelos --->
+    <!-- directiva de modelos -->
     <script type="text/ng-template" id="cdx.modelos.html">
 
-        <div ng-init="cdx.salto = 0">
+        <div ng-init="cdx.salto = 0" class="col s12">
             <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )">
-            <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
-                <label for="{{modelo.idModelo}}">
-                    <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
-                    <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
-                </label>
+
+            <div class="contenedor-modelos">
+                <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
+                    <label for="{{modelo.idModelo}}">
+                        <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
+                        <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
+                    </label>
+                </div>
             </div>
+
             <img src="assets/images/forms/right.png" ng-click="avanzar(cdx.salto,true, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length)">
         </div>
 
     </script>
 
-    <!-- directiva de modal para buscar placas--->
+    <!-- directiva de modal para buscar placas -->
     <script type="text/ng-template" id="cdx.encontreMascotaModal.html">
         <div class="row margin-in">
             <div class="col s12 center-align">
@@ -243,7 +247,7 @@
     </script>
 
 
-    <!-- directiva de modal para buscar placas--->
+    <!-- directiva de modal para buscar placas -->
     <script type="text/ng-template" id="cdx.borrarPlaca.html">
         <div class="row margin-in">
             <div class="col s12 center-align">

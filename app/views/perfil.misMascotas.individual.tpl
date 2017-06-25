@@ -122,12 +122,12 @@
                 <div class="campo-formulario">Nombre de tu mascota *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': basicoEditarForm.nombreMascota.$pristine || basicoEditarForm.nombreMascota.$valid}">
-                        <input ng-model="misMascotasIndividual.espejo.basico.nombre" ng-class="{'valido': basicoEditarForm.nombreMascota.$valid, 'erroneo': (!basicoEditarForm.nombreMascota.$valid && basicoEditarForm.nombreMascota.$dirty)}" placeholder="Nombre de tu mascota " type="text" name="nombreMascota" minlength="3" required>
+                        <input ng-model="misMascotasIndividual.espejo.basico.nombre" ng-class="{'valido': basicoEditarForm.nombreMascota.$valid, 'erroneo': (!basicoEditarForm.nombreMascota.$valid && basicoEditarForm.nombreMascota.$dirty)}" placeholder="Nombre de tu mascota " type="text" name="nombreMascota" minlength="2" required>
                         <cdx-validez data-validez="basicoEditarForm.nombreMascota.$valid" data-mostrar="true"></cdx-validez>
                     </div>
                     <div ng-messages="basicoEditarForm.nombreMascota.$error" ng-show="basicoEditarForm.nombreMascota.$dirty">
                         <div ng-message="required">Este campo es requerido.</div>
-                        <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                        <div ng-message="minlength">Debe contener al menos 2 caracteres.</div>
                     </div>
                 </div>
             </div>

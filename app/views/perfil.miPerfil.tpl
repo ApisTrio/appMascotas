@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-left: none;">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Fecha de nacimiento</div>
             <div class="contenido-info">{{miPerfil.datos.dueno.nacimiento}}</div>

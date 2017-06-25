@@ -511,7 +511,7 @@ h5{
 }
 
 .menu-perfil > div:not(.colaspso-menu){
-    padding-left: 18px !important;
+    padding-left: 17px !important;
     white-space: normal;
 }
 
@@ -535,6 +535,7 @@ h5{
     text-align: right;
     padding-right: 20px;
     margin-bottom: 60px;
+    height: 40px;
 }
 
 .colapso-menu img {
@@ -545,8 +546,12 @@ h5{
 .opcion-menu {
     font-size: 12px;
     margin-left: 8px;
-    max-width: calc(100% - 60px);
+    max-width: calc(72% - 30px);
     font-weight: 100;
+    position: absolute;
+    white-space: normal;
+    width: 27%;
+    transition: 1s all ease
 }
 
 .desactivar-alarma-perfil,
@@ -809,11 +814,10 @@ textarea.erroneo:focus {
     background-color: white;
     overflow: hidden;
     white-space: nowrap;
-    display: flex;
 }
 
 .contenedor-perfil-colapsado .menu-perfil > div:not(.colapso-menu) div.opcion-menu  {
-    display: none;
+    opacity: 0;
 }
 
 .colapso-menu:focus, .burguer-menu:focus{
@@ -827,15 +831,46 @@ textarea.erroneo:focus {
 .contenedor-perfil-interno {
     padding: 0px !important;
     box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.14), inset 1px 0px 0px 0 rgba(0, 0, 0, 0.12), 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    transition: width 1s;
+    display: inline-block;
+    float: none !important;
 }
 
-.menu-perfil {
-    background-color: white;
-    height: 100%;
+@media only screen and (min-width: 993px){
+    .contenedor-perfil-interno.col.l11 {
+        width: 94.666667%;
+    }
 }
+
+#menu-perfil {
+    transition: 1s all ease;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+@media only screen and (min-width: 601px){
+    .opcion-menu {
+        width: 22%;
+    }
+}
+
+@media only screen and (min-width: 993px){
+    .menu-perfil.col.l1 {
+        width: 5.333333% !important;
+    }
+    .opcion-menu {
+        width: 11%;
+    }
+}
+
+
+
 
 #menu-perfil{
-    transition: .5s all ease;
+    transition: 1s all ease;
 }
 
 
@@ -1037,13 +1072,18 @@ cdx-modelos>div {
     display: inline-block;
 }
 
-cdx-modelos>div>div {
+cdx-modelos>div>div>div, cdx-modelos>div>div   {
     display: inline-block;
     vertical-align: middle;
+    width: 100px;
+}
+
+cdx-modelos>div>div {
+    overflow: hidden;
 }
 
 cdx-modelos > div > img:first-child, cdx-modelos > div > img:last-child {
-    height: 20px;
+    height: 14px;
     vertical-align: middle;
 }
 
@@ -1197,4 +1237,63 @@ header .contenedor-navbar .login-contenedor {
     left: -10px;
     cursor: pointer;
         z-index: 1000000000000000000000;
+}
+
+
+
+/*FOTTER*/
+
+#main-footer {
+    background-color: #3c3d41;
+}
+
+#main-footer .footer-widget h4 {
+    color: #b5b5b5;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#footer-widgets .footer-widget li {
+    position: relative;
+    padding-left: 14px;
+}
+
+.footer-widget, .footer-widget li, .footer-widget li a, #footer-info {
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer-bottom {
+    background-color: rgba(0,3,48,0);
+    padding: 15px 0 5px;
+}
+
+#footer-info {
+    font-size: 10px;
+}
+
+#footer-info, #footer-info a {
+    color: #ffffff;
+}
+
+.menu-legal-container ul {
+    list-style: none;
+}
+
+#footer-widgets {
+    padding: 6% 0 0;
+    display: flex;
+}
+.footer-widget {
+    flex:1;
+    margin: 0 0 5.5% 0;
+}
+
+.et_pb_social_media_follow li {
+    float: left;
+    margin-bottom: 8px;
 }

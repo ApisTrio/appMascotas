@@ -36,11 +36,11 @@
             </div>
         </div>
 
-        <div class="col s10 m4 offset-m1 offset-s1 cubo-mascota padding-top-30 margin-bottom-30" ui-sref="perfil.misMascotasNueva">
+        <div class="col s10 offset-s1 m10 offset-m1 l4 offset-l1 cubo-mascota padding-top-30 margin-bottom-30" ui-sref="perfil.misMascotasNueva">
             <div class="row">
                 <div class="col s12 center-align">
                     <div class="center-align">
-                        <img class="circle" src="assets/images/icons/agregar_nueva_mascota.png">
+                        <img class="circle" width="200" src="assets/images/icons/agregar_nueva_mascota.png">
                     </div>
                 </div>
             </div>

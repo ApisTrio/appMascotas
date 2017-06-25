@@ -177,7 +177,8 @@
             </div>
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="margin-bottom-30">
-                    <div class="campo-formulario">Foto</div>
+
+                    <div class="campo-formulario" style="position: relative;">Foto <img style="cursor: pointer;" width="17" ng-mouseover="registro.aviso = true" ng-mouseleave="registro.aviso = false" src="assets/images/icons/info.png"> <div ng-show="registro.aviso" ng-init="registro.aviso = false" style="position: absolute;width: 350px;padding: 10px;box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.32);top: -66px;right: 18px;">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div></div>
                     <div class="input-formulario text-center" style="position: relative;">
                         <div ng-hide="registro.imagen">
                             <button class="boton-verde-negativo" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" >CARGAR FOTO</button>
@@ -188,6 +189,7 @@
                             <button class="boton-verde" ng-click="registro.previsualizar($event, registro.imagen)">PREVISUALIZAR</button> O <button class="boton-neutro" ng-click="registro.imagen = null">Cancelar</button>
                             <!--<img ngf-src="misMascotasNueva.imagen">-->
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -784,7 +786,7 @@
 
     <!--------- SIGUIENTE -------->
 
-    <div class="row">
+    <div class="row no-margin-bottom" style="padding-bottom: 40px;">
         <div class="col s10 offset-s1 m4 offset-m4 botones-formulario" ng-show="registro.pasos < 5 && registro.listo">
             <button class="boton-neutro" ui-sref="landing">Cancelar</button>
             <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid, registro.datos)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>

@@ -156,8 +156,81 @@
     <div class="fondo-blanco" ui-view>
 
     </div>
-    <footer>
+    <footer id="main-footer">
+                    
+        <div class="container">
+            <div id="footer-widgets" class="clearfix">
+                <div class="footer-widget">
+                    <div id="advwidget-2" class="fwidget et_pb_widget widget_advwidget">
+                        <h4 class="title"> </h4>
+                    <div class="adwrap">
+                    <a href="">
+                        <img src="https://www.dinbeat.com/wp-content/uploads/2017/04/endeca-104x85.png" alt="advertisement" title="advertisement">
+                    </a>
+                </div> <!-- end adwrap -->
+            </div> <!-- end .fwidget -->
+        </div> <!-- end .footer-widget -->
+        <div class="footer-widget">
+            <div id="nav_menu-3" class="fwidget et_pb_widget widget_nav_menu">
+                <h4 class="title">Legal</h4>
+                <div class="menu-legal-container">
+                    <ul id="menu-legal" class="menu">
+                        <li id="menu-item-32660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32660">
+                            <a href="https://www.dinbeat.com/aviso-legal/">Aviso legal</a>
+                        </li>
+                        <li id="menu-item-32662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32662">
+                            <a href="https://www.dinbeat.com/politica-de-privacidad/">Política de privacidad</a>
+                        </li>
+                        <li id="menu-item-32686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32686">
+                            <a href="https://www.dinbeat.com/politica-de-compra/">Política de compra</a>
+                        </li>
+                        <li id="menu-item-32661" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32661">
+                            <a href="https://www.dinbeat.com/politica-de-cookies/">Política de cookies</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end .fwidget -->
+        </div> <!-- end .footer-widget -->
+        <div class="footer-widget">
+            <div id="nav_menu-2" class="fwidget et_pb_widget widget_nav_menu">
+                <h4 class="title">Conócenos</h4>
+                <div class="menu-footer-container">
+                    <ul id="menu-footer" class="menu">
+                        <li id="menu-item-32687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32687"><a href="https://www.dinbeat.com/sobre-nosotros/">Nuestra historia</a></li>
+                        <li id="menu-item-32650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32650"><a href="https://www.dinbeat.com/sobre-nosotros/equipo/">Equipo</a></li>
+                        <li id="menu-item-32649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32649"><a href="https://www.dinbeat.com/contacto/">Contacto</a></li>
+                        <li id="menu-item-32544" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32544"><a href="https://www.dinbeat.com/trabaja-con-nosotros/">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+            </div> <!-- end .fwidget -->
+        </div> <!-- end .footer-widget -->
+        <div class="footer-widget last">
+            <div id="text-5" class="fwidget et_pb_widget widget_text">
+                <h4 class="title">Síguenos</h4>          
+                <div class="textwidget">
+                    <ul class="et_pb_social_media_follow et_pb_module et_pb_bg_layout_dark  et_pb_social_media_follow_0 clearfix">
+            
+                        <li class="et_pb_social_icon et_pb_social_network_link et-social-facebook et_pb_social_media_follow_network_0">
+                            <a href="https://www.facebook.com/dinbeatofficial/" class="icon circle" title="Facebook" target="_blank"><img width="28" src="assets/images/fb.png"></a>
+                        </li>
+                        <li class="et_pb_social_icon et_pb_social_network_link et-social-twitter et_pb_social_media_follow_network_1">
+                            <a href="https://twitter.com/dinbeatofficial" class="icon circle" title="Twitter" target="_blank"><img width="28"  src="assets/images/tw.png"></a>     
+                        </li>
+                        <li class="et_pb_social_icon et_pb_social_network_link et-social-instagram et_pb_social_media_follow_network_2">
+                            <a href="https://www.instagram.com/dinbeatofficial/" class="icon circle" title="Instagram" target="_blank"><img width="28"  src="assets/images/g.png"></a>
+                        </li>
 
+                    </ul>
+                </div>
+            </div> <!-- end .fwidget --></div> <!-- end .footer-widget -->  </div> <!-- #footer-widgets -->
+        </div>  <!-- .container -->
+
+            
+        <div id="footer-bottom">
+            <div class="container clearfix">
+                <div id="footer-info">Copyright © 2016 Dindog Tech SL. Todos los derechos reservados.</div>                 
+            </div>  <!-- .container -->
+        </div>
     </footer>
 
     <!---- Directiva de pasos ---->
@@ -200,7 +273,7 @@
         </div>
     </script>
 
-    <!--- directiva de formas --->
+    <!-- directiva de formas -->
     <script type="text/ng-template" id="cdx.formas.html">
 
         <div ng-repeat="forma in formas">
@@ -210,23 +283,27 @@
     </script>
 
 
-    <!--- directiva de modelos --->
+    <!-- directiva de modelos -->
     <script type="text/ng-template" id="cdx.modelos.html">
 
-        <div ng-init="cdx.salto = 0">
+        <div ng-init="cdx.salto = 0" class="col s12">
             <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )">
-            <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
-                <label for="{{modelo.idModelo}}">
-                    <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
-                    <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
-                </label>
+
+            <div class="contenedor-modelos">
+                <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
+                    <label for="{{modelo.idModelo}}">
+                        <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
+                        <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
+                    </label>
+                </div>
             </div>
+
             <img src="assets/images/forms/right.png" ng-click="avanzar(cdx.salto,true, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length)">
         </div>
 
     </script>
 
-    <!-- directiva de modal para buscar placas--->
+    <!-- directiva de modal para buscar placas -->
     <script type="text/ng-template" id="cdx.encontreMascotaModal.html">
         <div class="row margin-bottom-40 margin-top-40 margin-left-40 margin-right-40">
             <div class="col s12 center-align">
@@ -243,7 +320,7 @@
     </script>
 
 
-    <!-- directiva de modal para buscar placas--->
+    <!-- directiva de modal para buscar placas -->
     <script type="text/ng-template" id="cdx.borrarPlaca.html">
         <div class="row margin-in">
             <div class="col s12 center-align">

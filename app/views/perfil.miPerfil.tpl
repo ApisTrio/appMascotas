@@ -204,7 +204,7 @@
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': editarForm.pais.$pristine || editarForm.pais.$valid}">
                         <md-select ng-model="miPerfil.datosEspejo.pais" ng-class="{'valido': editarForm.pais.$valid, 'erroneo': (!editarForm.pais.$valid && editarForm.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
-                            <md-option value="España">España</md-option>
+                            <md-option value="{{pais}}" ng-repeat="pais in miPerfil.paises">{{pais}}</md-option>
                         </md-select>
                         <cdx-validez data-validez="editarForm.pais.$valid" data-mostrar="true"></cdx-validez>
                     </div>

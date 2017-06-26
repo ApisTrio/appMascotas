@@ -1075,6 +1075,7 @@ cdx-modelos>div {
 cdx-modelos>div>div>div, cdx-modelos>div>div   {
     display: inline-block;
     vertical-align: middle;
+        width: 100px;
 }
 
 cdx-modelos>div>div {

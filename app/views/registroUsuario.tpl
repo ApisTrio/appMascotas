@@ -331,7 +331,7 @@
             <div class="col s10 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s10 offset-s1 m2">
+            <div class="col s10 offset-s1 m4">
 
                 <cdx-formas data-seleccionado="registro.seleccionado" class="margin-bottom-30"></cdx-formas>
 

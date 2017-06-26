@@ -1,12 +1,14 @@
 angular.module("mascotas")
 
-.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", "apiConstant", "$filter", "razasService", "$q", "$state", "vacunasService", "$mdDialog", "placasService", function (placasService, mascotasService, $stateParams, placaValida, apiConstant, $filter, razasService, $q, $state, vacunasService, $mdDialog, placasService) {
+.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", "apiConstant", "$filter", "razasService", "$q", "$state", "vacunasService", "$mdDialog", "placasService", "paisesValue",function (placasService, mascotasService, $stateParams, placaValida, apiConstant, $filter, razasService, $q, $state, vacunasService, $mdDialog, placasService, paisesValue) {
 
     var cdx = this;
 
     cdx.datos = placaValida;
 
     cdx.apiDir = apiConstant;
+    
+    cdx.paises = paisesValue;
 
     cdx.cargar = function ($file) {
 

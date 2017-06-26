@@ -117,8 +117,12 @@
                     <div class="campo-formulario">Peso</div>
                     <div class="input-formulario">
                         <md-select ng-model="misMascotasNueva.datos.peso" placeholder="Peso" class="md-no-underline">
-                            <md-option value="2-5 Kg">2-5 Kg</md-option>
-                            <md-option value="5-8 Kg">5-8 Kg</md-option>
+                            <md-option value="-1 Kg">-1 Kg</md-option>
+                            <md-option value="2-4 Kg">2-4 Kg</md-option>
+                            <md-option value="5-14 Kg">5-14 Kg</md-option>
+                            <md-option value="15-24 Kg">15-24 Kg</md-option>
+                            <md-option value="25-40 Kg">25-40 Kg</md-option>
+                            <md-option value="+40 Kg">+40 Kg</md-option>
                         </md-select>
                     </div>
                 </div>

@@ -1,12 +1,13 @@
 angular.module("mascotas")
 
-.controller("miPerfilController", ["usuariosService", "mascotasService", function (usuariosService, mascotasService) {
+.controller("miPerfilController", ["usuariosService", "mascotasService", "paisesValue",function (usuariosService, mascotasService, paisesValue) {
 
     var cdx = this;
 
     cdx.datos = usuariosService.autorizado();
 
-
+    cdx.paises = paisesValue;
+    
     cdx.editarComenzar = function (datosOriginales) {
         datosOriginales
 

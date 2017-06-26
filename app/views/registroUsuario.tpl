@@ -272,8 +272,12 @@
                     <div class="campo-formulario">Peso</div>
                     <div class="input-formulario">
                         <md-select ng-model="registro.datos.mascota.peso" placeholder="Peso" class="md-no-underline">
-                            <md-option value="2-5 Kg">2-5 Kg</md-option>
-                            <md-option value="5-8 Kg">5-8 Kg</md-option>
+                            <md-option value="-1 Kg">-1 Kg</md-option>
+                            <md-option value="2-4 Kg">2-4 Kg</md-option>
+                            <md-option value="5-14 Kg">5-14 Kg</md-option>
+                            <md-option value="15-24 Kg">15-24 Kg</md-option>
+                            <md-option value="25-40 Kg">25-40 Kg</md-option>
+                            <md-option value="+40 Kg">+40 Kg</md-option>
                         </md-select>
                     </div>
                 </div>
@@ -464,7 +468,7 @@
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.pais.$pristine || formPaso4.pais.$valid}">
                         <md-select ng-model="registro.datos.dueno.pais" ng-class="{'valido': formPaso4.pais.$valid, 'erroneo': (!formPaso4.pais.$valid && formPaso4.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
-                            <md-option value="España">España</md-option>
+                            <md-option value="{{pais}}" ng-repeat="pais in registro.paises">{{pais}}</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso4.pais.$valid" data-mostrar="formPaso4.pais.$dirty"></cdx-validez>
                     </div>
@@ -653,7 +657,7 @@
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.pais.$pristine || duenoExtraForm.pais.$valid}">
                             <md-select ng-model="dueno.pais" ng-class="{'valido': duenoExtraForm.pais.$valid, 'erroneo': (!duenoExtraForm.pais.$valid && duenoExtraForm.pais.$dirty)}" placeholder="País" class="md-no-underline" name="pais" required>
-                                <md-option value="España">España</md-option>
+                                <md-option value="{{pais}}" ng-repeat="pais in registro.paises">{{pais}}</md-option>
                             </md-select>
                             <cdx-validez data-validez="duenoExtraForm.pais.$valid" data-mostrar="duenoExtraForm.pais.$dirty"></cdx-validez>
                         </div>

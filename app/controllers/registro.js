@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("registroController", ["usuariosService", "razasService", "especiesService", "mascotasService", "mailService",function (usuariosService, razasService, especiesService, mascotasService, mailService) {
+.controller("registroController", ["usuariosService", "razasService", "especiesService", "mascotasService", "mailService", "paisesValue",function (usuariosService, razasService, especiesService, mascotasService, mailService, paisesValue) {
 
     var cdx = this;
     
@@ -9,6 +9,8 @@ angular.module("mascotas")
     cdx.razas = [];
     
     cdx.listo = true;
+    
+    cdx.paises = paisesValue;
     
 
     //funcion para el avance del formulario

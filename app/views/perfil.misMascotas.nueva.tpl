@@ -29,7 +29,7 @@
             <div class="col s12 m4 offset-m2">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario" style="position: relative;">Foto <img style="cursor: pointer;" width="17" ng-mouseover="misMascotasNueva.aviso = true" ng-mouseleave="misMascotasNueva.aviso = false" src="assets/images/icons/info.png">
-                        <div ng-show="misMascotasNueva.aviso" ng-init="misMascotasNueva.aviso = false" style="position: absolute;width: 350px;padding: 10px;box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.32);top: -66px;right: 18px;">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div>
+                        <div ng-show="misMascotasNueva.aviso" ng-init="misMascotasNueva.aviso = false" style="background-color: white ;position: absolute;width: 310px;padding: 10px;box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.32);top: -66px;right: 18px; white-space: normal;">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div>
                     </div>
                     <div class="input-formulario text-center">
                         <div ng-hide="misMascotasNueva.imagen">

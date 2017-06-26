@@ -208,6 +208,36 @@ table.table-admin td {
     margin: auto;
 }
 
+.margin-top-30{
+    
+    margin-top: 30px;
+    
+}
+
+.margin-top-40{
+    
+    margin-top: 40px;
+    
+}
+
+.margin-left-40{
+    
+    margin-left: 40px;
+    
+}
+
+.margin-right-40{
+    
+    margin-right: 40px;
+    
+}
+
+.margin-bottom-40{
+    
+    margin-bottom: 40px;
+    
+}
+
 .text-center {
     text-align: center;
 }
@@ -558,6 +588,7 @@ h5{
 
 .campo-formulario {
     font-weight: bold;
+    margin-bottom: 7px;
 }
 
 .input-formulario input {
@@ -1044,7 +1075,6 @@ cdx-modelos>div {
 cdx-modelos>div>div>div, cdx-modelos>div>div   {
     display: inline-block;
     vertical-align: middle;
-    width: 100px;
 }
 
 cdx-modelos>div>div {

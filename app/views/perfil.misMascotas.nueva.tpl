@@ -7,7 +7,7 @@
 </section>
 <section ng-form="nuevaMascotaForm" ng-init="misMascotasNueva.pasos = 1" ng-switch="misMascotasNueva.pasos">
     <div ng-form="formPaso1" ng-switch-when="1">
-       <div class="row">
+        <div class="row">
             <div class="col s12 m10 offset-m1 negrita">
                 Introduce los datos de tu mascota.
             </div>
@@ -28,10 +28,20 @@
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="margin-bottom-30">
-                    <div class="campo-formulario">Foto</div>
+                    <div class="campo-formulario" style="position: relative;">Foto <img style="cursor: pointer;" width="17" ng-mouseover="misMascotasNueva.aviso = true" ng-mouseleave="misMascotasNueva.aviso = false" src="assets/images/icons/info.png">
+                        <div ng-show="misMascotasNueva.aviso" ng-init="misMascotasNueva.aviso = false" style="position: absolute;width: 350px;padding: 10px;box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.32);top: -66px;right: 18px;">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div>
+                    </div>
                     <div class="input-formulario text-center">
-                        
-                        <label for="input-file-id" class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="500KB" ngf-min-height="100">CARGAR FOTO</label>
+                        <div ng-hide="misMascotasNueva.imagen">
+                            <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true">CARGAR FOTO</button>
+
+                        </div>
+                        <div ng-show="misMascotasNueva.imagen">
+
+                            <button class="boton-verde" ng-click="misMascotasNueva.previsualizar($event, misMascotasNueva.imagen)">PREVISUALIZAR</button> O <button class="boton-neutro" ng-click="misMascotasNueva.imagen = null">Cancelar</button>
+                            <!--<img ngf-src="misMascotasNueva.imagen">-->
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -173,7 +183,7 @@
 
         <div class="row">
             <div class="col s12 m10 offset-m1 center-align">
-                <cdx-modelos ng-model="misMascotasNueva.datos.modelos_idModelo" data-seleccionado="{{misMascotasNueva.seleccionado}}"  required class="margin-bottom-30"></cdx-modelos>
+                <cdx-modelos ng-model="misMascotasNueva.datos.modelos_idModelo" data-seleccionado="{{misMascotasNueva.seleccionado}}" required class="margin-bottom-30"></cdx-modelos>
             </div>
         </div>
 
@@ -198,12 +208,12 @@
 
         <div class="row">
             <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
-               Has creado el perfil de una nueva mascota, para editar sus datos accede a su ficha.
+                Has creado el perfil de una nueva mascota, para editar sus datos accede a su ficha.
             </div>
         </div>
     </div>
-    
-    
+
+
 </section>
 <section>
     <div class="row">

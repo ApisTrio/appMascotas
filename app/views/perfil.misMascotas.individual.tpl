@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col s12 m4 offset-m4 center-align">
-            <div class="center-align  contenedor-foto-mascota" ngf-select="misMascotasIndividual.cargar($file)" ng-model="misMascotasIndividual.imagen" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="500KB" ngf-min-height="100">
+            <div class="center-align  contenedor-foto-mascota" ngf-select="misMascotasIndividual.cargar($file)" ng-model="misMascotasIndividual.imagen" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true">
                 <div class="circle foto-mascota" style="background-image:url({{misMascotasIndividual.apiDir.dominio}}{{misMascotasIndividual.apiDir.path}}{{misMascotasIndividual.apiDir.imagenes.mascotas}}{{misMascotasIndividual.datos.basico.foto}}); background-position: 100% 100%; background-size: cover;" ng-if="misMascotasIndividual.datos.basico.foto">
                 </div>
                 <div class="circle foto-mascota" style="background-image:url(assets/images/icons/foto_perfil.png); border: 1px solid black" ng-if="!misMascotasIndividual.datos.basico.foto">
@@ -122,12 +122,12 @@
                 <div class="campo-formulario">Nombre de tu mascota *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': basicoEditarForm.nombreMascota.$pristine || basicoEditarForm.nombreMascota.$valid}">
-                        <input ng-model="misMascotasIndividual.espejo.basico.nombre" ng-class="{'valido': basicoEditarForm.nombreMascota.$valid, 'erroneo': (!basicoEditarForm.nombreMascota.$valid && basicoEditarForm.nombreMascota.$dirty)}" placeholder="Nombre de tu mascota " type="text" name="nombreMascota" minlength="3" required>
+                        <input ng-model="misMascotasIndividual.espejo.basico.nombre" ng-class="{'valido': basicoEditarForm.nombreMascota.$valid, 'erroneo': (!basicoEditarForm.nombreMascota.$valid && basicoEditarForm.nombreMascota.$dirty)}" placeholder="Nombre de tu mascota " type="text" name="nombreMascota" minlength="2" required>
                         <cdx-validez data-validez="basicoEditarForm.nombreMascota.$valid" data-mostrar="true"></cdx-validez>
                     </div>
                     <div ng-messages="basicoEditarForm.nombreMascota.$error" ng-show="basicoEditarForm.nombreMascota.$dirty">
                         <div ng-message="required">Este campo es requerido.</div>
-                        <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                        <div ng-message="minlength">Debe contener al menos 2 caracteres.</div>
                     </div>
                 </div>
             </div>
@@ -299,7 +299,7 @@
                             <div ng-class="{'margin-bottom-30': vacunasForm.fecha.$pristine || vacunasForm.fecha.$valid}">
                                 <input ng-class="{'valido': vacunasForm.fecha.$valid, 'erroneo': (!vacunasForm.fecha.$valid && vacunasForm.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="vacuna.fecha" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" required/>
                                 <cdx-validez data-validez="vacunasForm.fecha.$valid" data-mostrar="true"></cdx-validez>
-                                <img class="eliminar-vacuna-boton" src="assets/images/icons/eliminar.png" ng-click="misMascotasIndividual.editar.vacunas.desparecer($index)">
+                                <img class="eliminar-vacuna-boton" src="assets/images/icons/eliminar.png" ng-click="misMascotasIndividual.editar.vacunas.desaparecer($index)">
                             </div>
                             <div ng-messages="vacunasForm.fecha.$error" ng-show="true">
                                 <div ng-message="required">Este campo es requerido.</div>

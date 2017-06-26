@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("misMascotasNuevaController", ["especiesService", "razasService", "mascotasService", "mailService",function (especiesService, razasService, mascotasService, mailService) {
+.controller("misMascotasNuevaController", ["especiesService", "razasService", "mascotasService", "mailService", "$mdDialog",function (especiesService, razasService, mascotasService, mailService, $mdDialog) {
 
     var cdx = this;
 
@@ -30,7 +30,9 @@ angular.module("mascotas")
             } else {
 
                 if (cdx.imagen) {
-
+                    
+                    console.log(cdx.imagen)
+                    
                     mascotasService.foto(cdx.imagen, "." + cdx.imagen.type.split("/")[1]).then(function (res) {
 
                         datos.foto = res;
@@ -102,7 +104,31 @@ angular.module("mascotas")
         })
 
     }
+    
+    
+    
+      cdx.previsualizar = function ($event, imagen) {
+        
+        $mdDialog.show({
+            parent: angular.element(document.body),
+            targetEvent: $event,
+            templateUrl: "cdx.previsualizarMascota.html",
+            locals: {
+                imagen: imagen
+            },
+            controller: function ($scope, $mdDialog, imagen) {
+            
+                $scope.cerrarModal = function () {
+                    $mdDialog.hide();
+                }
+                
+                $scope.imagen = imagen;
+            },
+            clickOutsideToClose: true,
+            escapeToClose: true
+        });
 
+      }
 
 
 

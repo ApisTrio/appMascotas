@@ -232,7 +232,7 @@ angular.module("mascotas")
                         fecha: vacunasOriginal[llave].fecha,
                         recordatorio: recordatorio,
                         activo:  activo,
-                        vacunas_idVacuna: vacunasOriginal[llave].vacunas_idVacuna,
+                        vacunas_idVacuna: vacunasOriginal[llave].idVacuna,
                         idMascota: vacunasOriginal[llave].idMascota,
                         idVamas: vacunasOriginal[llave].idVamas
                     };
@@ -270,8 +270,9 @@ angular.module("mascotas")
                     })
 
                     angular.forEach(cdx.editar.vacunas.eliminar, function (valor, llave) {
-
-                        //promesas.push(mascotasService.eliminarDueno(valor));
+                        
+              
+                        promesas.push(mascotasService.eliminarVacuna(valor));
 
                     })
 
@@ -298,10 +299,10 @@ angular.module("mascotas")
             },
             desaparecer: function (indice) {
 
-
+               
                 if (cdx.espejo.vacunas[indice].idVamas) {
 
-                    cdx.editar.vacunas.eliminar.push(cdx.espejo.vacunas[indice + 1].idVamas);
+                    cdx.editar.vacunas.eliminar.push(cdx.espejo.vacunas[indice].idVamas);
 
                 }
 
@@ -383,12 +384,12 @@ angular.module("mascotas")
                     $q.all(promesas).then(function (res) {
 
                         mascotasService.duenosMascota(cdx.datos.basico.idMascota).then(function (res) {
-
+                            console.log(res)
                             cdx.datos.duenos = res;
                             var duenoPrincipal = cdx.espejo.duenos[0];
                             cdx.espejo.duenos = [duenoPrincipal];
-                            cdx.editar.eliminar = null;
-                            cdx.editar.pasos = false;
+                            cdx.editar.duenos.eliminar = null;
+                            cdx.editar.duenos.pasos = false;
 
                         })
 

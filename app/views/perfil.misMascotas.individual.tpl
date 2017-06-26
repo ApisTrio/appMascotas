@@ -709,9 +709,7 @@
                     <div class="campo-formulario">Provincia *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.provincia.$pristine || duenoExtraForm.provincia.$valid}">
-                            <md-select ng-model="dueno.provincia" ng-class="{'valido': duenoExtraForm.provincia.$valid, 'erroneo': (!duenoExtraForm.provincia.$valid)}" placeholder="Provincia" class="md-no-underline" name="provincia" required>
-                                <md-option value="Alguna">Alguna</md-option>
-                            </md-select>
+                            <input ng-model="dueno.provincia" ng-class="{'valido': duenoExtraForm.provincia.$valid, 'erroneo': (!duenoExtraForm.provincia.$valid)}" placeholder="Provincia" type="text" name="provincia" required>
                             <cdx-validez data-validez="duenoExtraForm.provincia.$valid" data-mostrar="true"></cdx-validez>
                         </div>
                         <div ng-messages="duenoExtraForm.provincia.$error" ng-show="duenoExtraForm.provincia.$dirty">
@@ -727,9 +725,7 @@
                     <div class="campo-formulario">Ciudad *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.ciudad.$pristine || duenoExtraForm.ciudad.$valid}">
-                            <md-select ng-model="dueno.ciudad" ng-class="{'valido': duenoExtraForm.ciudad.$valid, 'erroneo': (!duenoExtraForm.ciudad.$valid)}" placeholder="Ciudad" class="md-no-underline" name="ciudad" required>
-                                <md-option value="Alguna">Alguna</md-option>
-                            </md-select>
+                            <input ng-model="dueno.ciudad" ng-class="{'valido': duenoExtraForm.ciudad.$valid, 'erroneo': (!duenoExtraForm.ciudad.$valid)}" placeholder="Ciudad" type="text" name="ciudad" required>
                             <cdx-validez data-validez="duenoExtraForm.ciudad.$valid" data-mostrar="true"></cdx-validez>
                         </div>
                         <div ng-messages="duenoExtraForm.ciudad.$error" ng-show="duenoExtraForm.ciudad.$dirty">

@@ -112,12 +112,12 @@
                 <div class="campo-formulario">Nombre *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': editarForm.nombre.$valid}">
-                        <input ng-model="miPerfil.datosEspejo.nombre" ng-class="{'valido': editarForm.nombre.$valid, 'erroneo': (!editarForm.nombre.$valid)}" placeholder="Nombre Completo" type="text" name="nombre" minlength="3" required>
+                        <input ng-model="miPerfil.datosEspejo.nombre" ng-class="{'valido': editarForm.nombre.$valid, 'erroneo': (!editarForm.nombre.$valid)}" placeholder="Nombre Completo" type="text" name="nombre" minlength="2" required>
                         <cdx-validez data-validez="editarForm.nombre.$valid" data-mostrar="true"></cdx-validez>
                     </div>
                     <div ng-messages="editarForm.nombre.$error" ng-show="editarForm.nombre.$dirty">
                         <div ng-message="required">Este campo es requerido.</div>
-                        <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                        <div ng-message="minlength">Debe contener al menos 2 caracteres.</div>
                     </div>
                 </div>
             </div>
@@ -127,12 +127,12 @@
                 <div class="campo-formulario">Apellido *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': editarForm.nombre.$valid}">
-                        <input ng-model="miPerfil.datosEspejo.apellido" ng-class="{'valido': editarForm.apellido.$valid, 'erroneo': (!editarForm.apellido.$valid)}" placeholder="Apellido" type="text" name="apellido" minlength="3" required>
+                        <input ng-model="miPerfil.datosEspejo.apellido" ng-class="{'valido': editarForm.apellido.$valid, 'erroneo': (!editarForm.apellido.$valid)}" placeholder="Apellido" type="text" name="apellido" minlength="2" required>
                         <cdx-validez data-validez="editarForm.apellido.$valid" data-mostrar="true"></cdx-validez>
                     </div>
                     <div ng-messages="editarForm.apellido.$error" ng-show="editarForm.apellido.$dirty">
                         <div ng-message="required">Este campo es requerido.</div>
-                        <div ng-message="minlength">Debe contener al menos 3 caracteres.</div>
+                        <div ng-message="minlength">Debe contener al menos 2 caracteres.</div>
                     </div>
                 </div>
             </div>
@@ -219,9 +219,8 @@
                 <div class="campo-formulario">Provincia *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': editarForm.provincia.$pristine || editarForm.provincia.$valid}">
-                        <md-select ng-model="miPerfil.datosEspejo.provincia" ng-class="{'valido': editarForm.provincia.$valid, 'erroneo': (!editarForm.provincia.$valid && editarForm.provincia.$dirty)}" placeholder="Provincia" class="md-no-underline" name="provincia" required>
-                            <md-option value="Alguna">Alguna</md-option>
-                        </md-select>
+                        <input ng-model="miPerfil.datosEspejo.provincia" ng-class="{'valido': editarForm.provincia.$valid, 'erroneo': (!editarForm.provincia.$valid && editarForm.provincia.$dirty)}" placeholder="Provincia" type="text" name="provincia" required>
+
                         <cdx-validez data-validez="editarForm.provincia.$valid" data-mostrar="true"></cdx-validez>
                     </div>
                     <div ng-messages="editarForm.provincia.$error" ng-show="editarForm.provincia.$dirty">
@@ -236,9 +235,7 @@
                 <div class="campo-formulario">Ciudad *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': editarForm.ciudad.$pristine || editarForm.ciudad.$valid}">
-                        <md-select ng-model="miPerfil.datosEspejo.ciudad" ng-class="{'valido': editarForm.ciudad.$valid, 'erroneo': (!editarForm.ciudad.$valid && editarForm.ciudad.$dirty)}" placeholder="Ciudad" class="md-no-underline" name="ciudad" required>
-                            <md-option value="Alguna">Alguna</md-option>
-                        </md-select>
+                        <input ng-model="miPerfil.datosEspejo.ciudad" ng-class="{'valido': editarForm.ciudad.$valid, 'erroneo': (!editarForm.ciudad.$valid && editarForm.ciudad.$dirty)}" placeholder="Ciudad" type="text" name="ciudad" required>
                         <cdx-validez data-validez="editarForm.ciudad.$valid" data-mostrar="true"></cdx-validez>
                     </div>
                     <div ng-messages="editarForm.ciudad.$error" ng-show="editarForm.ciudad.$dirty">

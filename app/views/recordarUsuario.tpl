@@ -28,7 +28,7 @@
 		        </div>
 		        <br>
 		        <button class="boton-verde" ng-click="recordarUsuario.enviar(recordarUsuarioForm.$valid, recordarUsuario.email)">RECORDAR USUARIO</button>
-		        <p class="recordar-usuario-texto">Si el e-mail introducido está en nuestra base de datos recibirás un correo recordándote tu nombre de usuario. Revisa tu bandeja de entrada.</p>
+		        <p class="recordar-usuario-texto white-space-normal">Si el e-mail introducido está en nuestra base de datos recibirás un correo recordándote tu nombre de usuario. Revisa tu bandeja de entrada.</p>
 			</div>
             <div ng-switch-when="2">
                 <div class="row">
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="row">
-                    <p class="col s10 offset-s1 m8 offset-m2 center-align">
+                    <p class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                         Te hemos enviado un e-mail con los pasos a seguir para recuperar tu nombre de usuario. Si tienes algún problema puedes contactarn
                     </p>
                 </div>

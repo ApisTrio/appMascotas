@@ -46,7 +46,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align">
+            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
                 Te hemos enviado un e-mail para que confirmes la eliminación de tu cuenta. Tienes 24 horas para confirmarlo, de lo contrario tu cuenta seguirá estando activa.
             </div>
         </div>

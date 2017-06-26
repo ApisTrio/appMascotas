@@ -9,7 +9,7 @@
 
     <div ng-switch-when="1">
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita">
+            <div class="col s12 m10 offset-m1 negrita white-space-normal">
                 Agrega una nueva placa. Si no tienes una placa puedes comprarla en nuestra <a href="">tienda</a>.
             </div>
         </div>
@@ -36,7 +36,7 @@
         </div>
 
        <div class="row">
-            <div class="col s12 m2 offset-m1">
+            <div class="col s12 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
             <div class="col s12 m2">

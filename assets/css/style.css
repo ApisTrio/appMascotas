@@ -1079,6 +1079,7 @@ cdx-modelos>div>div>div, cdx-modelos>div>div   {
 
 cdx-modelos>div>div {
     overflow: hidden;
+    white-space: nowrap;
 }
 
 cdx-modelos > div > img:first-child, cdx-modelos > div > img:last-child {

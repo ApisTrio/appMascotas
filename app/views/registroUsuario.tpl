@@ -328,7 +328,7 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m2 offset-m1">
+            <div class="col s10 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
             <div class="col s10 offset-s1 m2">

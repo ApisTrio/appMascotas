@@ -1,9 +1,9 @@
 angular.module("mascotas")
 
-.controller("mascotasPerdidasController", ["mascotasService", "formatearFactory", function (mascotasService, formatearFactory) {
+.controller("mascotasPerdidasController", ["mascotasService", "formatearFactory", "apiConstant", function (mascotasService, formatearFactory, apiConstant) {
 
     var cdx = this;
-
+    cdx.apiDir = apiConstant;
     cdx.perdidas = [];
     cdx.encontradas = [];
 

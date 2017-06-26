@@ -9,8 +9,8 @@
 
     <div ng-switch-when="1">
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita white-space-normal">
-                Agrega una nueva placa. Si no tienes una placa puedes comprarla en nuestra <a href="">tienda</a>.
+            <div class="col s10 m10 offset-m1 negrita white-space-normal">
+                Agrega una nueva placa. Si no tienes una placa puedes comprarla en nuestra <a href="/tienda">tienda</a>.
             </div>
         </div>
         <div class="row">

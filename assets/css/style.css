@@ -980,6 +980,7 @@ md-select.ng-invalid.ng-touched .md-select-value {
 
 .mapa {
     height: 250px;
+        max-width: 90%;
 }
 
 [ng-messages] {

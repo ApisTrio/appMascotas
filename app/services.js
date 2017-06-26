@@ -786,11 +786,7 @@ angular.module("mascotas")
 
 
 
-        $http.post(apiRootFactory + "mascotas/registro", $httpParamSerializer(datos), {
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        }).then(function (res) {
+        $http.post(apiRootFactory + "mascotas/registro", datos).then(function (res) {
 
 
             if (res.data.response) {

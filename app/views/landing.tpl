@@ -99,7 +99,7 @@
                             <div class="center-align"><img src="assets/images/icons/crea_un_perfil.png" width="45px" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">1. Compra una Placa QR</div>
                             <div class="center-align texto-pequeno negrita parrafo">Adquiere tu Placa QR en nuestra tienda online de forma simple y segura</div>
-                            <div class="center-align"><button class="boton-verde">COMPRAR</button></div>
+                            <div class="center-align"><a href="/tienda"><button class="boton-verde">COMPRAR</button></a></div>
                         </div>
 
                         <div class="col s12 m4 margin-in">

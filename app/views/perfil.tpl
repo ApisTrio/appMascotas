@@ -38,7 +38,7 @@
                 </div>
                 <div ui-sref="perfil.desactivarAlerta"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseover="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseleave="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" src="{{perfil.iconoDesactivarAlerta}}">
+                        <img ng-init="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseover="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseleave="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" src="{{perfil.iconoDesactivarAlerta}}" width="35px">
                     </div>
                     <div class="opcion-menu">
                         Desactivar alerta de mascota perdida
@@ -47,7 +47,7 @@
 
             </div>
         </div><!--
-        --><div  class="col s10 contenedor-perfil-interno fondo-blanco" id="contenedor-perfil-interno" ng-class="{'m11': perfil.menuColapsado, 'm8': !perfil.menuColapsado, 'l11': perfil.menuColapsado, 'l10': !perfil.menuColapsado}" style="min-height: calc(100% - 384px);">
+        --><div  class="col s10 contenedor-perfil-interno fondo-blanco" id="contenedor-perfil-interno" ng-class="{'m11': perfil.menuColapsado, 'm8': !perfil.menuColapsado, 'l11': perfil.menuColapsado, 'l10': !perfil.menuColapsado}" style="min-height: calc(100% - 313px);">
             <div id="hiddeninmobile" ui-view>
 
 

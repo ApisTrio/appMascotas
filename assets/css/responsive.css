@@ -202,7 +202,8 @@
 
     .login {
         background-size: 170% 73%;
-        background-position: center 52%;
+        background-position: center 8%;
+        padding: 50px 0;
     }
 
     .login .linea-media {
@@ -2069,6 +2070,58 @@ iPad 3
 }
 
 @media only screen and (min-width : 600px) and (max-width : 1024px) and (orientation : portrait) {
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+
+    .contenedor-modelos{
+            width: 394px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 100px;
+    }
+
+    .como-funciona {
+        height: auto !important;
+    }
+
+    /*.ondas {
+        margin-top: -142px;
+    }*/
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+
+    header .contenedor-navbar-mobile, md-sidenav {
+        display: none;
+    }
+
+    .menu-perfil {
+        padding-left: 0px !important;
+    }
+
+    .login {
+        background-size: 175% 76%;
+    }
+}
+
+@media only screen and (min-width : 600px) {
     .globitos {
         height: 280px;
         width: 280px;

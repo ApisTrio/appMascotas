@@ -8,7 +8,7 @@
 <section ng-form="nuevaMascotaForm" ng-init="misMascotasNueva.pasos = 1" ng-switch="misMascotasNueva.pasos">
     <div ng-form="formPaso1" ng-switch-when="1">
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita">
+            <div class="col s12 m10 offset-m1 negrita white-space-normal">
                 Introduce los datos de tu mascota.
             </div>
         </div>
@@ -29,9 +29,9 @@
             <div class="col s12 m4 offset-m2">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario" style="position: relative;">Foto <img style="cursor: pointer;" width="17" ng-mouseover="misMascotasNueva.aviso = true" ng-mouseleave="misMascotasNueva.aviso = false" src="assets/images/icons/info.png">
-                        <div ng-show="misMascotasNueva.aviso" ng-init="misMascotasNueva.aviso = false" style="background-color: white ;position: absolute;width: 310px;padding: 10px;box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.32);top: -66px;right: 18px; white-space: normal;">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div>
+                        <div ng-show="misMascotasNueva.aviso" ng-init="misMascotasNueva.aviso = false" ng-click="registro.aviso = !registro.aviso" class="aviso-foto">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div>
                     </div>
-                    <div class="input-formulario text-center">
+                    <div class="input-formulario">
                         <div ng-hide="misMascotasNueva.imagen">
                             <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'">CARGAR FOTO</button>
 
@@ -66,7 +66,7 @@
                 <div class="campo-formulario">Fecha de Nacimiento *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.fecha.$pristine || formPaso1.fecha.$valid}">
-                        <input ng-class="{'valido': formPaso1.fecha.$valid, 'erroneo': (!formPaso1.fecha.$valid && formPaso1.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="misMascotasNueva.datos.fecha_nacimiento" container="" format="dd/mm/yyyy" months-full="{{misMascotasNueva.datosDatepicker.meses}}" months-short="{{misMascotasNueva.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasNueva.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasNueva.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasNueva.datosDatepicker.max}}" today="misMascotasNueva.datosDatepicker.hoy" first-day="1" clear="misMascotasNueva.datosDatepicker.limpiar" close="misMascotasNueva.datosDatepicker.cerrar" select-years="12" required/>
+                        <input ng-class="{'valido': formPaso1.fecha.$valid, 'erroneo': (!formPaso1.fecha.$valid && formPaso1.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="misMascotasNueva.datos.fecha_nacimiento" container="" format="dd/mm/yyyy" months-full="{{misMascotasNueva.datosDatepicker.meses}}" months-short="{{misMascotasNueva.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasNueva.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasNueva.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasNueva.datosDatepicker.max}}" today="misMascotasNueva.datosDatepicker.hoy" first-day="1" clear="misMascotasNueva.datosDatepicker.limpiar" close="misMascotasNueva.datosDatepicker.cerrar" select-years="12" required><img src=""></input>
                         <cdx-validez data-validez="formPaso1.fecha.$valid" data-mostrar="formPaso1.fecha.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso1.fecha.$error" ng-show="formPaso1.fecha.$dirty">
@@ -149,7 +149,7 @@
 
         <div class="row">
             <div class="col s12 m10 offset-m1 negrita white-space-normal">
-                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a href="https://www.dinbeat.com/tienda/">tienda</a>.
+                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a target="_blank" href="https://www.dinbeat.com/tienda/">tienda</a>.
             </div>
         </div>
         <div class="row">

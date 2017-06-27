@@ -59,7 +59,7 @@
             <div class="margin-bottom-30">
                 <div class="campo-formulario">Escribe un mensaje</div>
                 <div class="input-formulario">
-                    <textarea ng-model="activarAlerta.datos.mensaje" placeholder="Escribe un mensaje" rows="3" name="mensaje" required></textarea>
+                    <textarea ng-model="activarAlerta.datos.mensaje" placeholder="Escribe un mensaje" rows="3" name="mensaje" style="width: 100%;" required></textarea>
                 </div>
             </div>
         </div>

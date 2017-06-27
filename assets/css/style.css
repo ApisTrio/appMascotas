@@ -111,6 +111,8 @@ body {
     visibility: hidden;
 }
 
+
+
 .flex {
     display: flex;
 }
@@ -333,12 +335,10 @@ table.table-admin td {
 }
 
 img.editar-perfil{
-    
+        
     height: 25px;
     margin: 10px;
-    cursor: pointer;
-    visibility: hidden;
-    
+   cursor: pointer;
 }
 
 section.informacion-mascota:hover img.editar-perfil{
@@ -866,8 +866,17 @@ textarea.erroneo:focus {
     }
 }
 
-
-
+.aviso-foto{
+    background-color: white;
+    position: absolute;
+    padding: 22px;
+    text-align: center;
+    font-weight: 100;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 15px -1px;
+    bottom: 0;
+    left: 58px;
+    white-space: normal;
+}
 
 #menu-perfil{
     transition: 1s all ease;
@@ -884,10 +893,12 @@ textarea.erroneo:focus {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 100% 100%;
+    box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.14), inset 1px 0px 0px 0 rgba(0, 0, 0, 0.12), 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 .informacion-mascota {
     background-color: white;
+    box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.14), inset 1px 0px 0px 0 rgba(0, 0, 0, 0.12), 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 .titulo-info {
@@ -1073,13 +1084,15 @@ cdx-modelos>div {
     display: inline-block;
 }
 
-cdx-modelos>div>div>div, cdx-modelos>div>div   {
+cdx-modelos>div>div>div{
     display: inline-block;
     vertical-align: middle;
-        width: 100px;
+    width: 100px;
 }
 
 cdx-modelos>div>div {
+    display: inline-block;
+    vertical-align: middle;
     overflow: hidden;
     white-space: nowrap;
 }

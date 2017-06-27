@@ -321,7 +321,7 @@
     }*/
 
     .contenedor-modelos{
-        width: 400px;
+        width: 395px;
     }
 
     .contenedor-navbar{
@@ -1021,7 +1021,7 @@
     }
 
     .contenedor-modelos{
-        width: 400px;
+        width: 395px;
     }
 
     .inicio {
@@ -1183,7 +1183,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 6+ ----------- */
-@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : landscape) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1261,7 +1261,7 @@
         height: 200px;
     }
 }
-@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : portrait) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1741,9 +1741,17 @@ iPad 3
     }
 }
 
+
+@media only screen and (min-width : 1280px) and (max-width : 2600px) and (orientation : landscape){
+    img.editar-perfil{
+        visibility: hidden;
+        
+    }
+}
+
 @media only screen and (min-width : 1450px) and (max-width : 2600px) and (orientation : landscape){
     .inicio {
-        background-position: 100% 54%;
-        background-size: 100% 160%;
+        background-position: 100% 44%;
+        background-size: 100% 200%;
     }
 }

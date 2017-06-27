@@ -19,8 +19,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 center-align">
-                    <div class="titulo-info">{{mascota.raza}}, {{mascota.edad}}</div>
+                <div class="col s12 center-align white-space-normal">
+                    <div class="titulo-info  white-space-normal">{{mascota.raza}}, {{mascota.edad}}</div>
                 </div>
             </div>
 

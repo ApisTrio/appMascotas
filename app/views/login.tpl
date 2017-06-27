@@ -4,7 +4,7 @@
 		
 		<div class="row">
 			
-			<div class="col s12 m6 l6 xl5 offset-xl1 center-align registrarse">
+			<div class="col s12 m12 l6 xl5 offset-xl1 center-align registrarse">
 				<div class="col s10 offset-s1">
 					<p class="titulo-registrate">CREAR MI CUENTA</p>
 					<p style="font-size: 18px; color: #5c5b5c">¿Te apasionan los animales? <br>¡Entonces eres de los nuestros!</p>
@@ -19,7 +19,7 @@
     padding: 0px 5px 2px 5px;">o</div>
 				<div class="tres"><div></div></div>
 			</div>
-			<div class="col s12 m6 l6 xl5 center-align iniciar-sesion" ng-form="loginForm">
+			<div class="col s12 m12 l6 xl5 center-align iniciar-sesion" ng-form="loginForm">
 				<p class="titulo-inicios">INICIAR SESIÓN</p>
 				<div class="col s10 offset-s1">
 					<input ng-model="login.usuario.usuario" type="text" name="usuario" placeholder="Usuario" ng-class="{'margin-bottom-30': ((loginForm.usuario.$pristine && !loginForm.$submitted) || (loginForm.usuario.$valid)),'error': login.error}" required>

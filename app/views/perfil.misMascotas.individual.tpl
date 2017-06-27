@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <div class="col s12 center-align"> {{misMascotasIndividual.datos.basico.raza}}, {{misMascotasIndividual.datos.basico.edad}}</div>
+        <div class="col s12 center-align white-space-normal"> {{misMascotasIndividual.datos.basico.raza}}, {{misMascotasIndividual.datos.basico.edad}}</div>
     </div>
 
     <div class="row">

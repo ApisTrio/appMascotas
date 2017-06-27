@@ -2,7 +2,7 @@
 
     <div class="row contenedor-perfil" ng-init="perfil.menuColapsado = true" ng-class="{'contenedor-perfil-colapsado': perfil.menuColapsado}">
 
-        <div class="col negrita menu-perfil margin-out" id="menu-perfil" ng-class="{'s2': perfil.menuColapsado,'s8' : !perfil.menuColapsado,'m1': perfil.menuColapsado, 'm4': !perfil.menuColapsado, 'l1': perfil.menuColapsado, 'l2': !perfil.menuColapsado}">
+        <div class="col negrita menu-perfil margin-out" id="menu-perfil" ng-class="{'s2': perfil.menuColapsado,'s6' : !perfil.menuColapsado,'m1': perfil.menuColapsado, 'm4': !perfil.menuColapsado, 'l1': perfil.menuColapsado, 'l2': !perfil.menuColapsado}">
         
 
             <div class="colapso-menu" ng-click="perfil.colapsar(perfil.menuColapsado)">

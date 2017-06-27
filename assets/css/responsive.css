@@ -13,6 +13,10 @@
     	float: none !important;
 	}
 
+    .opcion-menu {
+        width: 34%;
+    }
+
 
     cdx-pasos .datos>div>div {   
         font-size: 9px;
@@ -20,6 +24,10 @@
 
     #footer-widgets {
         padding: 2% 0 0;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
         flex-flow: column;
     }
 
@@ -105,6 +113,18 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -112,7 +132,7 @@
 
 }
 
-@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : portrait) {
+@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : portrait) and (max-aspect-ratio: 13/9) {
     .login .linea-media .uno, .login .linea-media .tres {
         margin: 0 auto;
         height: 2px;
@@ -135,6 +155,18 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -143,21 +175,76 @@
     #footer-widgets {
         padding: 2% 0 0;
         flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
     }
 
 }
 
-@media only screen and (max-width : 800px){
+@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : landscape) {
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login {
+        background-size: 170% 73%;
+        background-position: center 52%;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
+
+    #footer-widgets {
+        padding: 2% 0 0;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
+    }
+
+}
+
+@media only screen and (max-width : 767px){
     header .contenedor-navbar {
         display: none;
     }
 }
 
-@media only screen and (min-width : 800px){
-    header .contenedor-navbar-mobile {
-        display: none;
-    }
-}
 
 
 /*------------------------------------------------------------*/
@@ -206,9 +293,17 @@
         justify-content: center;
         align-items: center;
         flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
         position: absolute;
-        z-index: 1000000000;
+        z-index: 10;
         left: calc(50% - 18px);
     }
 
@@ -285,6 +380,14 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -377,26 +480,35 @@
         background-position: center 56%;
     }
 
-    .login .linea-media{
-        left: 0;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-        display: flex;
-        position: absolute;
-        z-index: 1000000000;
-        left: calc(50% - 18px);
-    }
-
-    .login .linea-media .uno, .login .linea-media .tres{
+.login .linea-media .uno, .login .linea-media .tres {
         margin: 0 auto;
-        height: 200px;
+        height: 2px;
+        width: 48%;
     }
 
-    .login .linea-media .tres div, .login .linea-media .uno div{
-        width: 1px;
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
         background-color: #e5e5e5;
-        height: 200px;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
@@ -491,6 +603,14 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -553,9 +673,17 @@
         justify-content: center;
         align-items: center;
         flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
         position: absolute;
-        z-index: 1000000000;
+        z-index: 10;
         left: calc(50% - 18px);
     }
 
@@ -652,6 +780,14 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -722,27 +858,37 @@
         background-size: 166% 64%;
         background-position: center 56%;
     }
-    .login .linea-media{
-        left: 0;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-        display: flex;
-        position: absolute;
-        z-index: 1000000000;
-        left: calc(50% - 18px);
-    }
-
-    .login .linea-media .uno, .login .linea-media .tres{
+    .login .linea-media .uno, .login .linea-media .tres {
         margin: 0 auto;
-        height: 200px;
+        height: 2px;
+        width: 48%;
     }
 
-    .login .linea-media .tres div, .login .linea-media .uno div{
-        width: 1px;
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
         background-color: #e5e5e5;
-        height: 200px;
+        height: 2px;
     }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
+
 
 
 }
@@ -831,6 +977,14 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -840,6 +994,8 @@
 }
 
 
+
+
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 /*----------- 375px X 667px and 667px X 375px-----------------*/
@@ -847,7 +1003,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 6 ----------- */
-@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 374px) and (max-width: 668px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -866,6 +1022,10 @@
     .contenedor-navbar{
         display: none
     }
+
+    .opcion-menu {
+        width: 30%;
+    } 
 
     .desactivar-alarma-perfil, .agregar-placa-perfil {
         margin-top: 20px;
@@ -887,37 +1047,50 @@
     }
 
     .login {
-        background-size: 166% 64%;
-        background-position: center 56%;
+        background-size: 166% 74%;
+        background-position: center 49%;
     }
 
-    .login .linea-media{
-        left: 0;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-        display: flex;
-        position: absolute;
-        z-index: 1000000000;
-        left: calc(50% - 18px);
-    }
-
-    .login .linea-media .uno, .login .linea-media .tres{
+    .login .linea-media .uno, .login .linea-media .tres {
         margin: 0 auto;
-        height: 200px;
+        height: 2px;
+        width: 48%;
     }
 
-    .login .linea-media .tres div, .login .linea-media .uno div{
-        width: 1px;
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
         background-color: #e5e5e5;
-        height: 200px;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
     }
     #footer-widgets {
         padding: 2% 0 0;
         flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
     }
 }
-@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-width: 374px) and (max-width: 668px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -928,15 +1101,21 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
-
-
     }
+
+    .opcion-menu {
+        width: 30%;
+    }   
 
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
     #footer-widgets {
         padding: 2% 0 0;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
         flex-flow: column;
     }
     .como-funciona {
@@ -993,6 +1172,14 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -1006,8 +1193,8 @@
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 
-/* iPhone 6+ ----------- */
-@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : landscape){
+/* iPhone 6 ----------- */
+@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : landscape) and (max-aspect-ratio: 2){
     .globitos {
         height: 280px;
         width: 280px;
@@ -1019,6 +1206,10 @@
         height: 450px;
         width: 230px;
     }
+
+    .opcion-menu {
+        width: 30%;
+    } 
 
     .contenedor-modelos{
         width: 395px;
@@ -1072,9 +1263,17 @@
         justify-content: center;
         align-items: center;
         flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
         position: absolute;
-        z-index: 1000000000;
+        z-index: 10;
         left: calc(50% - 18px);
     }
 
@@ -1102,6 +1301,10 @@
         width: 230px;
     }
 
+    .opcion-menu {
+        width: 30%;
+    } 
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
@@ -1120,6 +1323,10 @@
 
     #footer-widgets {
         padding: 2% 0 0;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
         flex-flow: column;
     }
     .como-funciona {
@@ -1169,6 +1376,212 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
+
+}
+
+
+@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 3){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .opcion-menu {
+        width: 30%;
+    } 
+
+    .contenedor-modelos{
+        width: 395px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 120px;
+    }
+    /*.ondas {
+        margin-top: -115px;
+    }*/
+
+    .como-funciona {
+        height: auto !important;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+
+    header .contenedor-logo {
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+        padding-left: 10px; 
+    }
+
+    header .contenedor-navbar-mobile {
+        width: 49%;
+    }
+
+        .menu-perfil {
+        padding-left: 0px !important;
+    }
+
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        position: absolute;
+        z-index: 10;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
+}
+@media only screen and (min-width: 412px) and (max-width: 732px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 3){
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+    }
+
+    .opcion-menu {
+        width: 30%;
+    } 
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
+    .inicio {
+        background-size: auto 80%;
+        background-position: 32% 101%;
+    }
+
+    .como-empezar .parrafo {
+        height: 100px;
+    }
+    /*.ondas {
+        margin-top: -102px;
+    }*/
+
+    #footer-widgets {
+        padding: 2% 0 0;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+    .contenedor-navbar{
+        display: none
+    }
+
+    .divider.responsive {
+        margin-bottom: 20px;
+    }
+
+    .desactivar-alarma-perfil, .agregar-placa-perfil {
+        margin-top: 20px;
+    }
+
+    header .contenedor-logo {
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+        padding-left: 10px; 
+    }
+
+    header .contenedor-navbar-mobile {
+        width: 49%;
+    }
+
+        .menu-perfil {
+        padding-left: 0px !important;
+    }
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -1183,7 +1596,7 @@
 /*------------------------------------------------------------*/
 
 /* iPhone 6+ ----------- */
-@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : landscape) {
+@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 3)  {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1194,6 +1607,10 @@
         margin-bottom: 20px;
         height: 450px;
         width: 230px;
+    }
+
+    .opcion-menu {
+        width: 24%;
     }
 
     .inicio {
@@ -1236,32 +1653,42 @@
 
 
     .login {
-        background-size: 166% 64%;
-        background-position: center 56%;
-    }
-    .login .linea-media{
-        left: 0;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-        display: flex;
-        position: absolute;
-        z-index: 1000000000;
-        left: calc(50% - 18px);
+        background-size: 170% 73%;
+        background-position: center 52%;
     }
 
-    .login .linea-media .uno, .login .linea-media .tres{
+    .login .linea-media .uno, .login .linea-media .tres {
         margin: 0 auto;
-        height: 200px;
+        height: 2px;
+        width: 48%;
     }
 
-    .login .linea-media .tres div, .login .linea-media .uno div{
-        width: 1px;
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
         background-color: #e5e5e5;
-        height: 200px;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
     }
 }
-@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : portrait) {
+@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 3) and (-webkit-device-pixel-ratio : 3)  {
     .globitos {
         height: 280px;
         width: 280px;
@@ -1344,6 +1771,14 @@
         align-items: center;
         margin: 13px 0 !important;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
         flex-flow: row;
         position: relative;
         left: 0;
@@ -1356,66 +1791,33 @@
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 
-/* iPhone 6+ ----------- */
-@media only screen and (min-width: 414px) and (max-width: 737px) and (orientation : landscape){
-    .globitos {
-        height: 280px;
-        width: 280px;
-        margin: auto auto 20px auto;
-        float: none !important;
-    }
-    .contenido-iphone {
-        margin-bottom: 20px;
-        height: 450px;
-        width: 230px;
-    }
 
-    .inicio {
-        background-size: auto 80%;
-        background-position: 32% 101%;
-    }
 
-    .como-empezar .parrafo {
-        height: 120px;
-    }
-    /*.ondas {
-        margin-top: -120px;
-    }*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*----------- 768px X 1024px and 1024px X 768px---------------*/
+/*------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 
-    .como-funciona {
-        height: auto !important;
-    }
-    .contenedor-navbar{
-        display: none
-    }
-
-    .desactivar-alarma-perfil, .agregar-placa-perfil {
-        margin-top: 20px;
-    }
-
-    header .contenedor-logo {
-        justify-content: flex-start;
-        align-items: center;
-        width: 50%;
-        padding-left: 10px; 
-    }
-
-    header .contenedor-navbar-mobile, md-sidenav {
-        width: 49%;
-    }
-
-        .menu-perfil {
-        padding-left: 0px !important;
-    }
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
 
     .login .linea-media{
         left: 0;
         justify-content: center;
         align-items: center;
         flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
         position: absolute;
-        z-index: 1000000000;
+        z-index: 10;
         left: calc(50% - 18px);
     }
 
@@ -1429,20 +1831,6 @@
         background-color: #e5e5e5;
         height: 200px;
     }
-}
-
-
-
-/*------------------------------------------------------------*/
-/*------------------------------------------------------------*/
-/*----------- 768px X 1024px and 1024px X 768px---------------*/
-/*------------------------------------------------------------*/
-/*------------------------------------------------------------*/
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-width : 768px) and (max-width : 1024px) {
-
-
 
 }
 
@@ -1478,14 +1866,24 @@
         background-position: center 56%;
     }
 
+
+
+
     .login .linea-media{
         left: 0;
         justify-content: center;
         align-items: center;
         flex-flow: column;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;;
         display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
         position: absolute;
-        z-index: 1000000000;
+        z-index: 10;
         left: calc(50% - 18px);
     }
 
@@ -1546,6 +1944,37 @@
     .login {
         background-size: 160% 70%;
     }
+
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
 }
 
 /**********
@@ -1578,29 +2007,38 @@ iPad 3
     }
 
     .login {
-        background-size: 166% 64%;
-        background-position: center 56%;
+        background-size: 168% 73%;
+        background-position: center 47%;
     }
-    .login .linea-media{
-        left: 0;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-        display: flex;
-        position: absolute;
-        z-index: 1000000000;
-        left: calc(50% - 18px);
-    }
-
-    .login .linea-media .uno, .login .linea-media .tres{
+    .login .linea-media .uno, .login .linea-media .tres {
         margin: 0 auto;
-        height: 200px;
+        height: 2px;
+        width: 48%;
     }
 
-    .login .linea-media .tres div, .login .linea-media .uno div{
-        width: 1px;
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
         background-color: #e5e5e5;
-        height: 200px;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
     }
 }
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
@@ -1678,7 +2116,7 @@ iPad 3
     }
 
     .login {
-        background-size: 160% 70%;
+        background-size: 175% 76%;
     }
 }
 
@@ -1688,6 +2126,70 @@ iPad 3
 /*----------------------- 800px X 1200px ---------------------*/
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
+
+@media only screen and (min-width : 1024px) {
+    .globitos {
+        height: 280px;
+        width: 280px;
+        margin: auto auto 20px auto;
+        float: none !important;
+    }
+    .contenido-iphone {
+        margin-bottom: 20px;
+        height: 450px;
+        width: 230px;
+
+
+    }
+    .como-funciona {
+        height: auto !important;
+    }
+
+    .menu-perfil {
+        padding-left: 0px !important;
+    }
+
+        .menu-perfil {
+        padding-left: 0px !important;
+    }
+
+    .login {
+        background-size: 166% 64%;
+        background-position: center 56%;
+    }
+
+    .login .linea-media{
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        width: 0 !important;
+        -webkit-flex-flow: column;
+        -moz-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        position: absolute;
+        z-index: 10;
+        left: calc(50% - 18px);
+    }
+
+    .login .linea-media .uno, .login .linea-media .tres{
+        margin: 0 auto;
+        height: 200px;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div{
+        width: 1px;
+        background-color: #e5e5e5;
+        height: 200px;
+    }
+}
+
 
 @media only screen and (min-width : 800px) and (max-width : 1024px) and (orientation : portrait) {
     .globitos {
@@ -1739,6 +2241,37 @@ iPad 3
     .login {
         background-size: 160% 70%;
     }
+
+    .login .linea-media .uno, .login .linea-media .tres {
+        margin: 0 auto;
+        height: 2px;
+        width: 48%;
+    }
+
+    .login .linea-media .tres div, .login .linea-media .uno div {
+        width: 100%;
+        background-color: #e5e5e5;
+        height: 2px;
+    }
+
+    .login .linea-media {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin: 13px 0 !important;
+        display: flex;
+        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+        display: -moz-box;      /* OLD: Firefox (buggy) */
+        display: -ms-flexbox;   /* MID: IE 10 */
+        display: -webkit-flex;
+        flex-flow: row;
+        -webkit-flex-flow: row;
+        -moz-flex-flow: row;
+        -ms-flex-flow: row;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
 }
 
 
@@ -1752,6 +2285,13 @@ iPad 3
 @media only screen and (min-width : 1450px) and (max-width : 2600px) and (orientation : landscape){
     .inicio {
         background-position: 100% 44%;
-        background-size: 100% 200%;
+        background-size: 100% 260%;
+    }
+    .como-funciona {
+        background-size: 100% 120%;
+        background-position: 100% 90%;
+    }
+    .login{
+        background-size: 100% 70%;
     }
 }

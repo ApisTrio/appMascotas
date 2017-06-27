@@ -38,7 +38,7 @@
                 </div>
                 <div ui-sref="perfil.desactivarAlerta"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseover="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseleave="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" src="{{perfil.iconoDesactivarAlerta}}" width="35px">
+                        <img ng-init="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseover="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseleave="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" src="{{perfil.iconoDesactivarAlerta}}" style="width: 35px;margin-right: -10px;">
                     </div>
                     <div class="opcion-menu">
                         Desactivar alerta de mascota perdida

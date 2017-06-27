@@ -115,9 +115,17 @@ body {
 
 .flex {
     display: flex;
+    display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+    display: -moz-box;      /* OLD: Firefox (buggy) */
+    display: -ms-flexbox;   /* MID: IE 10 */
+    display: -webkit-flex;
 }
 
 .flex.column {
+    flex-flow: column;
+    -webkit-flex-flow: column;
+    -moz-flex-flow: column;
+    -ms-flex-flow: column;
     flex-flow: column;
 }
 
@@ -1308,6 +1316,10 @@ header .contenedor-navbar .login-contenedor {
 #footer-widgets {
     padding: 6% 0 0;
     display: flex;
+    display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+    display: -moz-box;      /* OLD: Firefox (buggy) */
+    display: -ms-flexbox;   /* MID: IE 10 */
+    display: -webkit-flex;
 }
 .footer-widget {
     flex:1;

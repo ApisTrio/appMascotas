@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col s12 m12 l4 center-align">
             <div class="globitos flotar-derecha">
-                <img class="responsive-img" src="assets/images/icons/Add_dog.png">
+                <img class="responsive-img" src="assets/images/icons/Add_dog.svg">
                 <h5 class="negrita">REGISTRA TU MASCOTA</h5>
                 <p class="texto-pequeno">Registrate en nuestra plataforma para poder activar tu placa o entra con tu usuario y contraseña</p>
                 <button class="boton-verde" ui-sref="registroUsuario">EMPIEZA AQUÍ</button>
@@ -21,14 +21,14 @@
         <div class="col s12 m12 l4 center-align">
             <div class="contenido-iphone margin-auto">
                 <h5 class="negrita">¡HE PERDIDO MI MASCOTA!</h5>
-                <img class="responsive-img" src="assets/images/icons/Lost_Human.png">
+                <img class="responsive-img" src="assets/images/icons/Lost_Human.svg">
                 <p class="texto-pequeno">Activa esta alerta y deja que otros usuarios que estén cerca te ayuden a encontrarla</p>
                 <button class="boton-verde-negativo" ui-sref="perfil.activarAlerta">ACTIVAR ALARMA</button>
             </div>
         </div>
         <div class="col s12 m12 l4 center-align">
             <div class="globitos">
-                <img class="responsive-img" src="assets/images/icons/lost_dog.png">
+                <img class="responsive-img" src="assets/images/icons/lost_dog.svg">
                 <h5 class="negrita">HE ENCONTRADO UNA MASCOTA</h5>
                 <p class="texto-pequeno">Introduce el id de la placa</p>
                 <button class="boton-verde" ng-click="landing.mostrarModal()">ENCONTRAR DUEÑO</button>
@@ -57,12 +57,12 @@
 
             <div class="col s12 m12 l6">
                 <div class="col s12 m6 l6 margin-in">
-                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/crea_un_perfil.png"></div>
+                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/shape.svg"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Crea un perfil y registra tu placa</div>
                     <div class="center-align texto-pequeno negrita parrafo">Registrala en nuestra web y mantén la información de tu mascota actualizada. Puedes añadir datos médicos, veterinarios, personas de contacto alternativas, etc...</div>
                 </div>
                 <div class="col s12 m6 l6 margin-in">
-                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/lost_dog2.png"></div>
+                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/lostdog2.svg"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Si tu mascota se pierde</div>
                     <div class="center-align texto-pequeno negrita parrafo">Asegúrate de que la información de su perfil está actualizada y activa la alerta de mascota perdida para que el resto de usuarios cercanos puedan ayudarte a localizarla</div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="center-align texto-pequeno negrita parrafo">Cualquiera con un móvil puede escanear el código QR o visitar el perfil de tu mascota a través de la web para ver tus datos de contacto y su información</div>
                 </div>
                 <div class="col s12 m6 l6 margin-in">
-                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/reunete_con_tu_mascota.png"></div>
+                    <div class="center-align"><img class="responsive-img" src="assets/images/icons/reunion.svg"></div>
                     <div class="negrita center-align titulo2 interlineado20 c2">Reúnete con tu mascota</div>
                     <div class="center-align texto-pequeno negrita parrafo">Cuando alguien acceda a la información del código QR de tu mascota te enviaremos un e-mail informándote de que ha sido encontrada y la dirección del lugar</div>
                 </div>
@@ -96,21 +96,21 @@
                 <div class="card-panel shadow">
                     <div class="row">
                         <div class="col s12 m4 margin-in">
-                            <div class="center-align"><img src="assets/images/icons/crea_un_perfil.png" width="45px" height="45px"></div>
+                            <div class="center-align"><img src="assets/images/icons/shape.svg" width="45px" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">1. Compra una Placa QR</div>
                             <div class="center-align texto-pequeno negrita parrafo">Adquiere tu Placa QR en nuestra tienda online de forma simple y segura</div>
                             <div class="center-align"><a href="/tienda"><button class="boton-verde">COMPRAR</button></a></div>
                         </div>
 
                         <div class="col s12 m4 margin-in">
-                            <div class="center-align"><img src="assets/images/icons/profile_dog.png" width="45px" height="45px"></div>
+                            <div class="center-align"><img src="assets/images/icons/profile_dog.svg" width="45px" height="45px"></div>
 
                             <div class="negrita center-align titulo2 interlineado20 c2">2. Crea el perfil de tu mascota</div>
                             <div class="center-align texto-pequeno negrita parrafo">Introduce todos los datos relevantes de tu mascota, información veterinario, personas de contacto alternativas, etc. <br>Registra tantas placas como desees</div>
                             <div class="center-align"><button class="boton-verde-negativo" ui-sref="registroUsuario">CREAR CUENTA</button></div>
                         </div>
                         <div class="col s12 m4 margin-in">
-                            <div class="center-align"><img src="assets/images/icons/activa_tu_placa_qr.png" height="45px"></div>
+                            <div class="center-align"><img src="assets/images/icons/SYNC.svg" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">3. Activa tu placa QR</div>
                             <div class="center-align texto-pequeno negrita parrafo">Sincroniza tu perfil con tu placa y mantenlo actualizado para que en caso de pérdida sea sencillo contactarte</div>
                             <div class="center-align"><button class="boton-verde-negativo" ui-sref="perfil.misMascotasPlaca">ACTIVAR</button></div>

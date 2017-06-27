@@ -418,7 +418,7 @@ angular.module("mascotas")
         .catch(function (res) {
 
             $window.localStorage.removeItem('cdxToken');
-            defered.reject()
+            defered.reject(res.data.message);
 
         })
 
@@ -1285,6 +1285,34 @@ angular.module("mascotas")
 
 .service("mailService", ["apiRootFactory", "$http", "$q", "$httpParamSerializer", "$filter", function (apiRootFactory, $http, $q, $httpParamSerializer, $filter) {
 
+    this.contacto = function (idMascota, nombre, email, telefono, mensaje) {
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "mail/contacto", {
+            id: idMascota,
+            nombreform: nombre,
+            emailform: email,
+            telefonoform: telefono,
+            mensajform: mensaje
+        }).then(function (res) {
+
+            if (res.data) {
+
+                defered.resolve(res.data);
+
+            } else {
+
+                defered.reject();
+            }
+
+        })
+
+        return promise;
+
+    }
+
     this.recuperarUsuario = function (email) {
 
         var defered = $q.defer();
@@ -1443,7 +1471,7 @@ angular.module("mascotas")
         var hora = $filter('date')(hoy, "hh:mm a");
 
 
-        var enlace = latitud && longitud ? "https://www.google.co.ve/maps/@" + latitud + "," + longitud : "";
+        var enlace = latitud && longitud ? "https://www.google.co.ve/maps/@" + latitud + "," + longitud + ",z15" : "";
 
 
         $http.post(apiRootFactory + "mail/placa-escaneada", {

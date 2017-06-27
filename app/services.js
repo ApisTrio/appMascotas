@@ -754,11 +754,7 @@ angular.module("mascotas")
         var defered = $q.defer();
         var promise = defered.promise;
 
-        $http.post(apiRootFactory + "perdidas/registro", $httpParamSerializer(datos), {
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        }).then(function (res) {
+        $http.post(apiRootFactory + "perdidas/registro", datos).then(function (res) {
 
             if (res.data.response) {
 

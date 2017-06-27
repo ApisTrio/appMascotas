@@ -178,8 +178,9 @@
             <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                 <div class="margin-bottom-30">
 
-                    <div class="campo-formulario" style="position: relative;">Foto <img style="cursor: pointer;" width="17" ng-mouseover="registro.aviso = true" ng-mouseleave="registro.aviso = false" src="assets/images/icons/info.png"> <div ng-show="registro.aviso" ng-init="registro.aviso = false" style="position: absolute;width: 310px;padding: 10px;box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.32);top: -66px;right: 18px; background-color: white; ">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div></div>
-                    <div class="input-formulario text-center" style="position: relative;">
+                    <div class="campo-formulario" style="position: relative;">Foto <img style="cursor: pointer;" width="17" ng-mouseover="registro.aviso = true" ng-mouseleave="registro.aviso = false" src="assets/images/icons/info.png"> <div ng-show="registro.aviso" ng-init="registro.aviso = false" ng-click="registro.aviso = !registro.aviso" class="aviso-foto">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div></div>
+
+                    <div class="input-formulario " style="position: relative;">
                         <div ng-hide="registro.imagen">
                             <button class="boton-verde-negativo" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'">CARGAR FOTO</button>
                             
@@ -302,7 +303,7 @@
 
         <div class="row">
             <div class="col s10 offset-s1 m10 offset-m1 negrita">
-                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a href="/tienda/" target="_blank">tienda</a>.
+                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a target="_blank" href="https://www.dinbeat.com/tienda/">tienda</a>.
             </div>
         </div>
         <div class="row">

@@ -197,7 +197,7 @@ table.table-admin td {
 }
 
 .margin-bottom-30 {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
 }
 
 .margin-out {
@@ -491,6 +491,12 @@ h5{
     box-shadow: inset 0px 0px 1px 0px #efefef;
     padding: 0 0 0 30px;
     box-sizing: border-box;
+}
+
+.iniciar-sesion input{
+    
+    margin-bottom: 0px;
+    
 }
 
 .iniciar-sesion input::-webkit-input-placeholder {

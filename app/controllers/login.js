@@ -1,11 +1,11 @@
 angular.module("mascotas")
 
-.controller("loginController", ["usuariosService", "$state", "currentAuth", function (usuariosService, $state, currentAuth) {
+.controller("loginController", ["usuariosService", "$state", "currentAuth", "$scope", function (usuariosService, $state, currentAuth,$scope) {
 
     var cdx = this;
 
     cdx.iniciarSesion = function (datos, valido) {
-        
+        $scope.loginForm.$setSubmitted();
         if (valido) {
             
             usuariosService.sesion(datos.usuario, datos.pass)

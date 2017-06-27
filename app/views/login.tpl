@@ -22,10 +22,16 @@
 			<div class="col s12 m6 l6 xl5 center-align iniciar-sesion" ng-form="loginForm">
 				<p class="titulo-inicios">INICIAR SESIÓN</p>
 				<div class="col s10 offset-s1">
-					<input ng-model="login.usuario.usuario" type="text" name="usuario" placeholder="Usuario">
+					<input ng-model="login.usuario.usuario" type="text" name="usuario" placeholder="Usuario" ng-class="{'margin-bottom-30': ((loginForm.usuario.$pristine && !loginForm.$submitted) || (loginForm.usuario.$valid)),'error': login.error}" required>
+                    <div ng-messages="loginForm.usuario.$error" ng-show="loginForm.$submitted || loginForm.usuario.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
 				</div>
 				<div class="col s10 offset-s1">
-					<input ng-model="login.usuario.pass" type="password" name="pass" placeholder="Contraseña">
+					<input ng-model="login.usuario.pass" type="password" name="pass" placeholder="Contraseña" ng-class="{'margin-bottom-30': ((loginForm.pass.$pristine && !loginForm.$submitted) || (loginForm.pass.$valid)), 'error': login.error}" required>
+                    <div ng-messages="loginForm.pass.$error" ng-show="loginForm.$submitted || loginForm.pass.$dirty">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
 				</div>
 				<div class="col s10 offset-s1 text-left">
 					<input type="checkbox" class="filled-in" id="recuerdame" name="recuerdame" />

@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("activarAlertaController", ["NavigatorGeolocation", "NgMap", "mascotasService", "usuariosService", "$filter", "mailService",function (NavigatorGeolocation, NgMap, mascotasService, usuariosService, $filter, mailService) {
+.controller("activarAlertaController", ["NavigatorGeolocation", "NgMap", "mascotasService", "usuariosService", "$filter", "mailService", function (NavigatorGeolocation, NgMap, mascotasService, usuariosService, $filter, mailService) {
 
     var cdx = this;
 
@@ -8,8 +8,13 @@ angular.module("mascotas")
 
     cdx.mascotas = [];
 
-    cdx.datos = {};
-    
+    cdx.datos = {
+        fecha: null,
+        ubicacion: null,
+        mensaje: null,
+        mascota: null
+    };
+
     cdx.hoy = new Date();
 
 
@@ -38,20 +43,20 @@ angular.module("mascotas")
 
 
     mascotasService.mascotasDueno(usuariosService.autorizado().dueno.idDueno)
-        
-        .then(function (res) {
-        
-            angular.forEach(res, function(valor, llave){
 
-                if((!valor.perdida && !valor.encontrado) || (valor.perdida && valor.encontrado)){
+    .then(function (res) {
 
-                    cdx.mascotas.push(res[llave]);
+        angular.forEach(res, function (valor, llave) {
 
-                }
+            if ((!valor.perdida && !valor.encontrado) || (valor.perdida && valor.encontrado)) {
 
-            })
+                cdx.mascotas.push(res[llave]);
+
+            }
 
         })
+
+    })
 
 
 
@@ -64,17 +69,17 @@ angular.module("mascotas")
                 cdx.opciones = cdx.opciones + 1;
 
             } else if (cdx.opciones == 3) {
-                
-                datos.fecha = $filter('date')(cdx.hoy , "dd/MM/yyyy")
-                
+
+                datos.fecha = $filter('date')(cdx.hoy, "dd/MM/yyyy")
+
                 mascotasService.nuevaPerdida(datos)
 
                 .then(function (res) {
 
                     mailService.activarAlerta(datos.idMascota);
-                    
+
                     cdx.opciones = cdx.opciones + 1;
-                    
+
 
                 })
 
@@ -85,7 +90,7 @@ angular.module("mascotas")
                 })
 
             }
-            
+
         }
 
     }

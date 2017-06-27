@@ -149,7 +149,7 @@
 
         <div class="row">
             <div class="col s12 m10 offset-m1 negrita white-space-normal">
-                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a href="https://www.dinbeat.com/tienda/">tienda</a>.
+                Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a href="/tienda/">tienda</a>.
             </div>
         </div>
         <div class="row">

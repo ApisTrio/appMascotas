@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("registroController", ["usuariosService", "razasService", "especiesService", "mascotasService", "mailService", "paisesValue",function (usuariosService, razasService, especiesService, mascotasService, mailService, paisesValue) {
+.controller("registroController", ["usuariosService", "razasService", "especiesService", "mascotasService", "mailService", "paisesValue", "$mdDialog",function (usuariosService, razasService, especiesService, mascotasService, mailService, paisesValue, $mdDialog) {
 
     var cdx = this;
     

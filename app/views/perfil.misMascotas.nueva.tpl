@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m4 offset-m1">
                 <div class="campo-formulario">Nombre de tu mascota *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.nombreMascota.$pristine || formPaso1.nombreMascota.$valid}">
@@ -26,18 +26,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m4 offset-m2">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario" style="position: relative;">Foto <img style="cursor: pointer;" width="17" ng-mouseover="misMascotasNueva.aviso = true" ng-mouseleave="misMascotasNueva.aviso = false" src="assets/images/icons/info.png">
                         <div ng-show="misMascotasNueva.aviso" ng-init="misMascotasNueva.aviso = false" ng-click="registro.aviso = !registro.aviso" class="aviso-foto">Debes subir una foto de máximo 3Mb y con una medida mínima de 200px y 200px</div>
                     </div>
                     <div class="input-formulario">
                         <div ng-hide="misMascotasNueva.imagen">
+
                             <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5mb" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" name="foto">CARGAR FOTO</button>
-                            <div style="display: inline-block">
+                            <div  class="o" style="display: inline-block">
                             O
                             </div>
-                            <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5mb" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'"  name="foto">HACER FOTO</button>
+                            <button class="boton-verde-negativo tomar-foto" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5mb" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'"  name="foto">HACER FOTO</button>
+
 
                         </div>
                         <div ng-show="misMascotasNueva.imagen">
@@ -55,7 +57,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m4 offset-m1">
                 <div class="campo-formulario">Género *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.generoMasccota.$pristine || formPaso1.generoMasccota.$valid}">
@@ -70,11 +72,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m4 offset-m2">
                 <div class="campo-formulario">Fecha de Nacimiento *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.fecha.$pristine || formPaso1.fecha.$valid}">
-                        <input ng-class="{'valido': formPaso1.fecha.$valid, 'erroneo': (!formPaso1.fecha.$valid && formPaso1.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="misMascotasNueva.datos.fecha_nacimiento" container="" format="dd/mm/yyyy" months-full="{{misMascotasNueva.datosDatepicker.meses}}" months-short="{{misMascotasNueva.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasNueva.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasNueva.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasNueva.datosDatepicker.max}}" today="misMascotasNueva.datosDatepicker.hoy" first-day="1" clear="misMascotasNueva.datosDatepicker.limpiar" close="misMascotasNueva.datosDatepicker.cerrar" select-years="12" required><img src=""></input>
+                        <input ng-class="{'valido': formPaso1.fecha.$valid, 'erroneo': (!formPaso1.fecha.$valid && formPaso1.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="misMascotasNueva.datos.fecha_nacimiento" container="" format="dd/mm/yyyy" months-full="{{misMascotasNueva.datosDatepicker.meses}}" months-short="{{misMascotasNueva.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasNueva.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasNueva.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasNueva.datosDatepicker.max}}" today="misMascotasNueva.datosDatepicker.hoy" first-day="1" clear="misMascotasNueva.datosDatepicker.limpiar" close="misMascotasNueva.datosDatepicker.cerrar" select-years="12" required>
                         <cdx-validez data-validez="formPaso1.fecha.$valid" data-mostrar="formPaso1.fecha.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso1.fecha.$error" ng-show="formPaso1.fecha.$dirty">
@@ -84,7 +86,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m4 offset-m1">
                 <div class="campo-formulario">Especie *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.especie.$pristine || formPaso1.especie.$valid}">
@@ -98,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m4 offset-m2">
                 <div class="campo-formulario">Raza *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.raza.$pristine || formPaso1.raza.$valid}">
@@ -114,13 +116,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m4 offset-m1">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Número de chip</div>
                     <div class="input-formulario"><input ng-model="misMascotasNueva.datos.chip" placeholder="Número de chip" type="text"></div>
                 </div>
             </div>
-            <div class="col s12 m4 offset-m2">
+            <div class="col s11 offset-s1 m4 offset-m2">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Peso</div>
                     <div class="input-formulario">
@@ -137,7 +139,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m11 offset-m1">
+            <div class="col s11 offset-s1 m11 offset-m1">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Comentarios</div>
                     <div class="input-formulario">
@@ -161,7 +163,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m4 offset-m1">
                 <div class="campo-formulario">Introduce el número de tu placa *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.numeroPlaca.$pristine || formPaso2.numeroPlaca.$valid}">
@@ -183,7 +185,7 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m4 offset-m1 l2 offset-l1">
+            <div class="col s11 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
             <div class="col s12 m2">

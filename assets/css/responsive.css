@@ -52,10 +52,6 @@
     }
 
 
-    .contenedor-navbar{
-        display: none
-    }
-
     /*.ondas {
         top: 1px;
         margin-top: -58px;
@@ -63,7 +59,8 @@
 
     .inicio {
         background-size: auto 82%;
-        background-position: 32% 101%;  
+        background-position: 32% 101%;
+        padding-bottom: 16px; 
     }
 
     header .contenedor-logo {
@@ -242,9 +239,32 @@
 
 @media only screen and (max-width : 767px){
     header .contenedor-navbar {
-        display: none;
+        display: none !important;
     }
 }
+
+@media only screen and (min-width : 767px){
+    header .contenedor-navbar-mobile, md-sidenav {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width : 1024px){
+    .tomar-foto{
+        display: none;
+    }
+    .o{
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width : 400px){
+    .o{
+        display: block !important;
+        padding-left: 65px;
+    }
+}
+
 
 
 
@@ -257,9 +277,7 @@
 /* iPhone 5 ----------- */
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
 /* Styles */
-    .contenedor-navbar{
-        display: none
-    }
+
     .desactivar-alarma-perfil, .agregar-placa-perfil {
         margin-top: 20px;
     }
@@ -323,9 +341,6 @@
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
 /* Styles */
 
-    .contenedor-navbar{
-        display: none
-    }
 
     .contenedor-modelos{
         width: 200px;
@@ -428,9 +443,6 @@
         width: 395px;
     }
 
-    .contenedor-navbar{
-        display: none
-    }
 
     header .contenedor-logo {
         justify-content: center;
@@ -453,9 +465,6 @@
 
     .img-perrogato {
         bottom: -16%;
-    }
-    .contenedor-navbar{
-        display: none
     }
      .desactivar-alarma-perfil, .agregar-placa-perfil {
         margin-top: 20px;
@@ -529,9 +538,6 @@
         font-size: 9px;
     }
 
-    .contenedor-navbar{
-        display: none
-    }
 
 
     .como-funciona {
@@ -540,9 +546,6 @@
 
     }
 
-    .contenedor-navbar{
-        display: none
-    }
 
     /*.ondas {
         top: 1px;
@@ -635,10 +638,6 @@
         height: auto !important;
     }
 
-    .contenedor-navbar{
-        display: none
-    }
-
     /*.ondas {
         top: 1px;
         margin-top: -62px;
@@ -726,9 +725,6 @@
         margin-top: -62px;
     }*/
 
-    .contenedor-navbar{
-        display: none
-    }
 
     .inicio {
         background-size: auto 82%;
@@ -828,9 +824,6 @@
         margin-top: -62px;
     }*/
 
-    .contenedor-navbar{
-        display: none
-    }
 
     .inicio {
         background-size: auto 82%;
@@ -922,9 +915,6 @@
         font-size: 9px;
     }
 
-    .contenedor-navbar{
-        display: none
-    }
 
     .inicio {
         background-size: auto 82%;
@@ -1018,10 +1008,6 @@
     }
     .como-funciona {
         height: auto !important;
-    }
-
-    .contenedor-navbar{
-        display: none
     }
 
     .opcion-menu {
@@ -1123,9 +1109,6 @@
         height: auto !important;
     }
 
-    .contenedor-navbar{
-        display: none
-    }
 
     .divider.responsive {
         margin-bottom: 20px;
@@ -1231,10 +1214,6 @@
     .como-funciona {
         height: auto !important;
     }
-    .contenedor-navbar{
-        display: none
-    }
-
     .desactivar-alarma-perfil, .agregar-placa-perfil {
         margin-top: 20px;
     }
@@ -1333,9 +1312,6 @@
     .como-funciona {
         height: auto !important;
     }
-    .contenedor-navbar{
-        display: none
-    }
 
     .divider.responsive {
         margin-bottom: 20px;
@@ -1429,9 +1405,7 @@
     .como-funciona {
         height: auto !important;
     }
-    .contenedor-navbar{
-        display: none
-    }
+
 
     .desactivar-alarma-perfil, .agregar-placa-perfil {
         margin-top: 20px;
@@ -1531,9 +1505,6 @@
     .como-funciona {
         height: auto !important;
     }
-    .contenedor-navbar{
-        display: none
-    }
 
     .divider.responsive {
         margin-bottom: 20px;
@@ -1629,9 +1600,6 @@
     .como-funciona {
         height: auto !important;
     }
-    .contenedor-navbar{
-        display: none
-    }
 
     .desactivar-alarma-perfil, .agregar-placa-perfil {
         margin-top: 20px;
@@ -1720,9 +1688,6 @@
 
     .como-funciona {
         height: auto !important;
-    }
-    .contenedor-navbar{
-        display: none
     }
 
     .divider.responsive {
@@ -1848,9 +1813,6 @@
     	height: auto !important;
 	}
 
-    header .contenedor-navbar-mobile, md-sidenav {
-        display: none;
-    }
 
         .menu-perfil {
         padding-left: 0px !important;
@@ -1934,9 +1896,6 @@
         margin-top: 20px;
     }
 
-    header .contenedor-navbar-mobile, md-sidenav {
-        display: none;
-    }
 
         .menu-perfil {
         padding-left: 0px !important;
@@ -2108,9 +2067,6 @@ iPad 3
         margin-top: 20px;
     }
 
-    header .contenedor-navbar-mobile, md-sidenav {
-        display: none;
-    }
 
     .menu-perfil {
         padding-left: 0px !important;
@@ -2160,9 +2116,6 @@ iPad 3
         margin-top: 20px;
     }
 
-    header .contenedor-navbar-mobile, md-sidenav {
-        display: none;
-    }
 
     .menu-perfil {
         padding-left: 0px !important;
@@ -2180,7 +2133,7 @@ iPad 3
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1024px) and (max-width : 1280px) {
     .globitos {
         height: 280px;
         width: 280px;
@@ -2207,8 +2160,9 @@ iPad 3
     }
 
     .login {
-        background-size: 166% 64%;
-        background-position: center 56%;
+        background-size: 130% 85%;
+        background-position: center 95%;
+        padding-bottom: 80px;
     }
 
     .login .linea-media{
@@ -2283,9 +2237,7 @@ iPad 3
         margin-top: 20px;
     }
 
-    header .contenedor-navbar-mobile, md-sidenav {
-        display: none;
-    }
+
 
     .menu-perfil {
         padding-left: 0px !important;

@@ -210,7 +210,7 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s11 offset-s1 m10 offset-m1">
                 <div class="margin-bottom-30">
                     <div class="campo-formulario">Comentarios</div>
                     <div class="input-formulario">

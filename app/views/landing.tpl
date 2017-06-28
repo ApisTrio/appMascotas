@@ -32,7 +32,7 @@
                 <h5 class="negrita">HE ENCONTRADO UNA MASCOTA</h5>
                 <p class="texto-pequeno">Introduce el id de la placa</p>
                 <button class="boton-verde" ng-click="landing.mostrarModal()">ENCONTRAR DUEÑO</button>
-                <p class="texto-pequeno">¿Dónde está el ID?</p>
+                <a href="https://www.dinbeat.com/preguntas-frecuentes" style="color: white"><p class="texto-pequeno">¿Dónde está el ID?</p></a>
             </div>
         </div>
     </div>

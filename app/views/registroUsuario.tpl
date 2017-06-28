@@ -182,8 +182,10 @@
 
                     <div class="input-formulario " style="position: relative;">
                         <div ng-hide="registro.imagen">
-                            <button class="boton-verde-negativo" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true">CARGAR FOTO</button>
-                            <div style="display: inline-block">
+
+                            <button class="boton-verde-negativo tomar-foto" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true">CARGAR FOTO</button>
+                            
+                            <div class="o" style="display: inline-block">
                             O
                             </div>
                             <button class="boton-verde-negativo" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'">HACER FOTO</button>

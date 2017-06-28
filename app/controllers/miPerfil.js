@@ -1,8 +1,10 @@
 angular.module("mascotas")
 
-.controller("miPerfilController", ["usuariosService", "mascotasService", "paisesValue",function (usuariosService, mascotasService, paisesValue) {
+.controller("miPerfilController", ["usuariosService", "mascotasService", "paisesValue", "$scope",function (usuariosService, mascotasService, paisesValue, $scope) {
 
     var cdx = this;
+
+    $scope.$parent.seleccionado = 1;
 
     cdx.datos = usuariosService.autorizado();
 

@@ -1,8 +1,10 @@
 angular.module("mascotas")
 
-.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter", "$stateParams",function (mascotasService, usuariosService, $filter, $stateParams) {
+.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter", "$stateParams", "$scope",function (mascotasService, usuariosService, $filter, $stateParams, $scope) {
 
     var cdx = this;
+
+    $scope.$parent.seleccionado = 4;
 
     cdx.centro = [];
 

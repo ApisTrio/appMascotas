@@ -1,8 +1,10 @@
 angular.module("mascotas")
 
-.controller("misMascotasController", ["mascotasService", "usuariosService", "placasService", "apiConstant", function (mascotasService, usuariosService, placasService, apiConstant) {
+.controller("misMascotasController", ["mascotasService", "usuariosService", "placasService", "apiConstant", "$scope", function (mascotasService, usuariosService, placasService, apiConstant, $scope) {
     
     var cdx = this;
+
+    $scope.$parent.seleccionado = 2;
     
     cdx.mascotas = [];
     

@@ -247,21 +247,6 @@
     }
 }
 
-@media only screen and (min-width : 1024px){
-    .tomar-foto{
-        display: none;
-    }
-    .o{
-        display: none !important;
-    }
-}
-
-@media only screen and (max-width : 400px){
-    .o{
-        display: block !important;
-        padding-left: 65px;
-    }
-}
 
 
 

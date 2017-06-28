@@ -1,8 +1,10 @@
 angular.module("mascotas")
 
-.controller("activarAlertaController", ["NavigatorGeolocation", "NgMap", "mascotasService", "usuariosService", "$filter", "mailService", function (NavigatorGeolocation, NgMap, mascotasService, usuariosService, $filter, mailService) {
+.controller("activarAlertaController", ["NavigatorGeolocation", "NgMap", "mascotasService", "usuariosService", "$filter", "mailService", "$scope", function (NavigatorGeolocation, NgMap, mascotasService, usuariosService, $filter, mailService, $scope) {
 
     var cdx = this;
+
+    $scope.$parent.seleccionado = 3;
 
     cdx.centro = [];
 

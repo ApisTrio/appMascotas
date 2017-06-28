@@ -14,7 +14,7 @@
 
                 <div ui-sref="perfil.miPerfil"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoMiPerfil = 'assets/images/menu_iconos/profile.png'" ng-mouseover="perfil.iconoMiPerfil = 'assets/images/menu_iconos/profile_hover.png'" ng-mouseleave="perfil.iconoMiPerfil = 'assets/images/menu_iconos/profile.png'" src="{{perfil.iconoMiPerfil}}">
+                        <img ng-init="perfil.iconoMiPerfil = perfil.cambiarIcono(seleccionado, 1, iconoMiPerfil)" ng-mouseover="perfil.iconoMiPerfil = iconoMiPerfil[1]" ng-mouseleave="perfil.iconoMiPerfil = perfil.cambiarIcono(seleccionado, 1, iconoMiPerfil)" ng-src="{{ perfil.iconoMiPerfil }}">
                     </div>
                     <div class="opcion-menu">
                         Mi perfil
@@ -22,7 +22,7 @@
                 </div>
                 <div ui-sref="perfil.misMascotas"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoMisMascotas = 'assets/images/menu_iconos/huella.png'" ng-mouseover="perfil.iconoMisMascotas = 'assets/images/menu_iconos/huella_hover.png'" ng-mouseleave="perfil.iconoMisMascotas = 'assets/images/menu_iconos/huella.png'" src="{{perfil.iconoMisMascotas}}">
+                        <img ng-init="perfil.iconoMisMascotas = perfil.cambiarIcono(seleccionado, 2, iconoMisMascotas)" ng-mouseover="perfil.iconoMisMascotas = iconoMisMascotas[1]" ng-mouseleave="perfil.iconoMisMascotas = perfil.cambiarIcono(seleccionado, 2, iconoMisMascotas)" ng-src="{{ perfil.iconoMisMascotas }}">
                     </div>
                     <div class="opcion-menu" class="margin-out">
                         Mis mascotas
@@ -30,7 +30,7 @@
                 </div>
                 <div ui-sref="perfil.activarAlerta"  ui-sref-opts="{reload: true}">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoActivarAlerta = 'assets/images/menu_iconos/important_message.png'" ng-mouseover="perfil.iconoActivarAlerta = 'assets/images/menu_iconos/important_message_hover.png'" ng-mouseleave="perfil.iconoActivarAlerta = 'assets/images/menu_iconos/important_message.png'"  src="{{perfil.iconoActivarAlerta}}">
+                        <img ng-init="perfil.iconoActivarAlerta = perfil.cambiarIcono(seleccionado, 3, iconoActivarAlerta)" ng-mouseover="perfil.iconoActivarAlerta = iconoActivarAlerta[1]" ng-mouseleave="perfil.iconoActivarAlerta = perfil.cambiarIcono(seleccionado, 3, iconoActivarAlerta)"  ng-src="{{ perfil.iconoActivarAlerta }}">
                     </div>
                     <div class="opcion-menu">
                         Activar alerta de mascota perdida
@@ -38,7 +38,7 @@
                 </div>
                 <div ui-sref="perfil.desactivarAlerta"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseover="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" ng-mouseleave="perfil.iconoDesactivarAlerta = 'assets/images/menu_iconos/desactivar_inactivo.png'" src="{{perfil.iconoDesactivarAlerta}}" style="width: 35px;margin-right: -10px;">
+                        <img ng-init="perfil.iconoDesactivarAlerta = perfil.cambiarIcono(seleccionado, 4, iconoDesactivarAlerta)" ng-mouseover="perfil.iconoDesactivarAlerta  = iconoDesactivarAlerta[1]" ng-mouseleave="perfil.iconoDesactivarAlerta = perfil.cambiarIcono(seleccionado, 4, iconoDesactivarAlerta)" ng-src="{{perfil.iconoDesactivarAlerta}}" style="width: 35px;margin-right: -10px;">
                     </div>
                     <div class="opcion-menu">
                         Desactivar alerta de mascota perdida

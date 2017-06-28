@@ -361,9 +361,9 @@ img.editar-perfil{
     cursor: pointer;
 }
 
-.botón-verde-negativo[ngf-select]{
+button.boton-verde-negativo[ngf-select]{
     font-size: 10px;
-    width: 120px;
+    width: 104px;
 }
 
 md-dialog < .formulario-contacto{
@@ -495,8 +495,8 @@ input[input-date]{
     background-color: transparent;
     border: 1px solid #B2DA9F;
     padding: 12px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 14px;
+    padding-right: 14px;
     font-weight: bold;
     font-size: 12px;
     border-radius: 35px;

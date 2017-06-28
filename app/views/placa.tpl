@@ -1,4 +1,19 @@
 <section ng-switch="placa.pasos" ng-init="placa.pasos = 1">
+    <style type="text/css">
+        md-dialog {
+            min-height: 90%;
+            width: 50%;
+            border-radius: 0;
+        }
+
+        @media only screen and (max-width : 767px){
+            md-dialog {
+                min-height: 90%;
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+    </style>
     <div ng-switch-default>
         <section class="color-blanco header-mascota">
             <div class="row">

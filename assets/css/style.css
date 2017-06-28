@@ -230,6 +230,18 @@ table.table-admin td {
     
 }
 
+.margin-left-20{
+    
+    margin-left: 20px;
+    
+}
+
+.margin-right-20{
+    
+    margin-right: 20px;
+    
+}
+
 .margin-left-40{
     
     margin-left: 40px;
@@ -349,6 +361,13 @@ img.editar-perfil{
    cursor: pointer;
 }
 
+
+md-dialog < .formulario-contacto{
+    min-height: 80%;
+    width: 50%;
+}
+
+
 section.informacion-mascota:hover img.editar-perfil{
     
     visibility: visible;
@@ -387,6 +406,13 @@ img.editar-perfil:focus{
     cursor: pointer;
     
 }
+
+
+.formulario-contacto {}
+
+
+
+
 
 .contenedor-foto-mascota:hover .editar-foto-mascota{
     opacity: 1;

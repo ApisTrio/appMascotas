@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col s12 m4 offset-m4 center-align" ng-form="cargarFotoForm">
-            <div class="center-align  contenedor-foto-mascota" ngf-select="misMascotasIndividual.cargar($file)" ng-model="misMascotasIndividual.imagen" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" name="foto">
+            <div class="center-align  contenedor-foto-mascota" ngf-select="misMascotasIndividual.cargar($file)" ng-model="misMascotasIndividual.imagen" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" name="foto">
                 <div class="circle foto-mascota" style="background-image:url({{misMascotasIndividual.apiDir.dominio}}{{misMascotasIndividual.apiDir.path}}{{misMascotasIndividual.apiDir.imagenes.mascotas}}{{misMascotasIndividual.datos.basico.foto}}); background-position: 100% 100%; background-size: cover;" ng-if="misMascotasIndividual.datos.basico.foto">
                 </div>
                 <div class="circle foto-mascota" style="background-image:url(assets/images/icons/foto_perfil.png); border: 1px solid black" ng-if="!misMascotasIndividual.datos.basico.foto">

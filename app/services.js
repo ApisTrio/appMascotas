@@ -1471,7 +1471,7 @@ angular.module("mascotas")
         var hora = $filter('date')(hoy, "hh:mm a");
 
 
-        var enlace = latitud && longitud ? "https://www.google.co.ve/maps/@" + latitud + "," + longitud + ",z15" : "";
+        var enlace = latitud && longitud ? "https://www.google.com/maps/@" + latitud + "," + longitud + ",18z" : "";
 
 
         $http.post(apiRootFactory + "mail/placa-escaneada", {

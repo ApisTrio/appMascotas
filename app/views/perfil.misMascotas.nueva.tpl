@@ -234,7 +234,7 @@
         <div class="col s4 offset-s4 botones-formulario" ng-show="misMascotasNueva.pasos < 3">
             <div class="row">
                 <div class="col s12 m6 l6" style="margin-bottom: 10px;">
-                    <button class="boton-neutro" ui-sref="landing">Cancelar</button>
+                    <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
                 </div>
                 <div class="col s12 m6 l6">
                     <button class="boton-verde" ng-click="misMascotasNueva.avanzar(nuevaMascotaForm.$valid, misMascotasNueva.datos)" ng-class="{'bloqueado' : !nuevaMascotaForm.$valid }">SIGUIENTE</button>

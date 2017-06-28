@@ -346,7 +346,15 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
 }])
 
-.run(["$rootScope", "$state", function ($rootScope, $state) {
+.run(["$rootScope", "$state", "$anchorScroll",function ($rootScope, $state,  $anchorScroll) {
+    
+    $rootScope.$on('$stateChangeSuccess', function() {
+        
+        $anchorScroll();
+        
+    })
+                   
+                   
 
     $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
         // We can catch the error thrown when the $requireSignIn promise is rejected

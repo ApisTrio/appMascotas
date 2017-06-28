@@ -1,29 +1,46 @@
 angular.module("mascotas")
 
-.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", "apiConstant", "$filter", "razasService", "$q", "$state", "vacunasService", "$mdDialog", "placasService", "paisesValue",function (placasService, mascotasService, $stateParams, placaValida, apiConstant, $filter, razasService, $q, $state, vacunasService, $mdDialog, placasService, paisesValue) {
+.controller("misMascotasIndividualController", ["placasService", "mascotasService", "$stateParams", "placaValida", "apiConstant", "$filter", "razasService", "$q", "$state", "vacunasService", "$mdDialog", "placasService", "paisesValue", "$scope",function (placasService, mascotasService, $stateParams, placaValida, apiConstant, $filter, razasService, $q, $state, vacunasService, $mdDialog, placasService, paisesValue, $scope) {
 
     var cdx = this;
 
     cdx.datos = placaValida;
 
     cdx.apiDir = apiConstant;
-    
+
     cdx.paises = paisesValue;
 
     cdx.cargar = function ($file) {
 
-        mascotasService.foto($file, "." + $file.type.split("/")[1]).then(function (res) {
+        if ($file) {
 
-            mascotasService.nuevaFoto(placaValida.basico.idMascota, res).then(function (resNuevaFoto) {
+            mascotasService.foto($file, "." + $file.type.split("/")[1]).then(function (res) {
 
-                cdx.datos.basico.foto = res;
+                mascotasService.nuevaFoto(placaValida.basico.idMascota, res).then(function (resNuevaFoto) {
+
+                    cdx.datos.basico.foto = res;
+
+                })
+
+
 
             })
-
-
-
-        })
-
+        }
+        
+        
+        
+       /* if ($scope.cargarFotoForm.foto.$error && $scope.cargarFotoForm.foto.$pristine){
+            
+          
+            cdx.mostrarErrorFoto()
+            
+            //$scope.cargarFotoForm.foto.$error = null;
+            
+            
+        }
+        
+        $scope.cargarFotoForm.foto.$setPristine();*/
+        
 
     }
 
@@ -227,13 +244,13 @@ angular.module("mascotas")
                         recordatorio = new Date(vacunasOriginal[llave].fecha_recordatorio.split("/")[2], vacunasOriginal[llave].fecha_recordatorio.split("/")[1] - 1, vacunasOriginal[llave].fecha_recordatorio.split("/")[0]);
 
                     }
-                    
-                    var activo = vacunasOriginal[llave].recordatorio_activo == "1" ? true : false; 
-                    
+
+                    var activo = vacunasOriginal[llave].recordatorio_activo == "1" ? true : false;
+
                     cdx.espejo.vacunas[llave] = {
                         fecha: vacunasOriginal[llave].fecha,
                         recordatorio: recordatorio,
-                        activo:  activo,
+                        activo: activo,
                         vacunas_idVacuna: vacunasOriginal[llave].idVacuna,
                         idMascota: vacunasOriginal[llave].idMascota,
                         idVamas: vacunasOriginal[llave].idVamas
@@ -263,17 +280,17 @@ angular.module("mascotas")
 
                         valor.recordatorio = $filter('date')(valor.recordatorio, "dd/MM/yyyy");
                         valor.fecha = $filter('date')(valor.fecha, "dd/MM/yyyy");
-                        
-                        
-                         valor.activo = valor.activo ? "1" : "0"; 
-                        
+
+
+                        valor.activo = valor.activo ? "1" : "0";
+
                         promesas.push(mascotasService.registrarVacuna(valor));
 
                     })
 
                     angular.forEach(cdx.editar.vacunas.eliminar, function (valor, llave) {
-                        
-              
+
+
                         promesas.push(mascotasService.eliminarVacuna(valor));
 
                     })
@@ -301,7 +318,7 @@ angular.module("mascotas")
             },
             desaparecer: function (indice) {
 
-               
+
                 if (cdx.espejo.vacunas[indice].idVamas) {
 
                     cdx.editar.vacunas.eliminar.push(cdx.espejo.vacunas[indice].idVamas);
@@ -490,7 +507,7 @@ angular.module("mascotas")
 
 
             placasService.placasAsignadas(cdx.datos.basico.idMascota).then(function (res) {
-                
+
                 $mdDialog.hide();
                 cdx.datos.placas = res
 
@@ -500,6 +517,22 @@ angular.module("mascotas")
 
         })
 
+    }
+    
+    
+    cdx.mostrarErrorFoto = function($event){
+        
+        $mdDialog.show({
+            parent: angular.element(document.body),
+            targetEvent: $event,
+            templateUrl: "cdx.errorFotoCargar.html",
+            controller: function () {
+
+            },
+            clickOutsideToClose: true,
+            escapeToClose: true
+        });
+        
     }
 
 

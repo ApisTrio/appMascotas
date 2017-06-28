@@ -46,7 +46,7 @@
         </div>
     </div>
 </section>
-<section class="como-funciona">
+<section class="como-funciona" style="padding-bottom: 100px;">
     <div class="container">
         <div class="row">
             <div class="col s12 center-align">

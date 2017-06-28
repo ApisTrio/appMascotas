@@ -20,7 +20,7 @@
     <script src="assets/js/materialize.min.js"></script>
 
     <!-- MAPS -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD3rv58fVm8h5McUzT9wrG6J7lQFw_J7Uk"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyD3rv58fVm8h5McUzT9wrG6J7lQFw_J7Uk"></script>
 
     <!--Librerias core de angualarJS -->
     <script src="modulos/angular/angular.min.js"></script>
@@ -428,6 +428,16 @@
                 <img src="assets/images/icons/alerta.png" style="height: 40px; width:40px">
                 <h4 class="titulo2 negrita c2" style="line-height: 28px">{{titulo}}</h4>
                 <div class="center-align">{{mensaje}}</div>
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="cdx.errorFotoCargar.html">
+        <div class="row margin-bottom-40 margin-top-40 margin-left-40 margin-right-40">
+            <div class="col s12 center-align">
+                <img src="assets/images/icons/alerta.png" style="height: 40px; width:40px">
+                <h4 class="titulo2 negrita c2" style="line-height: 28px">Error de carga</h4>
+                <div class="center-align">Recuerda que la imagen no debe superar los 3MB y debe tener un minimo de 200px y 200px.</div>
             </div>
         </div>
     </script>

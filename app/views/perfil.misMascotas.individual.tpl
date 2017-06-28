@@ -10,14 +10,20 @@
     </div>
 
     <div class="row">
-        <div class="col s12 m4 offset-m4 center-align">
-            <div class="center-align  contenedor-foto-mascota" ngf-select="misMascotasIndividual.cargar($file)" ng-model="misMascotasIndividual.imagen" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'">
+        <div class="col s12 m4 offset-m4 center-align" ng-form="cargarFotoForm">
+            <div class="center-align  contenedor-foto-mascota" ngf-select="misMascotasIndividual.cargar($file)" ng-model="misMascotasIndividual.imagen" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" name="foto">
                 <div class="circle foto-mascota" style="background-image:url({{misMascotasIndividual.apiDir.dominio}}{{misMascotasIndividual.apiDir.path}}{{misMascotasIndividual.apiDir.imagenes.mascotas}}{{misMascotasIndividual.datos.basico.foto}}); background-position: 100% 100%; background-size: cover;" ng-if="misMascotasIndividual.datos.basico.foto">
                 </div>
                 <div class="circle foto-mascota" style="background-image:url(assets/images/icons/foto_perfil.png); border: 1px solid black" ng-if="!misMascotasIndividual.datos.basico.foto">
                 </div>
                 <img class="editar-foto-mascota" src="assets/images/icons/editar_foto_hover.png">
                 <img class="exclamacion-perdida" src="assets/images/icons/alerta_activada_mascota_perdida.png" ng-show="(misMascotasIndividual.datos.basico.perdida && !misMascotasIndividual.datos.basico.encontrado)">
+
+            </div>
+            <div ng-messages="cargarFotoForm.foto.$error">
+                <div ng-message="maxSize">La imagen no puede superar los 3MB.</div>
+                <div ng-message="minHeight">La imagen debe tener al menos 200px de ancho.</div>
+                <div ng-message="minWidth">La imagen debe tener al menos 200px de alto.</div>
             </div>
         </div>
     </div>

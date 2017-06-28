@@ -236,7 +236,7 @@
         </div>
         <div class="row">
             <div class="col s10 offset-s1 center-align">
-                <h4 class="titulo2 negrita c2" style="line-height: 28px">¡GRACIAS POR HABERTE PUEDO EN CONTACTO CON {{placa.datos.basico.nombre}} TU MENSAJE HA SIDO ENVIADO CON ÉXITO</h4>
+                <h4 class="titulo2 negrita c2" style="line-height: 28px">¡GRACIAS POR HABERTE PUESTO EN CONTACTO CON {{placa.datos.basico.nombre}} TU MENSAJE HA SIDO ENVIADO CON ÉXITO</h4>
             </div>
         </div>
         <div class="row">

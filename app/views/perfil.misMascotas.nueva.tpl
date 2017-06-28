@@ -33,11 +33,11 @@
                     </div>
                     <div class="input-formulario">
                         <div ng-hide="misMascotasNueva.imagen">
-                            <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true">CARGAR FOTO</button>
+                            <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5mb" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" name="foto">CARGAR FOTO</button>
                             <div style="display: inline-block">
                             O
                             </div>
-                            <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="3MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'">HACER FOTO</button>
+                            <button class="boton-verde-negativo" ngf-select ng-model="misMascotasNueva.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5mb" ngf-min-height="200px" ngf-min-width="200px" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'"  name="foto">HACER FOTO</button>
 
                         </div>
                         <div ng-show="misMascotasNueva.imagen">
@@ -45,7 +45,11 @@
                             <button class="boton-verde" ng-click="misMascotasNueva.previsualizar($event, misMascotasNueva.imagen)">PREVISUALIZAR</button> O <button class="boton-neutro" ng-click="misMascotasNueva.imagen = null">Cancelar</button>
                             <!--<img ngf-src="misMascotasNueva.imagen">-->
                         </div>
-
+                        <div ng-messages="formPaso1.$error">
+                            <div ng-message="maxSize">La imagen no puede superar los 3MB.</div>
+                            <div ng-message="minHeight">La imagen debe tener al menos 200px de ancho.</div>
+                            <div ng-message="minWidth">La imagen debe tener al menos 200px de alto.</div>
+                        </div>
                     </div>
                 </div>
             </div>

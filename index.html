@@ -85,7 +85,7 @@
         </div><!--
 
 
-     --><div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false">
+     --><div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false" show-gt-sm>
 
             <div>
                 <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
@@ -109,13 +109,13 @@
             </div>
         </div><!--
 
-     --><div class="contenedor-navbar-mobile">
+     --><div class="contenedor-navbar-mobile" hide-gt-sm>
             <label ng-click="header.toggleLeft()" class="burguer-menu">
                 <img src="assets/images/icons/burguer-menu.png">
             </label>
         </div>
 
-        <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4" hide-gt-sm>
 
             <md-content layout-padding>
                 <ul class="contenedor-navbar-mobile">
@@ -305,7 +305,7 @@
 
     <!-- directiva de modal para buscar placas -->
     <script type="text/ng-template" id="cdx.encontreMascotaModal.html">
-        <div class="row margin-bottom-40 margin-top-40 margin-left-20 margin-right-20">
+        <div class="row margin-bottom-40 margin-top-40 margin-left-40 margin-right-40">
             <div class="col s12 center-align">
                 <h4 class="titulo2 negrita interlineado20 c2">¿Has encontrado una mascota?</h4>
                 <div class="center-align">Por favor introduce el ID de su placa</div>
@@ -385,6 +385,7 @@
                         <input ng-model="correo" placeholder="E-mail" name="correo" type="email" style="width: 100%" required>
                         <div ng-messages="contactoForm.correo.$error" ng-show="contactoForm.correo.$dirty || contactoForm.$submitted">
                             <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="email">Debe ser un email válido.</div>
                         </div>
                     </div>
                 </div>

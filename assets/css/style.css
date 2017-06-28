@@ -399,6 +399,12 @@ img.editar-perfil:focus{
     
 }
 
+input[input-date]{
+    background-image: url(../images/icons/calendar.svg);
+    background-repeat: no-repeat;
+    background-position: 97% 49%;
+}
+
 .eliminar-vacuna-boton{
 
     height: 20px;

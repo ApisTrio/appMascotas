@@ -14,33 +14,33 @@
 
                 <div ui-sref="perfil.miPerfil"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoMiPerfil = perfil.cambiarIcono(seleccionado, 1, iconoMiPerfil)" ng-mouseover="perfil.iconoMiPerfil = iconoMiPerfil[1]" ng-mouseleave="perfil.iconoMiPerfil = perfil.cambiarIcono(seleccionado, 1, iconoMiPerfil)" ng-src="{{ perfil.iconoMiPerfil }}">
+                        <img ng-mouseover="iconoMiPerfil = iconosMiPerfil[1]" ng-mouseleave="iconoMiPerfil = cambiarIcono(seleccionado, 1, iconosMiPerfil)" ng-src="{{ iconoMiPerfil }}">
                     </div>
-                    <div class="opcion-menu">
+                    <div class="opcion-menu" ng-class="{'selected-menu-item' : seleccionado == 1}">
                         Mi perfil
                     </div>
                 </div>
                 <div ui-sref="perfil.misMascotas"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoMisMascotas = perfil.cambiarIcono(seleccionado, 2, iconoMisMascotas)" ng-mouseover="perfil.iconoMisMascotas = iconoMisMascotas[1]" ng-mouseleave="perfil.iconoMisMascotas = perfil.cambiarIcono(seleccionado, 2, iconoMisMascotas)" ng-src="{{ perfil.iconoMisMascotas }}">
+                        <img ng-mouseover="iconoMisMascotas = iconosMisMascotas[1]" ng-mouseleave="iconoMisMascotas = cambiarIcono(seleccionado, 2, iconosMisMascotas)" ng-src="{{ iconoMisMascotas }}">
                     </div>
-                    <div class="opcion-menu" class="margin-out">
+                    <div class="opcion-menu" ng-class="{'selected-menu-item' : seleccionado == 2}" class="margin-out">
                         Mis mascotas
                     </div>
                 </div>
                 <div ui-sref="perfil.activarAlerta"  ui-sref-opts="{reload: true}">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoActivarAlerta = perfil.cambiarIcono(seleccionado, 3, iconoActivarAlerta)" ng-mouseover="perfil.iconoActivarAlerta = iconoActivarAlerta[1]" ng-mouseleave="perfil.iconoActivarAlerta = perfil.cambiarIcono(seleccionado, 3, iconoActivarAlerta)"  ng-src="{{ perfil.iconoActivarAlerta }}">
+                        <img ng-mouseover="iconoActivarAlerta = iconosActivarAlerta[1]" ng-mouseleave="iconoActivarAlerta = cambiarIcono(seleccionado, 3, iconosActivarAlerta)"  ng-src="{{ iconoActivarAlerta }}">
                     </div>
-                    <div class="opcion-menu">
+                    <div class="opcion-menu" ng-class="{'selected-menu-item' : seleccionado == 3}">
                         Activar alerta de mascota perdida
                     </div>
                 </div>
                 <div ui-sref="perfil.desactivarAlerta"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-init="perfil.iconoDesactivarAlerta = perfil.cambiarIcono(seleccionado, 4, iconoDesactivarAlerta)" ng-mouseover="perfil.iconoDesactivarAlerta  = iconoDesactivarAlerta[1]" ng-mouseleave="perfil.iconoDesactivarAlerta = perfil.cambiarIcono(seleccionado, 4, iconoDesactivarAlerta)" ng-src="{{perfil.iconoDesactivarAlerta}}" style="width: 35px;margin-right: -10px;">
+                        <img ng-mouseover="iconoDesactivarAlerta  = iconosDesactivarAlerta[1]" ng-mouseleave="iconoDesactivarAlerta = cambiarIcono(seleccionado, 4, iconosDesactivarAlerta)" ng-src="{{iconoDesactivarAlerta}}" style="width: 35px;margin-right: -10px;">
                     </div>
-                    <div class="opcion-menu">
+                    <div class="opcion-menu" ng-class="{'selected-menu-item' : seleccionado == 4}">
                         Desactivar alerta de mascota perdida
                     </div>
                 </div>

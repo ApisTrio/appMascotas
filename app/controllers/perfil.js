@@ -41,28 +41,30 @@ angular.module("mascotas")
 
     $scope.seleccionado = 0;
 
-    $scope.iconoMiPerfil = [
+    $scope.iconosMiPerfil = [
         "assets/images/menu_iconos/profile.svg",
         "assets/images/menu_iconos/profile_hover.svg",
         "assets/images/menu_iconos/profile_selected.svg"
     ];
-    $scope.iconoMisMascotas = [
+    $scope.iconosMisMascotas = [
         "assets/images/menu_iconos/huella.svg",
         "assets/images/menu_iconos/huella_hover.svg",
         "assets/images/menu_iconos/huella_selected.svg"
     ];
-    $scope.iconoActivarAlerta = [
+    $scope.iconosActivarAlerta = [
         "assets/images/menu_iconos/important_message.svg",
         "assets/images/menu_iconos/important_message_hover.svg",
         "assets/images/menu_iconos/important_message_selected.svg"
     ];
-    $scope.iconoDesactivarAlerta = [
+    $scope.iconosDesactivarAlerta = [
         "assets/images/menu_iconos/desactivar.svg",
         "assets/images/menu_iconos/desactivar_hover.svg",
         "assets/images/menu_iconos/desactivar_selected.svg"
     ];
 
-    cdx.cambiarIcono = function(s, i, iconos){
+    $scope.cambiarIcono = function(s, i, iconos){
+
+        console.log(s,i,iconos);
 
         if (s == i) {
             return iconos[2];
@@ -72,6 +74,10 @@ angular.module("mascotas")
 
     }
 
+    //$scope.iconoMiPerfil = $scope.cambiarIcono($scope.seleccionado, 1, $scope.iconoMiPerfil);
+    //$scope.iconoMisMascotas = $scope.cambiarIcono($scope.seleccionado, 2, $scope.iconoMisMascotas);
+    //$scope.iconoActivarAlerta = $scope.cambiarIcono($scope.seleccionado, 3, $scope.iconoActivarAlerta);
+    //$scope.iconoDesactivarAlerta = $scope.cambiarIcono($scope.seleccionado, 4, $scope.iconoDesactivarAlerta);
 
 
 }])

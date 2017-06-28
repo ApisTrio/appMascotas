@@ -366,6 +366,9 @@ button.boton-verde-negativo[ngf-select]{
     width: 104px;
 }
 
+
+.selected-menu-item{ color: #b2da9f; }
+
 md-dialog < .formulario-contacto{
     min-height: 80%;
     width: 50%;

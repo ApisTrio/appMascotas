@@ -13,6 +13,10 @@
     	float: none !important;
 	}
 
+    .img-perrogato {
+        bottom: -4%;
+    }
+
     .opcion-menu {
         width: 34%;
     }
@@ -140,6 +144,11 @@
     .foto-mascota {
     height: 180px;
     width: 180px;
+}
+
+
+.img-perrogato {
+    bottom: -4%;
 }
 
 .mascota-add{

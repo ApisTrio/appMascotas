@@ -39,7 +39,7 @@
             <div class="col s12 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s12 m2">
+            <div class="col s12 m2"  style="margin-left: 10px;">
 
                 <cdx-formas data-seleccionado="misMascotasPlaca.seleccionado"></cdx-formas>
 
@@ -105,8 +105,15 @@
 <section ng-if="misMascotasPlaca.pasos != 2">
     <div class="row">
         <div class="col s4 offset-s4 botones-formulario">
-            <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-            <button class="boton-verde" ng-click="misMascotasPlaca.avanzar(nuevaPlacaForm.$valid, misMascotasPlaca.placa)" ng-class="{'bloqueado' : !nuevaPlacaForm.$valid }">GUARDAR</button>
+            <div class="row">
+                <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                    <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>    
+                </div>
+                <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                    <button class="boton-verde" ng-click="misMascotasPlaca.avanzar(nuevaPlacaForm.$valid, misMascotasPlaca.placa)" ng-class="{'bloqueado' : !nuevaPlacaForm.$valid }">GUARDAR</button>
+                </div>
+            </div>
+            
         </div>
     </div>
 

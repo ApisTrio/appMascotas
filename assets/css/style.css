@@ -357,10 +357,14 @@ table.table-admin td {
 img.editar-perfil{
         
     height: 25px;
-    margin: 10px;
-   cursor: pointer;
+    margin: 10px 0px;
+    cursor: pointer;
 }
 
+.botón-verde-negativo[ngf-select]{
+    font-size: 10px;
+    width: 120px;
+}
 
 md-dialog < .formulario-contacto{
     min-height: 80%;

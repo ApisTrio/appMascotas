@@ -343,7 +343,7 @@
             <div class="col s10 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s10 offset-s1 m4">
+            <div class="col s10 offset-s1 m4"  style="margin-left: 10px;">
 
                 <cdx-formas data-seleccionado="registro.seleccionado" class="margin-bottom-30"></cdx-formas>
 
@@ -782,9 +782,16 @@
     <!--------- SIGUIENTE -------->
 
     <div class="row no-margin-bottom" style="padding-bottom: 40px;">
-        <div class="col s10 offset-s1 m4 offset-m4 botones-formulario" ng-show="registro.pasos < 5 && registro.listo">
-            <button class="boton-neutro" ui-sref="landing">Cancelar</button>
-            <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid, registro.datos)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>
+        <div class="col s4 offset-s4 botones-formulario" ng-show="registro.pasos < 5 && registro.listo">
+            <div class="row">
+                <div class="col s12 m12 l6" style="margin-bottom: 10px">
+                    <button class="boton-neutro" ui-sref="landing">Cancelar</button>
+                </div>
+                <div class="col s12 m12 l6">
+                    <button class="boton-verde" ng-click="registro.avanzar(formPasos.$valid, registro.datos)" ng-class="{'bloqueado' : !formPasos.$valid }">SIGUIENTE</button>
+                </div>
+            </div>  
+            
         </div>
         <div class="col s12 m4 offset-m4 botones-formulario" ng-show="registro.pasos == 5">
             <button class="boton-verde" ui-sref="login">INICIAR SESIÓN</button>

@@ -64,8 +64,14 @@
 
     <div class="row" ng-if="desactivarAlerta.opciones !=2">
         <div class="col s4 offset-s4 botones-formulario">
-            <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-            <button class="boton-verde" ng-click="desactivarAlerta.avanzar(alertaForm.$valid, desactivarAlerta.datos.idMascota)" ng-class="{'bloqueado' : !alertaForm.$valid }" >DESACTIVAR</button>
+            <div class="row">
+                <div class="col s12 m12 l6" style="margin-bottom: 10px">
+                    <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button> 
+                </div>
+                <div class="col s12 m12 l6">
+                    <button class="boton-verde" ng-click="desactivarAlerta.avanzar(alertaForm.$valid, desactivarAlerta.datos.idMascota)" ng-class="{'bloqueado' : !alertaForm.$valid }" >DESACTIVAR</button>
+                </div>
+            </div>
         </div>
 
     </div>

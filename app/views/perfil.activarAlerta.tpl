@@ -91,9 +91,20 @@
 
     <div class="row" ng-if="activarAlerta.opciones !=4">
         <div class="col s4 offset-s4 botones-formulario">
-            <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
-            <button class="boton-verde" ng-click="activarAlerta.avanzar(alertaForm.$valid, activarAlerta.datos)" ng-if="activarAlerta.opciones < 3" ng-class="{'bloqueado' : !alertaForm.$valid }">SIGUIENTE</button>
-            <button class="boton-verde" ng-click="activarAlerta.avanzar(alertaForm.$valid, activarAlerta.datos)" ng-if="activarAlerta.opciones == 3">ACTIVAR</button>
+            <div class="row">
+                <div class="col s12 m12 l6" style="margin-bottom: 10px">
+                    <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
+                </div>
+                <div class="col s12 m12 l6">
+                    <button class="boton-verde" ng-click="activarAlerta.avanzar(alertaForm.$valid, activarAlerta.datos)" ng-if="activarAlerta.opciones < 3" ng-class="{'bloqueado' : !alertaForm.$valid }">SIGUIENTE</button>
+                </div>
+                <div class="col s12 m12 l6">
+                    <button class="boton-verde" ng-click="activarAlerta.avanzar(alertaForm.$valid, activarAlerta.datos)" ng-if="activarAlerta.opciones == 3">ACTIVAR</button>
+                </div>
+            </div>
+            
+            
+            
         </div>
 
     </div>

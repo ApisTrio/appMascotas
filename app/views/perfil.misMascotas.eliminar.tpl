@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col s4 offset-s4 botones-formulario">
                 <div class="row">
-                    <div class="col s12 m6 l6">
+                    <div class="col s12 m6 l6" style="margin-bottom: 10px;">
                         <button style="width: 100%" class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>
                     </div>
                     <div class="col s12 m6 l6">

@@ -188,7 +188,7 @@
             <div class="col s11 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s12 m2">
+            <div class="col s12 m2" style="margin-left: 10px;">
 
                 <cdx-formas data-seleccionado="misMascotasNueva.seleccionado" class="margin-bottom-30"></cdx-formas>
 
@@ -232,9 +232,16 @@
 <section>
     <div class="row">
         <div class="col s4 offset-s4 botones-formulario" ng-show="misMascotasNueva.pasos < 3">
-            <button class="boton-neutro" ui-sref="landing">Cancelar</button>
-            <button class="boton-verde" ng-click="misMascotasNueva.avanzar(nuevaMascotaForm.$valid, misMascotasNueva.datos)" ng-class="{'bloqueado' : !nuevaMascotaForm.$valid }">SIGUIENTE</button>
-        </div>
+            <div class="row">
+                <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                    <button class="boton-neutro" ui-sref="landing">Cancelar</button>
+                </div>
+                <div class="col s12 m6 l6">
+                    <button class="boton-verde" ng-click="misMascotasNueva.avanzar(nuevaMascotaForm.$valid, misMascotasNueva.datos)" ng-class="{'bloqueado' : !nuevaMascotaForm.$valid }">SIGUIENTE</button>
+                </div>
+            </div>
+            
+            
 
         <div class="col s12 m4 offset-m4 botones-formulario" ng-show="misMascotasNueva.pasos == 3">
             <button class="boton-verde" ui-sref="perfil.misMascotasIndividual({idPlaca: misMascotasNueva.perfilMascota})">VER PERFIL</button>

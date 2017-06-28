@@ -21,12 +21,12 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">E-mail</div>
-            <div class="contenido-info">{{miPerfil.datos.usuario.emailU}}</div>
+            <div class="contenido-info white-space-normal">{{miPerfil.datos.usuario.emailU}}</div>
             <div class="divider"></div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Nombre de usuario</div>
-            <div class="contenido-info">{{miPerfil.datos.usuario.usuario}}</div>
+            <div class="contenido-info white-space-normal">{{miPerfil.datos.usuario.usuario}}</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="row" style="margin-left: none;">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Fecha de nacimiento</div>
-            <div class="contenido-info">{{miPerfil.datos.dueno.nacimiento}}</div>
+            <div class="contenido-info white-space-normal">{{miPerfil.datos.dueno.nacimiento}}</div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Sexo</div>
@@ -61,12 +61,12 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Nombre</div>
-                <div class="contenido-info">{{miPerfil.datos.dueno.nombre}}</div>
+                <div class="contenido-info white-space-normal">{{miPerfil.datos.dueno.nombre}}</div>
                 <div class="divider"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">Apellido</div>
-                <div class="contenido-info">{{miPerfil.datos.dueno.apellido}}</div>
+                <div class="contenido-info white-space-normal">{{miPerfil.datos.dueno.apellido}}</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -74,12 +74,12 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Teléfono de contacto</div>
-                <div class="contenido-info">{{miPerfil.datos.dueno.telefono}}</div>
+                <div class="contenido-info white-space-normal">{{miPerfil.datos.dueno.telefono}}</div>
                 <div class="divider"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">E-mail</div>
-                <div class="contenido-info">{{miPerfil.datos.dueno.email}}</div>
+                <div class="contenido-info white-space-normal">{{miPerfil.datos.dueno.email}}</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -87,8 +87,8 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Dirección</div>
-                <div class="contenido-info" ng-if="miPerfil.datos.dueno.direccion" style="white-space: normal;">{{miPerfil.datos.dueno.direccion}}, {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
-                <div class="contenido-info" ng-if="!miPerfil.datos.dueno.direccion"> {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
+                <div class="contenido-info white-space-normal" ng-if="miPerfil.datos.dueno.direccion">{{miPerfil.datos.dueno.direccion}}, {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
+                <div class="contenido-info white-space-normal" ng-if="!miPerfil.datos.dueno.direccion"> {{miPerfil.datos.dueno.codigo_postal}}, {{miPerfil.datos.dueno.ciudad}}, {{miPerfil.datos.dueno.provincia}}, {{miPerfil.datos.dueno.pais}}</div>
             </div>
         </div>
 
@@ -248,9 +248,17 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                <button class="boton-neutro" ng-click="miPerfil.editarCancelar()">Cancelar</button>
-                <button class="boton-verde" ng-click="miPerfil.editarGuardar(editarForm.$valid, miPerfil.datosEspejo)" ng-class="{'bloqueado' : !editarForm.$valid }">GUARDAR</button>
+            <div class="col s4 offset-s4 botones-formulario">
+                <div class="row">
+                    <div class="col s12 m12 l6" style="margin-bottom: 10px">
+                        <button class="boton-neutro" ng-click="miPerfil.editarCancelar()">Cancelar</button>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <button class="boton-verde" ng-click="miPerfil.editarGuardar(editarForm.$valid, miPerfil.datosEspejo)" ng-class="{'bloqueado' : !editarForm.$valid }">GUARDAR</button>
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
     </div>

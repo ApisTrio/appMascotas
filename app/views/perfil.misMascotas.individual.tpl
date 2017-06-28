@@ -1,7 +1,7 @@
 <section class="color-blanco header-mascota">
     <div class="row">
         <div class="col s12 center-align">
-            <h4 class="negrita no-margin-bottom">{{misMascotasIndividual.datos.basico.nombre}}</h4>
+            <h4 class="negrita no-margin-bottom white-space-normal">{{misMascotasIndividual.datos.basico.nombre}}</h4>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
     </div>
     <div class="row  no-margin-bottom c2 negrita" ng-if="(misMascotasIndividual.datos.basico.perdida && !misMascotasIndividual.datos.basico.encontrado)">
         <div class="col s12 center-align">
-            <div class="desactivar-alarma-perfil" ui-sref="perfil.desactivarAlerta">
+            <div class="desactivar-alarma-perfil white-space-normal" ui-sref="perfil.desactivarAlerta">
                 <img src="assets/images/icons/alerta.png"> Desactivar alerta de mascota perdida
             </div>
         </div>
@@ -73,12 +73,12 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Nombre completo</div>
-                <div class="contenido-info">{{misMascotasIndividual.datos.basico.nombre}}</div>
+                <div class="contenido-info white-space-normal">{{misMascotasIndividual.datos.basico.nombre}}</div>
                 <div class="divider responsive"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">Fecha de nacimiento</div>
-                <div class="contenido-info">{{misMascotasIndividual.datos.basico.fecha_nacimiento}}</div>
+                <div class="contenido-info white-space-normal">{{misMascotasIndividual.datos.basico.fecha_nacimiento}}</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -86,12 +86,12 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Género</div>
-                <div class="contenido-info">{{misMascotasIndividual.datos.basico.genero}}</div>
+                <div class="contenido-info white-space-normal">{{misMascotasIndividual.datos.basico.genero}}</div>
                 <div class="divider responsive"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">Raza</div>
-                <div class="contenido-info">{{misMascotasIndividual.datos.basico.raza}}</div>
+                <div class="contenido-info white-space-normal">{{misMascotasIndividual.datos.basico.raza}}</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -99,14 +99,14 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Número de chip</div>
-                <div class="contenido-info" ng-if="misMascotasIndividual.datos.basico.chip">{{misMascotasIndividual.datos.basico.chip}}</div>
-                <div class="contenido-info" ng-if="!misMascotasIndividual.datos.basico.chip">...</div>
+                <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.basico.chip">{{misMascotasIndividual.datos.basico.chip}}</div>
+                <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.basico.chip">...</div>
                 <div class="divider responsive"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">Peso</div>
-                <div class="contenido-info" ng-if="misMascotasIndividual.datos.basico.peso">{{misMascotasIndividual.datos.basico.peso}}</div>
-                <div class="contenido-info" ng-if="!misMascotasIndividual.datos.basico.peso">...</div>
+                <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.basico.peso">{{misMascotasIndividual.datos.basico.peso}}</div>
+                <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.basico.peso">...</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -114,8 +114,8 @@
         <div class="row no-margin-bottom">
             <div class="col s12 m10 offset-m1">
                 <div class="titulo-info">Comentarios</div>
-                <div class="contenido-info" ng-if="misMascotasIndividual.datos.basico.comentarios">{{misMascotasIndividual.datos.basico.comentarios}}</div>
-                <div class="contenido-info" ng-if="!misMascotasIndividual.datos.basico.comentarios">...</div>
+                <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.basico.comentarios">{{misMascotasIndividual.datos.basico.comentarios}}</div>
+                <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.basico.comentarios">...</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -226,9 +226,17 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                <button class="boton-neutro" ng-click="misMascotasIndividual.editar.basico.cancelar()">Cancelar</button>
-                <button class="boton-verde" ng-click="misMascotasIndividual.editar.basico.guardar(basicoEditarForm.$valid,misMascotasIndividual.espejo.basico)" ng-class="{'bloqueado' : !basicoEditarForm.$valid }">GUARDAR</button>
+            <div class="col s4 offset-s4 botones-formulario">
+                
+                <div class="row">
+                    <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                        <button class="boton-neutro" ng-click="misMascotasIndividual.editar.basico.cancelar()">Cancelar</button>        
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <button class="boton-verde" ng-click="misMascotasIndividual.editar.basico.guardar(basicoEditarForm.$valid,misMascotasIndividual.espejo.basico)" ng-class="{'bloqueado' : !basicoEditarForm.$valid }">GUARDAR</button>        
+                    </div>
+                </div>
+            
             </div>
         </div>
 
@@ -347,9 +355,16 @@
 
             </div>
             <div class="row">
-                <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                    <button class="boton-neutro" ng-click="misMascotasIndividual.editar.vacunas.cancelar()">Cancelar</button>
-                    <button class="boton-verde" ng-class="{'bloqueado' : !vacunasPriForm.$valid }" ng-click="misMascotasIndividual.editar.vacunas.guardar(vacunasPriForm.$valid, misMascotasIndividual.espejo.vacunas)">GUARDAR</button>
+                <div class="col s4 offset-s4 botones-formulario">
+                    <div class="row">
+                        <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                            <button class="boton-neutro" ng-click="misMascotasIndividual.editar.vacunas.cancelar()">Cancelar</button>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <button class="boton-verde" ng-class="{'bloqueado' : !vacunasPriForm.$valid }" ng-click="misMascotasIndividual.editar.vacunas.guardar(vacunasPriForm.$valid, misMascotasIndividual.espejo.vacunas)">GUARDAR</button>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -370,42 +385,42 @@
         <div ng-switch-default>
             <div class="row">
                 <div class="col s12 m10 offset-m1 l4 offset-l1">
-                    <div class="titulo-info">Fecha de la última desparasitación interna</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.desparasitacion_i">{{misMascotasIndividual.datos.medicos.desparasitacion_i}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.desparasitacion_i">...</div>
+                    <div class="titulo-info  white-space-normal">Fecha de la última desparasitación interna</div>
+                    <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.medicos.desparasitacion_i">{{misMascotasIndividual.datos.medicos.desparasitacion_i}}</div>
+                    <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.medicos.desparasitacion_i">...</div>
                     <div class="divider responsive"></div>
                 </div>
                 <div class="col s12 m10 offset-m1 l4 offset-l2">
-                    <div class="titulo-info">Fecha de la última desparasitación externa</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.desparasitacion_e">{{misMascotasIndividual.datos.medicos.desparasitacion_e}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.desparasitacion_e">...</div>
+                    <div class="titulo-info  white-space-normal">Fecha de la última desparasitación externa</div>
+                    <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.medicos.desparasitacion_e">{{misMascotasIndividual.datos.medicos.desparasitacion_e}}</div>
+                    <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.medicos.desparasitacion_e">...</div>
                     <div class="divider"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 m4 offset-m1">
                     <div class="titulo-info">Centro Veterinario</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.centro">{{misMascotasIndividual.datos.medicos.centro}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.centro">...</div>
+                    <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.medicos.centro">{{misMascotasIndividual.datos.medicos.centro}}</div>
+                    <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.medicos.centro">...</div>
                     <div class="divider responsive"></div>
                 </div>
                 <div class="col s12 m4 offset-m2">
                     <div class="titulo-info">Veterinario</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.veterinario">{{misMascotasIndividual.datos.medicos.veterinario}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.veterinario">...</div>
+                    <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.medicos.veterinario">{{misMascotasIndividual.datos.medicos.veterinario}}</div>
+                    <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.medicos.veterinario">...</div>
                     <div class="divider"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 m4 offset-m1">
                     <div class="titulo-info">Dirección</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.direccion_veterinario">{{misMascotasIndividual.datos.medicos.direccion_veterinario}}</div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.direccion_veterinario">...</div>
+                    <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.medicos.direccion_veterinario">{{misMascotasIndividual.datos.medicos.direccion_veterinario}}</div>
+                    <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.medicos.direccion_veterinario">...</div>
                 </div>
                 <div class="col s12 m4 offset-m2">
                     <div class="titulo-info">Teléfono</div>
-                    <div class="contenido-info" ng-if="misMascotasIndividual.datos.medicos.telefono_veterinario"><a ng-href="tel:{{misMascotasIndividual.datos.medicos.telefono_veterinario}}">{{misMascotasIndividual.datos.medicos.telefono_veterinario}}</a></div>
-                    <div class="contenido-info" ng-if="!misMascotasIndividual.datos.medicos.telefono_veterinario">...</div>
+                    <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.medicos.telefono_veterinario"><a ng-href="tel:{{misMascotasIndividual.datos.medicos.telefono_veterinario}}">{{misMascotasIndividual.datos.medicos.telefono_veterinario}}</a></div>
+                    <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.medicos.telefono_veterinario">...</div>
                 </div>
             </div>
             <div class="row no-margin-bottom">
@@ -419,7 +434,7 @@
             <div class="row">
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
                     <div class="margin-bottom-30">
-                        <div class="campo-formulario">Fecha de la última desparasitación interna</div>
+                        <div class="campo-formulario white-space-normal">Fecha de la última desparasitación interna</div>
                         <div class="input-formulario">
                             <input input-date type="text" name="fecha" ng-model="misMascotasIndividual.espejo.medico.desparasitacion_i" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasIndividual.datosDatepicker.max}}" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" />
                         </div>
@@ -428,7 +443,7 @@
 
                 <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
                     <div class="margin-bottom-30">
-                        <div class="campo-formulario">Fecha de la última desparasitación externa</div>
+                        <div class="campo-formulario white-space-normal">Fecha de la última desparasitación externa</div>
                         <div class="input-formulario">
                             <input input-date type="text" name="fecha" ng-model="misMascotasIndividual.espejo.medico.desparasitacion_e" container="" format="dd/mm/yyyy" months-full="{{misMascotasIndividual.datosDatepicker.meses}}" months-short="{{misMascotasIndividual.datosDatepicker.mesesCorto}}" weekdays-full="{{misMascotasIndividual.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{misMascotasIndividual.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{misMascotasIndividual.datosDatepicker.max}}" today="misMascotasIndividual.datosDatepicker.hoy" first-day="1" clear="misMascotasIndividual.datosDatepicker.limpiar" close="misMascotasIndividual.datosDatepicker.cerrar" select-years="12" />
                         </div>
@@ -488,9 +503,16 @@
             </div>
 
             <div class="row">
-                <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                    <button class="boton-neutro" ng-click="misMascotasIndividual.editar.medico.cancelar()">Cancelar</button>
-                    <button class="boton-verde" ng-class="{'bloqueado' : !infoMedicoForm.$valid }" ng-click="misMascotasIndividual.editar.medico.guardar(infoMedicoForm.$valid, misMascotasIndividual.espejo.medico)">GUARDAR</button>
+                <div class="col s4 offset-s4 botones-formulario">
+                    <div class="row">
+                        <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                            <button class="boton-neutro" ng-click="misMascotasIndividual.editar.medico.cancelar()">Cancelar</button>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <button class="boton-verde" ng-class="{'bloqueado' : !infoMedicoForm.$valid }" ng-click="misMascotasIndividual.editar.medico.guardar(infoMedicoForm.$valid, misMascotasIndividual.espejo.medico)">GUARDAR</button>
+                        </div>
+                    </div>
+    
                 </div>
             </div>
         </div>
@@ -514,13 +536,13 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Nombre completo</div>
-            <div class="contenido-info">{{misMascotasIndividual.datos.duenos[0].nombre}} {{misMascotasIndividual.datos.duenos[0].apellido}}</div>
+            <div class="contenido-info white-space-normal">{{misMascotasIndividual.datos.duenos[0].nombre}} {{misMascotasIndividual.datos.duenos[0].apellido}}</div>
             <div class="divider responsive"></div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Fecha de nacimiento</div>
-            <div class="contenido-info" ng-if="misMascotasIndividual.datos.duenos[0].nacimiento">{{misMascotasIndividual.datos.duenos[0].nacimiento}}</div>
-            <div class="contenido-info" ng-if="!misMascotasIndividual.datos.duenos[0].nacimiento">...</div>
+            <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.duenos[0].nacimiento">{{misMascotasIndividual.datos.duenos[0].nacimiento}}</div>
+            <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.duenos[0].nacimiento">...</div>
             <div class="divider"></div>
         </div>
     </div>
@@ -528,12 +550,12 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Teléfonos de contacto</div>
-            <div class="contenido-info"><a ng-href="tel:{{misMascotasIndividual.datos.duenos[0].telefono}}">{{misMascotasIndividual.datos.duenos[0].telefono}}</a></div>
+            <div class="contenido-info white-space-normal"><a ng-href="tel:{{misMascotasIndividual.datos.duenos[0].telefono}}">{{misMascotasIndividual.datos.duenos[0].telefono}}</a></div>
             <div class="divider responsive"></div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">E-mail</div>
-            <div class="contenido-info"><a ng-href="mailto:{{misMascotasIndividual.datos.duenos[0].email}}">{{misMascotasIndividual.datos.duenos[0].email}}</a></div>
+            <div class="contenido-info white-space-normal"><a ng-href="mailto:{{misMascotasIndividual.datos.duenos[0].email}}">{{misMascotasIndividual.datos.duenos[0].email}}</a></div>
             <div class="divider"></div>
         </div>
     </div>
@@ -541,8 +563,8 @@
     <div class="row">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Dirección</div>
-            <div class="contenido-info" ng-if="misMascotasIndividual.datos.duenos[0].direccion">{{misMascotasIndividual.datos.duenos[0].direccion}},{{misMascotasIndividual.datos.duenos[0].codigo_postal}}, {{misMascotasIndividual.datos.duenos[0].ciudad}}, {{misMascotasIndividual.datos.duenos[0].provincia}}, {{misMascotasIndividual.datos.duenos[0].pais}} </div>
-            <div class="contenido-info" ng-if="!misMascotasIndividual.datos.duenos[0].direccion">{{misMascotasIndividual.datos.duenos[0].codigo_postal}}, {{misMascotasIndividual.datos.duenos[0].ciudad}}, {{misMascotasIndividual.datos.duenos[0].provincia}}, {{misMascotasIndividual.datos.duenos[0].pais}} </div>
+            <div class="contenido-info white-space-normal" ng-if="misMascotasIndividual.datos.duenos[0].direccion">{{misMascotasIndividual.datos.duenos[0].direccion}},{{misMascotasIndividual.datos.duenos[0].codigo_postal}}, {{misMascotasIndividual.datos.duenos[0].ciudad}}, {{misMascotasIndividual.datos.duenos[0].provincia}}, {{misMascotasIndividual.datos.duenos[0].pais}} </div>
+            <div class="contenido-info white-space-normal" ng-if="!misMascotasIndividual.datos.duenos[0].direccion">{{misMascotasIndividual.datos.duenos[0].codigo_postal}}, {{misMascotasIndividual.datos.duenos[0].ciudad}}, {{misMascotasIndividual.datos.duenos[0].provincia}}, {{misMascotasIndividual.datos.duenos[0].pais}} </div>
         </div>
     </div>
 
@@ -560,13 +582,13 @@
         <div class="row" ng-repeat-start="dueno in misMascotasIndividual.datos.duenos | limitTo: misMascotasIndividual.datos.duenos.length - 1 : 1">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Nombre completo</div>
-                <div class="contenido-info">{{dueno.nombre}} {{dueno.apellido}}</div>
+                <div class="contenido-info white-space-normal">{{dueno.nombre}} {{dueno.apellido}}</div>
                 <div class="divider responsive"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">Fecha de nacimiento</div>
-                <div class="contenido-info" ng-if="dueno.nacimiento">{{dueno.nacimiento}}</div>
-                <div class="contenido-info" ng-if="!dueno.nacimiento">...</div>
+                <div class="contenido-info white-space-normal" ng-if="dueno.nacimiento">{{dueno.nacimiento}}</div>
+                <div class="contenido-info white-space-normal" ng-if="!dueno.nacimiento">...</div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -574,12 +596,12 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Teléfonos de contacto</div>
-                <div class="contenido-info"><a ng-href="tel:{{dueno.telefono}}">{{dueno.telefono}}</a></div>
+                <div class="contenido-info white-space-normal"><a ng-href="tel:{{dueno.telefono}}">{{dueno.telefono}}</a></div>
                 <div class="divider responsive"></div>
             </div>
             <div class="col s12 m4 offset-m2">
                 <div class="titulo-info">E-mail</div>
-                <div class="contenido-info"><a ng-href="mailto:{{dueno.email}}">{{dueno.email}}</a></div>
+                <div class="contenido-info white-space-normal"><a ng-href="mailto:{{dueno.email}}">{{dueno.email}}</a></div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -587,8 +609,8 @@
         <div class="row">
             <div class="col s12 m4 offset-m1">
                 <div class="titulo-info">Dirección</div>
-                <div class="contenido-info" ng-if="dueno.direccion">{{dueno.direccion}},{{dueno.codigo_postal}}, {{dueno.ciudad}}, {{dueno.provincia}}, {{dueno.pais}} </div>
-                <div class="contenido-info" ng-if="!dueno.direccion">{{dueno.codigo_postal}}, {{dueno.ciudad}}, {{dueno.provincia}}, {{dueno.pais}} </div>
+                <div class="contenido-info white-space-normal" ng-if="dueno.direccion">{{dueno.direccion}},{{dueno.codigo_postal}}, {{dueno.ciudad}}, {{dueno.provincia}}, {{dueno.pais}} </div>
+                <div class="contenido-info white-space-normal" ng-if="!dueno.direccion">{{dueno.codigo_postal}}, {{dueno.ciudad}}, {{dueno.provincia}}, {{dueno.pais}} </div>
             </div>
         </div>
 
@@ -804,9 +826,16 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1 m4 offset-m4 botones-formulario">
-                <button class="boton-neutro" ng-click="misMascotasIndividual.editar.duenos.cancelar()">Cancelar</button>
-                <button class="boton-verde" ng-class="{'bloqueado' : !duenoExtraPrinForm.$valid }" ng-click="misMascotasIndividual.editar.duenos.guardar(duenoExtraPrinForm.$valid, misMascotasIndividual.espejo.duenos)">GUARDAR</button>
+            <div class="col s4 offset-s4 botones-formulario">
+                <div class="row">
+                    <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                        <button class="boton-neutro" ng-click="misMascotasIndividual.editar.duenos.cancelar()">Cancelar</button>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <button class="boton-verde" ng-class="{'bloqueado' : !duenoExtraPrinForm.$valid }" ng-click="misMascotasIndividual.editar.duenos.guardar(duenoExtraPrinForm.$valid, misMascotasIndividual.espejo.duenos)">GUARDAR</button>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <div class="center-align">
-                        <img class="circle" width="200" src="assets/images/icons/agregar_nueva_mascota.png">
+                        <img class="circle mascota-add" width="200" src="assets/images/icons/agregar_nueva_mascota.png">
                     </div>
                 </div>
             </div>

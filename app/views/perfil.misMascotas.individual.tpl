@@ -20,10 +20,10 @@
                 <img class="exclamacion-perdida" src="assets/images/icons/alerta_activada_mascota_perdida.png" ng-show="(misMascotasIndividual.datos.basico.perdida && !misMascotasIndividual.datos.basico.encontrado)">
 
             </div>
-            <div ng-messages="cargarFotoForm.foto.$error">
-                <div ng-message="maxSize">La imagen no puede superar los 3MB.</div>
-                <div ng-message="minHeight">La imagen debe tener al menos 200px de ancho.</div>
-                <div ng-message="minWidth">La imagen debe tener al menos 200px de alto.</div>
+            <div ng-messages="cargarFotoForm.foto.$error" class="white-space-normal">
+                <div ng-message="maxSize" class="white-space-normal">La imagen no puede superar los 3MB.</div>
+                <div ng-message="minHeight" class="white-space-normal">La imagen debe tener al menos 200px de ancho.</div>
+                <div ng-message="minWidth" class="white-space-normal">La imagen debe tener al menos 200px de alto.</div>
             </div>
         </div>
     </div>

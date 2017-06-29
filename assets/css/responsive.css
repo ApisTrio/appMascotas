@@ -566,6 +566,11 @@ background-size: 1060% 100%;
         height: auto !important;
     }
 
+
+    .como-funciona {
+        background-size: 202% 100%;
+        background-position: 26% 100%;
+    }
     /*.ondas {
         top: 1px;
         margin-top: -100px;
@@ -1127,7 +1132,7 @@ background-size: 1060% 100%;
     .globitos {
         height: 280px;
         width: 280px;
-        margin: auto auto 20px auto;
+        margin: auto auto 111px auto;
         float: none !important;
     }
     .contenido-iphone {
@@ -1137,6 +1142,12 @@ background-size: 1060% 100%;
     }
     .como-funciona {
         height: auto !important;
+    }
+
+    .como-funciona {
+        background-size: 202% 100%;
+        background-position: 26% 100%;
+
     }
 
     .opcion-menu {

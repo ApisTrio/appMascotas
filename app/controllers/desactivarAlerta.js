@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter", "$stateParams", "$scope",function (mascotasService, usuariosService, $filter, $stateParams, $scope) {
+.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter", "$stateParams", "$scope", "mailService",function (mascotasService, usuariosService, $filter, $stateParams, $scope, mailService) {
 
     var cdx = this;
 
@@ -68,14 +68,10 @@ angular.module("mascotas")
                 mascotasService.nuevaEncontrada(idMascota).then(function (res) {
                     
                     console.log(idMascota)
-                    //mailService.desactivarAlerta(idMascota);
+                    mailService.desactivarAlerta(idMascota);
                
                     cdx.opciones = cdx.opciones + 1;
 
-                }).catch(function(res){
-                    
-                    console.log("error")
-                    
                 })
 
               

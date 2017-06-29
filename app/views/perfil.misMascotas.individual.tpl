@@ -530,7 +530,7 @@
             <img class="editar-perfil" src="assets/images/icons/editar.png" ng-click="misMascotasIndividual.editar.duenos.comenzar(misMascotasIndividual.datos.duenos)" ng-show="!misMascotasIndividual.editar.duenos.pasos">
         </div>
     </div>
-    <div class="col s10 m8 offset-m1">
+    <!--<div class="col s10 m8 offset-m1">
         <div class="titulo-info c2">Dueño principal</div>
     </div>
     <div class="row">
@@ -573,7 +573,7 @@
             <div class="divider"></div>
         </div>
     </div>
-
+    -->
     <!-- DUEÑOS NORMAL-->
     <div ng-switch-default>
         <div class="col s10 m8 offset-m1" ng-show="misMascotasIndividual.datos.duenos.length > 1">

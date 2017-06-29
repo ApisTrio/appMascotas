@@ -701,13 +701,7 @@ angular.module("mascotas")
         var defered = $q.defer();
         var promise = defered.promise;
 
-        $http.post(apiRootFactory + "perdidas/cambiar/encontrada", $httpParamSerializer({
-            idMascota: idMascota
-        }), {
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        }).then(function (res) {
+        $http.post(apiRootFactory + "perdidas/cambiar/encontrada", {idMascota: idMascota}).then(function (res) {
 
             if (res.data.response) {
 
@@ -715,7 +709,7 @@ angular.module("mascotas")
 
             } else {
 
-                //defered.reject();
+                defered.reject();
             }
 
         })

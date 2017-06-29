@@ -301,7 +301,7 @@ angular.module("mascotas")
 
                             cdx.datos.vacunas = res;
                             cdx.espejo.vacunas = [];
-                            cdx.editar.vacunas.eliminar = null;
+                            cdx.editar.vacunas.eliminar = [];
                             cdx.editar.vacunas.pasos = false;
 
                         })
@@ -407,7 +407,7 @@ angular.module("mascotas")
                             cdx.datos.duenos = res;
                             var duenoPrincipal = cdx.espejo.duenos[0];
                             cdx.espejo.duenos = [duenoPrincipal];
-                            cdx.editar.duenos.eliminar = null;
+                            cdx.editar.duenos.eliminar = [];
                             cdx.editar.duenos.pasos = false;
 
                         })

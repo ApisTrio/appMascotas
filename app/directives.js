@@ -250,6 +250,8 @@ angular.module("mascotas")
                     })
 
                     ngModel.$setViewValue(null)
+                    
+                    scope.cdx.salto = 0;
 
                 }
 

@@ -287,7 +287,7 @@
     <script type="text/ng-template" id="cdx.modelos.html">
 
         <div ng-init="cdx.salto = 0" class="col s12">
-            <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )">
+            <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )" ng-class="{'escondidoQUITARMAY': !((modelos[seleccionado] | limitTo: 6 : cdx.salto  - 1).length == 6)}">
 
             <div class="contenedor-modelos">
                 <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
@@ -298,7 +298,7 @@
                 </div>
             </div>
 
-            <img src="assets/images/forms/right.png" ng-click="avanzar(cdx.salto,true, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length)">
+            <img src="assets/images/forms/right.png" ng-click="avanzar(cdx.salto,true, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length)" ng-class="{'escondidoQUITARMAY': !((modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length == 6)}">
         </div>
 
     </script>

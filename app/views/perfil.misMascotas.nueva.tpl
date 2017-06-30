@@ -62,8 +62,8 @@
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso1.generoMasccota.$pristine || formPaso1.generoMasccota.$valid}">
                         <md-select ng-model="misMascotasNueva.datos.genero" ng-class="{'valido': formPaso1.generoMasccota.$valid, 'erroneo': (!formPaso1.generoMasccota.$valid && formPaso1.generoMasccota.$dirty)}" placeholder="Genero" class="md-no-underline" name="generoMasccota" required>
-                            <md-option value="Masculino">Masculino</md-option>
-                            <md-option value="Femenino">Femenino</md-option>
+                            <md-option value="Macho">Macho</md-option>
+                            <md-option value="Hembra">Hembra</md-option>
                         </md-select>
                         <cdx-validez data-validez="formPaso1.generoMasccota.$valid" data-mostrar="formPaso1.generoMasccota.$dirty"></cdx-validez>
                     </div>

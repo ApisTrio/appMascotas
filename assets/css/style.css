@@ -453,6 +453,10 @@ input[input-date]{
     color: white !important;
 }
 
+button.landing{
+    width: auto !important;
+}
+
 .boton-neutro {
     color: black;
     background-color: #FAFAFA;
@@ -1281,10 +1285,10 @@ header .contenedor-navbar a {
 }
 
 
-header .contenedor-navbar-mobile li {
+header .contenedor-navbar-mobile-list li {
     margin-bottom: 10px;
 }
-header .contenedor-navbar-mobile a {
+header .contenedor-navbar-mobile-list a {
     color: #7f7f7f;
     font-weight: bold;
     font-size: 20px;

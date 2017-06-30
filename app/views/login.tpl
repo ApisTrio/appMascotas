@@ -9,7 +9,7 @@
 					<p class="titulo-registrate">CREAR MI CUENTA</p>
 					<p style="font-size: 18px; color: #5c5b5c">¿Te apasionan los animales? <br>¡Entonces eres de los nuestros!</p>
 					<br>
-					<button class="boton-verde" ui-sref="registroUsuario">REGISTRARME</button>
+					<button class="boton-verde landing" ui-sref="registroUsuario">REGISTRARME</button>
 				</div>
 			</div>
 			<div class="linea-media">
@@ -37,7 +37,7 @@
 					<input type="checkbox" class="filled-in" id="recuerdame" name="recuerdame" />
 					<label class="label" for="recuerdame">Recuérdame</label>
 				</div>
-				<button class="boton-verde margin-out" type="submit" ng-click="login.iniciarSesion(login.usuario, loginForm.$valid)" >ACCEDER</button>
+				<button class="boton-verde margin-out landing" type="submit" ng-click="login.iniciarSesion(login.usuario, loginForm.$valid)" >ACCEDER</button>
 				<p class="pointer" style="color: #afb2b6;" ui-sref="cambiarContrasena">¿Has olvidado tu contraseña?</p>
 				<p class="pointer" style="color: #afb2b6;" ui-sref="recordarUsuario">¿Has olvidado tu usuario?</p>
 			</div>

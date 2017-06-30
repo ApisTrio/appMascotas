@@ -8,7 +8,7 @@
 <section ng-form="nuevaMascotaForm" ng-init="misMascotasNueva.pasos = 1" ng-switch="misMascotasNueva.pasos">
     <div ng-form="formPaso1" ng-switch-when="1">
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita white-space-normal">
+            <div class="col s11 offset-s1 m10 offset-m1 negrita white-space-normal">
                 Introduce los datos de tu mascota.
             </div>
         </div>
@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m10 offset-m1">
+                <div class="col s11 offset-s1 m10 offset-m1">
                     * Dato requerido
                 </div>
             </div>

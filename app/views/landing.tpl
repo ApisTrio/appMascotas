@@ -15,7 +15,7 @@
                 <img class="responsive-img" src="assets/images/icons/Add_dog.svg">
                 <h5 class="negrita">REGISTRA TU MASCOTA</h5>
                 <p class="texto-pequeno">Registrate en nuestra plataforma para poder activar tu placa o entra con tu usuario y contraseña</p>
-                <button class="boton-verde" ui-sref="registroUsuario">EMPIEZA AQUÍ</button>
+                <button class="boton-verde landing" ui-sref="registroUsuario">EMPIEZA AQUÍ</button>
             </div>
         </div>
         <div class="col s12 m12 l4 center-align">
@@ -23,7 +23,7 @@
                 <h5 class="negrita">¡HE PERDIDO MI MASCOTA!</h5>
                 <img class="responsive-img" src="assets/images/icons/Lost_Human.svg">
                 <p class="texto-pequeno">Activa esta alerta y deja que otros usuarios que estén cerca te ayuden a encontrarla</p>
-                <button class="boton-verde-negativo" ui-sref="perfil.activarAlerta">ACTIVAR ALARMA</button>
+                <button class="boton-verde-negativo landing" ui-sref="perfil.activarAlerta">ACTIVAR ALARMA</button>
             </div>
         </div>
         <div class="col s12 m12 l4 center-align">
@@ -31,7 +31,7 @@
                 <img class="responsive-img" src="assets/images/icons/lost_dog.svg">
                 <h5 class="negrita">HE ENCONTRADO UNA MASCOTA</h5>
                 <p class="texto-pequeno">Introduce el id de la placa</p>
-                <button class="boton-verde" ng-click="landing.mostrarModal()">ENCONTRAR DUEÑO</button>
+                <button class="boton-verde landing" ng-click="landing.mostrarModal()">ENCONTRAR DUEÑO</button>
                 <a href="https://www.dinbeat.com/preguntas-frecuentes" style="color: white"><p class="texto-pequeno">¿Dónde está el ID?</p></a>
             </div>
         </div>
@@ -99,7 +99,7 @@
                             <div class="center-align"><img src="assets/images/icons/shape.svg" width="45px" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">1. Compra una Placa QR</div>
                             <div class="center-align texto-pequeno negrita parrafo">Adquiere tu Placa QR en nuestra tienda online de forma simple y segura</div>
-                            <div class="center-align"><a href="/tienda"><button class="boton-verde">COMPRAR</button></a></div>
+                            <div class="center-align"><a href="/tienda"><button class="boton-verde landing">COMPRAR</button></a></div>
                         </div>
 
                         <div class="col s12 m4 margin-in">
@@ -107,13 +107,13 @@
 
                             <div class="negrita center-align titulo2 interlineado20 c2">2. Crea el perfil de tu mascota</div>
                             <div class="center-align texto-pequeno negrita parrafo">Introduce todos los datos relevantes de tu mascota, información veterinario, personas de contacto alternativas, etc. <br>Registra tantas placas como desees</div>
-                            <div class="center-align"><button class="boton-verde-negativo" ui-sref="registroUsuario">CREAR CUENTA</button></div>
+                            <div class="center-align"><button class="boton-verde-negativo landing" ui-sref="registroUsuario">CREAR CUENTA</button></div>
                         </div>
                         <div class="col s12 m4 margin-in">
                             <div class="center-align"><img src="assets/images/icons/SYNC.svg" height="45px"></div>
                             <div class="negrita center-align titulo2 interlineado20 c2">3. Activa tu placa QR</div>
                             <div class="center-align texto-pequeno negrita parrafo">Sincroniza tu perfil con tu placa y mantenlo actualizado para que en caso de pérdida sea sencillo contactarte</div>
-                            <div class="center-align"><button class="boton-verde-negativo" ui-sref="perfil.misMascotasPlaca">ACTIVAR</button></div>
+                            <div class="center-align"><button class="boton-verde-negativo landing" ui-sref="perfil.misMascotasPlaca">ACTIVAR</button></div>
                         </div>
                     </div>
                     <img src="assets/images/perrogato.png" class="img-perrogato" width="160">
@@ -147,7 +147,7 @@
                 </div>
             </div>
             <div class="col s12 center-align margin-out">
-                <button class="boton-verde-negativo" ui-sref="mascotasPerdidas">VER MÁS</button>
+                <button class="boton-verde-negativo landing" ui-sref="mascotasPerdidas">VER MÁS</button>
             </div>
         </div>
     </div>

@@ -626,7 +626,7 @@ background-size: 1060% 100%;
         padding: 20px 0;
         background-image: none;
     }
-.login .linea-media .uno, .login .linea-media .tres {
+    .login .linea-media .uno, .login .linea-media .tres {
         margin: 0 auto;
         height: 2px;
         width: 48%;

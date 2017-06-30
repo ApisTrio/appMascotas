@@ -789,7 +789,7 @@
                 </div>
 
 
-                <div class="col s11 offset-s1 m4 offset-m3">
+                <div class="col s10 offset-s1 m4 offset-m3">
                     <div class="margin-bottom-30">
                         <button class="boton-neutro" ng-click="misMascotasIndividual.editar.duenos.desparecer($index)">Eliminar este contacto</button>
                     </div>

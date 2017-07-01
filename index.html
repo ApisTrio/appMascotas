@@ -31,17 +31,17 @@
     <script src="modulos/angular-animate/angular-animate.min.js"></script>
     <script src="modulos/angular-aria/angular-aria.min.js"></script>
     <script src="modulos/angular-aria/angular-aria.min.js"></script>
+    
+    <!--Librerias 3r party angularJS -->
     <script src="modulos/angular-ui-switch/angular-ui-switch.js"></script>
     <script src="modulos/angular-google-maps/build/scripts/ng-map.min.js"></script>
     <script src="modulos/angular-file-upload/ng-file-upload-shim.min.js"></script>
     <script src="modulos/angular-file-upload/ng-file-upload.min.js"></script>
-
-
-
-    <!--Librerias 3r party angularJS -->
+    <script src="modulos/angular-ismobile/dist/angular-ismobile.min.js"></script>
     <script src="modulos/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="modulos/angular-material/angular-material.min.js"></script>
     <script src="modulos/angular-materialize/angular-materialize.min.js"></script>
+    
 
 
     <!--Archivos App -->
@@ -290,10 +290,10 @@
     <script type="text/ng-template" id="cdx.modelos.html">
 
         <div ng-init="cdx.salto = 0" class="col s12">
-            <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto - 1).length )" ng-class="{'escondidoQUITARMAY': !((modelos[seleccionado] | limitTo: 6 : cdx.salto  - 1).length == 6)}">
+            <img src="assets/images/forms/left.png" ng-click="avanzar(cdx.salto,false, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: limite() : cdx.salto - 1).length, limite())" ng-class="{'escondidoQUITARMAY': !((modelos[seleccionado] | limitTo: limite() : cdx.salto  - 1).length == limite())}">
 
             <div class="contenedor-modelos">
-                <div ng-repeat="modelo in modelos[seleccionado] | limitTo: 6 : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
+                <div ng-repeat="modelo in modelos[seleccionado] | limitTo: limite() : cdx.salto" ng-click="seleccionar($index + cdx.salto, seleccionado)">
                     <label for="{{modelo.idModelo}}">
                         <img ng-src="assets/images/placas/{{seleccionado}}/{{modelo.modelo}}" ng-class="{'activo': modelo.activo}">
                         <input ng-model="$parent.valorCorbata" type="radio" id="{{modelo.idModelo}}" name="placa" ng-value="modelo.idModelo" ng-change="actualizar()">
@@ -301,8 +301,10 @@
                 </div>
             </div>
 
-            <img src="assets/images/forms/right.png" ng-click="avanzar(cdx.salto,true, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length)" ng-class="{'escondidoQUITARMAY': !((modelos[seleccionado] | limitTo: 6 : cdx.salto  + 1).length == 6)}">
+            <img src="assets/images/forms/right.png" ng-click="avanzar(cdx.salto,true, modelos[seleccionado].length, (modelos[seleccionado] | limitTo: limite() : cdx.salto  + 1).length, limite())" ng-class="{'escondidoQUITARMAY': !((modelos[seleccionado] | limitTo: limite() : cdx.salto  + 1).length == limite())}">
         </div>
+
+<div>{{hola}}</div>
 
     </script>
 

@@ -123,13 +123,34 @@ angular.module("mascotas")
 
 }])
 
-.directive('cdxModelos', ["modelosService", function (modelosService) {
+.directive('cdxModelos', ["modelosService", "isMobile", function (modelosService, isMobile) {
     return {
         require: "ngModel",
         scope: true,
         templateUrl: 'cdx.modelos.html',
-        controller: ["$scope", "modelosService", "apiConstant", function ($scope, modelosService, apiConstant) {
+        controller: ["$scope", "modelosService", "apiConstant", "isMobile", function ($scope, modelosService, apiConstant, isMobile) {
 
+            $scope.limite = function(){
+                
+                if(isMobile.phone){
+                    
+                    return 3;
+                    
+                }
+                
+                else if(isMobile.tablet){
+                    
+                    return 4;
+                }
+                
+                else{
+                    
+                    return 6;
+                    
+                }
+                
+            }
+            
             $scope.modelos = {
                 pajarita: [],
                 redonda: []
@@ -175,14 +196,13 @@ angular.module("mascotas")
             }
 
          
-            $scope.avanzar = function (salto, accion, cantidad, resultante) {
-                console.log(resultante) 
+            $scope.avanzar = function (salto, accion, cantidad, resultante, esperado) {
                 
                 if (accion) {
                     
                     
                    
-                    if (salto < cantidad && resultante == 6) {
+                    if (salto < cantidad && resultante == esperado) {
 
 
                         $scope.cdx.salto = $scope.cdx.salto + 1;
@@ -191,7 +211,7 @@ angular.module("mascotas")
                     }
                 } else if (!accion) {
 
-                    if (salto < cantidad && resultante == 6) {
+                    if (salto < cantidad && resultante == esperado) {
 
                         $scope.cdx.salto = $scope.cdx.salto - 1;
 
@@ -258,6 +278,7 @@ angular.module("mascotas")
 
             })
 
+            
         }
     }
 }])

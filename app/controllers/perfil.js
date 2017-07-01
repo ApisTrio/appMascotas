@@ -27,18 +27,6 @@ angular.module("mascotas")
         }
     }
 
-    cdx.mascotasPerdidas = false;
-
-    mascotasService.mascotasPerdidasDueno(usuariosService.autorizado().dueno.idDueno)
-        .then(function (res) {
-
-            if (res) {
-
-                cdx.mascotasPerdidas = true;
-
-            }
-        })
-
     $scope.seleccionado = 0;
 
     $scope.iconosMiPerfil = [

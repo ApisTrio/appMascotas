@@ -701,7 +701,9 @@ angular.module("mascotas")
         var defered = $q.defer();
         var promise = defered.promise;
 
-        $http.post(apiRootFactory + "perdidas/cambiar/encontrada", {idMascota: idMascota}).then(function (res) {
+        $http.post(apiRootFactory + "perdidas/cambiar/encontrada", {
+            idMascota: idMascota
+        }).then(function (res) {
 
             if (res.data.response) {
 
@@ -1046,7 +1048,7 @@ angular.module("mascotas")
                 defered.reject();
             }
 
-        })
+        });
 
         return promise;
 
@@ -1453,7 +1455,7 @@ angular.module("mascotas")
     }
 
 
-    this.placaEscaneada = function (idMascota, latitud = false, longitud = false, direccion = false) {
+    this.placaEscaneada = function (idMascota, latitud, longitud, direccion) {
 
         var defered = $q.defer();
         var promise = defered.promise;
@@ -1464,9 +1466,17 @@ angular.module("mascotas")
         var fecha = $filter('date')(hoy, "dd/MM/yyyy");
         var hora = $filter('date')(hoy, "hh:mm a");
 
-
-        var enlace = latitud && longitud ? "https://www.google.com/maps/@" + latitud + "," + longitud + ",18z" : "";
-
+        if (latitud && longitud) {
+            var enlace = latitud && longitud ? "https://www.google.com/maps/@" + latitud + "," + longitud + ",18z" : "";
+        }
+        
+        else {
+            
+            var enlace = null,
+            latitud = null,
+            longitud = null,
+            direccion = null
+        }
 
         $http.post(apiRootFactory + "mail/placa-escaneada", {
             id: idMascota,

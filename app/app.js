@@ -64,9 +64,15 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
             "currentAuth": ["$q", "usuariosService", function ($q, usuariosService) {
 
                 if (!usuariosService.autorizado()) {
-
+                    
                     return $q.reject("AUTH_REQUIRED");
                 }
+                
+                 if(!usuariosService.autorizado().dueno){
+                        
+                        usuariosService.salir();
+                        
+                    }
 
                 }]
         }

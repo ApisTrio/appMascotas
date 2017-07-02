@@ -52,8 +52,6 @@ angular.module("mascotas")
 
     $scope.cambiarIcono = function(s, i, iconos){
 
-        console.log(s,i,iconos);
-
         if (s == i) {
             return iconos[2];
         }

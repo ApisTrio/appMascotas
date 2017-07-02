@@ -6,7 +6,7 @@
     <base href="/appMascotas/">
 
 
-    <title>Proyecto - Dinbeat</title>
+    <title>Dinbeat - Los mejores productos tecnológicos para mascotas</title>
     <link rel="shortcut icon" href="https://www.dinbeat.com/wp-content/uploads/2016/06/favicon-dinbeat.png">
 
     <link rel="stylesheet" type="text/css" href="modulos/angular-ui-switch/angular-ui-switch.css">
@@ -100,7 +100,7 @@
                 <div ng-switch="header.autorizado" class="login-contenedor">
                     <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
 
-                    <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default>{{header.autorizado.dueno.nombre}} {{header.autorizado.dueno.apellido}}
+                    <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default>{{header.autorizado.usuario.usuario}}
                     </a>
                     <div ng-switch-default ng-show="header.hmenuMostrar" class="cerrar-sesion c2 nombre-usuario" ng-click="header.salir()">
                         Cerrar sesion
@@ -130,7 +130,7 @@
                         <a ui-sref="landing" ng-click="header.close()">Placas QR</a>
                     </li>
                     <li>
-                        <a href="#" ng-click="header.close()">Tienda</a>
+                        <a href="/tienda" ng-click="header.close()">Tienda</a>
                     </li>
                     <li>
                         <a href="http://www.dinbeat.com/sobre-nosotros/" ng-click="header.close()">Sobre nosotros</a>

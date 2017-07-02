@@ -71,8 +71,8 @@ angular.module("mascotas")
                     $scope.contactoForm.$setSubmitted();
                     if (valido) {
 
-                        mailService.contacto(idMascota, nombre, email, telefono, mensaje)
-                        $mdDialog.hide()
+                        mailService.contacto(idMascota, nombre, email, telefono, mensaje);
+                        $mdDialog.hide();
 
                     }
                 }

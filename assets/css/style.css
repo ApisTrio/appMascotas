@@ -422,7 +422,7 @@ table.table-admin td {
 }
 
 img.editar-perfil{
-        
+    visibility: hidden;
     height: 25px;
     margin: 10px 0px;
     cursor: pointer;

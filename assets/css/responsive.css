@@ -99,6 +99,12 @@
 /* Portrait */
 @media (max-device-width: 800px) and (orientation: portrait) { 
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
+
 }
 
 /* Landscape */
@@ -277,18 +283,34 @@
         left: 0;
     }
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
 
 }
 
 /* Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
 }
 
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     .ondas2 {
         bottom: -18%;
+    }
+
+    img.editar-perfil{
+        
+        visibility: visible;
+        
     }
 }
 
@@ -401,6 +423,12 @@
         background-position: 82% 100%;
     }
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
+
 }
 
 
@@ -473,6 +501,11 @@
         left: 0;
     }
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
 
 }
 
@@ -591,6 +624,11 @@
         font-size: 9px;
     }
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
 }
 
 @media only screen and (min-device-width : 414px) and (max-device-width : 736) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
@@ -757,6 +795,12 @@
 
     cdx-pasos .datos>div>div {   
         font-size: 9px;
+    }
+
+    img.editar-perfil{
+        
+        visibility: visible;
+        
     }
 }
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
@@ -1004,6 +1048,12 @@
         font-size: 9px;
     }
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
+
 }
 
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -1198,6 +1248,12 @@
         font-size: 9px;
     }
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
+
 }
 
 @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -1387,6 +1443,11 @@
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
 
 }
 
@@ -1567,6 +1628,11 @@
         font-size: 9px;
     }
 
+    img.editar-perfil{
+        
+        visibility: visible;
+        
+    }
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -1806,6 +1872,32 @@
         background-position: 82% 100%;
     }
 
+
+    .col.contenedor-placas-mascota{
+        padding: 0px;
+    }
+
+    .placas-mascota>.placa-individual {
+        font-size: 10px;
+    }
+
+    .placas-mascota>.placa-individual>img {
+        width: 20px;
+    }
+
+    .placas-mascota .divisor-placas {
+        height: 18px;
+    }
+
+    .eliminar-placa-boton {
+        margin-left: 0px;
+    }
+
+    .placas-mascota .divisor-placas {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
     /*Slider modelos*/
     cdx-modelos>div {
         display: inline-block;
@@ -1849,6 +1941,12 @@
 
     cdx-pasos .datos>div>div {   
         font-size: 9px;
+    }
+
+    img.editar-perfil{
+        
+        visibility: visible;
+        
     }
 
 }
@@ -1943,6 +2041,12 @@
 
     cdx-pasos .datos>div>div {   
         font-size: 9px;
+    }
+
+    img.editar-perfil{
+        
+        visibility: visible;
+        
     }
 }
 
@@ -2086,4 +2190,4 @@
     .agregar-placa-perfil{
         margin-top: 10px;
     }
-}}
+}

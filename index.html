@@ -54,6 +54,7 @@
     <script src="app/controllers/activarAlerta.js"></script>
     <script src="app/controllers/desactivarAlerta.js"></script>
     <script src="app/controllers/header.js"></script>
+    <script src="app/controllers/sidenav.js"></script>
     <script src="app/controllers/admin.js"></script>
     <script src="app/controllers/landing.js"></script>
     <script src="app/controllers/mascotaPerdida.js"></script>
@@ -78,82 +79,87 @@
 </head>
 
 <body ng-app="mascotas">
-    <header ng-controller="headerController as header">
-        <div class="contenedor-logo col s6 m3">
-            <div>
-                <a href="http://www.dinbeat.com/">
-                    <img src="assets/images/logo/logo_dinbeat.svg">
-                </a>
-            </div>
-        </div><!--
 
+    <div ng-controller="headerController as header">
 
-     --><div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false" show-gt-sm>
-
-            <div>
-                <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
-                <a ui-sref="landing">Placas QR</a>
-                <a href="/tienda">Tienda</a>
-                <a href="http://www.dinbeat.com/sobre-nosotros/">Sobre nosotros</a>
-                <a href="http://www.dinbeat.com/blog/">Blog</a>
-
-                <div ng-switch="header.autorizado" class="login-contenedor">
-                    <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
-
-                    <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default>{{header.autorizado.usuario.usuario}}
+        <header >
+            <div class="contenedor-logo col s6 m3">
+                <div>
+                    <a href="http://www.dinbeat.com/">
+                        <img src="assets/images/logo/logo_dinbeat.svg">
                     </a>
-                    <div ng-switch-default ng-show="header.hmenuMostrar" class="cerrar-sesion c2 nombre-usuario" ng-click="header.salir()">
-                        Cerrar sesion
+                </div>
+            </div><!--
+
+
+         --><div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false" show-gt-sm>
+
+                <div>
+                    <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
+                    <a ui-sref="landing">Placas QR</a>
+                    <a href="/tienda">Tienda</a>
+                    <a href="http://www.dinbeat.com/sobre-nosotros/">Sobre nosotros</a>
+                    <a href="http://www.dinbeat.com/blog/">Blog</a>
+
+                    <div ng-switch="header.autorizado" class="login-contenedor">
+                        <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
+
+                        <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default>{{header.autorizado.usuario.usuario}}
+                        </a>
+                        <div ng-switch-default ng-show="header.hmenuMostrar" class="cerrar-sesion c2 nombre-usuario" ng-click="header.salir()">
+                            Cerrar sesion
+
+                        </div>
 
                     </div>
 
                 </div>
+            </div><!--
 
+         --><div class="contenedor-navbar-mobile" hide-gt-sm>
+                <label ng-click="header.toggleLeft()" class="burguer-menu">
+                    <img src="assets/images/icons/burguer-menu.png">
+                </label>
             </div>
-        </div><!--
+        </header>
 
-     --><div class="contenedor-navbar-mobile" hide-gt-sm>
-            <label ng-click="header.toggleLeft()" class="burguer-menu">
-                <img src="assets/images/icons/burguer-menu.png">
-            </label>
-        </div>
-    </header>
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
 
-    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4" hide-gt-sm>
+            <md-content layout-padding>
+                <ul class="contenedor-navbar-mobile-list">
 
-        <md-content layout-padding>
-            <ul class="contenedor-navbar-mobile-list">
+                    <li>
+                        <a href="http://www.dinbeat.com/proyecto-wearable/" ng-click="header.close()">Proyecto</a>
+                    </li>
+                    <li>
+                        <a ui-sref="landing" ng-click="header.close()">Placas QR</a>
+                    </li>
+                    <li>
+                        <a href="/tienda" ng-click="header.close()">Tienda</a>
+                    </li>
+                    <li>
+                        <a href="http://www.dinbeat.com/sobre-nosotros/" ng-click="header.close()">Sobre nosotros</a>
+                    </li>
+                    <li>
+                        <a href="http://www.dinbeat.com/blog/" ng-click="header.close()">Blog</a>
+                    </li>
+                    <li ng-click="header.close()">
+                        <a ng-if="!header.autorizado" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
 
-                <li>
-                    <a href="http://www.dinbeat.com/proyecto-wearable/" ng-click="header.close()">Proyecto</a>
-                </li>
-                <li>
-                    <a ui-sref="landing" ng-click="header.close()">Placas QR</a>
-                </li>
-                <li>
-                    <a href="/tienda" ng-click="header.close()">Tienda</a>
-                </li>
-                <li>
-                    <a href="http://www.dinbeat.com/sobre-nosotros/" ng-click="header.close()">Sobre nosotros</a>
-                </li>
-                <li>
-                    <a href="http://www.dinbeat.com/blog/" ng-click="header.close()">Blog</a>
-                </li>
-                <li ng-click="header.close()">
-                    <a ng-if="!header.autorizado" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
+                        <a ng-if="header.autorizado" class="c2 nombre-usuario" ui-sref="perfil.miPerfil">{{header.autorizado.usuario.usuario}}
+                            </a>
 
-                    <a ng-if="header.autorizado" class="c2 nombre-usuario" ui-sref="perfil.miPerfil">{{header.autorizado.usuario.usuario}}
-                        </a>
+                    </li>
+                    <li ng-if="header.autorizado" ng-click="header.close()">
+                        <a href="#" ng-click="header.salir()">
+                            Cerrar sesion</a>
+                    </li>
+                </ul>
 
-                </li>
-                <li ng-if="header.autorizado" ng-click="header.close()">
-                    <a href="#" ng-click="header.salir()">
-                        Cerrar sesion</a>
-                </li>
-            </ul>
+            </md-content>
+        </md-sidenav>
 
-        </md-content>
-    </md-sidenav>
+    </div>
 
 
     <div class="fondo-blanco" ui-view style="min-height: calc(100% - 360px)">

@@ -526,6 +526,8 @@ input[input-date]{
 
 button.landing{
     width: auto !important;
+    padding-left:24px;
+    padding-right: 24px;  
 }
 
 .previsualizar{

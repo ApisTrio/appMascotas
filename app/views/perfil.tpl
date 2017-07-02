@@ -47,7 +47,7 @@
 
             </div>
         </div><!--
-        --><div  class="col s10 contenedor-perfil-interno fondo-blanco" id="contenedor-perfil-interno" ng-class="{'m11': perfil.menuColapsado, 'm8': !perfil.menuColapsado, 'l11': perfil.menuColapsado, 'l10': !perfil.menuColapsado}" style="min-height: calc(100% - 313px);">
+        --><div  class="col s10 contenedor-perfil-interno fondo-blanco" id="contenedor-perfil-interno" ng-class="{'m11': perfil.menuColapsado, 'm8': !perfil.menuColapsado, 'l11': perfil.menuColapsado, 'l10': !perfil.menuColapsado}" style="min-height: calc(100% - 313px); min-height: -webkit-calc(100% - 313px);">
             <div id="hiddeninmobile" ui-view>
 
 

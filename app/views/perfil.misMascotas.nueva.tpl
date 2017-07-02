@@ -44,7 +44,7 @@
                         </div>
                         <div ng-show="misMascotasNueva.imagen">
 
-                            <button class="boton-verde" ng-click="misMascotasNueva.previsualizar($event, misMascotasNueva.imagen)">PREVISUALIZAR</button> O <button class="boton-neutro" ng-click="misMascotasNueva.imagen = null">Cancelar</button>
+                            <button class="boton-verde previsualizar landing" ng-click="misMascotasNueva.previsualizar($event, misMascotasNueva.imagen)">PREVISUALIZAR</button> O <button class="boton-neutro landing" ng-click="misMascotasNueva.imagen = null">Cancelar</button>
                             <!--<img ngf-src="misMascotasNueva.imagen">-->
                         </div>
                         <div ng-messages="formPaso1.$error" class="white-space-normal">
@@ -158,7 +158,7 @@
     <div ng-form="formPaso2" ng-switch-when="2">
 
         <div class="row">
-            <div class="col s12 m10 offset-m1 negrita white-space-normal">
+            <div class="s11 offset-s1 m10 offset-m1 negrita white-space-normal">
                 Introduce los datos de tu placa. Si no tienes una placa puedes comprarla en nuestra <a target="_blank" href="https://www.dinbeat.com/tienda/">tienda</a>.
             </div>
         </div>
@@ -188,7 +188,7 @@
             <div class="col s11 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s12 m2" style="margin-left: 10px;">
+            <div class="col s11 offset-s1 m2" style="margin-left: 24px;">
 
                 <cdx-formas data-seleccionado="misMascotasNueva.seleccionado" class="margin-bottom-30"></cdx-formas>
 
@@ -196,7 +196,7 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m10 offset-m1 center-align">
+            <div class="col s10 offset-s1 m10 offset-m1 center-align">
                 <cdx-modelos ng-model="misMascotasNueva.datos.modelos_idModelo" data-seleccionado="{{misMascotasNueva.seleccionado}}" required class="margin-bottom-30"></cdx-modelos>
             </div>
         </div>

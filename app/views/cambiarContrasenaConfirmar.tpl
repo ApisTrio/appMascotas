@@ -45,7 +45,7 @@
 
 		        </div>
 		        <br>
-		        <input class="boton-verde" value="CAMBIAR CONTRASEÑA">
+		        <input class="boton-verde landing" value="CAMBIAR CONTRASEÑA">
 			</div>
 
 		</div>

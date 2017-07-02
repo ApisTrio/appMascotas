@@ -27,7 +27,7 @@
                     </div>
 		        </div>
 		        <br>
-		        <button class="boton-verde" ng-click="recordarUsuario.enviar(recordarUsuarioForm.$valid, recordarUsuario.email)">RECORDAR USUARIO</button>
+		        <button class="boton-verde landing" ng-click="recordarUsuario.enviar(recordarUsuarioForm.$valid, recordarUsuario.email)">RECORDAR USUARIO</button>
 		        <p class="recordar-usuario-texto white-space-normal">Si el e-mail introducido está en nuestra base de datos recibirás un correo recordándote tu nombre de usuario. Revisa tu bandeja de entrada.</p>
 			</div>
             <div ng-switch-when="2">

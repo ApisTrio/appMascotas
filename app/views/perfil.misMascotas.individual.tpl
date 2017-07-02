@@ -226,7 +226,7 @@
         </div>
 
         <div class="row">
-            <div class="col s4 offset-s4 botones-formulario">
+            <div class="col s6 offset-s3 col m4 offset-m4 col l4 offset-l4 botones-formulario">
                 
                 <div class="row">
                     <div class="col s12 m6 l6" style="margin-bottom: 10px;">
@@ -355,7 +355,7 @@
 
             </div>
             <div class="row">
-                <div class="col s4 offset-s4 botones-formulario">
+                <div class="col s6 offset-s3 col m4 offset-m4 col l4 offset-l4 botones-formulario">
                     <div class="row">
                         <div class="col s12 m6 l6" style="margin-bottom: 10px;">
                             <button class="boton-neutro" ng-click="misMascotasIndividual.editar.vacunas.cancelar()">Cancelar</button>
@@ -503,7 +503,7 @@
             </div>
 
             <div class="row">
-                <div class="col s4 offset-s4 botones-formulario">
+                <div class="col s6 offset-s3 col m4 offset-m4 col l4 offset-l4 botones-formulario">
                     <div class="row">
                         <div class="col s12 m6 l6" style="margin-bottom: 10px;">
                             <button class="boton-neutro" ng-click="misMascotasIndividual.editar.medico.cancelar()">Cancelar</button>
@@ -826,7 +826,7 @@
         </div>
 
         <div class="row">
-            <div class="col s4 offset-s4 botones-formulario">
+            <div class="col s6 offset-s3 col m4 offset-m4 col l4 offset-l4 botones-formulario">
                 <div class="row">
                     <div class="col s12 m6 l6" style="margin-bottom: 10px;">
                         <button class="boton-neutro" ng-click="misMascotasIndividual.editar.duenos.cancelar()">Cancelar</button>

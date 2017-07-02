@@ -109,12 +109,11 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
     .state({
         name: 'perfil.desactivarAlerta',
-        url: '/desactivar-alerta',
+        url: '/desactivar-alerta?idMascota',
         templateUrl: 'app/views/perfil.desactivarAlerta.tpl',
         controller: 'desactivarAlertaController as desactivarAlerta',
         params: {
             idMascota: null
-            
         }
     })
 
@@ -127,12 +126,11 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
     .state({
         name: 'perfil.misMascotasPlaca',
-        url: '/mis-mascotas/nueva-placa',
+        url: '/mis-mascotas/nueva-placa?idMascota',
         templateUrl: 'app/views/perfil.misMascotas.placa.tpl',
         controller: 'misMascotasPlacaController as misMascotasPlaca',
         params: {
             idMascota: null
-            
         }
     })
 

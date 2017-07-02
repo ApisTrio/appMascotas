@@ -1,12 +1,12 @@
 angular.module("mascotas")
 
-.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter", "$stateParams", "$scope", "mailService",function (mascotasService, usuariosService, $filter, $stateParams, $scope, mailService) {
+.controller("desactivarAlertaController", ["mascotasService", "usuariosService", "$filter", "$stateParams", "$scope", "mailService", "$state", function (mascotasService, usuariosService, $filter, $stateParams, $scope, mailService, $state) {
 
     var cdx = this;
 
     if ($scope.$parent.seleccionado != 4) {
 
-        $scope.$parent.seleccionado = 4 ;
+        $scope.$parent.seleccionado = 4;
 
         $scope.$parent.iconoMiPerfil = $scope.$parent.cambiarIcono($scope.$parent.seleccionado, 1, $scope.$parent.iconosMiPerfil);
         $scope.$parent.iconoMisMascotas = $scope.$parent.cambiarIcono($scope.$parent.seleccionado, 2, $scope.$parent.iconosMisMascotas);
@@ -20,42 +20,17 @@ angular.module("mascotas")
     cdx.mascotas = [];
 
     cdx.datos = {};
-    
-    /*cdx.hoy = new Date();
-
-
-    NavigatorGeolocation.getCurrentPosition()
-
-    .then(function (position) {
-
-        cdx.centro[0] = position.coords.latitude;
-        cdx.centro[1] = position.coords.longitude;
-
-        cdx.datos.ubicacion = JSON.stringify({
-            latitud: position.coords.latitude,
-            longitud: position.coords.longitude
-        });
-
-        NgMap.getMap().then(function (evtMap) {
-
-            map = evtMap;
-            var center = map.getCenter();
-            google.maps.event.trigger(map, "resize");
-            map.setCenter(center);
-
-        });
-
-    });
-*/
 
     mascotasService.mascotasPerdidasDueno(usuariosService.autorizado().dueno.idDueno).then(function (res) {
 
         cdx.mascotas = res;
-        
+
         angular.forEach(cdx.mascotas, function (valor, llave) {
 
-            if ($stateParams.idMascota && $stateParams.idMascota == valor.idMascota ) {
-                cdx.datos.idMascota = valor.idMascota; 
+            if ($stateParams.idMascota && $stateParams.idMascota == valor.idMascota) {
+                cdx.datos.idMascota = parseInt(valor.idMascota);
+                cdx.idMascota = valor.idMascota;
+                cdx.codigo = valor.codigo;
             }
         })
 
@@ -65,21 +40,33 @@ angular.module("mascotas")
 
     cdx.avanzar = function (valido, idMascota) {
 
-       
+
         if (valido) {
 
-                mascotasService.nuevaEncontrada(idMascota).then(function (res) {
-                    
-                    console.log(idMascota)
-                    mailService.desactivarAlerta(idMascota);
-               
-                    cdx.opciones = cdx.opciones + 1;
+            mascotasService.nuevaEncontrada(idMascota).then(function (res) {
 
-                })
+                mailService.desactivarAlerta(idMascota);
 
-              
-              
-            
+                cdx.opciones = cdx.opciones + 1;
+
+            })
+
+
+
+
+        }
+
+    }
+
+
+    cdx.volver = function (placa) {
+
+        if (placa) {
+            $state.go("perfil.misMascotasIndividual", {idPlaca: placa});
+        }
+        
+        else{  
+            $state.go("perfil.misMascotas");
         }
 
     }

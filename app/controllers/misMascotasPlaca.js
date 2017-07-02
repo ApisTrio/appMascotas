@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("misMascotasPlacaController", ["mascotasService", "placasService", "usuariosService", "$stateParams", "$scope", function (mascotasService, placasService, usuariosService, $stateParams, $scope) {
+.controller("misMascotasPlacaController", ["mascotasService", "placasService", "usuariosService", "$stateParams", "$scope", "$state", function (mascotasService, placasService, usuariosService, $stateParams, $scope, $state) {
 
     var cdx = this;
 
@@ -18,17 +18,18 @@ angular.module("mascotas")
 
     cdx.placa = {};
 
-
     mascotasService.mascotasDueno(usuariosService.autorizado().dueno.idDueno).then(function (res) {
 
         cdx.mascotas = res;
 
-       /* angular.forEach(cdx.mascotas, function (valor, llave) {
+       angular.forEach(cdx.mascotas, function (valor, llave) {
 
             if ($stateParams.idMascota && $stateParams.idMascota == valor.idMascota ) {
-                cdx.placa.mascotas_idMascota = valor.idMascota; 
+                cdx.placa.mascotas_idMascota = parseInt(valor.idMascota); 
+                cdx.idMascota = valor.idMascota;
+                cdx.codigo = valor.codigo;
             }
-        })*/
+        })
 
     });
 
@@ -42,6 +43,19 @@ angular.module("mascotas")
 
             })
 
+        }
+
+    }
+    
+    
+    cdx.volver = function (placa) {
+
+        if (placa) {
+            $state.go("perfil.misMascotasIndividual", {idPlaca: placa});
+        }
+        
+        else{  
+            $state.go("perfil.misMascotas");
         }
 
     }

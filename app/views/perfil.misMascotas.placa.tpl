@@ -107,7 +107,7 @@
         <div class="col s4 offset-s4 botones-formulario">
             <div class="row">
                 <div class="col s11 offset-s1 m6 l6" style="margin-bottom: 10px;">
-                    <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>    
+                    <button class="boton-neutro" ng-click="misMascotasPlaca.volver(misMascotasPlaca.codigo)">Cancelar</button>    
                 </div>
                 <div class="col s11 offset-s1 m6 l6" style="margin-bottom: 10px;">
                     <button class="boton-verde" ng-click="misMascotasPlaca.avanzar(nuevaPlacaForm.$valid, misMascotasPlaca.placa)" ng-class="{'bloqueado' : !nuevaPlacaForm.$valid }">GUARDAR</button>

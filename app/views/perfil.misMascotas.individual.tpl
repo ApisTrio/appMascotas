@@ -49,7 +49,7 @@
     </div>
     <div class="row  no-margin-bottom c2 negrita" ng-if="(misMascotasIndividual.datos.basico.perdida && !misMascotasIndividual.datos.basico.encontrado)">
         <div class="col s12 center-align">
-            <div class="desactivar-alarma-perfil white-space-normal" ui-sref="perfil.desactivarAlerta">
+            <div class="desactivar-alarma-perfil white-space-normal" ui-sref="perfil.desactivarAlerta({idMascota: misMascotasIndividual.datos.basico.idMascota})">
                 <img src="assets/images/icons/alerta.png"> Desactivar alerta de mascota perdida
             </div>
         </div>

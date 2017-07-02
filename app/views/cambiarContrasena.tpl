@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <br>
-                <button class="boton-verde" type="submit" ng-click="cambiarContrasena.enviar(cambiarContrasenaForm.$valid, cambiarContrasena.email)" ng-class="{'bloqueado' : !cambiarContrasenaForm.$valid }">CAMBIAR CONTRASEÑA</button>
+                <button class="boton-verde landing" type="submit" ng-click="cambiarContrasena.enviar(cambiarContrasenaForm.$valid, cambiarContrasena.email)" ng-class="{'bloqueado' : !cambiarContrasenaForm.$valid }">CAMBIAR CONTRASEÑA</button>
                 <p class="recordar-usuario-texto">Si el e-mail introducido está en nuestra base de datos recibirás un correo recordándote tu nombre de usuario. Revisa tu bandeja de entrada.</p>
             </div>
             <div ng-switch-when="2">

@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s11 offset-s1 m4 offset-m1">
+            <div class="col s11 offset-s1 m7 offset-m1">
                 <div class="campo-formulario">Introduce el número de tu placa *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': nuevaPlacaForm.numeroPlaca.$pristine || nuevaPlacaForm.numeroPlaca.$valid}">
@@ -36,10 +36,10 @@
         </div>
 
        <div class="row">
-            <div class="col s11 offset-s1 m4 offset-m1 l2 offset-l1">
+            <div class="col s19 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s11 offset-s1 m2"  style="margin-left: 24px;">
+            <div class="col s2  m2">
 
                 <cdx-formas data-seleccionado="misMascotasPlaca.seleccionado"></cdx-formas>
 
@@ -52,7 +52,7 @@
             </div>
         </div>
       
-        <div class="col s11 offset-s1 m4 offset-m1">
+        <div class="col s11 offset-s1 m7 offset-m1">
             <div class="campo-formulario">Mascota *</div>
             <div class="input-formulario">
                 <div ng-class="{'margin-bottom-30': nuevaPlacaForm.mascota.$pristine || nuevaPlacaForm.mascota.$valid}">
@@ -104,12 +104,12 @@
 
 <section ng-if="misMascotasPlaca.pasos != 2">
     <div class="row">
-        <div class="col s4 offset-s4 botones-formulario">
+        <div class="col s6 offset-s3 col m4 offset-m4 col l4 offset-l4 botones-formulario">
             <div class="row">
-                <div class="col s11 offset-s1 m6 l6" style="margin-bottom: 10px;">
+                <div class="col s11 offset-s1 m12 l6" style="margin-bottom: 10px;">
                     <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>    
                 </div>
-                <div class="col s11 offset-s1 m6 l6" style="margin-bottom: 10px;">
+                <div class="col s11 offset-s1 m12 l6" style="margin-bottom: 10px;">
                     <button class="boton-verde" ng-click="misMascotasPlaca.avanzar(nuevaPlacaForm.$valid, misMascotasPlaca.placa)" ng-class="{'bloqueado' : !nuevaPlacaForm.$valid }">GUARDAR</button>
                 </div>
             </div>

@@ -248,7 +248,7 @@
         </div>
 
         <div class="row">
-            <div class="col s4 offset-s4 botones-formulario">
+            <div class="col s6 offset-s3 col m4 offset-m4 col l4 offset-l4 botones-formulario">
                 <div class="row">
                     <div class="col s12 m12 l6" style="margin-bottom: 10px">
                         <button class="boton-neutro" ng-click="miPerfil.editarCancelar()">Cancelar</button>

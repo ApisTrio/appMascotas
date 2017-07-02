@@ -784,6 +784,23 @@
         margin: 0 5px;
     }
 
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 85px;
+    }
+
+
 }
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -832,6 +849,47 @@
     .header-mascota {
         background-size: 500% 96%;
         background-position: 82% 100%;
+    }
+
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 30px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 60px;
+    }
+
+    cdx-formas>div {
+        margin-right: 3px;
+    }
+
+    cdx-formas img {
+        height: 29px;
+        cursor: pointer;
+    }
+
+    div, p, input {
+        font-size: 11px;
+    }
+
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        font-size: 11px;
+    }     
+
+    .agregar-placa-perfil{
+        margin-top: 10px;
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
     }
 
 }
@@ -917,6 +975,31 @@
         left: 0;
     }
 
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 30px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 60px;
+    }
+
+    cdx-formas>div {
+        margin-right: 3px;
+    }
+
+    cdx-formas img {
+        height: 29px;
+        cursor: pointer;
+    }
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
@@ -990,6 +1073,19 @@
         background-size: 500% 96%;
         background-position: 82% 100%;
     }
+
+    div, p, input {
+        font-size: 11px;
+    }
+
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        font-size: 11px;
+    }     
+
+    .agregar-placa-perfil{
+        margin-top: 10px;
+    }
+
 }
 
 /*-------------------------------------------------------------------------*/
@@ -1073,6 +1169,31 @@
         left: 0;
     }
 
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 30px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 60px;
+    }
+
+    cdx-formas>div {
+        margin-right: 3px;
+    }
+
+    cdx-formas img {
+        height: 29px;
+        cursor: pointer;
+    }
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
@@ -1142,6 +1263,17 @@
         background-position: 82% 100%;
     }
 
+    div, p, input {
+        font-size: 11px;
+    }
+
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        font-size: 11px;
+    }     
+
+    .agregar-placa-perfil{
+        margin-top: 10px;
+    }
 }
 
 
@@ -1226,6 +1358,32 @@
         left: 0;
     }
 
+
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 30px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 60px;
+    }
+
+    cdx-formas>div {
+        margin-right: 3px;
+    }
+
+    cdx-formas img {
+        height: 29px;
+        cursor: pointer;
+    }
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
@@ -1294,6 +1452,22 @@
         background-position: 82% 100%;
     }
 
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
+    div, p, input {
+        font-size: 11px;
+    }
+
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        font-size: 11px;
+    }     
+
+    .agregar-placa-perfil{
+        margin-top: 10px;
+    }
 
 }
 
@@ -1396,10 +1570,26 @@
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 
-.menu-perfil > div:not(.colaspso-menu) {
-    padding-left: 15px;
-    white-space: normal;
-}
+    .menu-perfil > div:not(.colaspso-menu) {
+        padding-left: 15px;
+        white-space: normal;
+    }
+
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 85px;
+    }
 
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
@@ -1443,6 +1633,46 @@
         background-position: 82% 100%;
     }
 
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 30px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 60px;
+    }
+
+    cdx-formas>div {
+        margin-right: 3px;
+    }
+
+    cdx-formas img {
+        height: 29px;
+        cursor: pointer;
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
+    div, p, input {
+        font-size: 11px;
+    }
+
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        font-size: 11px;
+    }     
+
+    .agregar-placa-perfil{
+        margin-top: 10px;
+    }
 }
 
 
@@ -1576,6 +1806,47 @@
         background-position: 82% 100%;
     }
 
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 30px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 60px;
+    }
+
+    cdx-formas>div {
+        margin-right: 3px;
+    }
+
+    cdx-formas img {
+        height: 29px;
+        cursor: pointer;
+    }
+
+    cdx-pasos .datos>div>div {   
+        font-size: 9px;
+    }
+
+    div, p, input {
+        font-size: 11px;
+    }
+
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        font-size: 11px;
+    }     
+
+    .agregar-placa-perfil{
+        margin-top: 10px;
+    }
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
@@ -1688,6 +1959,22 @@
         white-space: normal;
     }
 
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 85px;
+    }
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
@@ -1724,6 +2011,10 @@
         width: 185px;
     }
 
+    .col.contenedor-placas-mascota{
+        padding: 0px;
+    }
+
     .placas-mascota>.placa-individual {
         font-size: 10px;
     }
@@ -1734,6 +2025,15 @@
 
     .placas-mascota .divisor-placas {
         height: 18px;
+    }
+
+    .eliminar-placa-boton {
+        margin-left: 0px;
+    }
+
+    .placas-mascota .divisor-placas {
+        margin-left: 3px;
+        margin-right: 3px;
     }
 
     .mascota-add{
@@ -1762,6 +2062,15 @@
         width: 60px;
     }
 
+    cdx-formas>div {
+        margin-right: 3px;
+    }
+
+    cdx-formas img {
+        height: 29px;
+        cursor: pointer;
+    }
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
     }
@@ -1777,4 +2086,4 @@
     .agregar-placa-perfil{
         margin-top: 10px;
     }
-}
+}}

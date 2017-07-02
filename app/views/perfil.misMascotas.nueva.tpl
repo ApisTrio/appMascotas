@@ -231,7 +231,7 @@
 </section>
 <section>
     <div class="row">
-        <div class="col s4 offset-s4 botones-formulario" ng-show="misMascotasNueva.pasos < 3">
+        <div class="col s6 offset-s3 col m6 offset-m3 col l4 offset-l4 botones-formulario" ng-show="misMascotasNueva.pasos < 3">
             <div class="row">
                 <div class="col s12 m6 l6" style="margin-bottom: 10px;">
                     <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>

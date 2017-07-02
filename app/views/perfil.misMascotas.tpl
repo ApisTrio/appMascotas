@@ -25,7 +25,7 @@
             </div>
 
             <div class="row c2">
-                <div class="col s12 center-align">
+                <div class="col s12 center-align contenedor-placas-mascota">
                     <div class="placas-mascota">
                         <div class="placa-individual" ng-repeat-start="placa in mascota.placas | limitTo:3">
                             <img ng-src="assets/images/placas/{{placa.forma}}/{{placa.modelo}}"> {{placa.codigo}}

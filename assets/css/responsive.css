@@ -1746,7 +1746,31 @@
         background-position: 82% 100%;
     }
 
+    /*Slider modelos*/
+    cdx-modelos>div {
+        display: inline-block;
+        padding: 0px !important
+    }
+
+    cdx-modelos img {
+        height: 30px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    cdx-modelos>div>div>div {
+        width: 60px;
+    }
+
     cdx-pasos .datos>div>div {   
         font-size: 9px;
+    }
+
+    div, p {
+        font-size: 11px;
+    }
+
+    .agregar-placa-perfil{
+        margin-top: 10px;
     }
 }

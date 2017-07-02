@@ -55,7 +55,7 @@
 
     <!-- MENSAJE -->
     <div ng-switch-when="3" class="row" ng-form="formPaso3">
-        <div class="col s12 m6 offset-m3">
+        <div class="col s10 offset-s1 m6 offset-m3">
             <div class="margin-bottom-30">
                 <div class="campo-formulario">Escribe un mensaje</div>
                 <div class="input-formulario">

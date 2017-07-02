@@ -60,10 +60,4 @@ angular.module("mascotas")
 
     }
 
-    //$scope.iconoMiPerfil = $scope.cambiarIcono($scope.seleccionado, 1, $scope.iconoMiPerfil);
-    //$scope.iconoMisMascotas = $scope.cambiarIcono($scope.seleccionado, 2, $scope.iconoMisMascotas);
-    //$scope.iconoActivarAlerta = $scope.cambiarIcono($scope.seleccionado, 3, $scope.iconoActivarAlerta);
-    //$scope.iconoDesactivarAlerta = $scope.cambiarIcono($scope.seleccionado, 4, $scope.iconoDesactivarAlerta);
-
-
 }])

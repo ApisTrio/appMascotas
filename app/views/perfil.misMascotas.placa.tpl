@@ -9,12 +9,12 @@
 
     <div ng-switch-when="1">
         <div class="row">
-            <div class="col s10 m10 offset-m1 negrita white-space-normal">
+            <div class="col s10 offset-s1 m10 offset-m1 negrita white-space-normal">
                 Agrega una nueva placa. Si no tienes una placa puedes comprarla en nuestra <a target="_blank" href="https://www.dinbeat.com/tienda/">tienda</a>.
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m4 offset-m1">
+            <div class="col s11 offset-s1 m4 offset-m1">
                 <div class="campo-formulario">Introduce el número de tu placa *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': nuevaPlacaForm.numeroPlaca.$pristine || nuevaPlacaForm.numeroPlaca.$valid}">
@@ -36,10 +36,10 @@
         </div>
 
        <div class="row">
-            <div class="col s12 m4 offset-m1 l2 offset-l1">
+            <div class="col s11 offset-s1 m4 offset-m1 l2 offset-l1">
                 <div class="campo-formulario">Selecciona un modelo *</div>
             </div>
-            <div class="col s12 m2"  style="margin-left: 10px;">
+            <div class="col s11 offset-s1 m2"  style="margin-left: 24px;">
 
                 <cdx-formas data-seleccionado="misMascotasPlaca.seleccionado"></cdx-formas>
 
@@ -47,12 +47,12 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m10 offset-m1 center-align">
+            <div class="col s10 offset-s1 m10 offset-m1 center-align">
                 <cdx-modelos ng-model="misMascotasPlaca.placa.modelos_idModelo" data-seleccionado="{{misMascotasPlaca.seleccionado}}"  required></cdx-modelos>
             </div>
         </div>
       
-        <div class="col s12 m4 offset-m1">
+        <div class="col s11 offset-s1 m4 offset-m1">
             <div class="campo-formulario">Mascota *</div>
             <div class="input-formulario">
                 <div ng-class="{'margin-bottom-30': nuevaPlacaForm.mascota.$pristine || nuevaPlacaForm.mascota.$valid}">
@@ -75,7 +75,7 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s11 offset-s1 m10 offset-m1">
                 * Dato requerido
             </div>
         </div>
@@ -106,10 +106,10 @@
     <div class="row">
         <div class="col s4 offset-s4 botones-formulario">
             <div class="row">
-                <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                <div class="col s11 offset-s1 m6 l6" style="margin-bottom: 10px;">
                     <button class="boton-neutro" ui-sref="perfil.miPerfil">Cancelar</button>    
                 </div>
-                <div class="col s12 m6 l6" style="margin-bottom: 10px;">
+                <div class="col s11 offset-s1 m6 l6" style="margin-bottom: 10px;">
                     <button class="boton-verde" ng-click="misMascotasPlaca.avanzar(nuevaPlacaForm.$valid, misMascotasPlaca.placa)" ng-class="{'bloqueado' : !nuevaPlacaForm.$valid }">GUARDAR</button>
                 </div>
             </div>

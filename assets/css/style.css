@@ -78,12 +78,15 @@
   font-style: italic; }
 /* END Extrabold Italic */
 
-body {
+* {
     font-family: 'Open Sans R' !important;
     font-weight: 300;
     background: white;
 }
 
+button, html, input, select, textarea {
+    font-family: 'Open Sans R' !important;
+}
 
 
 /* COLORES */
@@ -517,6 +520,11 @@ input[input-date]{
 
 button.landing{
     width: auto !important;
+}
+
+.previsualizar{
+    padding: 12px !important;
+    font-size: 10 !important;
 }
 
 .boton-neutro {

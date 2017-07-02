@@ -100,7 +100,7 @@
 
         <div class="row">
             <div class="col s12 center-align">
-                <button class="boton-verde-negativo" ng-click="miPerfil.editarComenzar(miPerfil.datos)">EDITAR</button>
+                <button class="boton-verde-negativo landing" ng-click="miPerfil.editarComenzar(miPerfil.datos)">EDITAR</button>
             </div>
         </div>
     </div>

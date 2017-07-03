@@ -54,7 +54,6 @@
     <script src="app/controllers/activarAlerta.js"></script>
     <script src="app/controllers/desactivarAlerta.js"></script>
     <script src="app/controllers/header.js"></script>
-    <script src="app/controllers/sidenav.js"></script>
     <script src="app/controllers/admin.js"></script>
     <script src="app/controllers/landing.js"></script>
     <script src="app/controllers/mascotaPerdida.js"></script>
@@ -70,6 +69,7 @@
     <script src="app/controllers/miPerfil.js"></script>
     <script src="app/controllers/placa.js"></script>
     <script src="app/controllers/login.js"></script>
+    <script src="app/controllers/loginAdmin.js"></script>
     <script src="app/controllers/registro.js"></script>
     <script src="app/controllers/confirmar.js"></script>
     <script src="app/controllers/cambiarContrasena.js"></script>
@@ -162,7 +162,7 @@
     </div>
 
 
-    <div class="fondo-blanco" ui-view style="min-height: calc(100% - 360px)">
+    <div class="fondo-blanco" ui-view style="min-height: calc(100% - 360px); min-height: -webkit-calc(100% - 360px)">
 
     </div>
     <footer id="main-footer">
@@ -353,7 +353,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="boton-verde" ng-click="borrarPlaca(eliminar, placa.idPlaca)">ACEPTAR</button>
+                <button class="boton-verde landing" ng-click="borrarPlaca(eliminar, placa.idPlaca)">ACEPTAR</button>
             </div>
         </div>
     </script>

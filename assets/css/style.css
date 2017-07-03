@@ -83,12 +83,21 @@
     font-weight: 300;
 }
 
+p, h1, h2, button, html, input, select, textarea {
+    font-family: 'Open Sans R' !important;
+    font-weight: 300;
+}
+
 body{
     background: white;
 }
 
-button, html, input, select, textarea {
+*, button, html, input, select, textarea, .campo-formulario, ::-webkit-input-placeholder {
     font-family: 'Open Sans R' !important;
+}
+
+button, html, input, select, textarea {
+    -webkit-appearance: none;  
 }
 
 .md-select-value > span {

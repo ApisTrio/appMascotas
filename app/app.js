@@ -14,12 +14,50 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         controller: 'landingController as landing'
     })
 
+
+    .state({
+        name: 'loginAdmin',
+        url: '/admin/login',
+        templateUrl: 'app/views/loginAdmin.tpl',
+        controller: 'loginAdminController as loginAdmin'
+    })
+
     .state({
         name: 'admin',
         url: '/admin',
+        abstract: true,
         templateUrl: 'app/views/admin.tpl',
         controller: 'adminController as admin'
     })
+
+    .state({
+        name: 'admin.usuarios',
+        url: '/usuarios',
+        templateUrl: 'app/views/admin.usuarios.tpl',
+        controller: 'adminUsuariosController as adminUsuarios'
+    })
+
+    .state({
+        name: 'admin.usuarios.',
+        url: '/usuarios',
+        templateUrl: 'app/views/admin.usuarios.tpl',
+        controller: 'adminUsuariosController as adminUsuarios'
+    })
+
+    .state({
+        name: 'admin.mascotas',
+        url: '/mascotas',
+        templateUrl: 'app/views/admin.mascotas.tpl',
+        controller: 'adminMascotasController as adminMascotas'
+    })
+
+    .state({
+        name: 'admin.generar',
+        url: '/generar',
+        templateUrl: 'app/views/admin.generar.tpl',
+        controller: 'adminMascotasController as adminMascotas'
+    })
+
 
     .state({
         name: 'registroUsuario',

@@ -188,7 +188,7 @@
                             <div class="o" style="display: inline-block">
                             O
                             </div>
-                            <button class="boton-verde-negativo" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'">HACER FOTO</button>
+                            <button class="boton-verde-negativo hacer-foto" ngf-select ng-model="registro.imagen" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, type: 'image/jpeg',quality: 0.5, ratio: '1:1', centerCrop: true, restoreExif: false}" ngf-fix-orientation="true" ngf-capture="'camera'">HACER FOTO</button>
                         </div>
                         <div ng-show="registro.imagen">
                             px
@@ -725,9 +725,9 @@
                 </div>
 
 
-                <div class="col s11 offset-s1 m4 offset-m3">
-                    <div class="margin-bottom-30">
-                        <button class="boton-neutro" ng-click="registro.datos.duenos.splice($index, 1)">Eliminar este contacto</button>
+                <div class="col s10 offset-s1 m4 offset-m2">
+                    <div class="margin-bottom-30 margin-top-30">
+                        <button class="boton-neutro landing" ng-click="misMascotasIndividual.editar.duenos.desparecer($index)">Eliminar este contacto</button>
                     </div>
                 </div>
             </div>

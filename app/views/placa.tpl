@@ -236,7 +236,7 @@
             </div>
 
             <div class="row">
-                <div class="col s12 center-align">
+                <div class="col s8 offset-s2 col m4 offset-m4 col l2 offset-l5 center-align">
                     <button class="boton-verde" ng-click="placa.mostrarModal($event, placa.datos.basico.idMascota)">CONTACTAR CON EL DUEÑO</button>
                 </div>
             </div>

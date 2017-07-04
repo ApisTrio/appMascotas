@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("miPerfilController", ["usuariosService", "mascotasService", "paisesValue", "$scope",function (usuariosService, mascotasService, paisesValue, $scope) {
+.controller("miPerfilController", ["usuariosService", "mascotasService", "paisesValue", "$scope", "$filter",function (usuariosService, mascotasService, paisesValue, $scope, $filter) {
 
     var cdx = this;
 
@@ -19,7 +19,8 @@ angular.module("mascotas")
     cdx.paises = paisesValue;
     
     cdx.editarComenzar = function (datosOriginales) {
-        datosOriginales
+        
+        var nacimiento = new Date(datosOriginales.dueno.nacimiento.split("/")[2], datosOriginales.dueno.nacimiento.split("/")[1] - 1, datosOriginales.dueno.nacimiento.split("/")[0]);
 
 
         cdx.datosEspejo = {
@@ -28,16 +29,16 @@ angular.module("mascotas")
             apellido: datosOriginales.dueno.apellido,
             borrado: datosOriginales.dueno.borrado,
             ciudad: datosOriginales.dueno.ciudad,
-            codigo_postal: datosOriginales.dueno.ciudad,
+            codigo_postal: datosOriginales.dueno.codigo_postal,
             creado: datosOriginales.dueno.creado,
             direccion: datosOriginales.dueno.direccion,
             email: datosOriginales.dueno.email,
             idDueno: datosOriginales.dueno.idDueno,
-            nacimiento: datosOriginales.dueno.nacimiento,
+            nacimiento: nacimiento,
             nombre: datosOriginales.dueno.nombre,
             pais: datosOriginales.dueno.pais,
             provincia: datosOriginales.dueno.provincia,
-            sexo: datosOriginales.dueno.provincia,
+            sexo: datosOriginales.dueno.sexo,
             telefono: datosOriginales.dueno.telefono
 
         };
@@ -48,6 +49,8 @@ angular.module("mascotas")
     cdx.editarGuardar = function (valido, datosEspejo) {
 
         if (valido) {
+            datosEspejo.nacimiento = $filter('date')(datosEspejo.nacimiento, "dd/MM/yyyy");
+            
             mascotasService.modificarDueno(datosEspejo)
 
             .then(function (res) {
@@ -72,5 +75,24 @@ angular.module("mascotas")
         cdx.datosEspejo = null;
         cdx.pasos = 1;
     }
+    
+    
+    //datos para los datepickers
+    cdx.hoy = new Date();
+
+    cdx.datosDatepicker = {
+
+        meses: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        mesesCorto: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        diasSemana: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        diasSemanaCorto: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
+        hoy: 'Hoy',
+        limpiar: 'Limpiar',
+        cerrar: 'Cerrar',
+        min: (new Date(cdx.hoy.getTime() - (1000 * 60 * 60 * 24 * 15))).toISOString(),
+        max: (new Date(cdx.hoy.getTime() + (1000 * 60 * 60 * 24))).toISOString()
+
+    }
+    
 
 }])

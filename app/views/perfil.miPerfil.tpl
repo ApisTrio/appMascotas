@@ -22,24 +22,24 @@
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">E-mail</div>
             <div class="contenido-info white-space-normal">{{miPerfil.datos.usuario.emailU}}</div>
-            <div class="divider"></div>
+            <div class="divider" ng-show="miPerfil.pasos == 1"></div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Nombre de usuario</div>
             <div class="contenido-info white-space-normal">{{miPerfil.datos.usuario.usuario}}</div>
-            <div class="divider"></div>
+            <div class="divider" ng-show="miPerfil.pasos == 1"></div>
         </div>
     </div>
 
-    <div class="row" style="margin-left: none;">
+    <div class="row" style="margin-left: none;" ng-show="miPerfil.pasos == 1">
         <div class="col s12 m4 offset-m1">
             <div class="titulo-info">Fecha de nacimiento</div>
             <div class="contenido-info white-space-normal">{{miPerfil.datos.dueno.nacimiento}}</div>
         </div>
         <div class="col s12 m4 offset-m2">
             <div class="titulo-info">Sexo</div>
-            <div class="contenido-info" ng-if="miPerfil.datos.usuario.sexo">{{miPerfil.datos.usuario.sexo}}</div>
-            <div class="contenido-info" ng-if="!miPerfil.datos.usuario.sexo">...</div>
+            <div class="contenido-info" ng-if="miPerfil.datos.dueno.sexo">{{miPerfil.datos.dueno.sexo}}</div>
+            <div class="contenido-info" ng-if="!miPerfil.datos.dueno.sexo">...</div>
         </div>
     </div>
 
@@ -246,8 +246,34 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- SEXO -->
+            <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l2">
+                <div class="campo-formulario">Sexo</div>
+                <div class="input-formulario">
+                    <div class="margin-bottom-30">
+                        <md-select ng-model="miPerfil.datosEspejo.sexo" placeholder="Sexo" class="md-no-underline">
+                            <md-option value="Masculino">Masculino</md-option>
+                            <md-option value="Femenino">Femenino</md-option>
+                        </md-select>
+                    </div>
+                </div>
+            </div>
 
 
+        </div>
+        
+         <div class="row">
+
+                <!-- FECHA -->
+                <div class="col s11 offset-s1 m5 offset-m1 l4 offset-l1">
+                    <div class="campo-formulario">Fecha de Nacimiento</div>
+                    <div class="input-formulario">
+                        <div>
+                            <input input-date type="text" name="fecha" ng-model="miPerfil.datosEspejo.nacimiento" container="" format="dd/mm/yyyy" months-full="{{miPerfil.datosDatepicker.meses}}" months-short="{{miPerfil.datosDatepicker.mesesCorto}}" weekdays-full="{{miPerfil.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{miPerfil.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{miPerfil.datosDatepicker.max}}" today="miPerfil.datosDatepicker.hoy" first-day="1" clear="miPerfil.datosDatepicker.limpiar" close="miPerfil.datosDatepicker.cerrar" select-years="12" />
+                        </div>
+                    </div>
+                </div>
         </div>
 
         <div class="row">

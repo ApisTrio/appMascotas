@@ -1453,9 +1453,10 @@ header .contenedor-navbar .login-contenedor {
     position: absolute;
     background: white;
     top: 30px;
-    left: -10px;
+    left: -40px;
+    width: 120px;
     cursor: pointer;
-        z-index: 1000000000000000000000;
+    z-index: 1000000000000000000000;
 }
 
 

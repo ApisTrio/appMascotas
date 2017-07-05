@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("miPerfilController", ["usuariosService", "mascotasService", "paisesValue", "$scope", "$filter",function (usuariosService, mascotasService, paisesValue, $scope, $filter) {
+.controller("miPerfilController", ["usuariosService", "mascotasService", "paisesValue", "$scope", "$filter", function (usuariosService, mascotasService, paisesValue, $scope, $filter) {
 
     var cdx = this;
 
@@ -17,11 +17,18 @@ angular.module("mascotas")
     cdx.datos = usuariosService.autorizado();
 
     cdx.paises = paisesValue;
-    
-    cdx.editarComenzar = function (datosOriginales) {
-        
-        var nacimiento = new Date(datosOriginales.dueno.nacimiento.split("/")[2], datosOriginales.dueno.nacimiento.split("/")[1] - 1, datosOriginales.dueno.nacimiento.split("/")[0]);
 
+    cdx.editarComenzar = function (datosOriginales) {
+
+        if (datosOriginales.dueno.nacimiento) {
+            var nacimiento = new Date(datosOriginales.dueno.nacimiento.split("/")[2], datosOriginales.dueno.nacimiento.split("/")[1] - 1, datosOriginales.dueno.nacimiento.split("/")[0]);
+        }
+        
+        else{
+            
+            var nacimiento = null;
+            
+        }
 
         cdx.datosEspejo = {
 
@@ -50,7 +57,7 @@ angular.module("mascotas")
 
         if (valido) {
             datosEspejo.nacimiento = $filter('date')(datosEspejo.nacimiento, "dd/MM/yyyy");
-            
+
             mascotasService.modificarDueno(datosEspejo)
 
             .then(function (res) {
@@ -67,7 +74,7 @@ angular.module("mascotas")
                 cdx.pasos = 1;
             })
         }
-        
+
     }
 
     cdx.editarCancelar = function () {
@@ -75,8 +82,8 @@ angular.module("mascotas")
         cdx.datosEspejo = null;
         cdx.pasos = 1;
     }
-    
-    
+
+
     //datos para los datepickers
     cdx.hoy = new Date();
 
@@ -93,6 +100,6 @@ angular.module("mascotas")
         max: (new Date(cdx.hoy.getTime() + (1000 * 60 * 60 * 24))).toISOString()
 
     }
-    
+
 
 }])

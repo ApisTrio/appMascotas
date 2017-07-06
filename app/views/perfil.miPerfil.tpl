@@ -270,7 +270,7 @@
                     <div class="campo-formulario">Fecha de Nacimiento</div>
                     <div class="input-formulario">
                         <div>
-                            <input input-date type="text" name="fecha" ng-model="miPerfil.datosEspejo.nacimiento" container="" format="dd/mm/yyyy" months-full="{{miPerfil.datosDatepicker.meses}}" months-short="{{miPerfil.datosDatepicker.mesesCorto}}" weekdays-full="{{miPerfil.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{miPerfil.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{miPerfil.datosDatepicker.max}}" today="miPerfil.datosDatepicker.hoy" first-day="1" clear="miPerfil.datosDatepicker.limpiar" close="miPerfil.datosDatepicker.cerrar" select-years="12" />
+                            <input input-date type="text" name="fecha" ng-model="miPerfil.datosEspejo.nacimiento" container="" format="dd/mm/yyyy" months-full="{{miPerfil.datosDatepicker.meses}}" months-short="{{miPerfil.datosDatepicker.mesesCorto}}" weekdays-full="{{miPerfil.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{miPerfil.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{miPerfil.datosDatepicker.max}}" today="miPerfil.datosDatepicker.hoy" first-day="1" clear="miPerfil.datosDatepicker.limpiar" close="miPerfil.datosDatepicker.cerrar" select-years="80" />
                         </div>
                     </div>
                 </div>

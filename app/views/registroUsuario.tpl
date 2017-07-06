@@ -226,7 +226,7 @@
                 <div class="campo-formulario">Fecha de Nacimiento *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso2.fecha.$pristine || formPaso2.fecha.$valid}">
-                        <input ng-class="{'valido': formPaso2.fecha.$valid, 'erroneo': (!formPaso2.fecha.$valid && formPaso2.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="registro.datos.mascota.fecha_nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" required/>
+                        <input ng-class="{'valido': formPaso2.fecha.$valid, 'erroneo': (!formPaso2.fecha.$valid && formPaso2.fecha.$dirty)}" input-date type="text" name="fecha" id="inputCreated" ng-model="registro.datos.mascota.fecha_nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="80" required/>
                         <cdx-validez data-validez="formPaso2.fecha.$valid" data-mostrar="formPaso2.fecha.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso2.fecha.$error" ng-show="formPaso2.fecha.$dirty">
@@ -446,7 +446,7 @@
                 <div class="campo-formulario">Fecha de Nacimiento</div>
                 <div class="input-formulario">
                     <div class="margin-bottom-30">
-                        <input input-date type="text" name="fecha" ng-model="registro.datos.dueno.nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" />
+                        <input input-date type="text" name="fecha" ng-model="registro.datos.dueno.nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="80" />
                     </div>
                 </div>
             </div>
@@ -631,7 +631,7 @@
                     <div class="campo-formulario">Fecha de Nacimiento</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.fecha.$pristine || duenoExtraForm.fecha.$valid}">
-                            <input input-date type="text" name="fecha" ng-model="dueno.nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="12" />
+                            <input input-date type="text" name="fecha" ng-model="dueno.nacimiento" container="" format="dd/mm/yyyy" months-full="{{registro.datosDatepicker.meses}}" months-short="{{registro.datosDatepicker.mesesCorto}}" weekdays-full="{{registro.datosDatepicker.diasSemana}}" weekdays-short="" weekdays-letter="{{registro.datosDatepicker.diasSemanaCorto}}" disable="disable" max="{{registro.datosDatepicker.max}}" today="registro.datosDatepicker.hoy" first-day="1" clear="registro.datosDatepicker.limpiar" close="registro.datosDatepicker.cerrar" select-years="80" />
                         </div>
                     </div>
                 </div>

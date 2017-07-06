@@ -1,6 +1,6 @@
 angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial", "ui.materialize", "uiSwitch", "ngMap", "ngFileUpload", "ismobile"])
 
-.config(["$stateProvider", "$locationProvider", function ($stateProvider, $locationProvider) {
+.config(["$stateProvider", "$locationProvider", "$mdDateLocaleProvider", function ($stateProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
@@ -57,15 +57,15 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
             "currentAuth": ["$q", "usuariosService", function ($q, usuariosService) {
 
                 if (!usuariosService.autorizado()) {
-                    
+
                     return $q.reject("AUTH_REQUIRED");
                 }
-                
-                 if(!usuariosService.autorizado().dueno){
-                        
-                        usuariosService.salir();
-                        
-                    }
+
+                if (!usuariosService.autorizado().dueno) {
+
+                    usuariosService.salir();
+
+                }
 
                 }]
         }
@@ -269,13 +269,13 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         templateUrl: 'app/views/cambiarContrasena.tpl',
         controller: 'cambiarContrasenaController as cambiarContrasena'
     })
-    
+
     .state({
         name: 'eliminarCuenta',
         url: '/eliminar-cuenta/:token',
         templateUrl: 'app/views/eliminarCuentaPublico.tpl',
         controller: 'eliminarCuentaPublicoController as eliminarCuentaPublico'
-        
+
     })
 
     .state({
@@ -343,15 +343,15 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
 }])
 
-.run(["$rootScope", "$state", "$anchorScroll",function ($rootScope, $state,  $anchorScroll) {
-    
-    $rootScope.$on('$stateChangeSuccess', function() {
-        
+.run(["$rootScope", "$state", "$anchorScroll", function ($rootScope, $state, $anchorScroll) {
+
+    $rootScope.$on('$stateChangeSuccess', function () {
+
         $anchorScroll();
-        
+
     })
-                   
-                   
+
+
 
     $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
         // We can catch the error thrown when the $requireSignIn promise is rejected

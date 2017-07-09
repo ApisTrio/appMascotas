@@ -38,10 +38,18 @@
                 </div>
                 <div ui-sref="perfil.desactivarAlerta"  ui-sref-opts="{reload: true}" class="margin-out">
                     <div class="icono-menu">
-                        <img ng-mouseover="iconoDesactivarAlerta  = iconosDesactivarAlerta[1]" ng-mouseleave="iconoDesactivarAlerta = cambiarIcono(seleccionado, 4, iconosDesactivarAlerta)" ng-src="{{iconoDesactivarAlerta}}" style="width: 35px;margin-right: -10px;">
+                        <img ng-mouseover="iconoDesactivarAlerta  = iconosDesactivarAlerta[1]" ng-mouseleave="iconoDesactivarAlerta = cambiarIcono(seleccionado, 4, iconosDesactivarAlerta)" ng-src="{{ iconoDesactivarAlerta }}">
                     </div>
                     <div class="opcion-menu" ng-class="{'selected-menu-item' : seleccionado == 4}">
                         Desactivar alerta de mascota perdida
+                    </div>
+                </div>
+                <div ng-click="perfil.salir()" ui-sref-opts="{reload: true}" class="margin-out">
+                    <div class="icono-menu">
+                        <img ng-mouseover="iconoSalir  = iconosSalir[1]" ng-mouseleave="iconoSalir  = iconosSalir[0]" ng-src="{{ iconoSalir }}">
+                    </div>
+                    <div class="opcion-menu">
+                        Cerrar Sesión
                     </div>
                 </div>
 

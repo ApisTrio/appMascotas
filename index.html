@@ -81,10 +81,10 @@
     <div ng-controller="headerController as header">
 
         <header >
-            <div class="contenedor-logo col s6 m3">
+            <div class="contenedor-logo col s10 m3">
                 <div>
                     <a href="http://www.dinbeat.com/">
-                        <img src="assets/images/logo/logo_dinbeat.svg">
+                        <img src="assets/images/logo/dinbeatqr.svg">
                     </a>
                 </div>
             </div><!--
@@ -93,22 +93,12 @@
          --><div class="contenedor-navbar col s6 m9" ng-mouseleave="header.hmenuMostrar=false" show-gt-sm>
 
                 <div>
-                    <a href="http://www.dinbeat.com/proyecto-wearable/">Proyecto</a>
-                    <a ui-sref="landing">Placas QR</a>
-                    <a href="/tienda">Tienda</a>
-                    <a href="http://www.dinbeat.com/sobre-nosotros/">Sobre nosotros</a>
-                    <a href="http://www.dinbeat.com/blog/">Blog</a>
 
                     <div ng-switch="header.autorizado" class="login-contenedor">
-                        <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login">Iniciar Sesión</a>
+                        <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login"> <img src="assets/images/menu_iconos/profile.svg" style="vertical-align: text-bottom;margin-right: 10px"> Acceder / Registro</a>
 
                         <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default>{{header.autorizado.usuario.usuario}}
                         </a>
-                        <div ng-switch-default ng-show="header.hmenuMostrar" class="cerrar-sesion c2 nombre-usuario" ng-click="header.salir()">
-                            Cerrar sesion
-
-                        </div>
-
                     </div>
 
                 </div>
@@ -147,10 +137,6 @@
                         <a ng-if="header.autorizado" class="c2 nombre-usuario" ui-sref="perfil.miPerfil">{{header.autorizado.usuario.usuario}}
                             </a>
 
-                    </li>
-                    <li ng-if="header.autorizado" ng-click="header.close()">
-                        <a href="#" ng-click="header.salir()">
-                            Cerrar sesion</a>
                     </li>
                 </ul>
 
@@ -203,7 +189,12 @@
                 <h4 class="title">Conócenos</h4>
                 <div class="menu-footer-container">
                     <ul id="menu-footer" class="menu">
-                        <li id="menu-item-32687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32687"><a href="https://www.dinbeat.com/sobre-nosotros/">Nuestra historia</a></li>
+                        <li id="menu-item-32687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32687"><a href="https://www.dinbeat.com/proyecto-wearable/">Dinbeat</a></li>
+                        <li id="menu-item-32687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32687"><a href="https://www.dinbeat.com/qr/">Inicio</a></li>
+                        <li id="menu-item-32687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32687"><a href="https://www.dinbeat.com/tienda/">Tienda</a></li>
+                        <li id="menu-item-32687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32687"><a href="https://www.dinbeat.com/blog/">Blog</a></li>
+                        <li id="menu-item-32687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32687"><a href="https://www.dinbeat.com/faq/">Preguntas frecuentes</a></li>
+
                         <li id="menu-item-32650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32650"><a href="https://www.dinbeat.com/sobre-nosotros/equipo/">Equipo</a></li>
                         <li id="menu-item-32649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32649"><a href="https://www.dinbeat.com/contacto/">Contacto</a></li>
                         <li id="menu-item-32544" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32544"><a href="https://www.dinbeat.com/trabaja-con-nosotros/">Trabaja con nosotros</a></li>
@@ -240,8 +231,7 @@
         </div>
     </footer>
 
-    <!---- Directiva de pasos ---->
-    <script type="text/ng-template" id="cdx.pasos.html">
+    <!---- Directiva de pasos ---->    <script type="text/ng-template" id="cdx.pasos.html">
         <div class="datos">
             <div>
                 <div ng-class="{activo: pasos[1]}">1</div>

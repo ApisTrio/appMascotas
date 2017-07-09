@@ -45,9 +45,14 @@ angular.module("mascotas")
         "assets/images/menu_iconos/important_message_selected.svg"
     ];
     $scope.iconosDesactivarAlerta = [
-        "assets/images/menu_iconos/desactivar.svg",
-        "assets/images/menu_iconos/desactivar_hover.svg",
-        "assets/images/menu_iconos/desactivar_selected.svg"
+        "assets/images/menu_iconos/important_message.svg",
+        "assets/images/menu_iconos/important_message_hover.svg",
+        "assets/images/menu_iconos/important_message_selected.svg"
+    ];
+
+    $scope.iconosSalir = [
+        "assets/images/menu_iconos/logout.svg",
+        "assets/images/menu_iconos/logout_hover.svg"
     ];
 
     $scope.cambiarIcono = function(s, i, iconos){
@@ -58,6 +63,12 @@ angular.module("mascotas")
 
         return iconos[0];
 
+    }
+
+    cdx.salir = function(){
+        
+        usuariosService.salir();
+        
     }
 
 }])

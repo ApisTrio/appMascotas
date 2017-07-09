@@ -58,11 +58,7 @@ angular.module("mascotas")
         }
     }
     
-    cdx.salir = function(){
-        
-        usuariosService.salir();
-        
-    }
+
 
 
 }])

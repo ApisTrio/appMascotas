@@ -1430,7 +1430,8 @@ header .contenedor-logo {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    position: absolute;
+    justify-content: center;
+    width: 100%;
 }
 
 header .contenedor-navbar {
@@ -1440,7 +1441,8 @@ header .contenedor-navbar {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 100%;
+    position: absolute;
+    right: 0;
 }
 
 header .contenedor-navbar-mobile {
@@ -1450,7 +1452,8 @@ header .contenedor-navbar-mobile {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 100%;
+    position: absolute;
+    right: 20px;
 }
 
 header .contenedor-navbar label img {

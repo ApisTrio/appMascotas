@@ -53,6 +53,7 @@
     <!-- Controladores -->
     <script src="app/controllers/activarAlerta.js"></script>
     <script src="app/controllers/desactivarAlerta.js"></script>
+    <script src="app/controllers/footer.js"></script>
     <script src="app/controllers/header.js"></script>
     <script src="app/controllers/landing.js"></script>
     <script src="app/controllers/mascotaPerdida.js"></script>
@@ -149,7 +150,7 @@
     <div class="fondo-blanco" ui-view style="min-height: calc(100% - 360px); min-height: -webkit-calc(100% - 360px)">
 
     </div>
-    <footer id="main-footer">
+    <footer id="main-footer" ng-controller="footerController as footer">
                     
         <div class="container">
             <div id="footer-widgets" class="clearfix">
@@ -226,7 +227,7 @@
             
         <div id="footer-bottom">
             <div class="container clearfix">
-                <div id="footer-info">Copyright © 2016 Dindog Tech SL. Todos los derechos reservados.</div>                 
+                <div id="footer-info">Copyright © {{footer.date | date:'yyyy'}} Dindog Tech SL. Todos los derechos reservados.</div>                 
             </div>  <!-- .container -->
         </div>
     </footer>

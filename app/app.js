@@ -160,6 +160,11 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
                         defered.resolve(datos);
                     })
+                    .catch(function(resGlobal){
+                        
+                        defered.reject("PLACA_INVALIDA_PRIVADA")
+                        
+                    })
 
                 })
 
@@ -316,6 +321,11 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
 
 
                         defered.resolve(datos);
+                    })
+                    .catch(function(resGlobal){
+                        
+                        defered.reject("PLACA_INVALIDA")
+                        
                     })
 
 

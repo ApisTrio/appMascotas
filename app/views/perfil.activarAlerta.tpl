@@ -42,11 +42,11 @@
     <!-- UBICACION -->
     <div ng-switch-when="2" class="row" ng-form="formPaso2">
 
-        <div class="col s12 m6 offset-m3">
+        <div class="col s12 m6 offset-m3" ng-if="activarAlerta.mostrarMapa">
             <div class="campo-formulario">Ubicación</div>
             <div class="input-formulario">
                 <div>
-                    <ng-map center="{{activarAlerta.centro}}" zoom="18" class="mapa"> </ng-map>
+                    <ng-map id="mapa" center="{{activarAlerta.centro}}" zoom="18" class="mapa"> </ng-map>
                 </div>
             </div>
         </div>

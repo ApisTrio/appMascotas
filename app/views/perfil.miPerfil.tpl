@@ -106,7 +106,7 @@
                 </div>
             </div>
         </div>
-    </div>
+ 
     <div ng-switch-when="2" ng-form="editarForm">
         <div class="row">
 

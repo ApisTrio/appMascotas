@@ -1940,7 +1940,7 @@
     }
 
     .placas-mascota>.placa-individual>img {
-        width: 20px;
+        height: 20px;
     }
 
     .placas-mascota .divisor-placas {
@@ -2202,7 +2202,7 @@
     }
 
     .placas-mascota>.placa-individual>img {
-        width: 20px;
+        height: 20px;
     }
 
     .placas-mascota .divisor-placas {

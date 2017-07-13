@@ -23,7 +23,7 @@
             </div>
 
             <div class="row">
-                <div class="col s12 center-align"> {{::placa.datos.basico.raza}}, {{::placa.datos.basico.edad}}</div>
+                <div class="col s12 center-align"> {{::placa.datos.basico.raza}}, {{::placa.datos.basico.edad || "Menos de 1 mes"}}</div>
             </div>
 
             <div class="row">

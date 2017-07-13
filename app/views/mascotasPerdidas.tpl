@@ -4,8 +4,14 @@
             <h4 class="center-align">Mascotas perdidas</h4>
         </div>
     </div>
+    <div class="row" ng-if="mascotasPerdidas.perdidas.length">
+        <div class="col s12 center-align">
+            <img class="flechas-perdidas-encontradas-izquierda" src="assets/images/forms/left.png" ng-click="mascotasPerdidas.avanzarPerdidas(false)">
+            <img class="flechas-perdidas-encontradas-derecha" src="assets/images/forms/right.png" ng-click="mascotasPerdidas.avanzarPerdidas(true)">
+        </div>
+    </div>
     <div class="row margin-out">
-        <div class="col s12 m6 l2 xl2 margin-in pointer" ng-repeat="perdida in mascotasPerdidas.perdidas | limitTo: 12" ng-class="{'offset-l1':($first || $index == 5), 'offset-xl1': ($first || $index == 5)}">
+        <div class="col s12 m6 l2 xl2 margin-in pointer" ng-repeat="perdida in mascotasPerdidas.perdidas | limitTo: 10 : mascotasPerdidas.salto" ng-class="{'offset-l1':($first || $index == 5), 'offset-xl1': ($first || $index == 5)}">
             <div class="center-align">
                 <div class="circle foto-mascota" style="background-image:url({{mascotasPerdidas.apiDir.dominio}}{{mascotasPerdidas.apiDir.path}}{{mascotasPerdidas.apiDir.imagenes.mascotas}}{{perdida.foto}}); background-position: 100% 100%; background-size: cover;" ng-if="perdida.foto">
                 </div>
@@ -32,8 +38,15 @@
             <h4 class="center-align">Mascotas encontradas</h4>
         </div>
     </div>
+
+    <div class="row" ng-if="mascotasPerdidas.encontradas.length">
+        <div class="col s12 center-align">
+            <img class="flechas-perdidas-encontradas-izquierda" src="assets/images/forms/left.png" ng-click="mascotasPerdidas.avanzarEncontradas(false)">
+            <img class="flechas-perdidas-encontradas-derecha" src="assets/images/forms/right.png" ng-click="mascotasPerdidas.avanzarEncontradas(true)">
+        </div>
+    </div>
     <div class="row margin-out">
-        <div class="col s12 m6 l2 xl2 margin-in pointer" ng-repeat="encontrada in mascotasPerdidas.encontradas | limitTo: 12" ng-class="{'offset-l1': ($first || $index == 5), 'offset-xl1': ($first || $index == 5)}">
+        <div class="col s12 m6 l2 xl2 margin-in pointer" ng-repeat="encontrada in mascotasPerdidas.encontradas | limitTo: 10 : mascotasPerdidas.saltoEncontrada" ng-class="{'offset-l1': ($first || $index == 5), 'offset-xl1': ($first || $index == 5)}">
             <div class="center-align">
                 <div class="circle foto-mascota" style="background-image:url({{mascotasPerdidas.apiDir.dominio}}{{mascotasPerdidas.apiDir.path}}{{mascotasPerdidas.apiDir.imagenes.mascotas}}{{encontrada.foto}});  background-position: 100% 100%; background-size: cover; " ng-if="encontrada.foto">
                 </div>

@@ -941,7 +941,7 @@ md-datepicker.erroneo input:focus {
 }
 
 .placas-mascota>.placa-individual>img {
-    width: 45px;
+    height: 28px;
     vertical-align: middle;
 }
 
@@ -985,6 +985,7 @@ md-datepicker.erroneo input:focus {
 }
 
 .mascotas-perdidas {
+    position: relative;
     background-color: #43435B;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -1594,6 +1595,13 @@ header .contenedor-navbar .login-contenedor {
     
     vertical-align: middle;
     height: 15px;
+    cursor: pointer;
+    
+}
+
+.flechas-slider:focus{
+    
+    outline: none;
     
 }
 
@@ -1607,4 +1615,37 @@ header .contenedor-navbar .login-contenedor {
     
     
     margin-left: 5px;
+}
+
+.flechas-perdidas-encontradas-izquierda, .flechas-perdidas-encontradas-derecha{
+    
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    
+}
+
+
+.flechas-perdidas-encontradas-izquierda:focus, .flechas-perdidas-encontradas-derecha:focus{
+    
+    outline: none;
+    
+}
+
+.flechas-perdidas-encontradas-izquierda{
+    
+    left: 2%;
+    
+}
+
+.flechas-perdidas-encontradas-derecha{
+    
+    right: 2%;
+    
+}
+
+.mascotas-encontradas{
+    
+    position: relative;
+    
 }

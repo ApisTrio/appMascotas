@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <div class="col s12 center-align white-space-normal"> {{misMascotasIndividual.datos.basico.raza}}, {{misMascotasIndividual.datos.basico.edad}}</div>
+        <div class="col s12 center-align white-space-normal"> {{misMascotasIndividual.datos.basico.raza}}, {{misMascotasIndividual.datos.basico.edad || "Menos de 1 mes"}}</div>
     </div>
 
     <div class="row">
@@ -32,13 +32,15 @@
     <div class="row c2">
 
         <div class="col s12 m12 l6 offset-l3 center-align">
-            <div class="placas-mascota">
-                <div class="placa-individual" ng-repeat-start="placa in misMascotasIndividual.datos.placas | limitTo:3">
+            <div class="placas-mascota" ng-init="misMascotasIndividual.salto = 0;">
+                <img class="flechas-slider" src="assets/images/forms/left.png" ng-if="misMascotasIndividual.datos.placas.length > 3 && misMascotasIndividual.salto"  ng-click="misMascotasIndividual.salto = misMascotasIndividual.salto - 1">
+                <div class="placa-individual" ng-repeat-start="placa in misMascotasIndividual.datos.placas | limitTo: 3 : misMascotasIndividual.salto">
                     <img ng-src="assets/images/placas/{{placa.forma}}/{{placa.modelo}}"> {{placa.codigo}}
                     <div class="eliminar-placa-boton" ng-click="misMascotasIndividual.mostrarModal(placa, placa)" ng-if="misMascotasIndividual.datos.placas.length > 1">x</div>
                 </div>
 
                 <div class="divisor-placas" ng-show="!$last" ng-repeat-end></div>
+                <img class="flechas-slider" src="assets/images/forms/right.png"  ng-if="misMascotasIndividual.datos.placas.length > 3 && ((misMascotasIndividual.salto + 3) < misMascotasIndividual.datos.placas.length)" ng-click="misMascotasIndividual.salto = misMascotasIndividual.salto + 1">
             </div>
         </div>
         <div class="col s12 m12 l3 center-align">

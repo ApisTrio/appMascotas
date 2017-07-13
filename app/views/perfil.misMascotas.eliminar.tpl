@@ -2,7 +2,7 @@
     <div ng-switch-when="1">
         <div class="row">
             <div class="col s10 offset-s1 center-align">
-                <img src="assets/images/icons/eliminar_cuenta.png">
+                <img src="assets/images/baja-icon.png">
             </div>
         </div>
 

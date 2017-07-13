@@ -1572,4 +1572,24 @@ header .contenedor-navbar .login-contenedor {
 
 .md-datepicker-input-container input {
     width: 100%;
+
+}
+    
+.flechas-slider{
+    
+    vertical-align: middle;
+    height: 15px;
+    
+}
+
+.flechas-slider:first-child{
+    
+    margin-right: 5px;
+    
+}
+
+.flechas-slider:last-child{
+    
+    
+    margin-left: 5px;
 }

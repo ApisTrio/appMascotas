@@ -27,10 +27,12 @@
             <div class="row c2">
                 <div class="col s12 center-align contenedor-placas-mascota">
                     <div class="placas-mascota">
+                        <img class="flechas-slider" src="assets/images/forms/left.png">
                         <div class="placa-individual" ng-repeat-start="placa in mascota.placas | limitTo:3">
                             <img ng-src="assets/images/placas/{{placa.forma}}/{{placa.modelo}}"> {{placa.codigo}}
                         </div>
                         <div class="divisor-placas" ng-show="!$last" ng-repeat-end></div>
+                        <img class="flechas-slider" src="assets/images/forms/right.png">
                     </div>
                 </div>
             </div>

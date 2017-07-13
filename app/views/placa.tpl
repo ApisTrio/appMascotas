@@ -252,16 +252,16 @@
         </div>
         <div class="row">
             <div class="col s10 offset-s1 center-align">
-                <h4 class="titulo2 negrita c2" style="line-height: 28px">¡GRACIAS POR HABERTE PUESTO EN CONTACTO CON {{::placa.datos.basico.nombre}} TU MENSAJE HA SIDO ENVIADO CON ÉXITO</h4>
+                <h4 class="titulo2 negrita c2" style="line-height: 28px">¡GRACIAS POR HABERTE PUESTO EN CONTACTO CON {{::placa.datos.duenos[0].nombre}} {{::placa.datos.duenos[0].apellido}} TU MENSAJE HA SIDO ENVIADO CON ÉXITO</h4>
             </div>
         </div>
         <div class="row">
             <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
-                Esperamos que {{::placa.datos.duenos[0].nombre}} se ponga en contacto contigo inmediatamente. Si lo deseas tambien puedes contactarlo por teléfono.
+                Esperamos que {{::placa.datos.duenos[0].nombre}} {{::placa.datos.duenos[0].apellido}} se ponga en contacto contigo inmediatamente. Si lo deseas tambien puedes contactarlo por teléfono.
             </div>
         </div>
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
+            <div class="col s8 offset-s2 col m4 offset-m4 col l2 offset-l5 center-align">
                 <a ng-href="tel:{{::placa.datos.duenos[0].telefono}}"><button class="boton-verde">LLAMARLO</button></a>
             </div>
         </div>

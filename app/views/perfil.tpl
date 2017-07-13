@@ -40,7 +40,7 @@
                     <div class="icono-menu">
                         <img ng-mouseover="iconoDesactivarAlerta  = iconosDesactivarAlerta[1]" ng-mouseleave="iconoDesactivarAlerta = cambiarIcono(seleccionado, 4, iconosDesactivarAlerta)" ng-src="{{ iconoDesactivarAlerta }}" style="width: 35px;">
                     </div>
-                    <div class="opcion-menu" ng-class="{'selected-menu-item' : seleccionado == 4}">
+                    <div class="opcion-menu" ng-class="{'selected-menu-item' : seleccionado == 4}" style="margin-left: 0">
                         Desactivar alerta de mascota perdida
                     </div>
                 </div>

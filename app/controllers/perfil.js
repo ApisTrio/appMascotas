@@ -45,9 +45,9 @@ angular.module("mascotas")
         "assets/images/menu_iconos/important_message_selected.svg"
     ];
     $scope.iconosDesactivarAlerta = [
-        "assets/images/menu_iconos/important_message.svg",
-        "assets/images/menu_iconos/important_message_hover.svg",
-        "assets/images/menu_iconos/important_message_selected.svg"
+        "assets/images/menu_iconos/desactivar.svg",
+        "assets/images/menu_iconos/desactivar_hover.svg",
+        "assets/images/menu_iconos/desactivar_selected.svg"
     ];
 
     $scope.iconosSalir = [

@@ -12,7 +12,7 @@
 				<div class="margin-auto" style="width: 300px;">
 	                <div class="input-formulario text-left">
                         <div>
-                            <input ng-model="recordarUsuario.email" placeholder="Email" type="email" name="email" ng-class="{'valido': recordarUsuarioForm.email.$valid, 'erroneo': (!recordarUsuarioForm.email.$valid && recordarUsuarioForm.email.$dirty)}" cdx-validacion data-validacion="emailU" data-deseado="true" required>
+                            <input ng-model="recordarUsuario.email" placeholder="Email" type="email" name="email" ng-class="{'valido': recordarUsuarioForm.email.$valid, 'erroneo': (!recordarUsuarioForm.email.$valid && recordarUsuarioForm.email.$dirty)}" cdx-validacion data-validacion="emailU" data-deseado="true" style="width: 100%" required>
                             <cdx-validez data-validez="recordarUsuarioForm.email.$valid" data-mostrar="recordarUsuarioForm.email.$dirty"></cdx-validez>
                         </div>
 
@@ -45,7 +45,7 @@
 
                 <div class="row">
                     <p class="col s10 offset-s1 m8 offset-m2 center-align white-space-normal">
-                        Te hemos enviado un e-mail con los pasos a seguir para recuperar tu nombre de usuario. Si tienes algún problema puedes contactarn
+                        Te hemos enviado un e-mail con los pasos a seguir para recuperar tu nombre de usuario. Si tienes algún problema puedes contactarnos
                     </p>
                 </div>
 

@@ -443,7 +443,6 @@ table.table-admin td {
 
 .recordar-usuario-texto {
     font-size: 12px;
-    font-weight: 600;
     color: #424242;
 }
 
@@ -1073,6 +1072,20 @@ md-datepicker.erroneo input:focus {
     white-space: normal;
 }
 
+.aviso-baja-mascota {
+    background-color: white;
+    position: absolute;
+    padding: 22px;
+    text-align: center;
+    font-weight: 100;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 15px -1px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 15px -1px;
+    bottom: 35px;
+    left: 22%;
+    width: 400px;
+    white-space: normal;
+}
+
 #menu-perfil {
     -webkit-transition: 1s all ease;
     transition: 1s all ease;
@@ -1416,6 +1429,8 @@ header {
     position: relative;
     z-index: 2;
     padding: 0 30px;
+    -webkit-box-shadow: 0px 1px 0px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 1px 0px 0 rgba(0, 0, 0, 0.12);
 }
 
 header>div {

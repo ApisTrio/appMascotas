@@ -40,7 +40,7 @@
     }
 
     .o, .tomar-foto {
-        display: none;
+        display: none !important;
     }   
 
 }
@@ -53,7 +53,7 @@
     }
 
     .o, .tomar-foto {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -65,7 +65,7 @@
     }
 
     .o, .tomar-foto {
-        display: none;
+        display: none !important;
     }
 
 }
@@ -87,7 +87,7 @@
     }
 
     .o, .tomar-foto {
-        display: none;
+        display: none !important;
     }
 
 }
@@ -209,18 +209,6 @@
 
 }
 
-
-@media only screen and (min-width: 800px) {
-    header .contenedor-navbar-mobile, md-sidenav {
-        display: none !important;
-    }
-
-}
-@media only screen and (max-width : 800px){
-    header .contenedor-navbar {
-        display: none;
-    }
-}
 
 
 

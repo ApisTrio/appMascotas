@@ -13,7 +13,7 @@
                     <div class="campo-formulario text-left">E-mail</div>
                     <div class="input-formulario text-left">
                         <div>
-                            <input ng-model="cambiarContrasena.email" placeholder="Email" type="email" name="email" ng-class="{'valido': cambiarContrasenaForm.email.$valid, 'erroneo': (!cambiarContrasenaForm.email.$valid && cambiarContrasenaForm.email.$dirty)}" cdx-validacion data-validacion="emailU" data-deseado="true" required>
+                            <input ng-model="cambiarContrasena.email" placeholder="Email" type="email" name="email" ng-class="{'valido': cambiarContrasenaForm.email.$valid, 'erroneo': (!cambiarContrasenaForm.email.$valid && cambiarContrasenaForm.email.$dirty)}" cdx-validacion data-validacion="emailU" data-deseado="true" style="width: 100%" required>
                             <cdx-validez data-validez="cambiarContrasenaForm.email.$valid" data-mostrar="cambiarContrasenaForm.email.$dirty"></cdx-validez>
                         </div>
 
@@ -46,7 +46,7 @@
 
                 <div class="row">
                     <p class="col s10 offset-s1 m8 offset-m2 center-align">
-                        Te hemos enviado un e-mail con los pasos a seguir para cambiar tu contraseña. Si tienes algún problema puedes contactarn
+                        Te hemos enviado un e-mail con los pasos a seguir para cambiar tu contraseña. Si tienes algún problema puedes contactarnos
                     </p>
                 </div>
 

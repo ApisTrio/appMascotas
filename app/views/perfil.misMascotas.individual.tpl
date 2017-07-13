@@ -845,8 +845,8 @@
 <section>
     <div class="row">
         <div class="col s10 offset-s1">
-            <div ui-sref="perfil.misMascotasEliminar({idPlaca: misMascotasIndividual.datos.basico.codigo})" class="eliminar-pequeno">Dar de baja a {{misMascotasIndividual.datos.basico.nombre}} <img style="cursor: pointer;vertical-align: bottom;" width="17" ng-mouseover="registro.aviso = true" ng-mouseleave="registro.aviso = false" src="assets/images/icons/info.png"> </div>  <div ng-show="!registro.aviso" ng-init="registro.aviso = false" ng-click="registro.aviso = !registro.aviso" class="aviso-baja-mascota">
-            <img src="">
+            <div ui-sref="perfil.misMascotasEliminar({idPlaca: misMascotasIndividual.datos.basico.codigo})" class="eliminar-pequeno">Dar de baja a {{misMascotasIndividual.datos.basico.nombre}} <img style="cursor: pointer;vertical-align: bottom;" width="17" ng-mouseover="registro.aviso = true" ng-mouseleave="registro.aviso = false" src="assets/images/icons/info.png"> </div>  <div ng-show="registro.aviso" ng-init="registro.aviso = false" ng-click="registro.aviso = !registro.aviso" class="aviso-baja-mascota">
+            <img src="assets/images/baja-icon.png" style="display: block;width: 150px; margin: auto">
             Cuando das de baja a tu mascota su perfil es eliminado de nuestro nuestro sistema</div>
         </div>
     </div>

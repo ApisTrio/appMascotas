@@ -1282,6 +1282,12 @@
         
     }
 
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
+    }
+
 }
 
 @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -1477,6 +1483,12 @@
         
     }
 
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
+    }
+
 }
 
 @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -1661,6 +1673,12 @@
         visibility: visible;
         
     }
+
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
+    }
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -1683,6 +1701,12 @@
 
     cdx-modelos>div>div>div {
         width: 85px;
+    }
+
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
     }
 
 }
@@ -1766,6 +1790,12 @@
 
     .agregar-placa-perfil{
         margin-top: 10px;
+    }
+
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
     }
 }
 
@@ -1984,6 +2014,12 @@
         justify-content: flex-start;
         width: 100%;
     }
+
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
+    }
 }
 
 
@@ -2083,6 +2119,12 @@
         
         visibility: visible;
         
+    }
+
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
     }
 }
 
@@ -2233,5 +2275,11 @@
         align-items: center;
         justify-content: flex-start;
         width: 100%;
+    }
+
+    .aviso-baja-mascota {
+        bottom: 42px;
+        left: 1%;
+        width: 90%;
     }
 }

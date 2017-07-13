@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row margin-out">
-        <div class="col s12 m6 l3 xl2 margin-in pointer" ng-repeat="perdida in mascotasPerdidas.perdidas | limitTo: 12" ng-class="{'offset-m1': $first || ($index == 6) }">
+        <div class="col s12 m6 l2 xl2 margin-in pointer" ng-repeat="perdida in mascotasPerdidas.perdidas | limitTo: 12" ng-class="{'offset-l1':($first || $index == 5), 'offset-xl1': ($first || $index == 5)}">
             <div class="center-align">
                 <div class="circle foto-mascota" style="background-image:url({{mascotasPerdidas.apiDir.dominio}}{{mascotasPerdidas.apiDir.path}}{{mascotasPerdidas.apiDir.imagenes.mascotas}}{{perdida.foto}}); background-position: 100% 100%; background-size: cover;" ng-if="perdida.foto">
                 </div>
@@ -14,7 +14,7 @@
             </div>
             <div class="center-align negrita">
                 <div class="titulo2">{{perdida.nombre}}</div>
-                <div class="texto-pequeno">{{mascotasPerdidas.formatear(perdida.edad)}}</div>
+                <div class="texto-pequeno">{{mascotasPerdidas.formatear(perdida.edad) || "Menos de 1 mes"}}</div>
             </div>
         </div>
         <div class="col s12 margin-in" ng-if="!mascotasPerdidas.perdidas.length">
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="row margin-out">
-        <div class="col s12 m6 l3 xl2 margin-in pointer" ng-repeat="encontrada in mascotasPerdidas.encontradas | limitTo: 12" ng-class="{'offset-m1': $first || ($index == 6) }">
+        <div class="col s12 m6 l2 xl2 margin-in pointer" ng-repeat="encontrada in mascotasPerdidas.encontradas | limitTo: 12" ng-class="{'offset-l1': ($first || $index == 5), 'offset-xl1': ($first || $index == 5)}">
             <div class="center-align">
                 <div class="circle foto-mascota" style="background-image:url({{mascotasPerdidas.apiDir.dominio}}{{mascotasPerdidas.apiDir.path}}{{mascotasPerdidas.apiDir.imagenes.mascotas}}{{encontrada.foto}});  background-position: 100% 100%; background-size: cover; " ng-if="encontrada.foto">
                 </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="center-align negrita">
                 <div class="titulo2">{{encontrada.nombre}}</div>
-                <div class="texto-pequeno">{{mascotasPerdidas.formatear(encontrada.edad)}}</div>
+                <div class="texto-pequeno">{{mascotasPerdidas.formatear(encontrada.edad) || "Menos de 1 mes"}}</div>
             </div>
         </div>
         <div class="col s12 margin-in" ng-if="!mascotasPerdidas.encontradas.length">

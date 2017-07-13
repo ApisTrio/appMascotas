@@ -6,7 +6,7 @@ angular.module("mascotas")
 
     if ($scope.$parent.seleccionado != 3) {
 
-        $scope.$parent.seleccionado = 3 ;
+        $scope.$parent.seleccionado = 3;
 
         $scope.$parent.iconoMiPerfil = $scope.$parent.cambiarIcono($scope.$parent.seleccionado, 1, $scope.$parent.iconosMiPerfil);
         $scope.$parent.iconoMisMascotas = $scope.$parent.cambiarIcono($scope.$parent.seleccionado, 2, $scope.$parent.iconosMisMascotas);
@@ -41,14 +41,8 @@ angular.module("mascotas")
             longitud: position.coords.longitude
         });
 
-        NgMap.getMap().then(function (evtMap) {
+        cdx.mostrarMapa = true;
 
-            map = evtMap;
-            var center = map.getCenter();
-            google.maps.event.trigger(map, "resize");
-            map.setCenter(center);
-
-        });
 
     });
 
@@ -70,10 +64,31 @@ angular.module("mascotas")
     })
 
 
+    cdx.mapaCargado = function () {
+
+
+        NgMap.getMap().then(function (map) {
+
+
+
+            google.maps.event.addListener(map, "idle", function () {
+                var center = map.getCenter();
+                google.maps.event.trigger(map, 'resize');
+                map.setCenter(center);
+               
+            });
+
+        });
+    }
+
+
+
 
     cdx.avanzar = function (valido, datos) {
 
         if (valido) {
+
+
 
             if (cdx.opciones < 3) {
 

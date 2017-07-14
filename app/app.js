@@ -66,6 +66,7 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
                     usuariosService.salir();
 
                 }
+                
 
                 }]
         }
@@ -287,7 +288,7 @@ angular.module("mascotas", ["ngMessages", "ui.router", "ngAnimate", "ngMaterial"
         name: 'cambiarContrasenaConfirmar',
         url: '/cambiar-contrasena/:token',
         templateUrl: 'app/views/cambiarContrasenaConfirmar.tpl',
-        controller: 'cambiarContrasenaController as cambiarContrasena'
+        controller: 'cambiarContrasenaConfirmarController as cambiarContrasenaConfirmar'
     })
 
     ////////////////////////////

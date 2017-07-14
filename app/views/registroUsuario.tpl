@@ -530,11 +530,12 @@
                 <div class="campo-formulario">Código postal *</div>
                 <div class="input-formulario">
                     <div ng-class="{'margin-bottom-30': formPaso4.postcode.$pristine || formPaso4.postcode.$valid}">
-                        <input ng-model="registro.datos.dueno.codigo_postal" ng-class="{'valido': formPaso4.postcode.$valid, 'erroneo': (!formPaso4.postcode.$valid && formPaso4.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" required>
+                        <input ng-model="registro.datos.dueno.codigo_postal" ng-class="{'valido': formPaso4.postcode.$valid, 'erroneo': (!formPaso4.postcode.$valid && formPaso4.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" ng-pattern="/^[0-9]*$/" required>
                         <cdx-validez data-validez="formPaso4.postcode.$valid" data-mostrar="formPaso4.postcode.$dirty"></cdx-validez>
                     </div>
                     <div ng-messages="formPaso4.postcode.$error" ng-show="formPaso4.postcode.$dirty">
                         <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="pattern">Solo se aceptan digitos.</div>
                     </div>
                 </div>
             </div>
@@ -715,11 +716,12 @@
                     <div class="campo-formulario">Código postal *</div>
                     <div class="input-formulario">
                         <div ng-class="{'margin-bottom-30': duenoExtraForm.postcode.$pristine || duenoExtraForm.postcode.$valid}">
-                            <input ng-model="dueno.codigo_postal" ng-class="{'valido': duenoExtraForm.postcode.$valid, 'erroneo': (!duenoExtraForm.postcode.$valid && duenoExtraForm.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" required>
+                            <input ng-model="dueno.codigo_postal" ng-class="{'valido': duenoExtraForm.postcode.$valid, 'erroneo': (!duenoExtraForm.postcode.$valid && duenoExtraForm.postcode.$dirty)}" placeholder="Código postal" type="text" name="postcode" ng-pattern="/^[0-9]*$/" required>
                             <cdx-validez data-validez="duenoExtraForm.postcode.$valid" data-mostrar="duenoExtraForm.postcode.$dirty"></cdx-validez>
                         </div>
                         <div ng-messages="duenoExtraForm.postcode.$error" ng-show="duenoExtraForm.postcode.$dirty">
                             <div ng-message="required">Este campo es requerido.</div>
+                            <div ng-message="pattern">Solo se aceptan digitos.</div>
                         </div>
                     </div>
                 </div>

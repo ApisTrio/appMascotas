@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("perfilController", ["currentAuth", "usuariosService", "$rootScope", "$scope", "$state", "mascotasService", function (currentAuth, usuariosService, $rootScope, $scope, $state, mascotasService) {
+.controller("perfilController", ["currentAuth", "usuariosService", "$rootScope", "$scope", "$state", "mascotasService", "validarService", function (currentAuth, usuariosService, $rootScope, $scope, $state, mascotasService, validarService) {
 
     var cdx = this;
 
@@ -18,8 +18,14 @@ angular.module("mascotas")
 
     });
 
-    cdx.colapsar = function(menucColapsado) {
-        console.log(menucColapsado)
+    validarService.validar("idUsuario", usuariosService.autorizado().usuario.idUsuario).catch(function (res) {
+
+        usuariosService.salir();
+
+    })
+
+    cdx.colapsar = function (menucColapsado) {
+
         if (menucColapsado) {
             cdx.menuColapsado = false;
         } else {
@@ -55,7 +61,7 @@ angular.module("mascotas")
         "assets/images/menu_iconos/logout_hover.svg"
     ];
 
-    $scope.cambiarIcono = function(s, i, iconos){
+    $scope.cambiarIcono = function (s, i, iconos) {
 
         if (s == i) {
             return iconos[2];
@@ -65,10 +71,10 @@ angular.module("mascotas")
 
     }
 
-    cdx.salir = function(){
-        
+    cdx.salir = function () {
+
         usuariosService.salir();
-        
+
     }
 
 }])

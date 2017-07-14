@@ -322,6 +322,42 @@ angular.module("mascotas")
 
 .service("usuariosService", ["$http", "$q", "apiRootFactory", "$window", "$rootScope", function ($http, $q, apiRootFactory, $window, $rootScope) {
 
+    this.cambiarContrasena = function (contrasena, token) {
+
+
+
+        var defered = $q.defer();
+        var promise = defered.promise;
+
+        $http.post(apiRootFactory + "usuarios/cambiar-contrasena", {
+            pass: contrasena,
+            token: token
+        })
+
+        .then(function (res) {
+
+            if (res.data.response) {
+
+                defered.resolve();
+
+            }
+
+        }).catch(function (res) {
+
+
+            defered.reject();
+
+
+
+        })
+
+
+
+        return promise;
+
+    }
+
+
     this.borrar = function (token) {
 
 
@@ -332,12 +368,25 @@ angular.module("mascotas")
 
             if (res.data.response) {
 
-                defered.resolve(res.data.result);
+                defered.resolve();
+
+            }
+
+        }).catch(function (res) {
+
+
+
+            if (res.status == 400) {
+
+                defered.reject(400);
 
             } else {
 
-                defered.reject();
+                defered.reject(500)
+
             }
+
+
 
         });
 
@@ -1468,14 +1517,12 @@ angular.module("mascotas")
 
         if (latitud && longitud) {
             var enlace = latitud && longitud ? "https://www.google.com/maps/@" + latitud + "," + longitud + ",18z" : "";
-        }
-        
-        else {
-            
+        } else {
+
             var enlace = null,
-            latitud = null,
-            longitud = null,
-            direccion = null
+                latitud = null,
+                longitud = null,
+                direccion = null
         }
 
         $http.post(apiRootFactory + "mail/placa-escaneada", {

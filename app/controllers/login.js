@@ -27,6 +27,13 @@ angular.module("mascotas")
             var mensaje = "Por favor, revisa tu bandeja de entrada y confirma tu cuenta para poder iniciar sesión";
             
         }
+        
+        else if(texto == "Usuario borrado"){
+            
+            var titulo = "El usuario que has introducido ha sido eliminado";
+            var mensaje = "Si es un error, ponte en contacto con nosotros en <a href='mailto:qr@dinbeat.com'>qr@dinbeat.com</a>.";
+            
+        }
 
 
         $mdDialog.show({

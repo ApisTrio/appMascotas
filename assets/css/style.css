@@ -1649,3 +1649,11 @@ header .contenedor-navbar .login-contenedor {
     position: relative;
     
 }
+
+
+.row .menu.col.l1 {
+    width: 5.333333% !important;
+}
+.row .contenedor-admin-interno.col.l11 {
+    width: 94.666667% !important;
+}

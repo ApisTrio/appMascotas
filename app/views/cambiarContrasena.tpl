@@ -13,7 +13,7 @@
                     <div class="campo-formulario text-left">E-mail</div>
                     <div class="input-formulario text-left">
                         <div>
-                            <input ng-model="cambiarContrasena.email" placeholder="Email" type="email" name="email" ng-class="{'valido': cambiarContrasenaForm.email.$valid, 'erroneo': (!cambiarContrasenaForm.email.$valid && cambiarContrasenaForm.email.$dirty)}" cdx-validacion data-validacion="emailU" data-deseado="true" style="width: 100%" required>
+                            <input ng-model="cambiarContrasena.email" placeholder="Email" type="email" name="email" ng-class="{'valido': cambiarContrasenaForm.email.$valid, 'erroneo': (!cambiarContrasenaForm.email.$valid && cambiarContrasenaForm.email.$dirty)}" cdx-validacion data-validacion="emailU" data-deseado="true" required>
                             <cdx-validez data-validez="cambiarContrasenaForm.email.$valid" data-mostrar="cambiarContrasenaForm.email.$dirty"></cdx-validez>
                         </div>
 

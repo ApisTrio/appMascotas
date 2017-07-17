@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="col s12 m4 offset-m4 botones-formulario">
-                <button class="boton-verde" ui-sref="login">INICIAR SESIÓN</button>
+                <button class="boton-verde landing" ui-sref="login">INICIAR SESIÓN</button>
             </div>
         </div>
     </div>

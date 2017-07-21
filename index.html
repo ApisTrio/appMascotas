@@ -97,9 +97,9 @@
                 <div>
 
                     <div ng-switch="header.autorizado" class="login-contenedor">
-                        <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login"> <img src="assets/images/menu_iconos/profile.svg" style="vertical-align: text-bottom;margin-right: 10px"> Acceder / Registro</a>
+                        <a ng-switch-when="false" ng-click="header.menuMostrar()" class="c2 nombre-usuario" ui-sref="login"> <img src="assets/images/menu_iconos/profile.svg" style="vertical-align: text-bottom;margin-right: 10px"> <span class="acceder" style="color: black">Acceder / Registro </span></a>
 
-                        <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default> <img src="assets/images/menu_iconos/profile.svg" style="vertical-align: text-bottom;margin-right: 10px">
+                        <a ng-mouseenter="header.hmenuMostrar=true" class="c2 nombre-usuario" ui-sref="perfil.miPerfil" ng-switch-default> <img src="assets/images/menu_iconos/profile.svg" style="vertical-align: text-bottom;margin-right: 10px"> {{ header.autorizado.usuario.usuario }}
                         </a>
                     </div>
 

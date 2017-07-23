@@ -1,37 +1,37 @@
 angular.module("mascotas")
 
-.controller("loginController", ["usuariosService", "$state", "currentAuth", "$scope", "$mdDialog", function (usuariosService, $state, currentAuth, $scope, $mdDialog) {
+.controller("loginController", ["usuariosService", "$state", "currentAuth", "$scope", "$mdDialog", "$sce", function (usuariosService, $state, currentAuth, $scope, $mdDialog, $sce) {
 
     var cdx = this;
 
     cdx.mostrarModal = function ($event, texto) {
 
         
-        if (texto == "Clave invalida") {
-            var titulo = "La clave que has introducido no es válida";
-            var mensaje = "Verifica que la clave sea correcta";
+         if (texto == "Clave invalida") {
+            var titulo = "La clave que has introducido no es vÃ¡lida";
+            var mensaje = $sce.trustAsHtml("Verifica que la clave sea correcta");
 
         }
         
         else if(texto == "Su usuario no existe"){
             
             var titulo = "El usuario que has introducido no existe";
-            var mensaje = "Verifica que el usuario sea correcto";
+            var mensaje = $sce.trustAsHtml("Verifica que el usuario sea correcto");
             
         }
         
         
         else if(texto == "Usuario inactivo"){
             
-            var titulo = "Todavía no has confirmado tu cuenta";
-            var mensaje = "Por favor, revisa tu bandeja de entrada y confirma tu cuenta para poder iniciar sesión";
+            var titulo = "TodavÃ­a no has confirmado tu cuenta";
+            var mensaje = $sce.trustAsHtml("Por favor, revisa tu bandeja de entrada y confirma tu cuenta para poder iniciar sesiÃ³n");
             
         }
         
         else if(texto == "Usuario borrado"){
             
             var titulo = "El usuario que has introducido ha sido eliminado";
-            var mensaje = "Si es un error, ponte en contacto con nosotros en <a href='mailto:qr@dinbeat.com'>qr@dinbeat.com</a>.";
+            var mensaje = $sce.trustAsHtml("Si es un error, ponte en contacto con nosotros en <a href='mailto:qr@dinbeat.com'>qr@dinbeat.com</a>.");
             
         }
 

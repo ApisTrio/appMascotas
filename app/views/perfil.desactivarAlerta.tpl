@@ -22,7 +22,7 @@
     <!-- MASCOTA -->
     <div ng-switch-when="1" class="row" ng-form="formPaso1">
 
-        <div class="col s11 offset-s1 m6 offset-m3">
+        <div class="col s11 offset-s1 m6 offset-m3 xl5 offset-xl4">
             <div class="campo-formulario">Mascota *</div>
             <div class="input-formulario">
                 <div ng-class="{'margin-bottom-30': formPaso1.mascota.$pristine || formPaso1.mascota.$valid}">

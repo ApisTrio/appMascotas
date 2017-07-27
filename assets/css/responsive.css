@@ -660,6 +660,8 @@
         visibility: visible;
         
     }
+
+    .username{ display: none; }
 }
 
 @media only screen and (min-device-width : 414px) and (max-device-width : 736) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
@@ -836,6 +838,8 @@
         visibility: visible;
         
     }
+
+    .username{ display: none; }
 }
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -1091,6 +1095,8 @@
         
     }
 
+    .username{ display: none; }
+
 }
 
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -1300,6 +1306,8 @@
         width: 90%;
     }
 
+    .username{ display: none; }
+
 }
 
 @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -1504,6 +1512,7 @@
         width: 90%;
     }
 
+    .username{ display: none; }
 }
 
 @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -1697,6 +1706,8 @@
         left: 1%;
         width: 90%;
     }
+
+    .username{ display: none; }
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -2043,6 +2054,8 @@
         left: 1%;
         width: 90%;
     }
+
+    .username{ display: none; }
 }
 
 
@@ -2152,6 +2165,8 @@
         left: 1%;
         width: 90%;
     }
+
+    .username{ display: none; }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {

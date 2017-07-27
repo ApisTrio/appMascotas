@@ -235,7 +235,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row"  style="margin-bottom: 0; padding-bottom: 20px;">
                 <div class="col s8 offset-s2 col m4 offset-m4 col l2 offset-l5 center-align">
                     <button class="boton-verde" ng-click="placa.mostrarModal($event, placa.datos.basico.idMascota)">CONTACTAR CON EL DUEÑO</button>
                 </div>
@@ -266,5 +266,13 @@
             </div>
         </div>
     </div>
+
+    <style type="text/css">
+    @media (min-width: 2560px) {
+        .md-dialog-container{
+            height: 57% !important;
+        }
+    }
+    </style>
 
 </section>

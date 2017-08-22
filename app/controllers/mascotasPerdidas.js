@@ -1,6 +1,6 @@
 angular.module("mascotas")
 
-.controller("mascotasPerdidasController", ["mascotasService", "formatearFactory", "apiConstant", function (mascotasService, formatearFactory, apiConstant) {
+.controller("mascotasPerdidasController", ["mascotasService", "formatearFactory", "apiConstant", "isMobile", function (mascotasService, formatearFactory, apiConstant, isMobile) {
 
     var cdx = this;
     cdx.apiDir = apiConstant;
@@ -8,7 +8,27 @@ angular.module("mascotas")
     cdx.encontradas = [];
     cdx.salto = 0;
     cdx.saltoEncontrada = 0;
-
+            
+            if(isMobile.phone){
+                
+                cdx.num = 1;
+                console.log(cdx.num)
+                
+            }
+            
+            else if(isMobile.tablet){
+                
+                cdx.num = 4;
+                console.log(cdx.num)
+            }
+            
+            else{
+                
+                cdx.num = 10;
+                console.log(cdx.num)
+                
+            }
+            
     cdx.listo = {
 
         perdidas: true,
@@ -16,13 +36,13 @@ angular.module("mascotas")
 
     }
 
-    mascotasService.perdidas(10, 0).then(function (res) {
+    mascotasService.perdidas(cdx.num, 0).then(function (res) {
 
         cdx.perdidas = res;
 
     })
 
-    mascotasService.encontradas(10, 0).then(function (res) {
+    mascotasService.encontradas(cdx.num, 0).then(function (res) {
 
         cdx.encontradas = res;
 
@@ -40,17 +60,17 @@ angular.module("mascotas")
 
             if (accion) {
 
-                var salto = cdx.salto + 10;
+                var salto = cdx.salto + cdx.num;
 
             } else {
 
-                var salto = cdx.salto - 10;
+                var salto = cdx.salto - cdx.num;
 
             }
 
             if (salto > -1) {
 
-                mascotasService.perdidas(10, salto).then(function (res) {
+                mascotasService.perdidas(cdx.num, salto).then(function (res) {
 
                     if (res) {
 
@@ -62,13 +82,13 @@ angular.module("mascotas")
 
                             })
 
-                            cdx.salto = cdx.salto + 10;
+                            cdx.salto = cdx.salto + cdx.num;
 
                         } else {                            
                             
                             cdx.perdidas.splice((cdx.perdidas.length - cdx.salto) * -1);
 
-                            cdx.salto = cdx.salto - 10;
+                            cdx.salto = cdx.salto - cdx.num;
 
                         }
 
@@ -108,17 +128,17 @@ angular.module("mascotas")
 
             if (accion) {
 
-                var salto = cdx.saltoEncontrada + 10;
+                var salto = cdx.saltoEncontrada + cdx.num;
 
             } else {
 
-                var salto = cdx.saltoEncontrada - 10;
+                var salto = cdx.saltoEncontrada - cdx.num;
 
             }
 
             if (salto > -1) {
 
-                mascotasService.encontradas(10, salto).then(function (res) {
+                mascotasService.encontradas(cdx.num, salto).then(function (res) {
 
                     if (res) {
 
@@ -130,13 +150,13 @@ angular.module("mascotas")
 
                             })
 
-                            cdx.saltoEncontrada = cdx.saltoEncontrada + 10;
+                            cdx.saltoEncontrada = cdx.saltoEncontrada + cdx.num;
 
                         } else {                            
                             
                             cdx.encontradas.splice((cdx.encontradas.length - cdx.saltoEncontrada) * -1);
 
-                            cdx.saltoEncontrada = cdx.saltoEncontrada - 10;
+                            cdx.saltoEncontrada = cdx.saltoEncontrada - cdx.num;
 
                         }
 

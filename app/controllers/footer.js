@@ -6,4 +6,16 @@ angular.module("mascotas")
 
     cdx.date = new Date();
     
+    cdx.cookies = localStorage.getItem("cdxCookies");
+    
+    
+    cdx.aceptarCookies = function(){
+        
+        
+        localStorage.setItem("cdxCookies", "true");
+        cdx.cookies = localStorage.getItem("cdxCookies");
+        
+    }
+    
+    
 }])

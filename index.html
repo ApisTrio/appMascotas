@@ -197,6 +197,12 @@
                 <div id="footer-info">Copyright © {{footer.date | date:'yyyy'}} Dindog Tech SL. Todos los derechos reservados.</div>                 
             </div>  <!-- .container -->
         </div>
+        
+        
+        <div ng-if="!footer.cookies">
+            aviso huehuehue mordekaiser es numero #1
+            <div ng-click="footer.aceptarCookies()">Aceptar</div>
+        </div>
     </footer>
 
     <!---- Directiva de pasos ---->    <script type="text/ng-template" id="cdx.pasos.html">
